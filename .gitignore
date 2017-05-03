@@ -1,0 +1,4 @@
+/bazel-*
+/.sass-cache
+/production
+*.swp
