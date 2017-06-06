@@ -1,16 +1,21 @@
+// Bazel logo colors
+$bazel-green: #43a047;
+$bazel-green-light: #76d275;
+$bazel-green-dark-left: #00701a;
+$bazel-green-dark-right: #004300;
+$color-on-bazel-green: #fff;
+
 $body-font-family: 'RobotoDraft', 'Helvetica Neue', Helvetica, Arial,
                    sans-serif;
 $code-font-family: 'Source Code Pro', monospace;
 
-$link-color: #4caf50;
+$link-color: $bazel-green;
 $link-hover-color: darken($link-color, 10%);
 $well-color: #f9f9f9;
 $text-color: #444;
 
 $vpad: 20px;
 
-$footer-height: 60px;
-$footer-margin: 40px;
 
 html {
   position: relative;
@@ -21,46 +26,27 @@ body {
   padding-top: 50px;
   color: $text-color;
   font-family: $body-font-family;
-  margin-bottom: $footer-height + $footer-margin;
 }
 
 // Footer styles
-$footer-bg-color: #424242;
-$footer-color: #fff;
-$footer-muted-color: #e0e0e0;
-$footer-link-color: #e0e0e0;
-$footer-link-hover-color: #fff;
-
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: $footer-height;
-  margin-top: $footer-margin;
-  background-color: $footer-bg-color;
-  color: $footer-color;
+  margin-top: 40px;
+  background-color: #424242;
+  color: #fff;
   padding: 20px;
 
   .text-muted {
-    color: $footer-muted-color;
+    color: #e0e0e0;
   }
 
   a {
-    color: $footer-link-color;
+    color: #e0e0e0;
 
     &:hover,
     &:focus {
-      color: $footer-link-hover-color;
+      color: #fff;
       text-decoration: none;
     }
-  }
-}
-
-.body-home {
-  margin-bottom: $footer-height;
-
-  .footer {
-    margin-top: 0;
   }
 }
 
@@ -162,41 +148,35 @@ code {
 
 // Main page hero styles.
 $hero-bg-color: #fafafa;
+$hero-padding: 40px;
 
 .hero {
   background-color: $hero-bg-color;
-  color: $text-color;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: $hero-padding;
+  padding-bottom: $hero-padding;
   text-align: center;
 
   h1 {
     margin-top: 0;
     font-size: 72px;
-    color: $text-color;
   }
 
   .logo {
-    width: 270px;
-    padding-bottom: 20px;
+    max-width: 500px;
+    margin-bottom: 20px;
   }
 }
 
-$hero-bar-bg-color: #eee;
-
 .hero-bar {
   text-align: center;
-  background-color: $hero-bar-bg-color;
-  padding-bottom: 10px;
-  padding-top: 10px;
+  background-color: $hero-bg-color;
+  padding-bottom: $hero-padding;
   font-weight: bold;
 }
 
-$page-title-bar-bg-color: #e8f5e9;
-$page-title-bar-color: #4caf50;
 
 .page-title-bar {
-  background-color: $page-title-bar-bg-color;
+  background-color: $bazel-green-light;
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -207,7 +187,7 @@ $page-title-bar-color: #4caf50;
   h5,
   h6 {
     margin: 8px 0 4px 0;
-    color: $page-title-bar-color;
+    color: $color-on-bazel-green;
   }
 }
 
@@ -215,14 +195,32 @@ $page-title-bar-color: #4caf50;
   height: 100px;
 }
 
+.user-logo-container .user-logo {
+  width: 200px;
+}
+
+.user-logo-container .user-logo.square {
+  width: 80px;
+}
+.user-logo-container .user-logo.heavy {
+  width: 160px;
+}
+
+.user-logo-container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // Sidebar styles
-$navbar-bg-color: #4caf50;
-$navbar-hover-bg-color: #66bb6a;
-$navbar-color: #fff;
+$navbar-bg-color: $bazel-green;
+$navbar-hover-bg-color: $bazel-green-light;
+$navbar-color: $color-on-bazel-green;
 $navbar-hover-color: #444;
-$navbar-input-bg-color: #c8e6c9;
-$navbar-input-focus-bg-color: #fff;
-$navbar-input-border-color: #4caf50;
+$navbar-input-bg-color: $bazel-green-light;
+$navbar-input-focus-bg-color: $color-on-bazel-green;
+$navbar-input-border-color: $bazel-green;
 
 .navbar-inverse {
   margin-bottom: 0;
@@ -230,7 +228,9 @@ $navbar-input-border-color: #4caf50;
   border-bottom: 1px solid $navbar-bg-color;
 
   .navbar-brand {
-    padding-top: 10px;
+    .navbar-logo {
+      height: 22px;
+    }
   }
 
   a.navbar-brand {
@@ -238,7 +238,7 @@ $navbar-input-border-color: #4caf50;
 
     &:focus,
     &:hover {
-      color: $navbar-color;
+      color: $navbar-hover-color;
       background-color: $navbar-bg-color;
     }
   }
@@ -248,7 +248,7 @@ $navbar-input-border-color: #4caf50;
 
     &:focus,
     &:hover {
-      color: $navbar-color;
+      color: $navbar-hover-color;
       background-color: $navbar-hover-bg-color;
     }
 
@@ -276,6 +276,10 @@ $navbar-input-border-color: #4caf50;
     input[type="search"] {
       background-color: $navbar-input-bg-color;
       border-color: $navbar-input-border-color;
+
+      &::placeholder {
+        color: $navbar-color;
+      }
 
       &:focus,
       &:active {
