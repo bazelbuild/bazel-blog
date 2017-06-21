@@ -2,3 +2,4 @@
 /.sass-cache
 /production
 *.swp
+.DS_Store
