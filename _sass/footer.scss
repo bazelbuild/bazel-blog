@@ -1,0 +1,21 @@
+// Footer styles
+.footer {
+  margin-top: 40px;
+  background-color: #424242;
+  color: #fff;
+  padding: 20px;
+
+  .text-muted {
+    color: #e0e0e0;
+  }
+
+  a {
+    color: #e0e0e0;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
