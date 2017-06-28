@@ -6,5 +6,8 @@ sass:
   sass_dir: _sass
 gems: [jekyll-paginate]
 
-main_site_url: https://www.bazel.build
+main_site_url: https://bazel.build
+blog_site_url: ""
 docs_site_url: https://docs.bazel.build
+
+assets_url: https://bazel.build
