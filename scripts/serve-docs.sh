@@ -102,7 +102,9 @@ build_and_serve() {
   build_tree
   echo "Serving bazel.build site at $HOST:$PORT"
   # TODO(dzc): Remove this workaround when jekyll/jekyll#6060 is fixed.
-  cd $RUN_JEKYLL_DIR && jekyll serve --host "$HOST" --detach --port "$PORT" --source "$WORKING_DIR"
+  pushd $RUN_JEKYLL_DIR > /dev/null
+  jekyll serve --host "$HOST" --detach --port "$PORT" --source "$WORKING_DIR"
+  popd > /dev/null
 }
 
 main() {
@@ -137,7 +139,7 @@ main() {
 kill_jekyll() {
   pid="$(lsof "-tiTCP:$PORT" -sTCP:LISTEN)" || true
   if [ ! -z "$pid" ]; then
-     kill "$pid"
+     kill -9 "$pid"
   fi
   # I found I got bind errors sometimes if I didn't wait a second for the server to
   # actually shut down.
