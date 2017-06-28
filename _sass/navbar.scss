@@ -13,8 +13,10 @@ $navbar-input-border-color: $bazel-green;
   border-bottom: 1px solid $navbar-bg-color;
 
   .navbar-brand {
+    padding-top: 12px;
+
     .navbar-logo {
-      height: 22px;
+      height: 28px;
     }
   }
 
@@ -36,10 +38,10 @@ $navbar-input-border-color: $bazel-green;
       color: $navbar-hover-color;
       background-color: $navbar-hover-bg-color;
     }
+  }
 
-    &.nav-icon {
-      font-size: 18px;
-    }
+   .navbar-nav .nav-icon {
+    font-size: 18px;
   }
 
   .navbar-nav > li.active > a {
@@ -88,7 +90,7 @@ $navbar-input-border-color: $bazel-green;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #cse-search-box {
     margin-top: 0;
     margin-bottom: 0;
