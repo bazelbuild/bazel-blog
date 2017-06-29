@@ -7,7 +7,7 @@
   <title>Bazel Blog</title>
   <link>http://bazel.build</link>
   <description>Fast, correct builds.</description>
-  {% for post in site.categories.blog limit:10 %}
+  {% for post in site.posts limit:10 %}
     <item>
       <title>{{ post.title }}</title>
       <link>{{ post.url }}</link>
