@@ -5,4 +5,3 @@ This repository hosts the content of the [Bazel](https://bazel.build) blog, avai
 ## Running the website locally
 
 Run `./scripts/serve-docs.sh `.
-(See [known issue](https://github.com/bazelbuild/bazel-website/issues/28) on macOS)
