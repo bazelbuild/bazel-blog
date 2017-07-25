@@ -16,13 +16,13 @@ change (1.0, 2.0, etc.). This is known as [Semantic
 Versioning](http://semver.org/). Major version changes should not be more
 frequent than once a year, and may be less.
 
-For each breaking change, we will add a flag, e.g. `--incompatible_foo` that is
-disabled by default. The flag `--all_incompatible_changes` will enable them all
-at once, so you can see whether you're ready for the next major release.
+For most breaking changes, we will add a flag, e.g. `--incompatible_foo` that is
+disabled by default. The flag `--all_incompatible_changes` will enable all of these
+flags at once, so you can see whether you're ready for the next major release.
 
 The Bazel team will use the flags as follow:
 
-*   To introduce a breaking change, we release the change along wtih a new flag
+*   To introduce a breaking change, we release the change along with a new flag
     that is unset by default, e.g. `--incompatible_foo`. This flag enables the
     new behavior, allowing you to test the future change. Flags for incompatible
     features are documented in the section
@@ -35,8 +35,8 @@ The Bazel team will use the flags as follow:
     so if needed you can disable it. 
 
 *   Finally, the flag may be removed at any release in the future, and so you will
-    no longer be able to disable the behaviour. In the release notes, we list
-    the removed flags.
+    no longer be able to disable the behaviour of the change. In the release notes,
+    we list these removed flags.
 
 When you migrate to a new release, we recommend the following workflow:
 
@@ -48,7 +48,9 @@ When you migrate to a new release, we recommend the following workflow:
 *   When there is a new Bazel release, try your code again with the
     specific incompatible changes released in the new version. Check the
     release notes to know which flags to use. After verifying your project
-    with the released changes, you can update to the new version.
+    with the released changes, you can update to the new version. Verify
+    your project again with the new version, as some small incompatible
+    changes are not introduced behind flags.
 
 *   If many users depend on your repository, please update it quickly after each
     Bazel release. This update will help your users test their code.
