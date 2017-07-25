@@ -22,20 +22,21 @@ at once, so you can see whether you're ready for the next major release.
 
 The Bazel team will use the flags as follow:
 
-*   To introduce a breaking change, we release the change along wtih a new option
+*   To introduce a breaking change, we release the change along wtih a new flag
     that is unset by default, e.g. `--incompatible_foo`. This flag enables the
     new behavior, allowing you to test the future change. Flags for incompatible
     features are documented in the section
     [Backward compatibility](https://docs.bazel.build/versions/master/skylark/backward-compatibility.html).
 
-*   At a later release, the new option is set by default. This
+*   At a later release, the new flag is set by default. This
     change is effectively released, so it can happen only at a major version
     (or minor version during Beta). In the release notes, we tell you which
     incompatible changes are enabled. The flag for this change still exists,
     so if needed you can disable it. 
 
-*   Finally, the option may be removed at any release in the future, and so you will
-    no longer be able to disable the behaviour.
+*   Finally, the flag may be removed at any release in the future, and so you will
+    no longer be able to disable the behaviour. In the release notes, we list
+    the removed flags.
 
 When you migrate to a new release, we recommend the following workflow:
 
@@ -46,8 +47,8 @@ When you migrate to a new release, we recommend the following workflow:
 
 *   When there is a new Bazel release, try your code again with the
     specific incompatible changes released in the new version. Check the
-    release notes to know which options to use. If the build is successful,
-    you can safely update to the new version.
+    release notes to know which flags to use. After verifying your project
+    with the released changes, you can update to the new version.
 
 *   If many users depend on your repository, please update it quickly after each
     Bazel release. This update will help your users test their code.
