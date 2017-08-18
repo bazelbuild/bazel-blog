@@ -141,7 +141,7 @@ These return codes can be used to determine the reason for a failure
 code 3 as unstable, and other non zero code as failed).
 
 You can also control how much information about test results Bazel prints out
-with the [`--test_output` flag](http://bazel.build/docs/bazel-user-manual.html#flag--test_output).
+with the [`--test_output` flag](https://docs.bazel.build/versions/master/bazel-user-manual.html#flag--test_output).
 Generally, printing the output of test that fails with `--test_output=errors` is
 a good setting for a CI system.
 
@@ -153,6 +153,6 @@ Other tests also get [a basic XML output file](https://github.com/bazelbuild/baz
 that contains only the result of the test (success or failure).
 
 To get your test results, you can also use the
-[Bazel dashboard](http://bazel.build/blog/2015/07/29/dashboard-dogfood.html),
+[Bazel dashboard](https://blog.bazel.build/2015/07/29/dashboard-dogfood.html),
 an optional system that automatically uploads Bazel test results to a shared
 server.
