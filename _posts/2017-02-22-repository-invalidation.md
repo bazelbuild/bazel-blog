@@ -3,21 +3,21 @@ layout: posts
 title: Invalidation of repository rules
 ---
 
-[Remote repositories](/docs/external.html) are the way to use dependencies from
+[Remote repositories](https://docs.bazel.build/versions/master/external.html) are the way to use dependencies from
 "outside" of the Bazel world in Bazel. Using them, you can download binaries from the
 internet or use some from your own host. You can even use
-[Skylark](/skylark/repository_rules.html) to define your own repository rules to depend
+[Skylark](https://docs.bazel.build/versions/master/skylark/repository_rules.html) to define your own repository rules to depend
 on a custom package manager or to implement
-[auto-configuration rules](/blog/2016/03/31/autoconfiguration.html).
+[auto-configuration rules](https://blog.bazel.build/2016/03/31/autoconfiguration.html).
 
 This post explains when Skylark repositories are invalidated and hence when they are executed.
 
 ## Dependencies
 
 The implementation attribute of the
-[`repository_rule`](https://bazel.build/versions/master/docs/skylark/lib/globals.html#repository_rule)
+[`repository_rule`](https://docs.bazel.build/versions/master/skylark/lib/globals.html#repository_rule)
 defines a function (the _fetch_ operation) that is executed inside a
-[Skyframe function](/designs/skyframe.html). This function is executed when
+[Skyframe function](https://www.bazel.build/designs/skyframe.html). This function is executed when
 one of its dependencies change.
 
 For repository that are declared `local` (set `local = True` in the call to the
@@ -35,8 +35,8 @@ dependencies change:
 
 - Skylark files needed to define the repository rule.
 - Declaration of the repository rule in the `WORKSPACE` file.
-- Value of any environment variable declared with the `environ` attribute of the [`repository_rule`](https://bazel.build/versions/master/docs/skylark/lib/globals.html#repository_rule) function. The value of those environment variable can be enforced from the command line with the
-[`--action_env`](/docs/command-line-reference.html#flag--action_env) flag (but this
+- Value of any environment variable declared with the `environ` attribute of the [`repository_rule`](https://docs.bazel.build/versions/master/skylark/lib/globals.html#repository_rule) function. The value of those environment variable can be enforced from the command line with the
+[`--action_env`](https://docs.bazel.build/versions/master/command-line-reference.html#flag--action_env) flag (but this
 flag will invalidate every action of the build).
 - Content of any file used and referred using a label (e.g., `//mypkg:label.txt` not `mypkg/label.txt`).
 
@@ -46,8 +46,8 @@ flag will invalidate every action of the build).
 
 First and foremost, declaring a repository `local` should be done only for rule that
 needs to be eagerly invalidated and are fast to update. For native rule, this is used only
-for [`local_repository`](/docs/be/workspace.html#local_repository) and
-[`new_local_repository`](/docs/be/workspace.html#new_local_repository).
+for [`local_repository`](https://docs.bazel.build/versions/master/be/workspace.html#local_repository) and
+[`new_local_repository`](https://docs.bazel.build/versions/master/be/workspace.html#new_local_repository).
 
 ### Put all slow operation at the end, resolve dependencies first
 
