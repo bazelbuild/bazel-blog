@@ -50,18 +50,18 @@ of the `cc_autoconf` rule does the following step:
    if we do not support the target platform.
  - Detect the [C++ compiler path](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L235)
    using [`repository_ctx.which`](https://docs.bazel.build/skylark/lib/repository_ctx.html#which) and the `CC` environment variable with
-   [`repository_ctx.os.environ`](https://docs.bazel.build/master/skylark/lib/repository_os.html#environ).
+   [`repository_ctx.os.environ`](https://docs.bazel.build/skylark/lib/repository_os.html#environ).
  - Detect some [more tool paths](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L53),
-   still using [`repository_ctx.which`](https://docs.bazel.build/master/skylark/lib/repository_ctx.html#which).
+   still using [`repository_ctx.which`](https://docs.bazel.build/skylark/lib/repository_ctx.html#which).
  - Generates the [various flag for the `CROSSTOOL` file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L127),
    [testing flags against the detected compiler](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L114)
-   using [`repository_ctx.execute`](https://docs.bazel.build/master/skylark/lib/repository_ctx.html#execute). We also
+   using [`repository_ctx.execute`](https://docs.bazel.build/skylark/lib/repository_ctx.html#execute). We also
    [detect the include directories](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L101)
-   with [`repository_ctx.execute`](https://docs.bazel.build/master/skylark/lib/repository_ctx.html#execute).
+   with [`repository_ctx.execute`](https://docs.bazel.build/skylark/lib/repository_ctx.html#execute).
  - With the gathered information, generate the C++ tools package: its [BUILD file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L274),
    [wrapper script for Darwin](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L278) and
    [CROSSTOOL file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L279) using
-   [`repository_ctx.template`](https://docs.bazel.build/master/skylark/lib/repository_ctx.html#template).
+   [`repository_ctx.template`](https://docs.bazel.build/skylark/lib/repository_ctx.html#template).
 
 So using the function provided by [`repository_ctx`](https://docs.bazel.build/skylark/lib/repository_ctx.html), we can discover
 the binaries on the system, what version they are, and which options they support, then generate a
