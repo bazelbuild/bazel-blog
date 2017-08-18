@@ -21,7 +21,7 @@ java_library(name = "bottom", deps = [":middle", ...], ...)
 ## Built-in support for Java
 
 In Skylark, an interface to built-in Java functionality is available via the `java_common` module.
-The full API can be found in [the documentation](https://bazel.build/versions/master/docs/skylark/lib/java_common.html).
+The full API can be found in [the documentation](https://docs.bazel.build/versions/master/skylark/lib/java_common.html).
 
 ### `java_common.compile`
 
