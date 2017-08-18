@@ -20,7 +20,7 @@ $ cd tiny-workspace
 ```
 
 Make sure you've
-[downloaded and installed Bazel](https://docs.bazel.build/versions/master/install.html) and have the
+[downloaded and installed Bazel](site.docs_site_url/install.html) and have the
 following line to your _~/.bazelrc_:
 
 ```
@@ -64,4 +64,4 @@ Now the resulting graph is just:
 Much neater!
 
 If you're interested in further refining your query, check out the
-[docs on querying](https://docs.bazel.build/versions/master/query.html).
+[docs on querying](site.docs_site_url/versions/master/query.html).
