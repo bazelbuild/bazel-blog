@@ -3,9 +3,9 @@ layout: posts
 title: Using Skylark remote repositories to auto-detect the C++ toolchain.
 ---
 
-[Skylark remote repositories](https://docs.bazel.build/skylark/lib/skylark/repository_rules.html) let you
-create custom [external repositories](https://docs.bazel.build/skylark/lib/master/external.html) using
-[Skylark](https://docs.bazel.build/skylark/lib/master/skylark/index.html). This not only enables creating rules for
+[Skylark remote repositories](site.docs_site_url/skylark/lib/skylark/repository_rules.html) let you
+create custom [external repositories](site.docs_site_url/skylark/lib/master/external.html) using
+[Skylark](site.docs_site_url/skylark/lib/master/skylark/index.html). This not only enables creating rules for
 custom package systems such as [PyPi](https://pypi.python.org) but also generating
 a repository to reflect the toolchain installed on the workstation Bazel is running
 on. We explain here how we implemented [auto-configuration for the C++
@@ -45,25 +45,25 @@ enforcing the `local_config_cc` name for the repository. The
 of the `cc_autoconf` rule does the following step:
 
  - [Detect the `cpu_value`](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L85)
-   using the [`repository_ctx.os.name`](https://docs.bazel.build/skylark/lib/repository_os.html#name) attribute.
+   using the [`repository_ctx.os.name`](site.docs_site_url/skylark/lib/repository_os.html#name) attribute.
  - Generates a [static package](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L85)
    if we do not support the target platform.
  - Detect the [C++ compiler path](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L235)
-   using [`repository_ctx.which`](https://docs.bazel.build/skylark/lib/repository_ctx.html#which) and the `CC` environment variable with
-   [`repository_ctx.os.environ`](https://docs.bazel.build/skylark/lib/repository_os.html#environ).
+   using [`repository_ctx.which`](site.docs_site_url/skylark/lib/repository_ctx.html#which) and the `CC` environment variable with
+   [`repository_ctx.os.environ`](site.docs_site_url/skylark/lib/repository_os.html#environ).
  - Detect some [more tool paths](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L53),
-   still using [`repository_ctx.which`](https://docs.bazel.build/skylark/lib/repository_ctx.html#which).
+   still using [`repository_ctx.which`](site.docs_site_url/skylark/lib/repository_ctx.html#which).
  - Generates the [various flag for the `CROSSTOOL` file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L127),
    [testing flags against the detected compiler](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L114)
-   using [`repository_ctx.execute`](https://docs.bazel.build/skylark/lib/repository_ctx.html#execute). We also
+   using [`repository_ctx.execute`](site.docs_site_url/skylark/lib/repository_ctx.html#execute). We also
    [detect the include directories](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L101)
-   with [`repository_ctx.execute`](https://docs.bazel.build/skylark/lib/repository_ctx.html#execute).
+   with [`repository_ctx.execute`](site.docs_site_url/skylark/lib/repository_ctx.html#execute).
  - With the gathered information, generate the C++ tools package: its [BUILD file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L274),
    [wrapper script for Darwin](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L278) and
    [CROSSTOOL file](https://github.com/bazelbuild/bazel/blob/9116b3e99af2fd31d92c9bb7c37905a1675456c1/tools/cpp/cc_configure.bzl#L279) using
-   [`repository_ctx.template`](https://docs.bazel.build/skylark/lib/repository_ctx.html#template).
+   [`repository_ctx.template`](site.docs_site_url/skylark/lib/repository_ctx.html#template).
 
-So using the function provided by [`repository_ctx`](https://docs.bazel.build/skylark/lib/repository_ctx.html), we can discover
+So using the function provided by [`repository_ctx`](site.docs_site_url/skylark/lib/repository_ctx.html), we can discover
 the binaries on the system, what version they are, and which options they support, then generate a
 configuration to match the local C++ toolchain.
 
@@ -81,7 +81,7 @@ When creating a Skylark remote repository, a few things should be taken in consi
    to check as many things as possible to ensure hermeticity (and overall, we recommend
    using a vendored toolchain instead of using auto-detected one if reproducibility is important).
    For example, it is recommended to use the `sha256` argument of the
-   [`repository_ctx.download`](https://docs.bazel.build/skylark/lib/skylark/lib/repository_ctx.html#download) method.
+   [`repository_ctx.download`](site.docs_site_url/skylark/lib/skylark/lib/repository_ctx.html#download) method.
  - Naming a rule can be complex and we recommend to not use standard suffix of classical
    rules for remote repositories (e.g. `*_library` or `*_binary`). If you create a
    package rule, a good name would probably be `xxx_package` (e.g., `pypi_package`). If
