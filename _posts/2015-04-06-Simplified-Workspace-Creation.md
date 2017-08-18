@@ -29,7 +29,7 @@ update your `~/.bazelrc` file.
 finds/generates, you can create a `tools/` directory in your project and
 Bazel will attempt to use that instead of the system-wide one.
 
-See the [getting started](https://docs.bazel.build/versions/master/getting-started.html) docs for more info about
+See the [getting started](site.docs_site_url/getting-started.html) docs for more info about
 setting up your workspace.
 
 Let us know if you have any questions or issues on the
