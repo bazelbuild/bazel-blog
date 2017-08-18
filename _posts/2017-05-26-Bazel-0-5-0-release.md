@@ -24,7 +24,7 @@ APIs](https://docs.google.com/document/d/1AaGk7fOPByEvpAbqeXIyE8HX_A3_axxNnvrobl
 As announced earlier, when using an install script, bazel now comes by default
 bundled with JDK 8. This means fewer steps required to install Bazel.  Read more
 about JDK 7 deprecation in [the related blog
-post](https://bazel.build/blog/2017/04/21/JDK7-deprecation.html).
+post](https://blog.bazel.build/2017/04/21/JDK7-deprecation.html).
 
 ### Windows support: now in beta
 
@@ -52,11 +52,11 @@ java\_test.
 ### New rules
 
 New rules in Bazel:
-[proto\_library](https://bazel.build/versions/master/docs/be/protocol-buffer.html#proto_library),
-[java\_lite\_proto\_library](https://bazel.build/versions/master/docs/be/java.html#java_lite_proto_library),
-[java\_proto\_library](https://bazel.build/versions/master/docs/be/java.html#java_proto_library)
+[proto\_library](https://docs.bazel.build/versions/master/be/protocol-buffer.html#proto_library),
+[java\_lite\_proto\_library](https://docs.bazel.build/versions/master/be/java.html#java_lite_proto_library),
+[java\_proto\_library](https://docs.bazel.build/versions/master/be/java.html#java_proto_library)
 and
-[cc\_proto\_library](https://bazel.build/versions/master/docs/be/c-cpp.html#cc_proto_library).
+[cc\_proto\_library](https://docs.bazel.build/versions/master/be/c-cpp.html#cc_proto_library).
 
 ### New Apple rules
 
@@ -76,7 +76,7 @@ versions as they become available.
    documentation](https://developer.android.com/studio/preview/features/java8-support.html)
    for more details about Android's Java 8 language features.
 -  Multidex is now fully supported via
-   [android\_binary.multidex](https://bazel.build/versions/master/docs/be/android.html#android_binary.multidex).
+   [android\_binary.multidex](https://docs.bazel.build/versions/master/be/android.html#android_binary.multidex).
 -  android\_ndk\_repository now supports Android NDK 13 and NDK 14.
 -  APKs are now signed with both APK Signature V1 and V2.
    See [Android
@@ -96,20 +96,20 @@ minor change compared to the implementation in this 0.5.0 release.
 ## Skylark
 
 -  Declared Providers are now implemented and
-   [documented](https://bazel.build/versions/master/docs/skylark/rules.html#providers).
+   [documented](https://docs.bazel.build/versions/master/skylark/rules.html#providers).
    They enable more robust and clearly defined interfaces between different
    rules and aspects. We recommend using them for all rules and aspects.
 -  The type formerly known as 'set' is now called 'depset'. Depsets make your
    rules perform much better, allowing rules memory consumption to scale
    linearly instead of quadratically with build graph size - make sure you have
    read the
-   [documentation on depsets](https://bazel.build/versions/master/docs/skylark/depsets.html).
+   [documentation on depsets](https://docs.bazel.build/versions/master/skylark/depsets.html).
 
 ## Finally...
 
 A big thank you to our community for your continued support.
 Particular shout-outs to Peter Mounce for the [Chocolatey Windows
-package](https://bazel.build/versions/master/docs/install-windows.html) and Yuki
+package](https://docs.bazel.build/versions/master/install-windows.html) and Yuki
 Yugui Sonoda for maintaining [rules\_go](https://github.com/bazelbuild/rules_go)
 (they both received an [open source peer
 bonus](https://opensource.googleblog.com/2017/03/the-latest-round-of-google-open-source.html)
