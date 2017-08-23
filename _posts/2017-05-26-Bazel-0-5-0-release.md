@@ -52,11 +52,11 @@ java\_test.
 ### New rules
 
 New rules in Bazel:
-[proto\_library](site.docs_site_url/be/protocol-buffer.html#proto_library),
-[java\_lite\_proto\_library](site.docs_site_url/be/java.html#java_lite_proto_library),
-[java\_proto\_library](site.docs_site_url/be/java.html#java_proto_library)
+[proto\_library]({{ site.docs_site_url }}/be/protocol-buffer.html#proto_library),
+[java\_lite\_proto\_library]({{ site.docs_site_url }}/be/java.html#java_lite_proto_library),
+[java\_proto\_library]({{ site.docs_site_url }}/be/java.html#java_proto_library)
 and
-[cc\_proto\_library](site.docs_site_url/be/c-cpp.html#cc_proto_library).
+[cc\_proto\_library]({{ site.docs_site_url }}/be/c-cpp.html#cc_proto_library).
 
 ### New Apple rules
 
@@ -76,7 +76,7 @@ versions as they become available.
    documentation](https://developer.android.com/studio/preview/features/java8-support.html)
    for more details about Android's Java 8 language features.
 -  Multidex is now fully supported via
-   [android\_binary.multidex](site.docs_site_url/be/android.html#android_binary.multidex).
+   [android\_binary.multidex]({{ site.docs_site_url }}/be/android.html#android_binary.multidex).
 -  android\_ndk\_repository now supports Android NDK 13 and NDK 14.
 -  APKs are now signed with both APK Signature V1 and V2.
    See [Android
@@ -96,20 +96,20 @@ minor change compared to the implementation in this 0.5.0 release.
 ## Skylark
 
 -  Declared Providers are now implemented and
-   [documented](site.docs_site_url/skylark/rules.html#providers).
+   [documented]({{ site.docs_site_url }}/skylark/rules.html#providers).
    They enable more robust and clearly defined interfaces between different
    rules and aspects. We recommend using them for all rules and aspects.
 -  The type formerly known as 'set' is now called 'depset'. Depsets make your
    rules perform much better, allowing rules memory consumption to scale
    linearly instead of quadratically with build graph size - make sure you have
    read the
-   [documentation on depsets](site.docs_site_url/skylark/depsets.html).
+   [documentation on depsets]({{ site.docs_site_url }}/skylark/depsets.html).
 
 ## Finally...
 
 A big thank you to our community for your continued support.
 Particular shout-outs to Peter Mounce for the [Chocolatey Windows
-package](site.docs_site_url/install-windows.html) and Yuki
+package]({{ site.docs_site_url }}/install-windows.html) and Yuki
 Yugui Sonoda for maintaining [rules\_go](https://github.com/bazelbuild/rules_go)
 (they both received an [open source peer
 bonus](https://opensource.googleblog.com/2017/03/the-latest-round-of-google-open-source.html)
