@@ -64,4 +64,4 @@ Now the resulting graph is just:
 Much neater!
 
 If you're interested in further refining your query, check out the
-[docs on querying]({{ site.docs_site_url }}/versions/master/query.html).
+[docs on querying]({{ site.docs_site_url }}/query.html).
