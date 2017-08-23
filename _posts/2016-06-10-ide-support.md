@@ -38,7 +38,7 @@ and actions. Applying an aspect to a build target creates a "shadow
 dependency graph" reflecting all transitive dependencies of that target,
 and the aspect's implementation determines the actions that Bazel executes
 while traversing that graph.
-The [documentation on aspects]({{ site.docs_site_url }}/master/skylark/aspects.html) explains this in more
+The [documentation on aspects]({{ site.docs_site_url }}/skylark/aspects.html) explains this in more
 detail.
 
 ## Architecture of a Bazel IDE plugin.
@@ -88,7 +88,7 @@ group (and hence only to the aspect) are built, and therefore that no
 unnecessary build steps are performed.
 
 The aspect uses the
-[`java` provider](https://docs.bazel.build/versions/master/skylark/lib/JavaSkylarkApiProvider.html) on the targets
+[`java` provider]({{ site.docs_site_url }}/skylark/lib/JavaSkylarkApiProvider.html) on the targets
 it applies to to access a variety of information about Java targets.
 
 
