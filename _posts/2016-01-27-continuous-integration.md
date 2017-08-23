@@ -141,8 +141,7 @@ These return codes can be used to determine the reason for a failure
 code 3 as unstable, and other non zero code as failed).
 
 You can also control how much information about test results Bazel prints out
-with the [`--test_output` flag](Finally, Bazel's built-in [JUnit test runner](https://github.com/bazelbuild/bazel/blob/master/src/java_tools/junitrunner)
-/bazel-user-manual.html#flag--test_output).
+with the [`--test_output` flag]({{ site.docs_site_url }}/bazel-user-manual.html#flag--test_output).
 Generally, printing the output of test that fails with `--test_output=errors` is
 a good setting for a CI system.
 
