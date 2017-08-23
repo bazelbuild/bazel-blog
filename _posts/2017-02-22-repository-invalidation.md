@@ -46,8 +46,8 @@ flag will invalidate every action of the build).
 
 First and foremost, declaring a repository `local` should be done only for rule that
 needs to be eagerly invalidated and are fast to update. For native rule, this is used only
-for [`local_repository`](https://docs.bazel.build/versions/master/be/workspace.html#local_repository) and
-[`new_local_repository`](https://docs.bazel.build/versions/master/be/workspace.html#new_local_repository).
+for [`local_repository`]({{ site.docs_site_url }}/be/workspace.html#local_repository) and
+[`new_local_repository`]({{ site.docs_site_url }}/be/workspace.html#new_local_repository).
 
 ### Put all slow operation at the end, resolve dependencies first
 
