@@ -24,14 +24,14 @@ Our beta release provides:
 * Binary releases for
   [Linux and OS X](https://github.com/bazelbuild/bazel/releases).
 * Support for building and testing C++, Java, Python, Rust,
-  [and more](site.docs_site_url/be/overview.html).
+  [and more]({{ site.docs_site_url }}/be/overview.html).
 * Support for building Docker images, Android apps, and iOS apps.
 * Support for using libraries from
-  [Maven, GitHub, and more](site.docs_site_url/external.html).
-* [A robust API](site.docs_site_url/skylark/index.html) for adding your own
+  [Maven, GitHub, and more]({{ site.docs_site_url }}/external.html).
+* [A robust API]({{ site.docs_site_url }}/skylark/index.html) for adding your own
   build rules.
 
-Check out the [tutorial app](site.docs_site_url/tutorial/index.html) to see a
+Check out the [tutorial app]({{ site.docs_site_url }}/tutorial/index.html) to see a
 working example using several languages.
 
 We still have a long way to go.  Looking ahead towards our 1.0.0 release, we
