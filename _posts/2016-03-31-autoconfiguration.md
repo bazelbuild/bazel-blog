@@ -5,7 +5,7 @@ title: Using Skylark remote repositories to auto-detect the C++ toolchain.
 
 [Skylark remote repositories]({{ site.docs_site_url }}/skylark/lib/skylark/repository_rules.html) let you
 create custom [external repositories]({{ site.docs_site_url }}/skylark/lib/master/external.html) using
-[Skylark]({{ site.docs_site_url }}/skylark/lib/master/skylark/index.html). This not only enables creating rules for
+[Skylark]({{ site.docs_site_url }}/skylark/lib/index.html). This not only enables creating rules for
 custom package systems such as [PyPi](https://pypi.python.org) but also generating
 a repository to reflect the toolchain installed on the workstation Bazel is running
 on. We explain here how we implemented [auto-configuration for the C++
