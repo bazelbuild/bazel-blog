@@ -3,8 +3,8 @@ layout: posts
 title: Introducing sandboxfs
 ---
 
-sandboxfs is a new project to improve the way sandboxing works in Bazel by
-making it more efficient and correct.  It's experimental and subject to
+**sandboxfs** is a new project to improve the way sandboxing works in Bazel
+by making it more efficient and correct.  It's experimental and subject to
 change, but it's available now for you to check out! Read on for details.
 
 # Correct builds
