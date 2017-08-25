@@ -7,7 +7,7 @@ title: Introducing sandboxfs
 by making it more efficient and correct.  It's experimental and subject to
 change, but it's available now for you to check out! Read on for details.
 
-# Correct builds
+## Correct builds
 
 As our motto claims, *correctness* is an integral part of Bazel. To achieve
 correctness, builds must be *hermetic* and
@@ -32,7 +32,7 @@ the compiler went astray and read random files from the system, making
 future builds inconsistent. One way to achieve these restrictions is by
 running each action within a sandbox.
 
-# Current sandboxing techniques
+## Current sandboxing techniques
 
 Today, Bazel uses different technologies to implement the sandboxing of
 actions. For example, on Linux, Bazel uses PID- and mount-namespaces, and
@@ -51,13 +51,13 @@ to extract the real path of such symlinks and work off that path. These
 tools may end up "discovering" and consuming undeclared files that are
 siblings of the symlink's target.
 
-# Enter sandboxfs
+## Enter sandboxfs
 
 To resolve these issues, we came up with the idea of implementing a FUSE file
 system that allows us to *define an arbitrary view of the host's file system
 under the mount point*. We call this approach **sandboxfs**.
 
-## sandboxfs is efficient
+### sandboxfs is efficient
 
 The view sandboxfs offers is cheaply configured at mount time. With
 sandboxfs there is a single system call to configure the mount point versus
@@ -67,7 +67,7 @@ The view can also be reconfigured cheaply across different actions,
 avoiding the need to remount the FUSE file system on each action, which
 would also be costly.
 
-## sandboxfs is correct
+### sandboxfs is correct
 
 The view sandboxfs offers is fully virtual, so sandboxfs can enforce
 arbitrary read-only and read/write access permissions on any file or
@@ -75,7 +75,7 @@ directory it exposes. Similarly, because the view is virtual, there are no
 symlinks involved. sandboxfs exposes real files and directories to the
 actions, so actions cannot reach into the original locations.
 
-# Isn't FUSE slow though?
+## Isn't FUSE slow though?
 
 Yes. As you may know, [FUSE is slower than a real file
 system](https://www.usenix.org/system/files/conference/fast17/fast17-vangoor.pdf).
@@ -94,7 +94,7 @@ tuned it. The integration points with Bazel are still being defined and
 implemented, which means it's not yet trivial to test-run Bazel's
 sandboxing with sandboxfs.
 
-# But it's here!
+## But it's here!
 
 Though still in development, there is no reason to keep the code hostage
 any longer. We are very happy to announce that, as of today, it's now
