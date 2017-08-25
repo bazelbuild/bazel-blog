@@ -32,13 +32,13 @@ the artifacts, IDEs use it to provide code navigation, autocompletion and
 other code-aware features.
 
 In the 0.3.0 Bazel release, we are adding a new concept to Bazel -
-[_aspects_](/docs/skylark/aspects.html).
+[_aspects_]({{ site.docs_site_url }}/skylark/aspects.html).
 Aspects allow augmenting build dependency graphs with additional information
 and actions. Applying an aspect to a build target creates a "shadow
 dependency graph" reflecting all transitive dependencies of that target,
 and the aspect's implementation determines the actions that Bazel executes
 while traversing that graph.
-The [documentation on aspects](/docs/skylark/aspects.html) explains this in more
+The [documentation on aspects]({{ site.docs_site_url }}/skylark/aspects.html) explains this in more
 detail.
 
 ## Architecture of a Bazel IDE plugin.
@@ -88,7 +88,7 @@ group (and hence only to the aspect) are built, and therefore that no
 unnecessary build steps are performed.
 
 The aspect uses the
-[`java` provider](/docs/skylark/lib/JavaSkylarkApiProvider.html) on the targets
+[`java` provider]({{ site.docs_site_url }}/skylark/lib/JavaSkylarkApiProvider.html) on the targets
 it applies to to access a variety of information about Java targets.
 
 

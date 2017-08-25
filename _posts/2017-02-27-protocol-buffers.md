@@ -5,13 +5,13 @@ title: Protocol Buffers in Bazel
 
 Bazel currently provides built-in rules for Java, JavaLite and C++.
 
-[`proto_library`](https://bazel.build/versions/master/docs/be/protocol-buffer.html#proto_library)
+[`proto_library`]({{ site.docs_site_url }}/be/protocol-buffer.html#proto_library)
 is a language-agnostic rule that describes relations between `.proto` files.
 
-[`java_proto_library`](https://bazel.build/versions/master/docs/be/java.html#java_proto_library),
-[`java_lite_proto_library`](https://bazel.build/versions/master/docs/be/java.html#java_lite_proto_library)
+[`java_proto_library`]({{ site.docs_site_url }}/be/java.html#java_proto_library),
+[`java_lite_proto_library`]({{ site.docs_site_url }}/be/java.html#java_lite_proto_library)
 and
-[`cc_proto_library`](https://bazel.build/versions/master/docs/be/c-cpp.html#cc_proto_library)
+[`cc_proto_library`]({{ site.docs_site_url }}/be/c-cpp.html#cc_proto_library)
 are rules that "attach" to `proto_library` and generate language-specific
 bindings.
 
@@ -189,7 +189,7 @@ repository](https://github.com/google/protobuf/blob/b4b0e304be5a68de3d0ee1af9b28
 ### Bazel Aspects
 
 The `X_proto_library` rules are implemented using [Bazel
-Aspects](https://bazel.build/versions/master/docs/skylark/aspects.html) to have
+Aspects]({{ site.docs_site_url }}/skylark/aspects.html) to have
 the best of two worlds -
 
 1.  Only need a single `X_proto_library` rule for an arbitrarily-large proto
