@@ -19,6 +19,7 @@ Let's consider an example. Think of a `cc_library` target that specifies
 `foo.cc` as a source. This `cc_library` rule contains a *compilation
 action* that, for this target, turns the `foo.cc` source file into a
 `foo.o` object file.  This action will run clang, and it will need to:
+
 *  read `foo.cc`,
 *  read all the headers required by `foo.cc`,
 *  write `foo.o`, and
@@ -99,7 +100,7 @@ Though still in development, there is no reason to keep the code hostage
 any longer. We are very happy to announce that, as of today, it's now
 available as an open-source project under the Bazel umbrella! See:
 
-> https://github.com/bazelbuild/sandboxfs/
+> [https://github.com/bazelbuild/sandboxfs/](https://github.com/bazelbuild/sandboxfs/)
 
 Keep in mind that this project is still an experiment and highly subject to
 change. In particular, be aware that the command line and the data formats
