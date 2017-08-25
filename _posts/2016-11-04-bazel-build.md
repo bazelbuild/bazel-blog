@@ -4,7 +4,7 @@ title: We are now bazel.build!
 ---
 
 As you might have seen either in our
-[0.4 announcement](https://blog.bazel.build/2016/11/02/0.4.0-release.html) or simply by going to
+[0.4 announcement]({{ site.blog_site_url }}/2016/11/02/0.4.0-release.html) or simply by going to
 our website, we have recently switched over to the
 [bazel.build](https://bazel.build) domain name.
 
