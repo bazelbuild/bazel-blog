@@ -16,11 +16,11 @@ actions invoked by Bazel should be run in a well-defined environment. In
 other words: we want actions to run within a sandbox.
 
 Let's consider an example. Think of a `cc_library` target that specifies
-`foo.cc` as a source. This `cc_library` target contains a *compilation
-action* that turns the `foo.cc` source file into a `foo.o` object file.
-This action will run clang, and it will need to:
+`foo.cc` as a source. This `cc_library` rule contains a *compilation
+action* that, for this target, turns the `foo.cc` source file into a
+`foo.o` object file.  This action will run clang, and it will need to:
 *  read `foo.cc`,
-*  read the transitive closure of all headers required by `foo.cc`,
+*  read all the headers required by `foo.cc`,
 *  write `foo.o`, and
 *  possibly write some temporary files under `/tmp/`.
 
@@ -28,8 +28,8 @@ To be confident this build is correct, Bazel must ensure that the action
 has read-only access to the identified input files and write-only access to
 the output and temporary files we expect. Otherwise, Bazel cannot know if
 the compiler went astray and read random files from the system, making
-future builds inconsistent. One way to achieve this is by running each
-action within a sandbox.
+future builds inconsistent. One way to achieve these restrictions is by
+running each action within a sandbox.
 
 # Current sandboxing techniques
 
@@ -45,10 +45,10 @@ macOS, this approach is especially problematic because Bazel must create
 thousands of symlinks every time it invokes an action, and this is slow.
 
 To make things worse, these approaches also have correctness issues. If
-symlinks are used, some build tools will decide to extract the real path of
-such symlinks and work off that path, which means that they may end up
-"discovering" and consuming undeclared files that are siblings of the
-symlink's target.
+symlinks are used, some tools (e.g. some compilers or linkers) will decide
+to extract the real path of such symlinks and work off that path. These
+tools may end up "discovering" and consuming undeclared files that are
+siblings of the symlink's target.
 
 # Enter sandboxfs
 
@@ -106,10 +106,10 @@ change. In particular, be aware that the command line and the data formats
 are most certainly going to mutate (for simplicity if anything). But the
 current code is now sufficient to experiment and play with.
 
-As sandboxfs is now effectively an open-source project, please take a look
-and report any features you would like to see, any bugs you encounter,
-and...  if you decide to delve into the code and address any of the many
-`TODO`s in it, feel free to send us your Pull Requests!
+As sandboxfs is now an open-source project, please take a look and report
+any features you would like to see, any bugs you encounter, and...  if you
+decide to delve into the code and address any of the many `TODO`s in it,
+feel free to send us your Pull Requests!
 
 Enjoy!
 
