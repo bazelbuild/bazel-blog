@@ -153,6 +153,6 @@ Other tests also get [a basic XML output file](https://github.com/bazelbuild/baz
 that contains only the result of the test (success or failure).
 
 To get your test results, you can also use the
-[Bazel dashboard](https://blog.bazel.build/2015/07/29/dashboard-dogfood.html),
+[Bazel dashboard]({{ site.blog_site_url }}/2015/07/29/dashboard-dogfood.html),
 an optional system that automatically uploads Bazel test results to a shared
 server.
