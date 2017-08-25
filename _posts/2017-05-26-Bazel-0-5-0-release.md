@@ -24,7 +24,7 @@ APIs](https://docs.google.com/document/d/1AaGk7fOPByEvpAbqeXIyE8HX_A3_axxNnvrobl
 As announced earlier, when using an install script, bazel now comes by default
 bundled with JDK 8. This means fewer steps required to install Bazel.  Read more
 about JDK 7 deprecation in [the related blog
-post](https://blog.bazel.build/2017/04/21/JDK7-deprecation.html).
+post]({{ site.blog_site_url }}/2017/04/21/JDK7-deprecation.html).
 
 ### Windows support: now in beta
 
