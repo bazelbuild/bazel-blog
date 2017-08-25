@@ -8,7 +8,7 @@ title: Invalidation of repository rules
 internet or use some from your own host. You can even use
 [Skylark]({{ site.docs_site_url }}/skylark/repository_rules.html) to define your own repository rules to depend
 on a custom package manager or to implement
-[auto-configuration rules](https://blog.bazel.build/2016/03/31/autoconfiguration.html).
+[auto-configuration rules]({{ site.blog_site_url }}/2016/03/31/autoconfiguration.html).
 
 This post explains when Skylark repositories are invalidated and hence when they are executed.
 
