@@ -216,7 +216,7 @@ tracks this ability in the protobuf compiler)
 
 The aforementioned file only contains information about the `.proto` files
 directly mentioned by a `proto_library` rule; the collection of transitive
-descriptor sets is available through the 'proto.transitive_descriptor_sets'
+descriptor sets is available through the `proto.transitive_descriptor_sets`
 Skylark provider. See [documentation in
 ProtoSourcesProvider](https://github.com/bazelbuild/bazel/blob/5dbb23ba44ec0037cf0944b17716ea3f08a69c27/src/main/java/com/google/devtools/build/lib/rules/proto/ProtoSourcesProvider.java#L121).
 
