@@ -50,3 +50,5 @@ form, so the "maybe dirty" node will end up being marked as "yes, dirty" and
 re-evaluated (and so on up the tree).  However, Bazel's build graph lets you
 compile the bare minimum for a well-structured library, and in some cases avoid
 compilations altogether.
+
+*By [Kristina Chodorow](https://www.kchodorow.com)*

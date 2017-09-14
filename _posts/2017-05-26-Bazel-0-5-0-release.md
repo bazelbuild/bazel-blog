@@ -120,3 +120,5 @@ Thank you all, keep the
 reports](https://github.com/bazelbuild/bazel/issues) coming!
 
 See the full list of changes on [GitHub](https://github.com/bazelbuild/bazel/releases/tag/0.5.0).
+
+*By [Steren Giannini](https://github.com/steren)*

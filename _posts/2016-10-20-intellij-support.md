@@ -28,3 +28,5 @@ or build directly from [source](https://github.com/bazelbuild/intellij).
 Detailed docs are available [here](https://ij.bazel.build).
 
 The plugins are currently Linux-only, with plans for Mac support in the future.
+
+*By [Brendan Douglas](https://github.com/brendandouglas)*

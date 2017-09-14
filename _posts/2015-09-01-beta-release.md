@@ -46,4 +46,4 @@ free to contact us with questions or feedback on the
 [mailing list](https://groups.google.com/forum/#!forum/bazel-discuss) or IRC
 (#bazel on freenode).
 
-_By Jeff Cox, Bazel team_
+*By Jeff Cox, Bazel team*

@@ -1,4 +1,4 @@
----
+7---
 layout: posts
 title: Backward compatibility
 ---
@@ -63,4 +63,4 @@ To learn more about the changes we are doing, see the
 [backward compatibility page](https://docs.bazel.build/versions/master/skylark/backward-compatibility.html).
 
 
-_By [Laurent Le Brun](https://github.com/laurentlb)_
+*By [Laurent Le Brun](https://github.com/laurentlb)*

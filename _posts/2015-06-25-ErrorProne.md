@@ -15,3 +15,5 @@ You can also tune the checks error-prone will perform by using the
 
 See the [documentation of Error Prone](http://errorprone.info/docs/installation) for more
 on Error Prone.
+
+*By [Damien Martin-Guillerez](https://github.com/damienmg)*

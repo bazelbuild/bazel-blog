@@ -29,3 +29,4 @@ and let us know what works or what doesn't work yet, and what we can do better.
 
 We are looking forward to what you build (on Windows)!
 
+*By [Dmitry Lomov](https://github.com/dslomov)*

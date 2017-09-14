@@ -21,4 +21,4 @@ and follow [Harmandeep's blog](https://harmanio.wordpress.com/).
 
 A big thank you to everyone who applied!
 
-_By [Laurent Le Brun](https://github.com/laurentlb)_
+*By [Laurent Le Brun](https://github.com/laurentlb)*

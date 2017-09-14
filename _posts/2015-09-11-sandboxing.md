@@ -82,3 +82,5 @@ attribute to `genrule` or `*_test` calls.
 If you're writing a custom rule in Skylark, then you cannot currently opt out.
 Instead, please [file a bug](https://github.com/bazelbuild/bazel/issues) and
 we'll help you make it work.
+
+*By [Ulf Adams](https://github.com/ulfjack)* and [Philipp Wollermann](https://github.com/philwo)

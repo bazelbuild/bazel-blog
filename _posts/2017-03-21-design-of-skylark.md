@@ -93,4 +93,4 @@ may create a copy and modify it, though.
 
 In a future blog post, we'll take a look at the other features of the language.
 
-_By [Laurent Le Brun](https://github.com/laurentlb)_
+*By [Laurent Le Brun](https://github.com/laurentlb)*

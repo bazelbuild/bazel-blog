@@ -87,3 +87,5 @@ When creating a Skylark remote repository, a few things should be taken in consi
    package rule, a good name would probably be `xxx_package` (e.g., `pypi_package`). If
    you create an autoconfiguration rule, `xxx_configure` is probably the best name
    (e.g. `cc_configure`).
+
+*By [Damien Martin-Guillerez](https://github.com/damienmg)*
