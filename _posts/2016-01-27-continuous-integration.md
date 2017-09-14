@@ -152,7 +152,4 @@ with the `--nolegacy_bazel_java_test` flag (this will soon be the default).
 Other tests also get [a basic XML output file](https://github.com/bazelbuild/bazel/blob/master/tools/test/test-setup.sh#L54)
 that contains only the result of the test (success or failure).
 
-To get your test results, you can also use the
-[Bazel dashboard]({{ site.blog_site_url }}/2015/07/29/dashboard-dogfood.html),
-an optional system that automatically uploads Bazel test results to a shared
-server.
+*By [Damien Martin-Guillerez](https://github.com/damienmg)*

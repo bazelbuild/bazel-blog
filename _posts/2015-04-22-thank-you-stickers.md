@@ -18,3 +18,5 @@ Let us know if you've done any of the following and we'll send you stickers:
 * Are in the process of doing any of the things above.
 
 Thanks for your contributions, we really appreciate them.
+
+*By [Kristina Chodorow](https://www.kchodorow.com)*

@@ -35,3 +35,5 @@ for documentation.
 
 This is very much a work in progress. Please let us know if you have any
 questions, comments, or feedback.
+
+*By [Kristina Chodorow](https://www.kchodorow.com)

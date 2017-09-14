@@ -48,4 +48,4 @@ Java team at Google, in particular
 Special thanks to [Philipp Wollermann](https://github.com/philwo) who made this
 new installer possible.
 
-
+*By [Damien Martin-Guillerez](https://github.com/damienmg)*

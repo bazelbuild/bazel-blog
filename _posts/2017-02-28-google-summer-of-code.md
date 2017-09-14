@@ -28,4 +28,4 @@ If you have any question, please contact us on bazel-core@googlegroups.com
 
 I'm looking forward to hearing from you,
 
-_Laurent Le Brun, on behalf of the Bazel mentors._
+*By Laurent Le Brun, on behalf of the Bazel mentors.*

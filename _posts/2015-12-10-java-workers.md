@@ -15,3 +15,5 @@ We’ve tried the persistent JavaBuilder for a variety of builds and are seeing 
 If you often build Java code, we’d like you to give it a try. Just pass `--strategy=Javac=worker` to enable it or add `build --strategy=Javac=worker` to the .bazelrc in your home directory or in your workspace. Check the WorkerOptions class for [flags to further tune the workers’ behavior](https://github.com/bazelbuild/bazel/blob/master/src/main/java/com/google/devtools/build/lib/worker/WorkerOptions.java) or run “bazel help” and look for the “Strategy options” category. Let us know how it works for you.
 
 We’re currently using a simple [protobuf-based protocol](https://github.com/bazelbuild/bazel/blob/master/src/main/protobuf/worker_protocol.proto) to communicate with the worker process. Let us know if you want to add support for more compilers; in many cases, you can do that without any Bazel changes. However, the protocol is still subject to change based on your feedback.
+
+*By [Philipp Wollermann](https://github.com/philwo)*

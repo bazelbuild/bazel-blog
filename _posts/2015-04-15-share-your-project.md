@@ -15,4 +15,6 @@ the following information:
 5. Any other info or comments you have!
 
 If you don't want your project publicly listed, we'd still love to hear about
-it. Please [email us](mailto:kchodorow@google.com) directly and let us know.
+it. Please [email us](mailto:bazel-core@googlegroups.com) directly and let us know.
+
+*By [Kristina Chodorow](https://www.kchodorow.com/)*

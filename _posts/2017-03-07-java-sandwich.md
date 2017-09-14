@@ -187,4 +187,4 @@ Soon there will be support for use cases like this. Stay tuned!
 If you are interested in tracking the progress on Bazel Java sandwich you can
 subscribe to [this Github issue](https://github.com/bazelbuild/bazel/issues/2614).
 
-_[Irina Iancu](https://github.com/iirina), on behalf of the Bazel Java team_
+*By [Irina Iancu](https://github.com/iirina), on behalf of the Bazel Java team*

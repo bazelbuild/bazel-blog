@@ -91,4 +91,4 @@ The aspect uses the
 [`java` provider]({{ site.docs_site_url }}/skylark/lib/JavaSkylarkApiProvider.html) on the targets
 it applies to to access a variety of information about Java targets.
 
-
+*By [Dmitry Lomov](https://github.com/dslomov)*
