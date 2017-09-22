@@ -11,13 +11,13 @@ taking some steps to bring more clarity and order to the world of Bazel releases
  * We will cut (from [master](https://github.com/bazelbuild/bazel/tree/master)) a candidate for 
    *minor releases* (0.7, 0.8 and so on) **every month** 
    on approximately first business day of the month. The planned target dates for
-   those cuts are published [as GitHub issues with label 'release'](https://github.com/bazelbuild/bazel/issues?q=label%3Arelease%20)
+   the cuts are published [as GitHub issues with label 'release'](https://github.com/bazelbuild/bazel/issues?q=label%3Arelease%20)
  * After the release candidate is cut, we will let it bake for *two weeks* before promoting it 
    to the release. We will cherry-pick fixes for critical bugs, issuing new release candidates
    (0.7.0rc1, 0.7.0rc2 and so on), and release 0._minor_.0 version at the end of baking period.
  * If critical bugs are discovered after the release, we will fix them and issue *patch releases*
    as needed (0.7.1, 0.7.2 and so on). Patch releases are always patches on top of existing minor 
-   releases - they are never cut from HEAD.
+   releases - they are never cut from master.
  * No new features or breaking changes ever appear in patch releases, and no new features or breaking
    changes are added to release candidates after they have been cut.
    
