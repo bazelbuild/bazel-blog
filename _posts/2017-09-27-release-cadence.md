@@ -23,7 +23,7 @@ taking some steps to bring more clarity and order to the world of Bazel releases
    
 Our website has more details on [release policy](https://bazel.build/support.html#releases).
 
-As a result of this change, we now issue one minor release per month (0.7 in October 2017, 0.8 in November 2017 and so on).
+As a result of this change, we now issue one minor release per month.
 
 Our [roadmap](https://bazel.build/roadmap.html) reflects our vision for Bazel 1.0 and beyond. We will
 annotate features on the roadmap with the release versions as those features get shipped.
