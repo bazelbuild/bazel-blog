@@ -3,10 +3,10 @@ layout: posts
 title: The new World of Bazel Releases
 ---
 
-Bazel has been open-sourced exactly [2.5 years ago](https://blog.bazel.build/2015/03/27/Hello-World.html). It continues to be quite a journey, and we are very happy we have acquired some fellow travellers: [many projects, organizations and companies that we all know and love rely on Bazel every day](https://sites.google.com/corp/bazel.build/conference2017/agenda).
+Bazel has been open-sourced exactly [2.5 years ago](https://blog.bazel.build/2015/03/27/Hello-World.html). It continues to be quite a journey, and we are very happy we have acquired some fellow travellers: [many projects, organizations and companies that we all know and love](https://sites.google.com/corp/bazel.build/conference2017/agenda) rely on Bazel every day.
 
 As our community grows, we owe to it a transparent and predictable release process. So we are
-taking some steps to bring more clarity and order in the world of Bazel releases:
+taking some steps to bring more clarity and order to the world of Bazel releases:
 
  * We will cut (from [master](https://github.com/bazelbuild/bazel/tree/master)) a candidate for 
    *minor releases* (0.7, 0.8 and so on) **every month** 
