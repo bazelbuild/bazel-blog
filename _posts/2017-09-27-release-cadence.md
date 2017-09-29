@@ -18,8 +18,8 @@ taking some steps to bring more clarity and order to the world of Bazel releases
  * If critical bugs are discovered after the release, we will fix them and issue *patch releases*
    as needed (0.7.1, 0.7.2 and so on). Patch releases are always patches on top of existing minor 
    releases - they are never cut from master.
- * No new features or breaking changes ever appear in patch releases, and no new features or breaking
-   changes are added to release candidates after they have been cut.
+ * No new features or backward incompatible changes ever appear in patch releases, and no new
+   features or backward incompatible changes are added to release candidates after they have been cut.
    
 Our website has more details on [release policy](https://bazel.build/support.html#releases).
 
