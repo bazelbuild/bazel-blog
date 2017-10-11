@@ -37,7 +37,7 @@ Over the last year, we put a lot of work into improving Bazel's Windows support:
     faster launch times. (If you see errors, you can use the
     `--[no]windows_exe_launcher` flag to fall back to the old behavior; if you
     do, please [file a bug](https://github.com/bazelbuild/bazel/issues/new).
-    We'll remove this flag.)
+    We'd like to remove this flag and only support the new behavior.)
 
 ## Coming soon
 
