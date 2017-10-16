@@ -52,4 +52,10 @@ We are also working on bringing the following to Bazel on Windows:
     rules that work not just on Linux and macOS, but also on Windows. See
     [issue #3889](https://github.com/bazelbuild/bazel/issues/3889).
 
+Looking ahead, we aim to maintain feature parity between Windows and other
+platforms. We aim to maximize portability between host systems, so you get
+the same fast, correct builds on your developer OS of choice. If you run into
+any problems, please don't hesitate to
+[file a bug](https://github.com/bazelbuild/bazel/issues/new).
+
 *By [László Csomor](https://github.com/laszlocsomor)*
