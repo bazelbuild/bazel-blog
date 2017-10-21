@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Bazel on Windows: a year in retrospect
+title: "Bazel on Windows -- a year in retrospect"
 ---
 
 Bazel on Windows is no longer experimental. We think Bazel on Windows is now
