@@ -1,4 +1,5 @@
 load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load("//scripts:jekyll.bzl", "jekyll_build")
 
 filegroup(
     name = "jekyll-srcs",
@@ -70,4 +71,9 @@ pkg_tar(
         ":font-awesome-font",
         ":jekyll-files",
     ],
+)
+
+jekyll_build(
+   name = "site",
+   srcs = [":jekyll-tree"],
 )
