@@ -12,7 +12,7 @@ filegroup(
             "scripts/**",
             "*.swp",
             "LICENSE",
-            "CONTRIBUTING",
+            "CONTRIBUTING.md",
             "production/**",
             "README.md",
         ],
