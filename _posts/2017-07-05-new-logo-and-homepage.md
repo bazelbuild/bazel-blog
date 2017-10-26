@@ -16,7 +16,7 @@ It was the top results of our internal and community votes.
 We also updated the homepage of the Bazel website: [https://bazel.build](https://bazel.build)
 
 In addition to a visual refresh, this new website features clearer value statements, clearer call to actions and more relevant 'Get Started' links.
-We are also very proud to showcase a few famous users and their testimonials (fee free to add yours [in the dedicated page of our wiki](https://github.com/bazelbuild/bazel/wiki/Bazel-Users)).
+We are also very proud to showcase a few famous users and their testimonials (feel free to add yours [in the dedicated page of our wiki](https://github.com/bazelbuild/bazel/wiki/Bazel-Users)).
 
 ![Screenshot of the Bazel homepage](/assets/home-screenshot.png)
 
