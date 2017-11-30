@@ -46,6 +46,7 @@ The following satisfies these dependencies:
 http_archive(
     name = "com_google_protobuf",
     urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
+    strip_prefix = "protobuf-b4b0e304be5a68de3d0ee1af9b286f958750f5e4",
 )
 
 # cc_proto_library rules implicitly depend on @com_google_protobuf_cc//:cc_toolchain,
@@ -53,6 +54,7 @@ http_archive(
 http_archive(
     name = "com_google_protobuf_cc",
     urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
+    strip_prefix = "protobuf-b4b0e304be5a68de3d0ee1af9b286f958750f5e4",
 )
 
 # java_proto_library rules implicitly depend on @com_google_protobuf_java//:java_toolchain,
@@ -60,6 +62,7 @@ http_archive(
 http_archive(
     name = "com_google_protobuf_java",
     urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
+    strip_prefix = "protobuf-b4b0e304be5a68de3d0ee1af9b286f958750f5e4",
 )
 ```
 
