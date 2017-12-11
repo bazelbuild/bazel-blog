@@ -3,9 +3,7 @@ layout: posts
 title: Thank you for BazelCon 2017
 ---
 
-We are truly thankful to our community for making our first annual [**Bazel Conference**](https://sites.google.com/corp/bazel.build/conference2017) a success! 
-
-Check out all the videos of all the talks from [BazelCon 2017 on YouTube](https://www.youtube.com/playlist?list=PLxNYxgaZ8RseY0KmkXQSt0StE71E7yizG)!
+We are truly thankful to our community for making our first annual [Bazel Conference](https://sites.google.com/corp/bazel.build/conference2017) a success! Check out all the videos of all the talks from [**BazelCon 2017 on YouTube**](https://www.youtube.com/playlist?list=PLxNYxgaZ8RseY0KmkXQSt0StE71E7yizG).
 
 Your feedback reflected high level of satisfaction, and there was something of interest for everyone:
 * Bazel usage and migration stories from TensorFlow, Kubernetes, SpaceX, Pinterest, Wix, Stripe, DataBricks, and Dropbox.
