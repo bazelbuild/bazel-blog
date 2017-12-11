@@ -38,7 +38,7 @@ What we can do next:
 What you can do next:
 * Contribute to Bazel, particularly to the new community driven [buildfarm](https://github.com/bazelbuild/bazel-buildfarm) effort.
 * Kick off local meet-ups (we will reach out to volunteers who responded to this in our survey).
-* Get more info on Bazel at [Bazel.build](https://bazel.build/).
+* Get more info on Bazel at [bazel.build](https://bazel.build/).
 * Join the discussion on bazel-discuss@googlegroups.com.
 
 We look forward to working with you and growing our Bazel user community in 2018!
