@@ -7,7 +7,7 @@ We are truly thankful to our community for making our first annual [Bazel Confer
 
 Your feedback reflected high level of satisfaction, and there was something of interest for everyone:
 * Bazel usage and migration stories from TensorFlow, Kubernetes, SpaceX, Pinterest, Wix, Stripe, DataBricks, and Dropbox.
-* Talks about upcoming features and tools such as [remote execution & caching](https://github.com/bazelbuild/bazel-buildfarm), [buildozer](https://github.com/bazelbuild/buildtools/tree/master/buildozer), [cs.bazel.build](https://cs.bazel.build/), scala support, robolectric tests, [PodToBUILD](https://github.com/pinterest/PodToBUILD), [bazeltfc](https://github.com/Asana/bazeltsc), [rules_typescript](https://github.com/bazelbuild/rules_typescript) presented by Uber, Two Sigma, Google, Stripe, Pinterest, and Asana.
+* Talks about upcoming features and tools such as [remote execution & caching](https://github.com/bazelbuild/bazel-buildfarm), [buildozer](https://github.com/bazelbuild/buildtools/tree/master/buildozer), scala support, robolectric tests, [PodToBUILD](https://github.com/pinterest/PodToBUILD), [bazeltfc](https://github.com/Asana/bazeltsc), [rules_typescript](https://github.com/bazelbuild/rules_typescript) presented by Uber, Two Sigma, Google, Stripe, Pinterest, and Asana.
 * Office hours where you got your Bazel questions answered, met engineers, and debugged on the fly. One attendee used their session to configure remote execution with [buildfarm](https://github.com/bazelbuild/bazel-buildfarm)!
 
 BazelCon2017 by the Numbers:
