@@ -46,11 +46,11 @@ Note that all searches are case insensitive unless you specify “case:yes” in
 
 <a id="understanding-the-bazel-codebase-using-cross-references"></a> 
 ## Understanding the Bazel codebase using cross references
-Another way to understand the Bazel repository is through the use of [cross references](browsing-cross-references). If you’ve ever wondered how to properly use a method, cross references can help by displaying all references to that method so you can see how it is used in other parts of the codebase. Alternatively, if you see a method being used but don’t understand what that method actually does, cross references enables you to click the method to view the definition or see how it’s used elsewhere. 
+Another way to understand the Bazel repository is through the use of [cross references](https://bazel.build/browse-and-search-user-guide.html#browsing-cross-references). If you’ve ever wondered how to properly use a method, cross references can help by displaying all references to that method so you can see how it is used in other parts of the codebase. Alternatively, if you see a method being used but don’t understand what that method actually does, cross references enables you to click the method to view the definition or see how it’s used elsewhere. 
 
 ![Cross refereneces pane](/assets/bazel-code-search-xref-pane.png)
 
-Cross references aren’t only available for method, they’re also generated for classes, fields, imports, and enums. Bazel Code Search uses the [Kythe](https://kythe.io/docs/kythe-overview.html) open source project to generate a semantic index of cross references for the Bazel codebase. These cross references appear automatically as hyperlinks within source files. To make cross references easier to identify, click the **Cross References** button to underline all cross references in a file. 
+Cross references aren’t only available for methods, they’re also generated for classes, fields, imports, and enums. Bazel Code Search uses the [Kythe](https://kythe.io/docs/kythe-overview.html) open source project to generate a semantic index of cross references for the Bazel codebase. These cross references appear automatically as hyperlinks within source files. To make cross references easier to identify, click the **Cross References** button to underline all cross references in a file. 
 
 ![Cross references underlined](/assets/bazel-code-search-xref-underlined.png)
 
