@@ -3,7 +3,6 @@ layout: posts
 title: Introducing Bazel Code Search
 ---
 
-
 We are always looking for new ways to improve the experience of contributing to Bazel and helping users understanding how Bazel works. Today, we’re excited to share a preview of [Bazel Code Search](https://source.bazel.build), a major upgrade to Bazel’s code search site. This new site features a [refreshed user interface for code browsing](#browsing-through-bazel-repositories) and cross-repository [semantic search](#searching-the-bazel-codebase) with regular expression support, and a [navigable semantic index](#understanding-the-bazel-codebase-using-cross-references) of all definitions and references for the Bazel codebase. We’ve also updated the “Contribute” page on the Bazel website with [documentation for this tool](https://bazel.build/browse-and-search-user-guide.html). 
 
 # Getting started with Bazel Code Search 
@@ -15,7 +14,7 @@ Select the repository you want to browse from the list on the main screen, or se
 
 <a id="searching-the-bazel-codebase"></a> 
 ## Searching the Bazel codebase
-Bazel Code Search has a semantic understanding of the Bazel codebase and allows you to [search for either files or code within files](https://bazel.build/browse-and-search-user-guide.html#searching-for-code). This semantic understanding of the code means that the search index identifies which parts of your code are entities such as classes, functions, and fields.  Since the search index has classified these entities, your queries can include filters to [scope the search to classes or functions](https://bazel.build/browse-and-search-user-guide.html#search) and allows for improved search relevance by ranking important parts of code like classes, functions, and fields higher. By default, all searches use [RE2 regular expressions](https://github.com/google/re2/wiki/Syntax) though you can escape individual special characters with a backslash, or an entire string by enclosing it in quotes. 
+Bazel Code Search has a semantic understanding of the Bazel codebase and allows you to [search for either files or code within files](https://bazel.build/browse-and-search-user-guide.html#search). This semantic understanding of the code means that the search index identifies which parts of your code are entities such as classes, functions, and fields.  Since the search index has classified these entities, your queries can include filters to [scope the search to classes or functions](https://bazel.build/browse-and-search-user-guide.html#search) and allows for improved search relevance by ranking important parts of code like classes, functions, and fields higher. By default, all searches use [RE2 regular expressions](https://github.com/google/re2/wiki/Syntax) though you can escape individual special characters with a backslash, or an entire string by enclosing it in quotes. 
 
 To search, start typing in the search box at the top of the screen and you’ll see suggestions for matching results. For Java, JavaScript, and Proto, result suggestions indicate if the match is an entity such as a Class, Method, Enum or Field. Semantic understanding for more languages is on the way. 
 
@@ -47,7 +46,7 @@ Note that all searches are case insensitive unless you specify “case:yes” in
 
 <a id="understanding-the-bazel-codebase-using-cross-references"></a> 
 ## Understanding the Bazel codebase using cross references
-Another way to understand the Bazel repository is through the use of cross references. If you’ve ever wondered how to properly use a method, cross references can help by displaying all references to that method so you can see how it is used in other parts of the codebase. Alternatively, if you see a method being used but don’t understand what that method actually does, cross references enables you to click the method to view the definition or see how it’s used elsewhere. 
+Another way to understand the Bazel repository is through the use of [cross references](browsing-cross-references). If you’ve ever wondered how to properly use a method, cross references can help by displaying all references to that method so you can see how it is used in other parts of the codebase. Alternatively, if you see a method being used but don’t understand what that method actually does, cross references enables you to click the method to view the definition or see how it’s used elsewhere. 
 
 ![Cross refereneces pane](/assets/bazel-code-search-xref-pane.png)
 
@@ -55,7 +54,7 @@ Cross references aren’t only available for method, they’re also generated fo
 
 ![Cross references underlined](/assets/bazel-code-search-xref-underlined.png)
 
-Once you’ve clicked on a cross reference, the Cross References pane will be displayed where you can view all the Definitions and References organized by file. Within the Cross References pane, you can navigate into multiple levels of depth of cross references while continuing to view the original file you were viewing in the File pane allowing you to maintain context of the original task. 
+Once you’ve clicked on a cross reference, the cross references pane will be displayed where you can view all the definitions and references organized by file. Within the cross references pane, you can navigate into multiple levels of depth of cross references while continuing to view the original file you were viewing in the File pane allowing you to maintain context of the original task. 
 
 ![Navigating through levels of cross references](/assets/bazel-code-search-xref-levels.png)
 
@@ -65,7 +64,9 @@ Selecting a repository from the main screen will take you to a view of the chose
 
 ![Repository view on Bazel Code Search](/assets/bazel-code-search-repo-view.png)
 
-From the view of the repository, you can browse through folders and files in the repository while taking advantage of [blame](https://bazel.build/browse-and-search-user-guide.html#view-file-changes), [change history](https://bazel.build/browse-and-search-user-guide.html#view-change-history), and a [diff view](https://bazel.build/browse-and-search-user-guide.html#compare-a-file-to-a-different-commit). 
+From the view of the repository, you can browse through folders and files in the repository while taking advantage of [blame](https://bazel.build/browse-and-search-user-guide.html#view-file-changes), [change history](https://bazel.build/browse-and-search-user-guide.html#view-change-history), a [diff view](https://bazel.build/browse-and-search-user-guide.html#compare-a-file-to-a-different-commit) and many other features. 
+
+![Bazel Code Search File View showing Blame and History](/assets/bazel-code-search-file-view.png)
 
 # Give Feedback 
 We hope you’ll try [Bazel Code Search](https://source.bazel.build) and provide feedback through the “**!**” button in the top right of any page on the Bazel Code Search site. We would love to hear whether this tool helps you work with Bazel and what else you’d like to see Bazel Code Search offer. 
