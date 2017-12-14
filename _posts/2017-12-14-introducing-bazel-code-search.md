@@ -23,6 +23,7 @@ To search, start typing in the search box at the top of the screen and you’ll 
 If you don’t see the result you want in the suggestions, you can submit your search and find all matches on the search result page. From the results page, you can select a matching line or file to view. 
 
 Here’s a sampling of different search examples to try out on your own: 
+
 * [ccToolchain](https://source.bazel.build/search?q=ccToolchain)
     * search for the substring “ccToolchain”
 * [class ccToolchain](https://source.bazel.build/search?q=class%20ccToolchain)
