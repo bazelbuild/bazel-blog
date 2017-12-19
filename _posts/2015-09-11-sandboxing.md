@@ -3,6 +3,9 @@ layout: posts
 title: About Sandboxing
 ---
 
+*This post was updated on 2017-12-19 to remove outdated information that caused
+frequent misunderstanding of Bazel's sandboxing feature.*
+
 We've only added sandboxing to Bazel two weeks ago, and we've already seen a
 flurry of fixes to almost all of the rules to conform with the additional
 restrictions imposed by it.
@@ -10,13 +13,16 @@ restrictions imposed by it.
 ## What is sandboxing?
 Sandboxing is the technique of restricting the access rights of a process. In
 the context of Bazel, we're mostly concerned with restricting file system
-access. More specifically, Bazel's file system sandbox contains only known
-inputs, such that compilers and other tools can't even see files they should
-not access.
+access. More specifically, Bazel's file system sandbox will run processes in
+a working directory that only contains known inputs, such that compilers and
+other tools can't even see source files they should not access, unless they
+know the absolute paths to them.
 
-(We currently also mount a number of system directories into the sandbox to
-allow running locally installed tools and make it easier to write shell
-scripts. See below.)
+Note that sandboxing does not try to hide the host environment in any way.
+Processes can freely access all files on the file system. However we try to
+prevent them from modifying any files outside their working directory. This
+requires platform-specific features though and is only available on newer
+Linux versions that support user namespaces and on macOS.
 
 
 ## Why are we sandboxing in Bazel?
@@ -43,44 +49,15 @@ compiler or make a change to an existing tool.
 
 ## How does it work?
 On Linux, we're using user namespaces, which are available in Linux 3.8 and
-later. Specifically, we create a new mount namespace. We create a temporary
-directory into which we mount all the files that the subprocess is allowed to
-see. We then use `pivot_root` to make the temporary directory appear as the
-root directory for all subprocesses.
+later. We use mount namespaces to make parts of the file system read-only
+and PID namespaces for reliable process management.
 
-We also mount `/proc`, `/dev/null`, `/dev/zero`, and a temporary filesystem
-(tmpfs) on `/tmp`. We mount `/dev/random` and `/dev/urandom`, but recommend
-against their usage, as it can lead to non-reproducible builds.
+On Mac, we use `sandbox-exec`, which is supplied with the operating system.
+Unfortunately no mechanism like PID namespaces or Subprocess Reapers seems
+to exist on macOS, so we couldn't get process management to work reliably
+so far.
 
-We currently also mount `/bin`, `/etc`, `/usr` (except `/usr/local`), and every
-directory starting with `/lib`, to allow running local tools. In the future, we
-are planning to provide a shell with a set of Linux utilities, and to require
-that all other tools are specified as inputs.
+On Windows, we currently do not implement sandboxing.
 
-
-## What about Mac and Windows?
-We are planning to implement sandboxing for OS X (using OS X sandboxing, see
-our [roadmap](/roadmap.html)) and eventually Windows as well.
-
-
-## What about networking?
-At some point, we'd like to also reduce network access, probably also using
-namespaces, with a separate opt-out mechanism.
-
-
-## How do I opt-out of sandboxing?
-Preferably, you should make all your rules and scripts work properly with
-sandboxing. If you need to opt out, you should talk to us first - at Google,
-the vast majority of actions is fully sandboxed, so we have some experience
-with how to make it work. For example, Bazel has a special mechanism to add
-information about the current user, date, time, or the current source control
-revision to generated binaries.
-
-If you still need to opt out for individual rules, you can add the `local = 1`
-attribute to `genrule` or `*_test` calls.
-
-If you're writing a custom rule in Skylark, then you cannot currently opt out.
-Instead, please [file a bug](https://github.com/bazelbuild/bazel/issues) and
-we'll help you make it work.
 
 *By [Ulf Adams](https://github.com/ulfjack)* and [Philipp Wollermann](https://github.com/philwo)
