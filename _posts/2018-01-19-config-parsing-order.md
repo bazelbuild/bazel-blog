@@ -53,14 +53,14 @@ Other rc ordering semantics remain. "common" options are expanded first, followe
 
 ## How to start using new behavior 
 
-1. Check your usual `--config` values’ expansions by running your usual blaze command line with `--announce_rc`. The order that the configs are listed, with the options they expand to, is the order in which they are interpreted.
+1. Check your usual `--config` values’ expansions by running your usual bazel command line with `--announce_rc`. The order that the configs are listed, with the options they expand to, is the order in which they are interpreted.
 
 1. Spend some time understanding the applicable configs, and check if any configs expand to the same option. If they do, you may need to move rc lines around to make sure the same value has priority with the new ordering.  See “Suggestions for config definers.”
 
 1. Flip on the startup option `--expand_configs_in_place` and debug any differences using `--announce_rc   
 `_If you have a shared bazelrc for your project, note that changing it will propagate to other users who might be importing this bazelrc into a personal rc. Proceed with caution as needed_
 
-1. Add the startup option to your blazerc to continue using this new expansion order.
+1. Add the startup option to your bazelrc to continue using this new expansion order.
 
 ### Suggestions for config definers
 
@@ -80,35 +80,39 @@ In order to minimize differences between old and new behavior, here are some tip
 
 The following example violates both #1 and #2, to help motivate why #2 makes things slightly better when #1 is impossible.
 ```
-blazerc contents:
+bazelrc contents:
 	build:foo --cpu=x86
 	build:misalteredfoo --config=foo # Violation of #2!
 	build:misalteredfoo --cpu=arm64 # Violation of #1!
 ```
 
-- `blaze build --config=misalteredfoo`
-  effectively x86 in fixed-point expansion, and arm64 with in-place expansion
+- `bazel build --config=misalteredfoo`
+
+   effectively x86 in fixed-point expansion, and arm64 with in-place expansion
 
 
 The following example still violates #1, but follows suggestion #2:
 ```
-blazerc contents:
+bazelrc contents:
 	build:foo --cpu=x86
 	build:misalteredfoo --cpu=arm64 # Violation of #1!
 	build:misalteredfoo --config=foo
 ```
 
-- `blaze build --config=misalteredfoo`
-  effectively x86 in both expansions, so this does not diverge and appears fine at first glance. (thanks, suggestion #2!)
+- `bazel build --config=misalteredfoo`
 
-- `blaze build --config=foo --config=misalteredfoo`
-  effectively arm64 in fixed-point expansion, x86 with in-place, since misalteredfoo’s expansion is independent of the previous config mention. 
+   effectively x86 in both expansions, so this does not diverge and appears fine at first glance. (thanks, suggestion #2!)
+
+- `bazel build --config=foo --config=misalteredfoo`
+
+   effectively arm64 in fixed-point expansion, x86 with in-place, since misalteredfoo’s expansion is independent of the previous config mention. 
 
 ### Suggestions for users of --config
 
 Lay users of --config might also see some surprising changes depending on usage patterns. The following suggestions are to avoid those differences. Both of the following will cause warnings if missed.
 
 A. Avoid including to the same --config twice
+
 B. Put --config options FIRST, so that explicit options continue to have precedence over the expansions of the configs.
 
 Multiple mentions of a single --config, when combined with violations of #1, may cause surprising results, as shown in #1’s motivating examples. In the new expansion, multiple expansions of the same config will warn. Multi-valued options will receive duplicates values, which may be surprising. 
@@ -116,16 +120,18 @@ Multiple mentions of a single --config, when combined with violations of #1, may
 #### Motivating example for B
 
 ```
-   blazerc contents:
+bazelrc contents:
 	build:foo --cpu=x86
 
 ```
 
-- `blaze build --config=foo --cpu=arm64 # Fine`
-  effectively arm64 in both expansion cases
+- `bazel build --config=foo --cpu=arm64 # Fine`
 
-- `blaze build --cpu=arm64 --config=foo # Violates B`
-  The explicit value arm64 has precedence with fixed-point expansion, but the config value x86 wins in in-place expansion. With in-place expansion, this will print a warning.
+   effectively arm64 in both expansion cases
+
+- `bazel build --cpu=arm64 --config=foo # Violates B`
+
+   The explicit value arm64 has precedence with fixed-point expansion, but the config value x86 wins in in-place expansion. With in-place expansion, this will print a warning.
 
 ## Additional Examples
 
