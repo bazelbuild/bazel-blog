@@ -1,13 +1,7 @@
 ---  
 layout: posts
-title: config parsing order  
+title: Migration Help: --config parsing order    
 ---  
-  
-# Migration Help: --config parsing order  
-  
-**Author**: [Chloe Calvarin](mailto:ccalvarin@google.com)  
-  
-**Design document published**: 20 November 2017
 
 ## Background: bazerrc & --config 
 
@@ -107,15 +101,15 @@ bazelrc contents:
 
    effectively arm64 in fixed-point expansion, x86 with in-place, since misalteredfoo’s expansion is independent of the previous config mention. 
 
-### Suggestions for users of --config
+### Suggestions for users of `--config`
 
-Lay users of --config might also see some surprising changes depending on usage patterns. The following suggestions are to avoid those differences. Both of the following will cause warnings if missed.
+Lay users of `--config` might also see some surprising changes depending on usage patterns. The following suggestions are to avoid those differences. Both of the following will cause warnings if missed.
 
-A. Avoid including to the same --config twice
+A. Avoid including to the same `--config` twice
 
-B. Put --config options FIRST, so that explicit options continue to have precedence over the expansions of the configs.
+B. Put `--config` options FIRST, so that explicit options continue to have precedence over the expansions of the configs.
 
-Multiple mentions of a single --config, when combined with violations of #1, may cause surprising results, as shown in #1’s motivating examples. In the new expansion, multiple expansions of the same config will warn. Multi-valued options will receive duplicates values, which may be surprising. 
+Multiple mentions of a single `--config`, when combined with violations of #1, may cause surprising results, as shown in #1’s motivating examples. In the new expansion, multiple expansions of the same config will warn. Multi-valued options will receive duplicates values, which may be surprising. 
 
 #### Motivating example for B
 
@@ -139,7 +133,7 @@ bazelrc contents:
 
 There are 2 boolean options, `--foo` and `--bar`. Each only accept one value (as opposed to accumulating multiple values).   
 
-In the following examples, the two options --foo and --bar have the same apparent order (and will have the same behavior with the new expansion logic). What changes from one example to the next is where the options are specified.
+In the following examples, the two options `--foo` and `--bar` have the same apparent order (and will have the same behavior with the new expansion logic). What changes from one example to the next is where the options are specified.
 
 <table>
 <thead>
@@ -307,3 +301,5 @@ Unfortunately, it gets worse, especially if you have the same config for differe
 
 To understand the order of your configs specifically, run Bazel as you normally would (remove targets for speed) with the option `--announce_rc`. The order in which the config expansions are output to the terminal is the order in which they are currently interpreted (again, between rc and command line). 
 
+
+*By [Chloe Calvarin](https://github.com/cvcal)*
