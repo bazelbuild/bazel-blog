@@ -3,14 +3,19 @@ layout: posts
 title: Migration Help: --config parsing order    
 ---  
 
-## Background: bazerrc & --config 
+`--config` expansion order is changing, in order to make it better align with user expectations, and to make layering of configs work as intended. To prepare for the change, please test your build with startup option `--expand_configs_in_place`.
+
+The change is mostly live with Bazel 0.9, triggered by the startup option --expand_configs_in_place. Bazel 0.10, out for canary, adds an additional warning if explicit flags are overriden, so it may be useful to wait for this version to test the change. The new expansion order will become the default behavior soon, and will then no longer be configurable.
+
+
+## Background: bazelrc & --config 
 
 [The Bazel User Manual](https://docs.bazel.build/versions/master/user-manual.html#bazelrc) contains the official documentation for bazelrcs and will not be repeated here.   
 A Bazel build command line generally looks something like this:
 
     bazel <startup options> build <command options> //some/targets
 
-For the rest of the doc, only the command options are relevant. Startup options can affect which bazelrc's are loaded, but that's the only effect they have here.
+For the rest of the doc, command options are the focus. Startup options can affect which bazelrc's are loaded, and the new behavior is gated by a startup option, but the config mechanisms are only relevant to command options.
 
 The bazelrcs allow users to set command options by default. These options can either be provided unconditionally or through a config expansion:
 
@@ -28,7 +33,7 @@ The current semantics of --config expansions breaks last-flag-wins expectations.
 
 1. Unconditional rc options (options set by a command without a config, "`build --opt`")
 1. All `--config` expansions are expanded in a "fixed-point" expansions.   
-_This does not check where the `--config` option initially was (rc, command line, or another `--config`), and will parse a single `--config` value at most once. Use --announce_rc to see the order used!_
+_This does not check where the `--config` option initially was (rc, command line, or another `--config`), and will parse a single `--config` value at most once. Use `--announce_rc` to see the order used!_
 1. Command-line specified options
 
 Bazel claims to have a last-flag-wins command line, and this is usually true, but the fixed-point expansion of configs makes it difficult to rely on ordering where `--config` options are concerned.   
@@ -36,7 +41,7 @@ See the Boolean option example below.
 
 ### The new order: Last-Flag-Wins
 
-Everywhere else, the last mention of a single-valued option has “priority” and overrides a previous value. The same will now be true of --config expansion. Like other expansion options, --config will now expand to its rc-defined expansion “in-place,” so that the options it expands to have the same precedence. 
+Everywhere else, the last mention of a single-valued option has “priority” and overrides a previous value. The same will now be true of `--config` expansion. Like other expansion options, `--config` will now expand to its rc-defined expansion “in-place,” so that the options it expands to have the same precedence. 
 
 Since this is no longer a fixed-point expansion, there are a few other changes:
 
@@ -51,8 +56,9 @@ Other rc ordering semantics remain. "common" options are expanded first, followe
 
 1. Spend some time understanding the applicable configs, and check if any configs expand to the same option. If they do, you may need to move rc lines around to make sure the same value has priority with the new ordering.  See “Suggestions for config definers.”
 
-1. Flip on the startup option `--expand_configs_in_place` and debug any differences using `--announce_rc   
-`_If you have a shared bazelrc for your project, note that changing it will propagate to other users who might be importing this bazelrc into a personal rc. Proceed with caution as needed_
+1. Flip on the startup option `--expand_configs_in_place` and debug any differences using `--announce_rc` 
+
+   _If you have a shared bazelrc for your project, note that changing it will propagate to other users who might be importing this bazelrc into a personal rc. Proceed with caution as needed_
 
 1. Add the startup option to your bazelrc to continue using this new expansion order.
 
