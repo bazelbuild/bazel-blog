@@ -5,8 +5,7 @@ title: Migration Help: --config parsing order
 
 `--config` expansion order is changing, in order to make it better align with user expectations, and to make layering of configs work as intended. To prepare for the change, please test your build with startup option `--expand_configs_in_place`.
 
-The change is mostly live with Bazel 0.9, triggered by the startup option `--expand_configs_in_place`. Bazel 0.10, out for canary, adds an additional warning if explicit flags are overriden, so it may be useful to wait for this version to test the change. The new expansion order will become the default behavior soon, and will then no longer be configurable.
-
+Please test this change with Bazel 0.10, triggered by the startup option `--expand_configs_in_place`. The change is mostly live with Bazel 0.9, but the newest release adds an additional warning if explicit flags are overriden, which should be helpful when debugging differences. The new expansion order will become the default behavior soon, and will then no longer be configurable.
 
 ## Background: bazelrc & --config 
 
