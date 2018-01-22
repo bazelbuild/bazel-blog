@@ -1,9 +1,9 @@
 ---  
 layout: posts
-title: Migration Help: --config parsing order    
+title: "Migration Help: --config parsing order"
 ---  
 
-`--config` expansion order is changing, in order to make it better align with user expectations, and to make layering of configs work as intended. To prepare for the change, please test your build with startup option `--expand_configs_in_place`.
+[`--config`](https://docs.bazel.build/versions/master/user-manual.html#config) expansion order is changing, in order to make it better align with user expectations, and to make layering of configs work as intended. To prepare for the change, please test your build with startup option `--expand_configs_in_place`.
 
 Please test this change with Bazel 0.10, triggered by the startup option `--expand_configs_in_place`. The change is mostly live with Bazel 0.9, but the newest release adds an additional warning if explicit flags are overriden, which should be helpful when debugging differences. The new expansion order will become the default behavior soon, and will then no longer be configurable.
 
@@ -20,9 +20,11 @@ The bazelrcs allow users to set command options by default. These options can ei
 
 +  Unconditionally, they are defined for a command, and all commands that inherit from it,  
 	`build --foo # applies "--foo" to build, test, etc`.
-+  As a config expansions  
-	`# applies "--foo" to build, test, etc. when --config=foobar is set.  
-	build:foobar --foo `
++  As a config expansion 
+	```
+	# applies "--foo" to build, test, etc. when --config=foobar is set.  
+	build:foobar --foo 
+	```
 
 ## What is changing 
 
@@ -35,25 +37,26 @@ The current semantics of --config expansions breaks last-flag-wins expectations.
 _This does not check where the `--config` option initially was (rc, command line, or another `--config`), and will parse a single `--config` value at most once. Use `--announce_rc` to see the order used!_
 1. Command-line specified options
 
-Bazel claims to have a last-flag-wins command line, and this is usually true, but the fixed-point expansion of configs makes it difficult to rely on ordering where `--config` options are concerned.   
+Bazel claims to have a last-flag-wins command line, and this is usually true, but the fixed-point expansion of configs makes it difficult to rely on ordering where `--config` options are concerned.
+
 See the Boolean option example below.
 
 ### The new order: Last-Flag-Wins
 
-Everywhere else, the last mention of a single-valued option has “priority” and overrides a previous value. The same will now be true of `--config` expansion. Like other expansion options, `--config` will now expand to its rc-defined expansion “in-place,” so that the options it expands to have the same precedence. 
+Everywhere else, the last mention of a single-valued option has "priority" and overrides a previous value. The same will now be true of `--config` expansion. Like other expansion options, `--config` will now expand to its rc-defined expansion "in-place," so that the options it expands to have the same precedence. 
 
 Since this is no longer a fixed-point expansion, there are a few other changes:
 
-+  `--config=foo --config=foo` will be expanded twice. If this is undesirable, more care will need to be taken to avoid redundancy. Double occurences will cause a warning.
++  `--config=foo --config=foo` will be expanded twice. If this is undesirable, more care will need to be taken to avoid redundancy. Double occurrences will cause a warning.
 +  cycles are no longer implicitly ignored, but will error out.
 
 Other rc ordering semantics remain. "common" options are expanded first, followed by the command hierarchy. This means that for an option added on the line "`build:foo --buildopt`", it will get added to `--config=foo`'s expansion for bazel build, test, coverage, etc. "`test:foo --testopt`" will add `--testopt` after the (less specific and therefore lower priority) build expansion of `--config=foo`. If this is confusing, avoid alternating command types in the rc file, and group them in order, general options at the top. This way, the order of the file is close to the interpretation order.
 
 ## How to start using new behavior 
 
-1. Check your usual `--config` values’ expansions by running your usual bazel command line with `--announce_rc`. The order that the configs are listed, with the options they expand to, is the order in which they are interpreted.
+1. Check your usual `--config` values' expansions by running your usual bazel command line with `--announce_rc`. The order that the configs are listed, with the options they expand to, is the order in which they are interpreted.
 
-1. Spend some time understanding the applicable configs, and check if any configs expand to the same option. If they do, you may need to move rc lines around to make sure the same value has priority with the new ordering.  See “Suggestions for config definers.”
+1. Spend some time understanding the applicable configs, and check if any configs expand to the same option. If they do, you may need to move rc lines around to make sure the same value has priority with the new ordering.  See "Suggestions for config definers."
 
 1. Flip on the startup option `--expand_configs_in_place` and debug any differences using `--announce_rc` 
 
@@ -69,11 +72,11 @@ In order to minimize differences between old and new behavior, here are some tip
 
 1. Avoid internal conflicts within a config expansion (redefinitions of the same option)
 1. Define recursive `--config` at the END of the config expansion
-   - Only critical if #1 can’t be followed.
+   - Only critical if #1 can't be followed.
 
-#1 is especially important if the config expands to another config. The behavior will be more predictable with `--expand_configs_in_place`, but without it, the expansion of a single `--config` depends on previous `--configs`. 
+Suggestion #1 is especially important if the config expands to another config. The behavior will be more predictable with `--expand_configs_in_place`, but without it, the expansion of a single `--config` depends on previous `--configs`. 
 
-#2 helps mitigate differences if #1 is violated, since the fixed-point expansion will expand all explicit options, and then expand any newly-found config values that were mentioned in the original config expansions. This is equivalent to expanding it at the end of the list, so use this order if you wish to preserve old behavior. 
+Suggestion #2 helps mitigate differences if #1 is violated, since the fixed-point expansion will expand all explicit options, and then expand any newly-found config values that were mentioned in the original config expansions. This is equivalent to expanding it at the end of the list, so use this order if you wish to preserve old behavior. 
 
 #### Motivating examples
 
@@ -104,7 +107,7 @@ bazelrc contents:
 
 - `bazel build --config=foo --config=misalteredfoo`
 
-   effectively arm64 in fixed-point expansion, x86 with in-place, since misalteredfoo’s expansion is independent of the previous config mention. 
+   effectively arm64 in fixed-point expansion, x86 with in-place, since misalteredfoo's expansion is independent of the previous config mention. 
 
 ### Suggestions for users of `--config`
 
@@ -114,7 +117,7 @@ A. Avoid including to the same `--config` twice
 
 B. Put `--config` options FIRST, so that explicit options continue to have precedence over the expansions of the configs.
 
-Multiple mentions of a single `--config`, when combined with violations of #1, may cause surprising results, as shown in #1’s motivating examples. In the new expansion, multiple expansions of the same config will warn. Multi-valued options will receive duplicates values, which may be surprising. 
+Multiple mentions of a single `--config`, when combined with violations of #1, may cause surprising results, as shown in #1's motivating examples. In the new expansion, multiple expansions of the same config will warn. Multi-valued options will receive duplicates values, which may be surprising. 
 
 #### Motivating example for B
 
