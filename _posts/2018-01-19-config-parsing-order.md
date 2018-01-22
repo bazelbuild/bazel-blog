@@ -133,9 +133,7 @@ bazelrc contents:
 
    The explicit value arm64 has precedence with fixed-point expansion, but the config value x86 wins in in-place expansion. With in-place expansion, this will print a warning.
 
-## Additional Examples
-
-### Boolean option example
+## Additional Boolean Option Example
 
 There are 2 boolean options, `--foo` and `--bar`. Each only accept one value (as opposed to accumulating multiple values).   
 
