@@ -36,37 +36,32 @@ Bazel's proto rules implicitly depend on the
 distribution (described below, in "Implicit Dependencies and Proto Toolchains").
 The following satisfies these dependencies:
 
-> TIP: This is a shortened version of
-> [https://github.com/cgrushko/proto_library/blob/master/WORKSPACE](https://github.com/cgrushko/proto_library/blob/master/WORKSPACE)
+> TIP: Clone https://github.com/cgrushko/proto_library/ to try protobufs in Bazel now.
 
 ```python
-# proto_library rules implicitly depend on @com_google_protobuf//:protoc,
-# which is the proto-compiler.
+# proto_library, cc_proto_library, and java_proto_library rules implicitly
+# depend on @com_google_protobuf for protoc and proto runtimes.
 # This statement defines the @com_google_protobuf repo.
 http_archive(
     name = "com_google_protobuf",
-    urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
+    sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
+    strip_prefix = "protobuf-3.5.0",
+    urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
 )
 
-# cc_proto_library rules implicitly depend on @com_google_protobuf_cc//:cc_toolchain,
-# which is the C++ proto runtime (base classes and common utilities).
+# java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite//:javalite_toolchain,
+# which is the JavaLite proto runtime (base classes and common utilities).
 http_archive(
-    name = "com_google_protobuf_cc",
-    urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
-)
-
-# java_proto_library rules implicitly depend on @com_google_protobuf_java//:java_toolchain,
-# which is the Java proto runtime (base classes and common utilities).
-http_archive(
-    name = "com_google_protobuf_java",
-    urls = ["https://github.com/google/protobuf/archive/b4b0e304be5a68de3d0ee1af9b286f958750f5e4.zip"],
+    name = "com_google_protobuf_javalite",
+    sha256 = "d8a2fed3708781196f92e1e7e7e713cf66804bd2944894401057214aff4f468e",
+    strip_prefix = "protobuf-5e8916e881c573c5d83980197a6f783c132d4276",
+    urls = ["https://github.com/google/protobuf/archive/5e8916e881c573c5d83980197a6f783c132d4276.zip"],
 )
 ```
 
 ### BUILD files
 
-> TIP: This is a shortened version of
-> [https://github.com/cgrushko/proto_library/blob/master/src/BUILD](https://github.com/cgrushko/proto_library/blob/master/src/BUILD)
+> TIP: Clone https://github.com/cgrushko/proto_library/ to try protobufs in Bazel now.
 
 ```python
 java_proto_library(
@@ -148,10 +143,7 @@ them independent of Bazel.
 
 **Q:** How does one use well-known types? (e.g., `any.proto`,
 `descriptor.proto`)<br />
-**A:** Once [https://github.com/google/protobuf/issues/2763](https://github.com/google/protobuf/issues/2763) is resolved, the
-following should be added to a `.proto` file: `import google/protobuf/any.proto`
-and the following: `@com_google_protobuf//:well_known_types_protos` to one's
-`proto_library` rule.
+**A:** See [the example repo](https://github.com/cgrushko/proto_library), particularly https://github.com/cgrushko/proto_library/blob/beae7b78b85b3af51d3ea54663c421ebde97dc10/src/BUILD#L42.
 
 **Q:** Any tips for writing my own such rules?<br />
 **A:** First, make sure you're able to register actions that compile your target
@@ -176,8 +168,8 @@ which is the protocol buffer compiler. It must be a binary rule (in protobuf,
 it's a `cc_binary`). The rule can be overridden using the `--proto_compiler`
 command-line flag.
 
-`X_proto_library` rules implicitly depend on
-`@com_google_protobuf_X//:X_toolchain`, which is a `proto_lang_toolchain` rule.
+Most `X_proto_library` rules implicitly depend on
+`@com_google_protobuf//:X_toolchain`, which is a `proto_lang_toolchain` rule.
 These rules can be overridden using the `--proto_toolchain_for_X` command-line
 flags.
 
