@@ -23,11 +23,6 @@ By making a `java_library` (resp. `cc_library`) depend on `java_proto_library`
 > TIP:
 > [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library)
 > contains a buildable example.
->
-> NOTE: Bazel 0.4.4 lacks some features the example uses - you'll need to build
-> Bazel from head. The easiest is to install Bazel, download Bazel's source
-> code, build it (`bazel build //src:bazel`) and copy it somewhere (e.g., `cp
-> bazel-bin/src/bazel ~/bazel`)
 
 ### WORKSPACE file
 
@@ -36,7 +31,7 @@ Bazel's proto rules implicitly depend on the
 distribution (described below, in "Implicit Dependencies and Proto Toolchains").
 The following satisfies these dependencies:
 
-> TIP: Clone https://github.com/cgrushko/proto_library/ to try protobufs in Bazel now.
+> TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
 ```python
 # proto_library, cc_proto_library, and java_proto_library rules implicitly
@@ -61,7 +56,7 @@ http_archive(
 
 ### BUILD files
 
-> TIP: Clone https://github.com/cgrushko/proto_library/ to try protobufs in Bazel now.
+> TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
 ```python
 java_proto_library(
