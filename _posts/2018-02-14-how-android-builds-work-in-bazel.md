@@ -1,6 +1,7 @@
-# How Android Builds Work in Bazel
-
-[TOC]
+---
+layout: posts
+title: How Android Builds Work in Blaze
+---
 
 ## Background: How Bazel Works
 
