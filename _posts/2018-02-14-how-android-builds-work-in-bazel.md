@@ -118,7 +118,7 @@ runtime.
 
 ### Resource processing with `aapt` and `aapt2`
 
-![Diagram of android resource build process](assets/android_resource_graph.png)
+![Diagram of android resource build process](/assets/android_resource_graph.png)
 
 Bazel supports processing resources using the original Android resource
 processor, `aapt`, or the new version, `aapt2`. Both methods are fundamentally
@@ -208,7 +208,7 @@ build and iterate faster.
 
 ## Android Libraries
 
-![Diagram of `android_library` build process](assets/android_library_graph.png)
+![Diagram of `android_library` build process](/assets/android_library_graph.png)
 
 An
 [`android_library`](https://docs.bazel.build/versions/master/be/android.html#android_library)
@@ -248,7 +248,7 @@ Finally, Bazel does some additional work on the compiled code:
 
 ## Android Binaries
 
-![Diagram of `android_binary` build process](assets/android_binary_graph.png)
+![Diagram of `android_binary` build process](/assets/android_binary_graph.png)
 
 An
 [`android_binary`](https://docs.bazel.build/versions/master/be/android.html#android_binary)
@@ -288,7 +288,7 @@ debug key to produce a signed APK.
 ## ProGuarded Android Binaries
 
 ![Diagram of `android_binary` build process with
-ProGuard](assets/android_binary_graph_proguard.png)
+ProGuard](/assets/android_binary_graph_proguard.png)
 
 Bazel supports running [ProGuard](https://www.guardsquare.com/en/proguard)
 against `android_binary` targets to [optimize them and reduce their
