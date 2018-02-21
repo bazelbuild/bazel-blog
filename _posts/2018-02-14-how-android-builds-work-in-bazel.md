@@ -193,7 +193,7 @@ fields. These fields limit the types of devices that will be built for. For
 example, if you only wanted to build for English-language devices with HDPI
 displays, you could specify:
 
-```build
+```python
 android_binary(
   # ...
   densities = ["hdpi"],
