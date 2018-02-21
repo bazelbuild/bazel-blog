@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: How Android Builds Work in Blaze
+title: How Android Builds Work in Bazel
 ---
 
 ## Background: How Bazel Works
@@ -329,3 +329,5 @@ same as it would without ProGuard.
 is a way of rapidly building and deploying Android applications iteratively.
 It’s based off of `android_binary`, but has some additional functionality to
 make builds and deployments more incremental.
+
+*By [Alex Steinberg](https://github.com/asteinb)*
