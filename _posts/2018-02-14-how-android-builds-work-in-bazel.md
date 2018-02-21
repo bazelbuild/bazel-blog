@@ -55,9 +55,9 @@ optimized to work efficiently for analysis. For part of a provider that
 represents some transitive state, for example, a trivial implementation might be
 to build a new list that contains the items for the current rule and each
 transitive dependency (for a chain of n transitive dependencies, that means we’d
-add $$n + (n - 1) + … 1 = O(n^2)$$ items to some list), but building a nested
+add n + (n - 1) + … 1 = O(n^2) items to some list), but building a nested
 set containing the new item and a pointer to the previous nested set is much
-more efficient (we’d add $$2 + 2 + … 2 = O(n)$$ items to some nested set). This
+more efficient (we’d add 2 + 2 + … 2 = O(n) items to some nested set). This
 introduces similar efficiency in memory usage as well.
 
 Artifacts can each be added to any number of __output groups__. Each output
