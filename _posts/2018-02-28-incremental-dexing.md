@@ -68,3 +68,5 @@ files that are larger than necessary.  That means you want to turn off increment
 you’re building a binary that you want to give to users, but it can speed up your development and
 test builds every day with no known adverse effect.  Plus, we expect this to get better since
 Android Studio has started to use a similar scheme to build Android apps in Gradle.
+
+*By [Kevin Bierhoff](https://github.com/kevin1e100)*
