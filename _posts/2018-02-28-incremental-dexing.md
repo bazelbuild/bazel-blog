@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Bazel 0.11"
+title: "Scalable Android Builds with Incremental Dexing"
 ---
 
 Bazel supports building Android apps with Java and C++ code out of the box through the
