@@ -31,6 +31,7 @@ the app’s runtime classpath.  To arrive at a final app, Bazel then merges the 
 from each .jar.
 
 How does that help?  In a number of ways:
+
 1. We can take advantage of the parallelism inherent in the build and farm out compilation to as
    many processes as there are .jars in the app.
 2. When rebuilding after making code changes, we only have to recompile the .jars that changed,
