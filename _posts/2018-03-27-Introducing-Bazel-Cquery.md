@@ -13,18 +13,48 @@ Bazel uses the [Bazel Query Language](https://docs.bazel.build/versions/master/q
 The query commands also support a set of flag-based options that govern query behavior. For example, [--noimplicit_deps](https://docs.bazel.build/versions/master/query.html#implicit_deps) limits results to only include targets that are explicitly declared in a BUILD file. The flags also support a selection of [output formats](https://docs.bazel.build/versions/master/query.html#output-formats) for the results of the query, such as a [graph output](https://docs.bazel.build/versions/master/query.html#output-graph) (especially helpful for visualizing the collection of paths between two nodes).
 
 ## Introducing `bazel cquery`
-Bazel has long supported the `query` command. We’re excited to announce a second* command, `cquery`!
+Bazel has long supported the `query` command. We’re excited to announce a second\* command, `cquery`!
 
 What’s the difference? `query` doesn’t understand build flags and returns all possible answers to a given query expression. `cquery` (configurable query) runs at a later point in the build process, after flag evaluation and [configurable attribute](https://docs.bazel.build/versions/master/be/common-definitions.html#configurable-attributes) resolution. Thus, it can understand [build options](https://docs.bazel.build/versions/master/command-line-reference.html#command-line-reference) and give the answer to a specific Bazel invocation as dictated by its set of flags. Since it runs at a later point, ‘cquery’ is by nature slower than ‘query’.  
 
 `cquery` has yet to reach feature parity with `query`, but as we develop it further, `cquery` will also be able to expose information to which `query` does not have access. See the comparison below for what’s currently supported. 
 
-|                      | `query`                                                                           |`cquery`                                | both                                                                            |
-|----------------------|-----------------------------------------------------------------------------------|----------------------------------------|---------------------------------------------------------------------------------|
-| Performance          | faster, less acurate                                                              | slower, accurate                       |                                                                                 |
-| Functions            | siblings, buildfiles, tests                                                       | config                                 | allpaths, attrs, dep, filter, kind, labels, loadfiles, rdeps, somepath, visible |
-| Output Formats       | build, label,  label_kind, minrank, maxrank, location, package, graph, xml, proto | label_and_configuration, transitions** |                                                                                 |
-| Options              | query options                                                                     | cquery options, build options          | common query options                                                            |
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th></th>
+      <th><code>query</code></th>
+      <th><code>cquery</code></th>
+      <th>both</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Performance</td>
+      <td>faster, less acurate</td>
+      <td>slower, accurate</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Functions</td>
+      <td>siblings, buildfiles, tests</td>
+      <td>config</td>
+      <td>allpaths, attrs, dep, filter, kind, labels, loadfiles, rdeps, somepath, visible</td>
+    </tr>
+    <tr>
+      <td>Output Formats</td>
+      <td>build, label, label_kind, minrank, maxrank, location, package, graph, xml, proto</td>
+      <td>label_and_configuration, transitions**</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Options</td>
+      <td>query options</td>
+      <td>cquery options, build options</td>
+      <td>common query options</td>
+    </tr>
+  </tbody>
+</table>
 
 So, if your priority is speed and over-approximation of results isn’t a problem, `query` is your engine. If your priority is results that match a specific bazel invocation’s flags and fancy output formats aren’t too important to you, then `cquery` is the better choice.
 
