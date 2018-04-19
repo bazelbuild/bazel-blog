@@ -7,7 +7,7 @@ title: Preliminary sandboxfs support and performance results
 introduced sandboxfs: a project to improve the performance and correctness of
 builds that have action sandboxing enabled. Today, after months of work to
 stabilize the codebase, we are happy to announce that preliminary support for
-sandboxfs is available in Bazel 0.12.0!
+sandboxfs is available in Bazel HEAD after April 13th!
 
 This post presents the performance measurements we have gotten so far when using
 sandboxfs. As these metrics look promising, the true goal of this post is a
@@ -101,7 +101,8 @@ Convinced that you should give this a try? Excellent. Use the following steps to
 install sandboxfs and perform a Bazel build with it. Be aware that due to the
 current status of sandboxfs (no formal releases), these may change at any time.
 
-1.  Ensure you are using Bazel 0.12.0 or newer.
+1.  Ensure you are using a Bazel build newer than April 13th or wait for the
+    future 0.13.x release series.
 
 1.  Download and install sandboxfs so that the `sandboxfs` binary ends up in
     your `PATH`. There currently are no formal releases for this project so you
