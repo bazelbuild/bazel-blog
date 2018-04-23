@@ -18,3 +18,11 @@ blog_site_url: https://blog.bazel.build
 docs_site_url: https://docs.bazel.build
 
 assets_url: https://bazel.build
+
+defaults:
+  - scope:
+      type: posts
+      path: '_posts'
+    values:
+      layout: posts
+      enable_comments: true
