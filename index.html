@@ -10,7 +10,35 @@ title: Bazel Blog
   <div class="blog-post-meta">
     <span class="text-muted">{{ post.date | date_to_long_string }}</span>
   </div>
-  {{ post.content }}
+
+  <p>{{ post.excerpt | strip_html }}</p>
+
+  {% assign words = post.content | number_of_words %}
+  {% comment %}
+    According to https://en.wikipedia.org/wiki/Words_per_minute, the
+    average person can read about 180 WPM.
+  {% endcomment %}
+  {% assign minutes = words | divided_by:180 %}
+
+  <div class="blog-post-meta">
+    <span class="text-muted">
+      <a href="{{ post.url }}">Continue reading
+        {% if minutes <= 1 %}
+        (about 1 minute)
+        {% else %}
+        (about {{ minutes }} minutes)
+        {% endif %}
+      </a>
+      &middot;
+
+      <a href="{{ post.url }}#disqus_thread">
+        <span class="disqus-comment-count"
+              data-disqus-url="{{ post.url | prepend: site.blog_site_url }}">Comments</span>
+      </a>
+    </span>
+  </div>
 </div>
 
 {% endfor %}
+
+<script id="dsq-count-scr" src="//googlebazel.disqus.com/count.js" async></script>
