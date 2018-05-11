@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Announcing simplified workspace creation
+authors:
+  - kchodorow
 ---
 
 To create a new workspace, you can now simply create an empty `WORKSPACE` file
@@ -35,5 +37,3 @@ setting up your workspace.
 Let us know if you have any questions or issues on the
 [mailing list](https://groups.google.com/forum/#!forum/bazel-discuss) or
 [GitHub](https://github.com/bazelbuild/bazel).
-
-*By [Kristina Chodorow](https://www.kchodorow.com)*

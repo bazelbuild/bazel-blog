@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Preliminary sandboxfs support and performance results
+authors:
+  - jmmv
 ---
 
 [Back in August of 2017]({% post_url 2017-08-25-introducing-sandboxfs %}), we
@@ -165,5 +167,3 @@ sandboxing as a blocker for enabling it. We are very interested in knowing what
 kind of impact this has on your builds so that we can assess how important it is
 to continue working on this. Please give the instructions above a try and let us
 know how it goes! And also, let us know if you want to contribute!
-
-*By [Julio Merino](http://julio.meroh.net/)*

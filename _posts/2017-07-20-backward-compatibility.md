@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Backward compatibility
+authors:
+  - laurentlb
 ---
 
 Bazel is in Beta and we are working hard towards Bazel 1.0 (see the
@@ -62,5 +64,3 @@ is unclear, please contact us and we will help you.
 To learn more about the changes we are doing, see the
 [backward compatibility page](https://docs.bazel.build/versions/master/skylark/backward-compatibility.html).
 
-
-*By [Laurent Le Brun](https://github.com/laurentlb)*

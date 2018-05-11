@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: "Bazel on Windows -- a year in retrospect"
+authors:
+  - laszlocsomor
 ---
 
 Bazel on Windows is no longer experimental. We think Bazel on Windows is now
@@ -57,5 +59,3 @@ platforms. We aim to maximize portability between host systems, so you get
 the same fast, correct builds on your developer OS of choice. If you run into
 any problems, please don't hesitate to
 [file a bug](https://github.com/bazelbuild/bazel/issues/new).
-
-*By [László Csomor](https://github.com/laszlocsomor)*

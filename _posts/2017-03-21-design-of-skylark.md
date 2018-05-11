@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: A glimpse of the design of Skylark
+authors:
+  - laurentlb
 ---
 
 This blog post describes the design of Skylark, the language used to specify
@@ -92,5 +94,3 @@ read-only, i.e. you can iterate on an array, but not modify its elements. You
 may create a copy and modify it, though.
 
 In a future blog post, we'll take a look at the other features of the language.
-
-*By [Laurent Le Brun](https://github.com/laurentlb)*

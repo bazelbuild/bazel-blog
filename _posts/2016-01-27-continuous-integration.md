@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Using Bazel in a continuous integration system
+authors:
+  - damienmg
 ---
 
 When doing continuous integration, you do not want your build to fail because a
@@ -151,5 +153,3 @@ that summarizes the results of your tests. This test runner can be activated
 with the `--nolegacy_bazel_java_test` flag (this will soon be the default).
 Other tests also get [a basic XML output file](https://github.com/bazelbuild/bazel/blob/master/tools/test/test-setup.sh#L54)
 that contains only the result of the test (success or failure).
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

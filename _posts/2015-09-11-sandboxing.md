@@ -1,6 +1,9 @@
 ---
 layout: posts
 title: About Sandboxing
+authors:
+  - ulfjack
+  - philwo
 ---
 
 *This post was updated on 2017-12-19 to remove outdated information that caused
@@ -59,5 +62,3 @@ so far.
 
 On Windows, we currently do not implement sandboxing.
 
-
-*By [Ulf Adams](https://github.com/ulfjack)* and [Philipp Wollermann](https://github.com/philwo)

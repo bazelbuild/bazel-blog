@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Tell us about your Bazel project!
+authors:
+  - kchodorow
 ---
 
 We're setting up a list of projects using Bazel. If you'd like us
@@ -16,5 +18,3 @@ the following information:
 
 If you don't want your project publicly listed, we'd still love to hear about
 it. Please [email us](mailto:bazel-core@googlegroups.com) directly and let us know.
-
-*By [Kristina Chodorow](https://www.kchodorow.com/)*

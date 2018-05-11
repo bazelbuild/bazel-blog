@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Bazel on Windows
+authors:
+  - dslomov
 ---
 
 We first announced experimental Windows support in 0.3.0. Since then, we've
@@ -28,5 +30,3 @@ Now, we need your help! Please try building your Bazel project on Windows,
 and let us know what works or what doesn't work yet, and what we can do better.
 
 We are looking forward to what you build (on Windows)!
-
-*By [Dmitry Lomov](https://github.com/dslomov)*
