@@ -10,7 +10,7 @@ For instance, you could de-activate [Error Prone](http://errorprone.info)'s
 [DepAnn](http://errorprone.info/bugpattern/DepAnn) checks by adding the
 `--javacopt="-Xep:DepAnn:OFF"` flag in your `~/.bazelrc`. However, `~/.bazelrc`
 is not really convenient as it a user file, not shared with
-your team. You could instead add a rc file at `tools/bazel.rc` in your workspace
+your team. You could instead add an rc file at `tools/bazel.rc` in your workspace
 with the content of the bazelrc file you want to share with your team:
 
 ```
