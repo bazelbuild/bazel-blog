@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: We are now bazel.build!
+authors:
+  - damienmg
 ---
 
 As you might have seen either in our
@@ -13,5 +15,3 @@ what Bazel is for: building!
 
 Our old domain, [bazel.io](https://bazel.io), will redirect to
 [bazel.build](https://bazel.build) for the forseenable future.
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: A new logo and homepage for Bazel
+authors:
+  - steren
 ---
 
 We are glad to unveil a new logo for Bazel:
@@ -28,5 +30,3 @@ By the way, feel free to suggest edits to our documentation, it is as easy as cl
 ![Edit button on Bazel docs](/assets/edit-button.png)
 
 We hope you like this new visual identity.
-
-*By [Steren Giannini](https://github.com/steren)*

@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Building deterministic Docker images with Bazel
+authors:
+  - damienmg
 ---
 
 [Docker](https://www.docker.com) images are great to automate your deployment
@@ -65,5 +67,3 @@ to fetch the various base image for the web and we are working on providing a
 
 You can learn more about this docker support
 [here](https://github.com/bazelbuild/docker_rules/blob/master/README.md).
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Strict Java Deps and `unused_deps`
+authors:
+  - cgrushko
 ---
 
 This blog post describes how Bazel implements "strict deps" for Java compilations ("SJD"), and how it is leveraged in [`unused_deps`](https://github.com/bazelbuild/buildtools/blob/799e530642bac55de7e76728fa0c3161484899f6/unused_deps/unused_deps.go), a tool to remove unused dependencies. It is my hope this knowledge will help write rules for similar JVM-based languages such as Scala and Kotlin.
@@ -53,5 +55,3 @@ This approach has the advantage that violations are easy to fix - Bazel tells th
 * Bazel passes all jars from the **transitive** dependencies of a rule.
 * Bazel notifies the SJD compiler plugin which jars are indirect.
 * During compilation, the compiler plugin reports any symbol mentioned in the Java file that is loaded from an indirect jar.
-
-*By [Carmi Grushko](https://github.com/cgrushko)*

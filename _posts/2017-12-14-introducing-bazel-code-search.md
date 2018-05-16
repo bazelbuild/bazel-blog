@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Introducing Bazel Code Search
+authors:
+  - russwolf
 ---
 
 We are always looking for new ways to improve the experience of contributing to Bazel and helping users understanding how Bazel works. Today, we’re excited to share a preview of [Bazel Code Search](https://source.bazel.build), a major upgrade to Bazel’s code search site. This new site features a [refreshed user interface for code browsing](#browsing-through-bazel-repositories) and cross-repository [semantic search](#searching-the-bazel-codebase) with regular expression support, and a [navigable semantic index](#understanding-the-bazel-codebase-using-cross-references) of all definitions and references for the Bazel codebase. We’ve also updated the “Contribute” page on the Bazel website with [documentation for this tool](https://bazel.build/browse-and-search-user-guide.html). 
@@ -73,5 +75,3 @@ From the view of the repository, you can browse through folders and files in the
 We hope you’ll try [Bazel Code Search](https://source.bazel.build) and provide feedback through the “**!**” button in the top right of any page on the Bazel Code Search site. We would love to hear whether this tool helps you work with Bazel and what else you’d like to see Bazel Code Search offer. 
 
 Keep in mind that this project is still experimental and is subject to change.
-
-*By [Russell Wolf](https://github.com/russwolf)*

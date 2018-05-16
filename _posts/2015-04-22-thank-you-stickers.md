@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Stickers for Contributors
+authors:
+  - kchodorow
 ---
 
 <img src="/assets/bazel-stickers.jpg" alt="Bazel stickers" class="img-responsive">
@@ -18,5 +20,3 @@ Let us know if you've done any of the following and we'll send you stickers:
 * Are in the process of doing any of the things above.
 
 Thanks for your contributions, we really appreciate them.
-
-*By [Kristina Chodorow](https://www.kchodorow.com)*

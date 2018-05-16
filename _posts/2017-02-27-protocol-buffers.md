@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Protocol Buffers in Bazel
+authors:
+  - cgrushko
 ---
 
 Bazel currently provides built-in rules for Java, JavaLite and C++.
@@ -206,5 +208,3 @@ directly mentioned by a `proto_library` rule; the collection of transitive
 descriptor sets is available through the `proto.transitive_descriptor_sets`
 Skylark provider. See [documentation in
 ProtoSourcesProvider](https://github.com/bazelbuild/bazel/blob/5dbb23ba44ec0037cf0944b17716ea3f08a69c27/src/main/java/com/google/devtools/build/lib/rules/proto/ProtoSourcesProvider.java#L121).
-
-*By [Carmi Grushko](https://github.com/cgrushko)*

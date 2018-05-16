@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Invalidation of repository rules
+authors:
+  - damienmg
 ---
 
 [Remote repositories]({{ site.docs_site_url }}/external.html) are the way to use dependencies from
@@ -86,5 +88,3 @@ the repositories.
 Therefore, if you think you should re-run if an environment variable changes (like
 for auto-configuration rules), you should declare those dependencies, or your user
 will have to do `bazel clean --expunge` each time they change their environment.
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Google Summer of Code 2017
+authors:
+  - laurentlb
 ---
 
 Thank you very much to everyone who applied for [Google Summer of
@@ -20,5 +22,3 @@ proposal](https://docs.google.com/document/d/16FiwRfkwNlcaAysMChphr07WCKuvO6_6G9
 and follow [Harmandeep's blog](https://harmanio.wordpress.com/).
 
 A big thank you to everyone who applied!
-
-*By [Laurent Le Brun](https://github.com/laurentlb)*

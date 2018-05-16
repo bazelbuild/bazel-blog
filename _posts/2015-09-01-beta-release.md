@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Bazel Builder Blasts Beyond Beta Barrier
+authors:
+  - jeffcox
 ---
 
 _Reposted from [Google's Open Source blog](http://google-opensource.blogspot.com/2015/09/building-build-system-bazel-reaches-beta.html)._
@@ -45,5 +47,3 @@ and follow our [blog](http://bazel.build/blog) or
 free to contact us with questions or feedback on the
 [mailing list](https://groups.google.com/forum/#!forum/bazel-discuss) or IRC
 (#bazel on freenode).
-
-*By Jeff Cox, Bazel team*

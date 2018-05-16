@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: IntelliJ and Android Studio support
+authors:
+  - brendandouglas
 ---
 
 We've recently open-sourced Bazel plugins for
@@ -28,5 +30,3 @@ or build directly from [source](https://github.com/bazelbuild/intellij).
 Detailed docs are available [here](https://ij.bazel.build).
 
 The plugins are currently Linux-only, with plans for Mac support in the future.
-
-*By [Brendan Douglas](https://github.com/brendandouglas)*

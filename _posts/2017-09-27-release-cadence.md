@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: The New World of Bazel Releases
+authors:
+  - dslomov
 ---
 
 Bazel has been open-sourced exactly [2.5 years ago](https://blog.bazel.build/2015/03/27/Hello-World.html). It continues to be quite a journey, and we are very happy we have acquired some fellow travellers: [many projects, organizations and companies that we all know and love](https://sites.google.com/corp/bazel.build/conference2017/agenda) rely on Bazel every day.
@@ -27,5 +29,3 @@ As a result of this change, we now issue one minor release per month.
 
 Our [roadmap](https://bazel.build/roadmap.html) reflects our vision for Bazel 1.0 and beyond. We will
 annotate features on the roadmap with the release versions as those features get shipped.
-
-_By [Dmitry Lomov](https://github.com/dslomov)_
