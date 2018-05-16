@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Introducing Bazel Cquery
+authors:
+  - juliexxia
 ---
 
 (If you’re already familiar with bazel’s `query` command, skip ahead to the section titled ‘Introducing Cquery’.)
