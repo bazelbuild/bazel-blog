@@ -14,6 +14,9 @@ Begin your post with the following lines:
 ---
 layout: posts
 title: <whatever>
+authors:
+  - username1  # See _config.yml for the list of authors.
+  - username2
 ---
 ```
 
