@@ -17,22 +17,20 @@ The query commands also support a set of flag-based options that govern query be
 ## Introducing `bazel cquery`
 Bazel has long supported the `query` command. We’re excited to announce a second* command, `cquery`!
 
-What’s the difference? `query` doesn’t understand build flags and returns all possible answers to a given query expression. `cquery` (configurable query) runs at a later point in the build process, after flag evaluation and [configurable attribute](https://docs.bazel.build/versions/master/be/common-definitions.html#configurable-attributes) resolution. Thus, it can understand [build options](https://docs.bazel.build/versions/master/command-line-reference.html#command-line-reference) and give the answer to a specific Bazel invocation as dictated by its set of flags. Since it runs at a later point, ‘cquery’ is by nature slower than ‘query’.  
+What’s the difference? `query` doesn’t understand build flags and returns all possible answers to a given query expression. `cquery` (configurable query) runs at a later point in the build process, after flag evaluation and [configurable attribute](https://docs.bazel.build/versions/master/be/common-definitions.html#configurable-attributes) resolution. Thus, it can understand [build options](https://docs.bazel.build/versions/master/command-line-reference.html#command-line-reference) and give the answer to a specific Bazel invocation as dictated by its set of flags. Since it runs at a later point, `cquery` is by nature slower than `query`.  
 
 `cquery` has yet to reach feature parity with `query`, but as we develop it further, `cquery` will also be able to expose information to which `query` does not have access. See the comparison below for what’s currently supported. 
 
-|                      | `query`                                                                           |`cquery`                                | both                                                                            |
-|----------------------|-----------------------------------------------------------------------------------|----------------------------------------|---------------------------------------------------------------------------------|
-| Performance          | faster, less acurate                                                              | slower, accurate                       |                                                                                 |
-| Functions            | siblings, buildfiles, tests                                                       | config                                 | allpaths, attrs, dep, filter, kind, labels, loadfiles, rdeps, somepath, visible |
-| Output Formats       | build, label,  label_kind, minrank, maxrank, location, package, graph, xml, proto | label_and_configuration, transitions** |                                                                                 |
-| Options              | query options                                                                     | cquery options, build options          | common query options                                                            |
+|                      | `query`                                                                    |`cquery`                              | both                                                                            |
+|----------------------|----------------------------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------|
+| Performance          | faster, less acurate                                                       | slower, accurate                     |                                                                                 |
+| Functions            | siblings, buildfiles, tests                                                | config                               | allpaths, attrs, dep, filter, kind, labels, loadfiles, rdeps, somepath, visible |
+| Output Formats       | build, label,  label_kind, minrank, maxrank, location, package, graph, xml | label_and_configuration, transitions | proto                                                                           |
+| Options              | query options                                                              | cquery options, build options        | common query options                                                            |
 
 So, if your priority is speed and over-approximation of results isn’t a problem, `query` is your engine. If your priority is results that match a specific bazel invocation’s flags and fancy output formats aren’t too important to you, then `cquery` is the better choice.
 
-\* Bazel also supports the ‘Sky Query’ engine which automatically kicks in with a specific set of options used with ‘query’. It supports a few extra functions and in some circumstances may be faster and less memory-intensive than ‘query’
-
-\*\* proto output format coming soon!
+\* Bazel also supports the `Sky Query` engine which automatically kicks in with a specific set of options used with `query`. It supports a few extra functions and in some circumstances may be faster and less memory-intensive than `query`
 
 ## Some Motivating Examples
 
@@ -51,8 +49,8 @@ $ bazel query "somepath(//foo:foo, third_party/zlib:zlibonly)"
 
 The [Bazel query how-to](https://docs.bazel.build/versions/master/query-how-to.html) contains many common examples of how `query` is used. Many of the examples can also apply to `cquery`. In the following example, we see where `cquery`’s strength lies (properly resolving a [select](https://docs.bazel.build/versions/master/be/functions.html#select) statement).
 
-```
-$ cat > tree/BUILD <<EOF
+```python
+# tree/BUILD
 sh_library(
     name = "ash",
     deps = select({
@@ -72,17 +70,19 @@ config_setting(
     name = "americana",
     values = {"define": "species=americana"},
 )
+```
 
+```
 # Traditional query
 $ bazel query "deps(//tree:ash)" --define species=excelsior
-...error because query does not understand --define…
+...error because query does not understand --define...
 
 $ bazel query "deps(//tree:ash)"
 //tree:ash
 //tree:white-ash
 //tree:manna-ash
 //tree:common-ash
-…
+...
 
 # cquery
 $ bazel cquery "deps(//tree:ash)" --define species=excelsior
@@ -90,5 +90,3 @@ $ bazel cquery "deps(//tree:ash)" --define species=excelsior
 //tree:manna-ash (hash-of-config)
 ...
 ```
-
-We are constantly working on improving `cquery`! If you have questions or ideas for improvement, contact juliexxia@google.com.
