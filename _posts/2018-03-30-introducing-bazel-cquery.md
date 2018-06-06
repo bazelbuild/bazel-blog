@@ -90,5 +90,3 @@ $ bazel cquery "deps(//tree:ash)" --define species=excelsior
 //tree:manna-ash (hash-of-config)
 ...
 ```
-
-We are constantly working on improving `cquery`! If you have questions or ideas for improvement, contact juliexxia@google.com.
