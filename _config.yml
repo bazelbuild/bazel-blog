@@ -28,6 +28,10 @@ defaults:
       enable_comments: true
 
 authors:
+  aehlig:
+    - Klaus Aehlig
+    - https://github.com/aehlig
+
   asteinb:
     - Alex Steinberg
     - https://github.com/asteinb
