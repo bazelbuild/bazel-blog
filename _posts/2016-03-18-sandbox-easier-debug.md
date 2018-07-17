@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Easier Debugging of Sandbox Failures
+authors:
+  - hermione521
 ---
 
 We have often heard that debugging failed execution due to issues with the sandbox is difficult and requires knowledge of the sandboxing code of Bazel to actually understand what’s happening. With [these changes](https://github.com/bazelbuild/bazel/commit/40ee9de052e3bb8cf5a59eeff3936148e1f55e69), we hope that you will be able to solve common issues easier on your own and make debugging easier.
@@ -56,5 +58,3 @@ There will be the same error message about not finding your compiler, but after 
 For this example, we run our compiler in the sandbox again manually and the error message shows `No command ‘some-compiler’ found` - looking around, you notice that the compiler binary is missing. This means it was not part of the action inputs, because Bazel always mounts all action inputs into the sandbox - so you check out your Skylark rule and notice that this is indeed the case. Adding your compiler to the input files in your Skylark rule should thus fix the error.
 
 Next time you run bazel build, it should mount your compiler into the sandbox and thus find it correctly. If you get a different error, you could repeat the steps above.
-
-*By [Yue Gan](https://github.com/hermione521)*

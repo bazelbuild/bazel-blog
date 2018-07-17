@@ -1,6 +1,9 @@
 ---
 layout: posts
 title: Thank you for BazelCon 2017
+authors:
+  - helenalt
+  - davidstanke
 ---
 
 We are truly thankful to our community for making our first annual [Bazel Conference](https://sites.google.com/corp/bazel.build/conference2017) a success! Check out all the videos of all the talks from [**BazelCon 2017 on YouTube**](https://www.youtube.com/playlist?list=PLxNYxgaZ8RseY0KmkXQSt0StE71E7yizG).
@@ -47,7 +50,3 @@ What you can do next:
 * Join the discussion on bazel-discuss@googlegroups.com.
 
 We look forward to working with you and growing our Bazel user community in 2018!
-
-
-*By [Helen Altshuler](https://github.com/helenalt) and [David Stanke](https://github.com/davidstanke)*
-

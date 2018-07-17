@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Skylark and Java rules interoperability
+authors:
+  - iirina
 ---
 
 As of Bazel 0.4.4, Java compilation is possible from a Skylark rule. This
@@ -186,5 +188,3 @@ Soon there will be support for use cases like this. Stay tuned!
 
 If you are interested in tracking the progress on Bazel Java sandwich you can
 subscribe to [this Github issue](https://github.com/bazelbuild/bazel/issues/2614).
-
-*By [Irina Iancu](https://github.com/iirina), on behalf of the Bazel Java team*

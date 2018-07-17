@@ -1,6 +1,8 @@
 ---  
 layout: posts
 title: "Migration Help: --config parsing order"
+authors:
+  - cvcal
 ---  
 
 [`--config`](https://docs.bazel.build/versions/master/user-manual.html#config) expansion order is changing, in order to make it better align with user expectations, and to make layering of configs work as intended. To prepare for the change, please test your build with startup option `--expand_configs_in_place`.
@@ -307,5 +309,3 @@ Unfortunately, it gets worse, especially if you have the same config for differe
 
 To understand the order of your configs specifically, run Bazel as you normally would (remove targets for speed) with the option `--announce_rc`. The order in which the config expansions are output to the terminal is the order in which they are currently interpreted (again, between rc and command line). 
 
-
-*By [Chloe Calvarin](https://github.com/cvcal)*

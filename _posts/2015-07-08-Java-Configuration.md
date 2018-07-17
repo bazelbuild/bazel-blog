@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Configuring your Java builds
+authors:
+  - damienmg
 ---
 
 Let say that you want to build for Java 8 and errorprone checks off but
@@ -41,5 +43,3 @@ build --java_toolchain=//package:my_toolchain
 In the future, toolchain rules should be the configuration points for all
 the languages but it is a long road. We also want to make it easier to
 rebind the toolchain using the `bind` rule in the WORKSPACE file.
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

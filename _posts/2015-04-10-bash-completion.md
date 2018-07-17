@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Support for Bash Shell Completion
+authors:
+  - damienmg
 ---
 
 We just pushed a support for [shell completion in the Bourne-Again
@@ -49,5 +51,3 @@ of two parts:
 Let us know if you have any questions or issues on the
 [mailing list](https://groups.google.com/forum/#!forum/bazel-discuss) or
 [GitHub](https://github.com/bazelbuild/bazel).
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

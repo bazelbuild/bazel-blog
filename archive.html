@@ -1,0 +1,40 @@
+---
+layout: blog
+enable_comments: false
+---
+
+<h1>Post Archive</h1>
+
+<div>
+  <!-- Iterate through the posts -->
+  {% for post in site.posts %}
+    <!-- Get the year of the current post -->
+    {% assign yearOfPost = post.date | date: "%Y" %}
+
+    <!-- Check if this is the first iteration or the post's year doesn't match the current year section -->
+    {% if yearOfPost != currentYear %}
+
+      <!-- Close the list -->
+      {% unless forloop.first %}</ul>{% endunless %}
+
+      <!-- Create the year header -->
+      <h1>{{ yearOfPost }}</h1>
+      <ul>
+
+      <!-- Assign the current year section -->
+      {% assign currentYear = yearOfPost %}
+    {% endif %}
+
+    <!-- Create the list entry for the post -->
+    <li>
+      <a href="{{ post.url }}">
+        <span>{{ post.date | date: "%b %-d" }}</span> - {{ post.title }}
+      </a>
+    </li>
+
+    <!-- Close the list if it's the last post -->
+    {% if forloop.last %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+</div>

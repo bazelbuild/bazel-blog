@@ -1,9 +1,16 @@
 destination: production
+
 markdown: redcarpet
+redcarpet:
+  extensions: ["tables"]
+
 paginate: 10
+
 highlighter: pygments
+
 sass:
   sass_dir: _sass
+
 gems: [jekyll-paginate]
 
 main_site_url: https://bazel.build
@@ -11,3 +18,104 @@ blog_site_url: https://blog.bazel.build
 docs_site_url: https://docs.bazel.build
 
 assets_url: https://bazel.build
+
+defaults:
+  - scope:
+      type: posts
+      path: '_posts'
+    values:
+      layout: posts
+      enable_comments: true
+
+authors:
+  aehlig:
+    - Klaus Aehlig
+    - https://github.com/aehlig
+
+  asteinb:
+    - Alex Steinberg
+    - https://github.com/asteinb
+
+  brendandouglas:
+    - Brendan Douglas
+    - https://github.com/brendandouglas
+
+  cgrushko:
+    - Carmi Grushko
+    - https://github.com/cgrushko
+
+  cvcal:
+    - Chloe Calvarin
+    - https://github.com/cvcal
+
+  damienmg:
+    - Damien Martin-Guillerez
+    - https://github.com/damienmg
+
+  davidstanke:
+    - David Stanke
+    - https://github.com/davidstanke
+
+  dslomov:
+    - Dmitry Lomov
+    - https://github.com/dslomov
+
+  helenalt:
+    - Helen Altshuler
+    - https://github.com/helenalt
+
+  hermione521:
+    - Yue Gan
+    - https://github.com/hermione521
+
+  iirina:
+    - Irina Iancu
+    - https://github.com/iirina
+
+  jeffcox:
+    - Jeff Cox
+    - https://bazel.build/
+
+  jin:
+    - Jingwen Chen
+    - https://github.com/jin
+
+  jmmv:
+    - Julio Merino
+    - http://julio.meroh.net/
+
+  juliexxia:
+    - Julie Xia
+    - https://github.com/juliexxia
+
+  kchodorow:
+    - Kristina Chodorow
+    - https://www.kchodorow.com/
+
+  kevin1e100:
+    - Kevin Bierhoff
+    - https://github.com/kevin1e100
+
+  laszlocsomor:
+    - László Csomor
+    - https://github.com/laszlocsomor
+
+  laurentlb:
+    - Laurent Le Brun
+    - https://github.com/laurentlb
+
+  philwo:
+    - Philipp Wollermann
+    - https://github.com/philwo
+
+  russwolf:
+    - Russell Wolf
+    - https://github.com/russwolf
+
+  steren:
+    - Steren Giannini
+    - https://github.com/steren
+
+  ulfjack:
+    - Ulf Adams
+    - https://github.com/ulfjack

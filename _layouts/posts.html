@@ -22,7 +22,7 @@ enable_comments: true
           <div class="blog-post">
             <h1 class="blog-post-title">{{ page.title }}</h1>
             <div class="blog-post-meta">
-              <span class="text-muted">{{ page.date | date_to_long_string }}</a>
+              {% include byline.html authors=page.authors date=page.date %}
             </div>
             <div class="blog-post-content">
               {{ content }}

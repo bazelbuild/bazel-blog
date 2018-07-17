@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Checking your Java errors with Error Prone.
+authors:
+  - damienmg
 ---
 
 We recently open-sourced our support for [Error Prone](http://errorprone.info).
@@ -15,5 +17,3 @@ You can also tune the checks error-prone will perform by using the
 
 See the [documentation of Error Prone](http://errorprone.info/docs/installation) for more
 on Error Prone.
-
-*By [Damien Martin-Guillerez](https://github.com/damienmg)*

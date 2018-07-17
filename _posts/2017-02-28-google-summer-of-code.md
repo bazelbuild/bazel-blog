@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: A Google Summer of Code with Bazel
+authors:
+  - laurentlb
 ---
 
 I'm happy to announce that Bazel has been accepted as
@@ -26,6 +28,4 @@ most frequent questions.
 
 If you have any question, please contact us on bazel-core@googlegroups.com
 
-I'm looking forward to hearing from you,
-
-*By Laurent Le Brun, on behalf of the Bazel mentors.*
+I'm looking forward to hearing from you.

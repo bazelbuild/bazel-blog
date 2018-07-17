@@ -1,0 +1,30 @@
+{% comment %}
+This include generates the byline of a post, which includes the post's date
+and the list of authors. The input parameters "date" and "authors" must be
+populated with the post's corresponding Front Matter fields.
+{% endcomment %}
+
+By
+{% assign last_pos=include.authors.size | minus: 1 %}
+{% assign and_pos=include.authors.size | minus: 2 %}
+{% for i in (0..last_pos) %}
+  {% assign author_id=include.authors[i] %}
+  {% assign author=site.authors[author_id] %}
+
+  {% if author %}
+    <a href="{{ author[1] }}">{{ author[0] }}</a>
+  {% else %}
+    {% comment %}
+    We found an invalid author. There is not much we can do other than just
+    dump the raw text. Do so and hope the author notices.
+    {% endcomment %}
+    {{ author_id }}
+  {% endif %}
+  {% if i == and_pos %}
+    and
+  {% elsif i < and_pos %}
+    ,
+  {% endif %}
+{% endfor %}
+
+on <span class="text-muted">{{ include.date | date_to_long_string }}</span>

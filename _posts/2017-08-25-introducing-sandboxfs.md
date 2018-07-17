@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: Introducing sandboxfs
+authors:
+  - jmmv
 ---
 
 **sandboxfs** is a new project to improve the way sandboxing works in Bazel
@@ -117,5 +119,3 @@ Enjoy!
 Special credits go to [Pallav Agarwal](https://github.com/pallavagarwal07),
 whom we had the pleasure of hosting over a summer internship in the Google
 NYC office and who wrote the initial version of sandboxfs.
-
-*By [Julio Merino](http://julio.meroh.net/)*
