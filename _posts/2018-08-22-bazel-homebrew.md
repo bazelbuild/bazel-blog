@@ -17,7 +17,17 @@ policy is not compatible with embedding a JDK and so we have made the decision
 to move out of homebrew core and instead provide our very
 [own homebrew tap](https://github.com/bazelbuild/homebrew-tap).
 
-You can make homebrew use our tap by (one time) running the below commands
+You can make homebrew use our tap by (one time) running the below commands.
+
+If you already installed bazel using homebrew core formula, you must first 
+uninstall.
+(Thanks [Jason Gavris](https://github.com/jgavris) for pointing this out!)
+
+```bash
+$ brew uninstall bazel
+```
+
+Then run the following commands to install and fetch from the tap
 
 ```bash
 $ brew tap bazelbuild/tap
@@ -35,7 +45,3 @@ and upgrade to a newer version via the upgrade command
 ```bash
 $ brew upgrade bazel
 ```
-
-Please note that if you have installed Bazel from the homebrew core formula in
-the past you will have to uninstall it first by running `brew uninstall bazel`.
-Thanks [Jason Gavris](https://github.com/jgavris) for pointing this out!
