@@ -39,5 +39,3 @@ and upgrade to a newer version via the upgrade command
 ```bash
 $ brew upgrade bazel
 ```
-
-
