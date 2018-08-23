@@ -19,6 +19,10 @@ to move out of homebrew core and instead provide our very
 
 You can make homebrew use our tap by (one time) running the below commands
 
+_Please note that if you have installed Bazel from the homebrew core formula in
+the past you will have to uninstall it first by running `brew uninstall bazel`.
+(Thanks [Jason Gavris](https://github.com/jgavris) for pointing this out!)_
+
 ```bash
 $ brew tap bazelbuild/tap
 $ brew tap-pin bazelbuild/tap
@@ -36,6 +40,4 @@ and upgrade to a newer version via the upgrade command
 $ brew upgrade bazel
 ```
 
-Please note that if you have installed Bazel from the homebrew core formula in
-the past you will have to uninstall it first by running `brew uninstall bazel`.
-Thanks [Jason Gavris](https://github.com/jgavris) for pointing this out!
+
