@@ -19,13 +19,14 @@ docs_site_url: https://docs.bazel.build
 
 assets_url: https://bazel.build
 
+enable_comments: false # disqus comments disabled because they're flaky
+
 defaults:
   - scope:
       type: posts
       path: '_posts'
     values:
       layout: posts
-      enable_comments: true
 
 authors:
   aehlig:
