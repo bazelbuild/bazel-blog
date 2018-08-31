@@ -25,7 +25,7 @@ defaults:
       path: '_posts'
     values:
       layout: posts
-      enable_comments: true
+      enable_comments: false
 
 authors:
   aehlig:
