@@ -25,7 +25,7 @@ defaults:
       path: '_posts'
     values:
       layout: posts
-      enable_comments: false
+      enable_comments: false # disqus comments disabled because they're flaky
 
 authors:
   aehlig:

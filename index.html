@@ -31,17 +31,17 @@ title: Bazel Blog
         (about {{ minutes }} minutes)
         {% endif %}
       </a>
-	  {% comment %} /* disqus disabled b/c it's flaky (and we're not sure if it's useful) */
+	  {% if page.enable_comments %} 
       &middot;
       <a href="{{ post.url }}#disqus_thread">
         <span class="disqus-comment-count"
               data-disqus-url="{{ post.url | prepend: site.blog_site_url }}">Comments</span>
       </a>
-	  {% endcomment %}
+	  {% endif %}
     </span>
   </div>
 </div>
 
 {% endfor %}
 
-{% comment %}<script id="dsq-count-scr" src="//googlebazel.disqus.com/count.js" async></script>{% endcomment %}
+{% if page.enable_comments %}<script id="dsq-count-scr" src="//googlebazel.disqus.com/count.js" async></script>{% endif %}
