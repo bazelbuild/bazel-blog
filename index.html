@@ -31,7 +31,7 @@ title: Bazel Blog
         (about {{ minutes }} minutes)
         {% endif %}
       </a>
-	  {% if page.enable_comments %} 
+	  {% if site.enable_comments %} 
       &middot;
       <a href="{{ post.url }}#disqus_thread">
         <span class="disqus-comment-count"
@@ -44,4 +44,4 @@ title: Bazel Blog
 
 {% endfor %}
 
-{% if page.enable_comments %}<script id="dsq-count-scr" src="//googlebazel.disqus.com/count.js" async></script>{% endif %}
+{% if site.enable_comments %}<script id="dsq-count-scr" src="//googlebazel.disqus.com/count.js" async></script>{% endif %}
