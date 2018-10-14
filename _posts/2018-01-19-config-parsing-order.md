@@ -11,7 +11,7 @@ Please test this change with Bazel 0.10, triggered by the startup option `--expa
 
 ## Background: bazelrc & --config 
 
-[The Bazel User Manual](https://docs.bazel.build/versions/master/user-manual.html#bazelrc) contains the official documentation for bazelrcs and will not be repeated here.   
+[The Bazel User Manual](https://docs.bazel.build/versions/master/guide.html#bazelrc) contains the official documentation for bazelrcs and will not be repeated here.   
 A Bazel build command line generally looks something like this:
 
     bazel <startup options> build <command options> //some/targets
