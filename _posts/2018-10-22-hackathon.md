@@ -13,6 +13,8 @@ Engineers from Bloomberg, Codethink, Dropbox, Etsy, Google, Uber, VMware and mor
 
 We look forward to seeing you at next year’s BazelCon!
 
+<img src="/assets/bazel-hackathon.jpg" alt="Bazel Hackathon in progress" class="img-responsive">
+
 ## What was Hacked On?
 
 Below is a sample of just a few of the issues that were worked on during the Hackathon.
