@@ -9,7 +9,7 @@ The day after this year’s [BazelCon](https://conf.bazel.build/2018) at Google 
 
 The event was an opportunity for engineers to meet face-to-face with fellow open source collaborators (many of whom had only ever previously communicated via email or GitHub) to hack on open issues, build enhancements and simply discuss their ideas in an informal and relaxed setting.
 
-Engineers from Bloomberg, Codethink, Dropbox, Etsy, Google, Uber, VMware and more collaborated on Bazel enhancements and bugfixes, as well as remote execution client and server implementations (e.g. [BuildFarm](https://github.com/bazelbuild/bazel-buildfarm), [BuildGrid](https://gitlab.com/BuildGrid/buildgrid) and [recc](https://gitlab.com/bloomberg/recc)). Ideas were exchanged, bugs were squashed and documentation was clarified. Below is a selection of just some of the things that were worked on during the hackathon.
+Engineers from Bloomberg, Codethink, Dropbox, Etsy, Google, Uber, VMware and more collaborated on Bazel enhancements and bugfixes, as well as remote execution client and server implementations (Such as [BuildFarm](https://github.com/bazelbuild/bazel-buildfarm), [BuildGrid](https://gitlab.com/BuildGrid/buildgrid) and [recc](https://gitlab.com/bloomberg/recc)). Ideas were exchanged, bugs were squashed and documentation was clarified. Below is a selection of just some of the things that were worked on during the hackathon.
 
 We look forward to seeing you at next year’s BazelCon!
 
@@ -19,7 +19,7 @@ Below is a sample of just a few of the issues that were worked on during the Hac
 
 After the talk at BazelCon by Two Sigma, support was added into [BuildBox](https://gitlab.com/BuildStream/buildbox/merge_requests/9) and recc for reading extended attributes for digests from the filesystem. This can provide significant performance improvements for builds that frequently require the checksum of their inputs; instead of rereading the entire file and calculating the checksum each time, the filesystem can provide it on update using FUSE.
 
-Alongside the BuildGrid maintainers, Paul Cody Johnstone’s ([@pcj](https://github.com/pcj)) [BuildKube](https://groups.google.com/forum/#!topic/bazel-discuss/pPNIc9-liCE) was enhanced to support spinning up a cluster of BuildGrid and Buildbarn servers and workers in order to make it easier to get started with remote execution from Bazel using Kubernetes.
+Alongside the BuildGrid maintainers, Paul Cody Johnston’s ([@pcj](https://github.com/pcj)) [BuildKube](https://groups.google.com/forum/#!topic/bazel-discuss/pPNIc9-liCE) was enhanced to support spinning up a cluster of BuildGrid and Buildbarn servers and workers in order to make it easier to get started with remote execution from Bazel using Kubernetes.
 
 Progress was made on a long-outstanding [issue](https://github.com/bazelbuild/bazel/pull/5928) related to the git repository cache by [@unapiedra](https://github.com/unapiedra) and Klaus Aehlig ([@aehlig](https://github.com/aehlig)). The complexities of this thorny issue were much easier to clarify and work on face-to-face.
 
@@ -27,7 +27,7 @@ Progress was made on a long-outstanding [issue](https://github.com/bazelbuild/ba
 
 [BuildStream](https://gitlab.com/BuildStream/buildstream) was tested against Google’s new Remote Build Execution service, further demonstrating the potential of the protocol. This will add a fourth publically available open source RBE client alongside Bazel, Pants and recc.
 
-Gregg Donovan of Etsy was seamlessly able to update their production version of Bazel to 0.17.2 from 0.16.1. In addition, he got their Bazel builds working using Google’s new RBE service -- both build and test are running in the cloud!
+Gregg Donovan of Etsy was able to seamlessly update their production version of Bazel to 0.17.2 from 0.16.1. In addition, he got their Bazel builds working using Google’s new RBE service -- both build and test are running in the cloud!
 
 With help from Ulf Adams ([@ulfjack](https://github.com/ulfjack)) from the Bazel team, Uber’s George Gensure ([@werkt](http://www.github.com/werkt)) was able to have a [commit](https://github.com/bazelbuild/bazel/pull/6365/files) to Bazel approved during the hackathon! This commit, which was applied the next day, improved the performance of Bazel when it comes to the creation of symlink trees.
 
