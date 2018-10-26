@@ -33,6 +33,6 @@ Gregg Donovan of Etsy was able to seamlessly update their production version of 
 
 With help from Ulf Adams ([@ulfjack](https://github.com/ulfjack)) from the Bazel team, Uber’s George Gensure ([@werkt](http://www.github.com/werkt)) was able to have a [commit](https://github.com/bazelbuild/bazel/pull/6365/files) to Bazel approved during the hackathon! This commit, which was applied the next day, improved the performance of Bazel when it comes to the creation of symlink trees.
 
-A fix was [filed](https://github.com/bazelbuild/bazel/pull/6360) against Bazel by Mark Zeren ([@mzeren-vmw](https://github.com/mzeren-vmw)) for a longstanding bug with C/C++ Toolcahins that was merged later by Ulf Adams ([@ulfjack](https://github.com/ulfjack)).
+A fix was [filed](https://github.com/bazelbuild/bazel/pull/6360) against Bazel by Mark Zeren ([@mzeren-vmw](https://github.com/mzeren-vmw)) for a longstanding bug with C/C++ Toolchains that was merged later by Ulf Adams ([@ulfjack](https://github.com/ulfjack)).
 
 Andreas Osowski ([@th0br0](https://github.com/th0br0)) made a [contribution](https://github.com/bazelbuild/bazel-buildfarm/pull/190) to BuildFarm to improve the validation of actions when requeueing in order to improve the stability of BuildFarm. It was merged during the hackathon by George Gensure ([@werkt](http://www.github.com/werkt)).
