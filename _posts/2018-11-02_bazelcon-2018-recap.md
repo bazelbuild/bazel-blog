@@ -53,5 +53,6 @@ Couldn't make it? Want to share with colleagues? Or simply want a replay? Here a
 
 ## Other ways to engage:
 * Join the [bazel-discuss mailing list](g.co/bazeldiscuss)
-* Chat with Bazel users and developers on Slack: [get an invite](https://bazel-slackin.herokuapp.com).
+* Chat with Bazel users and developers on Slack: [get an invite](https://bazel-slackin.herokuapp.com)
+* Follow Bazel on Twitter: [twitter.com/bazelbuild](https://twitter.com/bazelbuild)
 * Learn more about Bazel on [bazel.build](https://bazel.build)
