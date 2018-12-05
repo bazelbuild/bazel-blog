@@ -1,17 +1,17 @@
 ---
 layout: posts
-title: "Bazel - a multilanguage build system"
+title: "Bazel - a multi-language build system"
 authors:
   - laurentlb
 ---
 
 Part of [Bazel vision](https://docs.bazel.build/versions/master/bazel-overview.html)
-is to create a multilanguage build system: it should be possible to seamlessly
-use and mix multiple languages in a codebase and to orchestrate the builds and
-the tests with a single build tool. As a codebase gets bigger, this feature
+is to create a multi-language build system: it should be possible to seamlessly
+use and mix multiple languages in a codebase and to orchestrate builds and
+tests with a single build tool. As a codebase gets bigger, this feature
 becomes more and more important.
 
-When a user wants a build system to be multilanguage, they might mean:
+When a user wants a build system to be multi-language, they might mean:
 
 *   Is the build system extensible? In other words, can I add support for a new
     language, even if it doesn't have much adoption yet, or if it is internal?
@@ -44,7 +44,7 @@ https://docs.bazel.build/versions/master/be/overview.html#additional-rules), but
 we are working on a more principled process for recommendations - for example,
 we should recommend only rules that we have properly tested.
 
-It's hard to find an objective measure of the quality, but we can look at the
+It's hard to find an objective measure of quality, but we can look at the
 user base of each rule. Some of them are actively maintained and used in
 production. For example, companies like Lyft and LinkedIn rely on the Swift
 rules. C++ rules are widely used by projects and companies, such as
@@ -60,5 +60,5 @@ Bazel. Bazel can also build mobile applications, such as the
 [Tensorflow](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/android)
 for Android.
 
-This suggests that Bazel is a multilanguage build system and can be useful and
+This suggests that Bazel is a multi-language build system and can be useful and
 extensible beyond the few languages it originally supported.
