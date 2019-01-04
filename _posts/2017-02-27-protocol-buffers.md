@@ -35,6 +35,8 @@ The following satisfies these dependencies:
 
 > TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
+> **Update (January 2019)**: If you're using Bazel 0.21.0 or later, the minimum Protocol Buffer version required is [**3.6.1.2**](https://github.com/protocolbuffers/protobuf/releases/tag/v3.6.1.2). See this [pull request](https://github.com/protocolbuffers/protobuf/pull/4650) for more information. 
+
 ```python
 # proto_library, cc_proto_library, and java_proto_library rules implicitly
 # depend on @com_google_protobuf for protoc and proto runtimes.
