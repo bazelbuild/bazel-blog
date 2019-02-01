@@ -77,7 +77,7 @@ We expect the speedup to be more prominent as builds get larger, as seen in the 
 
 ## Future work and credits
 
-There still are some problems to be resolved, of course. The major one is that local workers do not support cancellations ([#614](https://github.com/bazelbuild/bazel/issues/614]), and this can result in a high build timing variance depending on how the actions are scheduled. Other minor issues include: an artificial delay before running actions locally ([#7327](https://github.com/bazelbuild/bazel/issues/7327)) and making sure remote caches are populated even when we cancel actions ([#7328](https://github.com/bazelbuild/bazel/issues/7328)).
+There still are some problems to be resolved, of course. The major one is that local workers do not support cancellations ([#614](https://github.com/bazelbuild/bazel/issues/614])), and this can result in a high build timing variance depending on how the actions are scheduled. Other minor issues include: an artificial delay before running actions locally ([#7327](https://github.com/bazelbuild/bazel/issues/7327)) and making sure remote caches are populated even when we cancel actions ([#7328](https://github.com/bazelbuild/bazel/issues/7328)).
 
 As a historical note, [@philwo](https://github.com/philwo/) originally implemented the dynamic spawn scheduler as a Google-internal module. The reason was simplicity because the code needed to directly interact with the Forge module. [@jin](https://github.com/jin/) later worked on generalizing the code to support both Forge and RBE and is who brought you this feature in Bazel 0.21. I, [@jmmv](https://julio.meroh.net/), am only the messenger and a performance tester.
 
