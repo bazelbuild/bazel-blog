@@ -47,7 +47,7 @@ we should recommend only rules that we have properly tested.
 It's hard to find an objective measure of quality, but we can look at the
 user base of each rule. Some of them are actively maintained and used in
 production. For example, companies like Lyft and LinkedIn rely on the Swift
-rules. C++ rules are widely used by comaponies and projects, such as
+rules. C++ rules are widely used by companies and projects, such as
 [Tensorflow](https://github.com/tensorflow/tensorflow).
 [Salesforce](https://www.youtube.com/watch?v=V8HayK90PI4) migrated to Bazel to
 build their Java codebase, Two Sigma uses Rust, while Square is experimenting
