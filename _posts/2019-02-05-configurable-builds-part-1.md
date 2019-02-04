@@ -26,7 +26,7 @@ $ bazel build //my:android_binary --android_sdk=@androidsdk//:sdk-28
 ```
 
 This post reviews Bazel's *configurability work*, which is an ongoing effort to
-to make these tasks simple, flexible, and powerful. This is a deeper dive into
+make these tasks simple, flexible, and powerful. This is a deeper dive into
 themes covered in Bazel's [configurability
 roadmap](https://bazel.build/roadmaps/configuration.html).
 
