@@ -32,15 +32,16 @@ roadmap](https://bazel.build/roadmaps/configuration.html).
 
 ## History
 
-Bazel's a
+Bazel is a
 [powerful](https://docs.bazel.build/versions/master/bazel-vision.html) build
-tool that's especially suited for large,
-[multi-language](/2018/12/05/multilanguage-build-system.html) builds. But it
-was born out of Google, which historically wrote code for homogeneous fleets of
+tool that's especially suited for large codebases with
+[multiple languages](/2018/12/05/multilanguage-build-system.html) builds. But it
+grew out of Google, which historically wrote code for fleets of identical
 Linux servers with little need for customization. What customization was needed
-was achieved with ad hoc flags and logic built
-[straight](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
-into the build tool.
+was achieved with
+[ad hoc flags and logic](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
+built straight into the tool.
+
 
 This is no longer true inside or outside of Google. Modern software targets
 phones, cloud, servers, desktops, [smart
@@ -93,9 +94,12 @@ correct.
 
 ## Configuration vs. Attributes
 
-Rules have always had [attributes](), which also affect how they build. The
-difference between configuration and attributes is that attributes only affect
-the rule's [direct build actions](https://docs.bazel.build/versions/master/skylark/rules.html#implementation-function)).
+Rules have always had [attributes](https://docs.bazel.build/versions/master/skylark/rules.html#attributes),
+which also affect how they build. So why not just use attributes?
+
+The difference between configuration and attributes is that attributes only
+affect the rule's
+[direct build actions](https://docs.bazel.build/versions/master/skylark/rules.html#implementation-function)).
 This means attributes **cannot affect a rule's dependencies**.
 
 For example, C++ rules have an attribute named
@@ -114,8 +118,8 @@ the graph while configuration changes behavior *down* the graph.
 
 ## Platforms
 
-One of configurability's major efforts is designing a principled API for
-defining *platforms* and *toolchains*.
+One of our team's major goals is designing a principled API for defining
+*platforms* and *toolchains*.
 
 While there are many kinds of "ways" you might want to build your project, in
 practice most developers want the flexibility to target different devices,
@@ -145,7 +149,7 @@ Android? This impacts not just C++, but also the JDK and maybe even which
 support libraries you need.
 
 Not only are `--cpu` and `-crosstool_top` insufficiently expressive, but they
-might actively sabotoge you. Consider this use of
+might actively sabotoge you. Consider the following use of
 [select](https://docs.bazel.build/versions/master/configurable-attributes.html):
 
 ```python
@@ -159,12 +163,12 @@ java_library(
 
 If you use `--cpu` and `crosstool_top` to define what `:android` means, what
 happens when an app supports a new Android phone with a different CPU?
-`:android` won't trigger, the app won't get required Android support libraries,
-and it will crash.
+`:android` won't trigger because `--cpu` no longer matches, the app won't get
+required Android support libraries, and it will crash.
 
 ### A Better Way
 
-Configurability's platform work, led by [@katre](https://github.com/katre),
+The configurability's team's platform work, led by [@katre](https://github.com/katre),
 lets you declare exactly what you want in a way all rules understand. It
 doesn't even matter if no one's ever heard of your platform.
 
@@ -176,9 +180,9 @@ constraint_setting(name = "os")
 constraint_value(name = "android", constraint_setting = ":os")
 constraint_value(name = "linux", constraint_setting = ":os")
 
-constraint_setting(name = "device") constraint_value(name = "phone",
-constraint_setting = ":device") constraint_value(name = "tablet",
-constraint_setting = ":device")
+constraint_setting(name = "device")
+constraint_value(name = "phone", constraint_setting = ":device")
+constraint_value(name = "tablet", constraint_setting = ":device")
 
 platform(name = "pixel3", constraint_values = [":android", ":phone"])
 ```
@@ -225,14 +229,15 @@ toolchain(
 ```
 
 where `android_jdk_provider_rule` is a Starlark rule that
-[provides](ttps://docs.bazel.build/versions/master/skylark/rules.html#providers)
+[provides](https://docs.bazel.build/versions/master/skylark/rules.html#providers)
  access to the actual JDK tools.
 
 This takes some infrastructure to set up, but the result is magic. Call your
 build with `--platforms=//platforms:pixel3` and `java_binary` automatically
 uses `:android_jdk`. All rules can join in on this. The only obligations rule
-designers have are to write Starlark describing how their toolchains work and
-define toolchains for the platforms they want to support.
+designers have are to write [Starlark rules](https://docs.bazel.build/versions/master/toolchains.html#defining-toolchains)
+describing how their toolchains work and define toolchains for the platforms
+they want to support.
 
 This brings us closer to the goal of `$ bazel build //:all` *just working* by
 replacing ad hoc language-specific flags with a single flag that works everywhere.
@@ -273,8 +278,7 @@ platform vision and [@hlopko](https://github.com/hlopko) and
 
 ## Part 2...
 
-Stay tuned for *Configurable Builds - Part 2*, ETA next week. We'll cover
-*transitions*, which make it possible to build different targets with different
-settings. We'll also discuss why you need to watch your build size when using
-these features.
+Stay tuned for *Configurable Builds - Part 2*, ETA next week. We'll talk about
+building different targets with different settings through *transitions*. We'll
+also discuss why you need to watch your build size when using these features.
 
