@@ -35,10 +35,10 @@ roadmap](https://bazel.build/roadmaps/configuration.html).
 Bazel is a
 [powerful](https://docs.bazel.build/versions/master/bazel-vision.html) build
 tool that's especially suited for large codebases with
-[multiple languages](/2018/12/05/multilanguage-build-system.html) builds. But it
-grew out of Google, which historically wrote code for fleets of identical
-Linux servers with little need for customization. What customization was needed
-was achieved with
+[multiple languages](https://blog.bazel.build/2018/12/05/multilanguage-build-system.html)
+builds. But it grew out of Google, which historically wrote code for fleets of
+identical Linux servers with little need for customization. What customization
+was needed was achieved with
 [ad hoc flags and logic](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
 built straight into the tool.
 
@@ -280,5 +280,5 @@ platform vision and [@hlopko](https://github.com/hlopko) and
 
 Stay tuned for *Configurable Builds - Part 2*, ETA next week. We'll talk about
 building different targets with different settings through *transitions*. We'll
-also discuss why you need to watch your build size when using these features.
+also discuss why you need to watch your build size when using tlberkhese features.
 
