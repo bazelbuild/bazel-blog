@@ -6,7 +6,7 @@ authors:
   - jin
 ---
 
-The recently-released [Bazel 0.21](https://blog.bazel.build/2018/12/19/bazel-0.21.html) delivers a new feature that can make your builds faster by making use of remote *and* local resources transparently. Prior to this release, this was already doable to some extent by using manual strategy definitions, but this new feature takes all manual decisions out of the picture.
+The recently-released [Bazel 0.21](https://blog.bazel.build/2018/12/19/bazel-0.21.html) brings an experimental new feature that can make your builds faster by making use of remote *and* local resources transparently. Prior to this release, this was already doable to some extent by using manual strategy definitions, but this new feature takes all manual decisions out of the picture.
 
 Let's dive in!
 
@@ -48,13 +48,13 @@ There are a couple of prerequisites to use the dynamic spawn scheduler feature:
 
 If your setup satisfies the above, all you have to do is specify `--experimental_spawn_scheduler` on your next build. Just make sure to pass this new flag after all others.
 
-*WARNING: As the flag name implies, this feature is experimental. In particular, be aware that this could introduce correctness issues if the local and remote build environments aren't sufficiently similar to yield the same outputs for each action.*
+*WARNING: As the flag name implies, [this feature is experimental](https://docs.bazel.build/versions/master/backward-compatibility.html#at-a-glance). In particular, be aware that this could introduce correctness issues if the local and remote build environments aren't sufficiently similar to yield the same outputs for each action.*
 
 ## Let's look at some numbers
 
 We have measured the behavior of the dynamic scheduler on a large iOS app on three Macs with different local performance characteristics, and also a [large Android app](https://github.com/jin/android-projects#big_connected) on a Linux workstation. The specific details of the builds and the machines is not relevant.
 
-We have evaluated primarily mobile apps because their critical path contains some actions that are especially costly to run remotely due to the large number of inputs and outputs they have, or the combined sizes of these. *These measurements are not indicative of the average performance you'd get from using any of these remote execution systems as we have purpusely picked some known problematic cases.*
+We have evaluated primarily mobile apps because their critical path contains some actions that are especially costly to run remotely due to the large number of inputs and outputs they have, or the combined sizes of these. *These measurements are not indicative of the average performance you'd get from using any of these remote execution systems as we have purposely picked some known problematic cases.*
 
 The iOS builds were run against the Google-internal remote execution system. The Android builds were [run against RBE](https://gist.github.com/jin/1fc2543acef7cdbd5618b08579d7210c).
 
@@ -88,3 +88,5 @@ There still are some problems to be resolved, of course, and is why this feature
 As a historical note, [@philwo](https://github.com/philwo/) originally implemented the dynamic spawn scheduler as a Google-internal module. The reason was simplicity because the code needed to directly interact with the Forge module. [@jin](https://github.com/jin/) later worked on generalizing the code to support both Forge and RBE and is who brought you this feature in Bazel 0.21. I, [@jmmv](https://julio.meroh.net/), am only the messenger and a performance tester.
 
 Please give this a try and [let us know](https://groups.google.com/forum/#!forum/bazel-discuss) how it goes!
+
+**EDIT (2019-02-05):** This post was updated to make it clear that most measurements were made against Google's internal remote execution system, that any numbers are not representative of average builds using RBE, and that the dynamic spawn scheduler is an experimental feature at this point.
