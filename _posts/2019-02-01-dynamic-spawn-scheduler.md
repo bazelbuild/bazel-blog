@@ -23,7 +23,7 @@ Action mnemonics are statically mapped to strategies via command-line flags. Whe
 
 ## The problem with remote execution
 
-In the case of a fully remote build, sending *all* actions through the `remote` strategy can be inefficient. Each remote action comes with a cost: there is the overhead of the RPCs to contact with the remote service and there is also the more-significant overhead of uploading inputs and downloading outputs (even if we can [maybe optimize the latter](https://docs.google.com/document/d/11m5AkWjigMgo9wplqB8zTdDcHoMLEFOSH0MdBNCBYOE/edit)). As a result, blindly running all actions remotely can be (and often is) detrimental to performance.
+In the case of a fully remote build, sending *all* actions through the `remote` strategy can be inefficient. Each remote action comes with a cost: there is the overhead of the RPCs to contact with the remote service and there is also the more significant overhead of uploading inputs and downloading outputs (even if we [may be able to optimize the latter](https://docs.google.com/document/d/11m5AkWjigMgo9wplqB8zTdDcHoMLEFOSH0MdBNCBYOE/edit)). As a result, blindly running all actions remotely can be (and often is) detrimental to performance.
 
 You'd think that this is not a big deal though---if remote execution offers sufficient parallelism, the fact that each action has higher latency is compensated by the fact that we have a much higher throughput than what you'd ever get with pure local execution. And you'd think right---for _most_ builds this is the case.
 
@@ -33,7 +33,7 @@ But this model breaks down at least in two cases:
 
 1.  When the compiler is so fast that it's cheaper to run the action locally than remotely, and said actions are in the critical path. Examples include the Go compiler or the Java persistent workers.
 
-The introduced delays in incremental builds kill the edit/build/test cycle, so some users affected by this problem have rightfully objected to using remote execution.
+The introduced delays in incremental builds kill the edit/build/test cycle, so some users affected by this problem have understandably objected to using remote execution.
 
 Other users had papered over this problem by configuring certain mnemonics to run locally but this approach doesn't scale: unless you have time to dedicate to engineering productivity (and not everyone has this privilege), it will be difficult to set things up and maintain them over time to keep builds fast.
 
@@ -85,9 +85,15 @@ iOS | MacBook Pro 2015, 4-core | 39s | 450s ↑ | 36s ≈
 
 As you can see, the remote-only configuration gave us better results than the local-only configuration for clean builds, but the remote-only configuration became unacceptably slow for incremental builds. As expected, though, dynamic execution won heads-down in all cases: clean builds were many times faster than they are with local or remote execution alone, and incremental builds were essentially the same.
 
-## Future work and credits
+## Caveats and future work
 
-There still are some problems to be resolved, of course, and is why this feature is still **experimental**. The major one is that *using this feature can lead to correctness issues unless you can guarantee that the local build environment matches the remote one* (if you cannot do this, avoid using this feature). Minor issues include the fact that local workers do not support cancellations ([#614](https://github.com/bazelbuild/bazel/issues/614])); high build timing variance depending on how the actions are scheduled; an artificial delay before running actions locally ([#7327](https://github.com/bazelbuild/bazel/issues/7327)); and making sure remote caches are populated even when we cancel actions ([#7328](https://github.com/bazelbuild/bazel/issues/7328)).
+There still are some problems to be resolved, of course, and is why this feature is still **experimental**.
+
+The major one is that *using this feature can lead to correctness issues unless you can guarantee that the local build environment matches the remote one* (if you cannot do this, avoid using this feature).
+
+Minor issues include the fact that local workers do not support cancellations ([#614](https://github.com/bazelbuild/bazel/issues/614])); high build timing variance depending on how the actions are scheduled; an artificial delay before running actions locally ([#7327](https://github.com/bazelbuild/bazel/issues/7327)); and making sure remote caches are populated even when we cancel actions ([#7328](https://github.com/bazelbuild/bazel/issues/7328)).
+
+## Credits
 
 As a historical note, [@philwo](https://github.com/philwo/) originally implemented the dynamic spawn scheduler as a Google-internal module. The reason was simplicity because the code needed to directly interact with the Forge module. [@jin](https://github.com/jin/) later worked on generalizing the code to support both Forge and RBE and is who brought you this feature in Bazel 0.21. I, [@jmmv](https://julio.meroh.net/), am only the messenger and a performance tester.
 
