@@ -215,7 +215,7 @@ java_binary = rule(..., toolchains = ["@bazel_tools//tools/jdk:toolchain_type"])
 ```
 
 This tells Bazel that `java_binary` understands toolchains that set
-`["@bazel_tools//tools/jdk:toolchain_type""]`. You can then write a Java
+`["@bazel_tools//tools/jdk:toolchain_type"]`. You can then write a Java
 toolchain for Android as:
 
 ```python
