@@ -151,11 +151,12 @@ might actively sabotoge you. Consider the following use of
 [select](https://docs.bazel.build/versions/master/configurable-attributes.html):
 
 ```python
+config_setting(name = "android", values = {"cpu": "arm", "crosstool_top": "//my:android_toolchain"})
 java_library(
     name = "supporting_library",
-	deps = select({
-	    ":android": [":extra_required_android_deps"],
-		"//conditions:default": []
+    deps = select({
+        ":android": [":extra_required_android_deps"],
+        "//conditions:default": []
     }))
 ```
 
@@ -187,11 +188,11 @@ platform(name = "pixel3", constraint_values = [":android", ":phone"])
 
 ```python
 $ cat helpers/BUILD
-config_setting(name = "android", constraint_values = "//platforms:android")
+config_setting(name = "android", constraint_values = ["//platforms:android"])
 java_library(
     name = "supporting_library",
     deps = select({
-	    ":android": [":extra_required_android_deps"],
+        ":android": [":extra_required_android_deps"],
         "//conditions:default": []
     }))
 ```
@@ -210,17 +211,17 @@ Rules understand `:android` by declaring [toolchain types](https://docs.bazel.bu
 For example, `java_binary` can be defined in Starlark as
 
 ```python
-java_binary = rule(..., toolchains = ["//toolchain_types:java"])
+java_binary = rule(..., toolchains = ["@bazel_tools//tools/jdk:toolchain_type"])
 ```
 
 This tells Bazel that `java_binary` understands toolchains that set
-`["//toolchain_types:java"]`. You can then write a Java toolchain for Android
-as:
+`["@bazel_tools//tools/jdk:toolchain_type""]`. You can then write a Java
+toolchain for Android as:
 
 ```python
 toolchain(
     name = "android_jdk",
-    toolchain_type = ["//toolchain_types:java"],
+    toolchain_type = ["@bazel_tools//tools/jdk:toolchain_type"],
     target_compatible_with = ["//platforms:android"],
     toolchain = ":android_jdk_provider_rule")
 ```
