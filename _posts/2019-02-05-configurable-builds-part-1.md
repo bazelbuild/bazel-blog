@@ -5,12 +5,22 @@ authors:
  - gregestren
 ---
 
-The larger your project gets, the more likely you have to build it in different
+One of Bazel's long-term goals is to make `$ bazel build //:all` "*just work*"
+so that every target builds "the right way", for whatever platform(s) you care
+about, using only flags that are genuinely interesting to you. This two-part
+series discusses the challenges involved and steps we're taking to get there.
+
+This is a deeper dive into themes covered in Bazel's [configurability roadmap]
+(https://bazel.build/roadmaps/configuration.html).
+
+## Motivation
+
+The larger your project gets, the more likely you have to build it different
 ways.
 
 Maybe you need Android, iOS, and desktop versions of your app. Maybe you build
-C++ for different platforms. Or maybe you maintain a popular library that
-different users need different features from.
+C++ for different platforms. Or maybe you maintain a popular JavaScript library
+users only want parts of to keep their .js files small.
 
 These are examples of *configuration*: the process of building the same *code*
 with different *settings* to customize it for specific needs. In Bazel-speak,
@@ -25,20 +35,18 @@ $ bazel build //my:cc_binary --cpu=arm
 $ bazel build //my:android_binary --android_sdk=@androidsdk//:sdk-28
 ```
 
-This post reviews Bazel's *configurability work*, which is an ongoing effort to
-make these tasks simple, flexible, and powerful. This is a deeper dive into
-themes covered in Bazel's [configurability
-roadmap](https://bazel.build/roadmaps/configuration.html).
+Bazel's *configurability work* is an ongoing effort to make these tasks simple,
+flexible, and powerful. 
 
-## History
+## The Problem
 
 Bazel is a
 [powerful](https://docs.bazel.build/versions/master/bazel-vision.html) build
 tool that's especially suited for large codebases with
-[multiple languages](https://blog.bazel.build/2018/12/05/multilanguage-build-system.html)
-builds. But it grew out of Google, which historically wrote code for fleets of
-identical Linux servers with little need for customization. What customization
-was needed was achieved with
+[multiple languages](https://blog.bazel.build/2018/12/05/multilanguage-build-system.html).
+But it grew out of Google, which historically wrote code for fleets of identical
+Linux servers with little need for customization. What customization was needed
+was achieved with
 [ad hoc flags and logic](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
 built straight into the tool.
 
@@ -46,7 +54,7 @@ built straight into the tool.
 This is no longer true inside or outside of Google. Modern software targets
 phones, cloud, servers, desktops, [smart
 devices](https://en.wikipedia.org/wiki/Smart_device) and more, and must offer
-increasingly flexible support for any intended combination of these platforms.
+increasingly flexible support for any combination of these platforms.
 
 This means
 
@@ -73,34 +81,24 @@ is lacking in many ways:
    different targets need different flags.
 1. `//my:binary`'s deps must use the same settings as their parent.
 1. It might be hard to remember which flags are needed by which targets,
-   especially across users and dev/test/prod environments. This risks
-   inconsistent and possibly incorrect builds.
+   especially across users and dev/test/prod machines. This makes it hard to
+   be confident in the integrity of your builds.
 
-A different approach might be to set flags directly in targets that need them,
-let rule writers design the flags that affect their rules, and provide standard
-extensible APIs for cross-language concepts like *platform* and *cpu*. This
-lets people configure their projects on their own terms, using language
-consistent with how their projects are organized.
-
-Bazel's configurability work is redesigning Bazel around these ideas. It's
-ultimate goal is to make
-
-    $ bazel build //:all
-
-*just work*, which means every target knows how to build "the right way", for
-whatever platform(s) and features you care about, and you only have to set
-flags that are genuinely interesting to you. All while keeping builds fast and
-correct.
+Another approach might be to set flags directly in targets that need them, let
+rule writers design the flags that affect their rules, and provide standard APIs
+for cross-language concepts like *platform* and *cpu*. This lets developers
+configure projects on their own terms, using language consistent with how their
+projects are organized. This is the essence of the work we're doing.
 
 ## Configuration vs. Attributes
 
 Rules have always had [attributes](https://docs.bazel.build/versions/master/skylark/rules.html#attributes),
-which also affect how they build. So why not just use attributes?
+which also affect how they build. So why do we even need configuration?
 
-The difference between configuration and attributes is that attributes only
-affect the rule's
-[direct build actions](https://docs.bazel.build/versions/master/skylark/rules.html#implementation-function)).
-This means attributes **cannot affect a rule's dependencies**.
+The difference between configuration and attributes is attributes only affect
+the rule's
+[direct build actions](https://docs.bazel.build/versions/master/skylark/rules.html#implementation-function).
+This means attributes **cannot affect how a rule's dependencies build**.
 
 For example, C++ rules have an attribute named
 [`copts`](https://docs.bazel.build/versions/master/be/c-cpp.html#cc_binary.copts)
@@ -202,12 +200,11 @@ and built with:
 
     $ bazel build //my:binary --platforms=//platforms:pixel3 --define MYFEATURE=1
 
-This is more concise and correct than before. Now it doesn't matter what the
-CPU is. Any platform with the `:android`
-[`constraint_value`](https://docs.bazel.build/versions/master/be/platform.html#constraint_value)
-is an Android platform. So it's easy to express *exactly* what you want and
-have `select`, rules, and toolchains understand it the same way. `MYFEATURE=1`,
-which isn't a platform property, remains as before.
+This is a significant improvement over before. It's more concise and you no
+longer have to care what the CPU is. *Any* platform tagged with `:android` is an
+Android platform. So it's easy to express *exactly* what you want and have
+`select`, rules, and toolchains understand it the same way. `MYFEATURE=1`, which
+isn't a platform property, remains as before.
 
 Rules understand `:android` by declaring [toolchain types](https://docs.bazel.build/versions/master/toolchains.html#writing-rules-that-use-toolchains).
 For example, `java_binary` can be defined in Starlark as
@@ -237,7 +234,7 @@ build with `--platforms=//platforms:pixel3` and `java_binary` automatically
 uses `:android_jdk`. All rules can join in on this. The only obligations rule
 designers have are to write [Starlark rules](https://docs.bazel.build/versions/master/toolchains.html#defining-toolchains)
 describing how their toolchains work and define toolchains for the platforms
-they want to support.
+they support.
 
 This brings us closer to the goal of `$ bazel build //:all` *just working* by
 replacing ad hoc language-specific flags with a single flag that works everywhere.
@@ -246,8 +243,9 @@ replacing ad hoc language-specific flags with a single flag that works everywher
 
 You can use platforms today. The catch is that rules have to opt in support by
 including definitions of how their toolchains work. If you're designing a new
-set of rules, you should design them for platforms. But most existing rules
-predate this work and still rely on legacy flags like
+set of rules, you should [design](https://docs.bazel.build/versions/master/toolchains.html)
+them for platforms. But most existing rules predate this work and still rely on
+legacy flags like
 [`--javabase`](https://source.bazel.build/bazel/+/0b84634f3be1118bdbd501f3d879382d6ae52307:src/main/java/com/google/devtools/build/lib/rules/java/JavaOptions.java;l=75).
 
 As of this post, Bazel's platform work is heavily focused on rules migration. 
@@ -280,5 +278,5 @@ platform vision and [@hlopko](https://github.com/hlopko) and
 
 Stay tuned for *Configurable Builds - Part 2*, ETA next week. We'll talk about
 building different targets with different settings through *transitions*. We'll
-also discuss why you need to watch your build size when using tlberkhese features.
+also discuss why you need to watch your build size when using these features.
 
