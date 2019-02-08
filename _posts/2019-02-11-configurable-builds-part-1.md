@@ -147,7 +147,7 @@ Android? This impacts not just C++, but also the JDK and maybe even which
 support libraries you need.
 
 Not only are `--cpu` and `-crosstool_top` insufficiently expressive, but they
-might actively sabotoge you. Consider the following use of
+might actively sabotage you. Consider the following use of
 [select](https://docs.bazel.build/versions/master/configurable-attributes.html):
 
 ```python
