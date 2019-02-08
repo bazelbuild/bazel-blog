@@ -50,7 +50,6 @@ was achieved with
 [ad hoc flags and logic](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
 built straight into the tool.
 
-
 This is no longer true inside or outside of Google. Modern software targets
 phones, cloud, servers, desktops, [smart
 devices](https://en.wikipedia.org/wiki/Smart_device) and more, and must offer
