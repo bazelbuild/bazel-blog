@@ -15,12 +15,12 @@ This is a deeper dive into themes covered in Bazel's [configurability roadmap]
 
 ## Motivation
 
-The larger your project gets, the more likely you have to build it different
-ways.
+The larger your project gets, the more likely you are to have to build it
+different ways.
 
 Maybe you need Android, iOS, and desktop versions of your app. Maybe you build
 C++ for different platforms. Or maybe you maintain a popular JavaScript library
-users only want parts of to keep their .js files small.
+that users only want parts of to keep their .js files small.
 
 These are examples of *configuration*: the process of building the same *code*
 with different *settings* to customize it for specific needs. In Bazel-speak,
@@ -105,7 +105,7 @@ For example, C++ rules have an attribute named
 that sets custom C++ compile options. `cc_binary(name = "mybinary", srcs =
 ["mybinary.cc"], deps = [":mylibrary"], copts =
 ["-DUSE_EXPERIMENTAL_FEATURES=1"])` might compile `mybinary.cc` with
-experimental features. But this won't happen for `:mylibrary` unless it sets
+experimental features. But this won't happen for `":mylibrary"` unless it sets
 its `copts` similarly. This makes attributes unsuitable for tasks like building
 a binary for a different CPU.
 
@@ -160,10 +160,10 @@ java_library(
     }))
 ```
 
-If you use `--cpu` and `crosstool_top` to define what `:android` means, what
+If you use `--cpu` and `crosstool_top` to define what `":android"` means, what
 happens when an app supports a new Android phone with a different CPU?
-`:android` won't trigger because `--cpu` no longer matches, the app won't get
-required Android support libraries, and it will crash.
+`":android"` won't trigger because `--cpu` no longer matches, the app won't get
+required Android support libraries, and it will break.
 
 ### A Better Way
 
@@ -202,12 +202,12 @@ and built with:
     $ bazel build //my:binary --platforms=//platforms:pixel3 --define MYFEATURE=1
 
 This is a significant improvement over before. It's more concise and you no
-longer have to care what the CPU is. *Any* platform tagged with `:android` is an
-Android platform. So it's easy to express *exactly* what you want and have
-`select`, rules, and toolchains understand it the same way. `MYFEATURE=1`, which
-isn't a platform property, remains as before.
+longer have to care what the CPU is. *Any* platform with the `constraint_value`
+`":android"` is an Android platform. So it's easy to express *exactly* what you
+want and have `select`, rules, and toolchains understand it the same way.
+`MYFEATURE=1`, which isn't a platform property, remains as before.
 
-Rules understand `:android` by declaring [toolchain types](https://docs.bazel.build/versions/master/toolchains.html#writing-rules-that-use-toolchains).
+Rules understand `":android"` by declaring [toolchain types](https://docs.bazel.build/versions/master/toolchains.html#writing-rules-that-use-toolchains).
 For example, `java_binary` can be defined in Starlark as
 
 ```python
@@ -232,7 +232,7 @@ where `android_jdk_provider_rule` is a Starlark rule that
 
 This takes some infrastructure to set up, but the result is magic. Call your
 build with `--platforms=//platforms:pixel3` and `java_binary` automatically
-uses `:android_jdk`. All rules can join in on this. The only obligations rule
+uses `":android_jdk"`. All rules can join in on this. The only obligations rule
 designers have are to write [Starlark rules](https://docs.bazel.build/versions/master/toolchains.html#defining-toolchains)
 describing how their toolchains work and define toolchains for the platforms
 they support.
@@ -252,10 +252,11 @@ legacy flags like
 As of this post, Bazel's platform work is heavily focused on rules migration. 
 C++ rules are [near ready](https://github.com/bazelbuild/bazel/issues/6516) and
 due to be [officially integrated](https://github.com/bazelbuild/bazel/issues/7260)
-mid-2019. Java rules will [follow](https://github.com/bazelbuild/bazel/issues/6521) soon after. By year's
-end all major Bazel rules should be integrated. These will be important
-milestones in demonstrating this work's value and providing best practice 
-examples for others.
+mid-2019. [Java](https://github.com/bazelbuild/bazel/issues/6521) and
+[Python](https://github.com/bazelbuild/bazel/issues/7375) rules will follow soon
+after (follow the relevant tracking bugs for best estimates). These will be
+important milestones in demonstrating this work's value and providing best
+practice examples for others.
 
 `--cpu`, `--crosstool_top` and other legacy flags will eventually be removed
 from Bazel. Since rules are migrating on different timelines and projects
@@ -269,7 +270,7 @@ For more details, see Bazel's [platforms roadmap](https://bazel.build/roadmaps/p
 [platform](https://docs.bazel.build/versions/master/platforms.html)
 and [toolchain](https://docs.bazel.build/versions/master/toolchains.html)
 docs, and the original [design doc](https://docs.google.com/document/d/1-G-VPRLEj9VyfC6VrQBiR8To-dZjnBSQS66Y4nargGM/edit?ts=57df9619#heading=h.al54v2ddwqzv).
-You can contact the team at [bazel-discuss@googlegroups.com](https://groups.google.com/forum/#!forum/bazel-discuss).
+Or contact the team at [bazel-discuss@googlegroups.com](https://groups.google.com/forum/#!forum/bazel-discuss).
 
 Special thanks to [@katre](https://github.com/katre) for leading Bazel's
 platform vision and [@hlopko](https://github.com/hlopko) and
@@ -277,7 +278,7 @@ platform vision and [@hlopko](https://github.com/hlopko) and
 
 ## Part 2...
 
-Stay tuned for *Configurable Builds - Part 2*, ETA next week. We'll talk about
+Stay tuned for *Configurable Builds - Part 2*, coming out soon. We'll talk about
 building different targets with different settings through *transitions*. We'll
 also discuss why you need to watch your build size when using these features.
 
