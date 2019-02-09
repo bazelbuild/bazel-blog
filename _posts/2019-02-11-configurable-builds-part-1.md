@@ -20,7 +20,7 @@ different ways.
 
 Maybe you need Android, iOS, and desktop versions of your app. Maybe you build
 C++ for different platforms. Or maybe you maintain a popular JavaScript library
-that users only want parts of to keep their .js files small.
+that users only want specific modules from.
 
 These are examples of *configuration*: the process of building the same *code*
 with different *settings* to customize it for specific needs. In Bazel-speak,
@@ -44,13 +44,13 @@ Bazel is a
 [powerful](https://docs.bazel.build/versions/master/bazel-vision.html) build
 tool that's especially suited for large codebases with
 [multiple languages](https://blog.bazel.build/2018/12/05/multilanguage-build-system.html).
-But it grew out of Google, which historically wrote code for fleets of identical
-Linux servers with little need for customization. What customization was needed
-was achieved with
+But it was originally created for Google engineers writing code for fleets of
+identical Linux servers with little need for customization. What customization
+was needed was achieved with
 [ad hoc flags and logic](https://source.bazel.build/bazel/+/144912e7b7a86b45e07f79e76f6fed20890acb36:src/main/java/com/google/devtools/build/lib/rules/cpp/CppOptions.java;l=258)
 built straight into the tool.
 
-This is no longer true inside or outside of Google. Modern software targets
+This is no longer true inside or outside of Google. Modern software runs on
 phones, cloud, servers, desktops, [smart
 devices](https://en.wikipedia.org/wiki/Smart_device) and more, and must offer
 increasingly flexible support for any combination of these platforms.
@@ -59,16 +59,16 @@ This means
 
     $ bazel build //my:binary
 
-isn't enough to describe what you want to do. What platform(s) are you
+isn't enough to describe what you want to do. What platforms are you
 targeting? What features do you want to include? What if you want to build a
 complex app with generated sources, client and server modules, native
 extensions, and test data?
 
-Bazel's historical approach of ad hoc flags:
+Bazel's historical approach is to use ad hoc flags:
 
     $ bazel build //my:binary --cpu=arm --crosstool_top=//my:custom_toolchain --define MYFEATURE=1
 
-is lacking in many ways:
+This approach has deep limitations:
 
 1. `--cpu` only accepts values explicitly supported by C++ rules. Even if you're
    not building C++.
@@ -83,11 +83,11 @@ is lacking in many ways:
    especially across users and dev/test/prod machines. This makes it hard to
    be confident in the integrity of your builds.
 
-Another approach might be to set flags directly in targets that need them, let
-rule writers design the flags that affect their rules, and provide standard APIs
-for cross-language concepts like *platform* and *cpu*. This lets developers
-configure projects on their own terms, using language consistent with how their
-projects are organized. This is the essence of the work we're doing.
+Our work is redesigning Bazel around a better approach: set flags directly in
+targets that need them, let rule writers design the flags that affect their
+rules, and provide standard APIs for cross-language concepts like *platform* and
+*cpu*. This lets developers configure projects on their own terms, using
+language consistent with how their projects are organized.
 
 ## Configuration vs. Attributes
 
@@ -200,7 +200,7 @@ and built with:
 
     $ bazel build //my:binary --platforms=//platforms:pixel3 --define MYFEATURE=1
 
-This is a significant improvement over before. It's more concise and you no
+This is a significant improvement from before. It's more concise and you no
 longer have to care what the CPU is. *Any* platform with the `constraint_value`
 `":android"` is an Android platform. So it's easy to express *exactly* what you
 want and have `select`, rules, and toolchains understand it the same way.
@@ -249,8 +249,8 @@ legacy flags like
 [`--javabase`](https://source.bazel.build/bazel/+/0b84634f3be1118bdbd501f3d879382d6ae52307:src/main/java/com/google/devtools/build/lib/rules/java/JavaOptions.java;l=75).
 
 As of this post, Bazel's platform work is heavily focused on rules migration. 
-C++ rules are [near ready](https://github.com/bazelbuild/bazel/issues/6516) and
-due to be [officially integrated](https://github.com/bazelbuild/bazel/issues/7260)
+C++ rules are [almost ready](https://github.com/bazelbuild/bazel/issues/6516)
+and due to be [officially integrated](https://github.com/bazelbuild/bazel/issues/7260)
 mid-2019. [Java](https://github.com/bazelbuild/bazel/issues/6521) and
 [Python](https://github.com/bazelbuild/bazel/issues/7375) rules will follow soon
 after (follow the relevant tracking bugs for best estimates). These will be
