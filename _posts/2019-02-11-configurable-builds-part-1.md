@@ -241,9 +241,9 @@ replacing ad hoc language-specific flags with a single flag that works everywher
 
 ### Status
 
-You can use platforms today. The catch is that rules have to opt in support by
-including definitions of how their toolchains work. If you're designing a new
-set of rules, you should [design](https://docs.bazel.build/versions/master/toolchains.html)
+You can use Bazel's new platform API today. The catch is that rules have to opt
+in support by including definitions of how their toolchains work. If you're
+designing a new set of rules, you should [design](https://docs.bazel.build/versions/master/toolchains.html)
 them for platforms. But most existing rules predate this work and still rely on
 legacy flags like
 [`--javabase`](https://source.bazel.build/bazel/+/0b84634f3be1118bdbd501f3d879382d6ae52307:src/main/java/com/google/devtools/build/lib/rules/java/JavaOptions.java;l=75).
