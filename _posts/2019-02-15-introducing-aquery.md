@@ -8,6 +8,23 @@ authors:
 _tl;dr: [`bazel aquery`](https://docs.bazel.build/versions/master/aquery.html) is a new bazel command that queries the action graph, and thus allows you to gain insights about the actions executed in a build (inputs, outputs, command line, …).
 `aquery`’s API is now stable and supported by the Bazel team._
 
+## Why `bazel aquery`?
+
+_"What was the command line that produced this output file?"_
+
+_"Did the new change in my rule implementation affect the current list of actions?"_
+
+_"What was the exact command line used to run action X?"_
+
+Those are some of the questions which can be answered with `aquery`. The `aquery` command allows you to query for actions to be executed in your build. It operates on the post-analysis Action Graph and exposes information about Actions, Artifacts and their relationships.
+
+`aquery` is already being used in our various workflows. An example usage of `aquery` can be found in the Bazel issue [#6861](https://github.com/bazelbuild/bazel/issues/6861), where we are migrating legacy CROSSTOOL fields. In this case, Bazel users would run a migration tool, and then use `aquery` to verify that the migration tool works properly, in particular:
+
+- The actions generated while building the same target before & after running the migration tool are the same.
+- The command lines run for each action are the same.
+
+The specific usage is implemented in [`aquery_differ` tool](https://github.com/bazelbuild/bazel/blob/master/tools/aquery_differ/aquery_differ.py). This also serves as an example of how tools can be built on top of `aquery`.
+
 ## Background & Motivation
 
 Apart from providing the ability to build & test your projects, Bazel also offers insights into how those processes happen with [`query`](https://docs.bazel.build/versions/master/query-how-to.html) and [`cquery`](https://docs.bazel.build/versions/master/cquery.html). These existing tools have been very helpful with answering the questions about dependencies of targets in your Bazel project.
@@ -28,14 +45,6 @@ Enter `aquery`.
 With `aquery`, it is now possible to tap into that knowledge.
 
 ## `bazel aquery`
-
-_"Which action generated this output file?”_
-
-_“Did the new change in my rule implementation affect the current list of actions?”_
-
-_“What was the exact command line used to run action X?”_
-
-Those are some of the questions which can be answered with `aquery`. The `aquery` command allows you to query for actions to be executed in your build. It operates on the post-analysis Action Graph and exposes information about Actions, Artifacts and their relationships.
 
 `aquery` is useful when we are interested in the properties of the Actions/Artifacts in the Action Graph. The basic structure of `aquery` output is as follows:
 
