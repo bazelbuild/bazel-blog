@@ -33,16 +33,16 @@ Apart from providing the ability to build & test your projects, Bazel also offer
 
 The Bazel build process consists of 3 phases<sup>[1](#footnote1)</sup>: _loading_, _analysis_ and _execution_. `query` operates on the post-loading phase target graph, which makes it unaware of the configurations of these targets. `cquery` moves it further down the building process and queries the post-analysis _configured targets_, thus includes the actual configurations.
 
-The topology of the _configured target graph_ closely resembles the dependency graph of targets established by the BUILD files. It offers information on the dependency between targets in a build, but not on the actual build actions that will be run to execute that build. To gain insights on the exact actions executed in a build, we have to go one level deeper, to the action graph.
+The topology of the _configured target graph_ closely resembles the dependency graph of targets established by the BUILD files. It offers information on the dependency between targets in a build, but not on the _actual build actions_ that will be run to execute that build. To gain insights on the exact actions executed in a build, we have to go one level deeper, to the action graph.
 
 Enter `aquery`.
 
 ![bazel queries and phases](/assets/bazel-queries.png)
 
-`aquery` runs on the configured target graph and queries the action graph. The action graph<sup>[2](#footnote2)</sup> is the result of the analysis phase. It is a bipartite graph with the following types of nodes:
+`aquery` runs on the configured target graph and queries the _action graph_. The action graph<sup>[2](#footnote2)</sup> is the result of the analysis phase. It is a bipartite graph with the following types of nodes:
 
-- artifacts: either a source file or any output file produced by an action
-- actions: the functional step that takes a list of artifacts as input and outputs a list of artifacts. Note that any (output) artifact is produced by exactly one action. The action graph conveys explicit step-by-step instructions on how the build would be executed.
+- Artifacts: either a source file or any output file produced by an action
+- Actions: the functional step that takes a list of artifacts as input and outputs a list of artifacts. Note that any (output) artifact is produced by exactly one action. The action graph conveys explicit step-by-step instructions on how the build would be executed.
 
 With `aquery`, it is now possible to tap into that knowledge.
 
@@ -127,4 +127,4 @@ _<a name="footnote1">1</a>: In the actual implementation of Bazel, we interleave
 
 _<a name="footnote2">2</a>: For a more detailed overview of the action graph, check out [Jin’s](https://github.com/jin) [blog post](https://jin.crypt.sg/articles/bazel-action-graph.html)._
 
-_<a name="footnote3">3</a>: [Skyframe](https://bazel.build/designs/skyframe.html) is the evaluation and incrementality model of Bazel. On each instance of Bazel server, Skyframe stores the dependency graph constructed from the previous runs of the analysis phase.
+_<a name="footnote3">3</a>: [Skyframe](https://bazel.build/designs/skyframe.html) is the evaluation and incrementality model of Bazel. On each instance of Bazel server, Skyframe stores the dependency graph constructed from the previous runs of the analysis phase._
