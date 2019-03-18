@@ -123,23 +123,6 @@ android_library(
 )
 ```
 
-We have also added a `artifact` helper function to specify the Maven coordinates
-directly. For example, the previous example can be written as:
-
-```python
-
-load("@rules_jvm_external//:defs.bzl", "artifact")
-
-android_library(
-    name = "foo",
-    srcs = ["MyAndroidLib.java"],
-    deps = [
-        artifact("androidx.test.espresso:espresso-core"),
-        artifact("com.google.guava:guava"),
-    ],
-)
-```
-
 ## How it works
 
 This rule relies on existing tooling to calculate the transitive closure of
