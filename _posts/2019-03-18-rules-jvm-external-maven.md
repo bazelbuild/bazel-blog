@@ -37,14 +37,14 @@ rules like `java_import_external` and `aar_import_external`.
 
 We wanted to fulfill two primary objectives with `rules_jvm_external`.
 
-The first is that users should be able to run `bazel build //...`. This means
-that the calculation of the transitive dependencies and their fetching need to
-happen during repository rule execution time. This makes dependency fetching
+First, users should be able to run `bazel build //...`. This means that the
+calculation of the transitive dependencies and their fetching need to happen
+during repository rule execution time. This makes dependency fetching
 transparent to users and reduces onboarding friction to a Bazel-built project.
 
-The second is to provide an interface that is familiar to users with projects
-that depend on Maven repositories. The specification of artifacts in the
-repository rule resembles the specification in the `<dependencies>` tag in a
+Second, we wanted to provide an interface that is familiar to users with
+projects that depend on Maven repositories. The specification of artifacts in
+the repository rule resembles the specification in the `<dependencies>` tag in a
 Maven POM file or the `dependencies` closure in a Gradle build file. In
 particular, this means that users only need to specify their direct dependencies
 and the rule will handle the rest for them.
@@ -74,8 +74,8 @@ reflect this over the coming weeks.
 
 ## How to use
 
-To start using this project in your Java or Android project, in your WORKSPACE
-file, point to the repository rule:
+To start using this feature in your Java or Android project, point to the
+repository rule in your WORKSPACE file:
 
 ```python
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -88,9 +88,9 @@ http_archive(
 )
 ```
 
-Then the key components of the rule are to specify your direct dependencies
-using the `artifacts` attribute and where those artifacts should come from using
-the `repositories` attribute:
+Then, specify your direct dependencies using the `artifacts` attribute and
+indicate where those artifacts should come from using the `repositories`
+attribute:
 
 ```python
 load("@rules_jvm_external//:defs.bzl", "maven_install")
@@ -98,8 +98,8 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 maven_install(
     name = "maven",
     artifacts = [
-        "com.google.guava:guava:27.0-android",
         "androidx.test.espresso:espresso-core:3.1.1",
+        "com.google.guava:guava:27.0-android",
     ],
     repositories = [
         "https://maven.google.com",
@@ -119,6 +119,22 @@ android_library(
     deps = [
         "@maven//:androidx_test_espresso_espresso_core"
         "@maven//:com_google_guava_guava",
+    ],
+)
+```
+
+For a more familiar syntax, we have added a `artifact` function to specify the
+Maven coordinates directly. For example, the previous example can be written as:
+
+```python
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+android_library(
+    name = "foo",
+    srcs = ["MyAndroidLib.java"],
+    deps = [
+        artifact("androidx.test.espresso:espresso-core"),
+        artifact("com.google.guava:guava"),
     ],
 )
 ```
