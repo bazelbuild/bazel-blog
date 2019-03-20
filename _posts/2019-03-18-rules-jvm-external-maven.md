@@ -6,7 +6,7 @@ authors:
   - dkelmer
 ---
 
-We’re delighted to introduce the initial release of
+We’re excited to introduce the initial release of
 [`rules_jvm_external`](https://github.com/bazelbuild/rules_jvm_external), a
 repository rule to resolve and fetch artifacts transitively in Maven
 repositories, like Maven Central and Google Maven. This project is officially
