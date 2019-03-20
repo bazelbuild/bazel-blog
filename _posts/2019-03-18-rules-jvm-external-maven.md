@@ -72,7 +72,7 @@ gmaven_rules, which was designed to be an interim solution, will also be
 replaced by rules_jvm_external. We will be updating existing documentation to
 reflect this over the coming weeks.
 
-## How to use rules_jvm_external in your project
+## How to use `rules_jvm_external` in your project
 
 To start using this feature in your Java or Android project, point to the
 repository rule in your WORKSPACE file:
