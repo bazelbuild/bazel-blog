@@ -25,17 +25,21 @@ from community members:
       repository using a pinned list of artifacts, with support for Kotlin and
       Android dependencies
 * [https://github.com/menny/mabel](https://github.com/menny/mabel)
-    * Tool to generate a Maven dependency graph as a lock file, with support for
-      Kotlin and Android dependencies
+  * Tool to generate a Maven dependency graph as a lock file, with support for
+Kotlin and Android dependencies
+* [java_import_external](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/java.bzl#L15)
+  and
+  [aar_import_external](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/android.bzl#L14)
+  * Part of a set of rules that allow you to wire up your dependencies manually 
 
-Each project approaches the problem slightly differently. Check out those
-projects as well to see their full feature set and determine which solution
-works best for you. It is also possible to wire dependencies up manually using
-rules like `java_import_external` and `aar_import_external`.
+Each project, including `rules_jvm_external`, approaches the problem slightly
+differently. Check out the projects above to see their full feature set and
+determine if one of those solutions work best for you. Keep reading to learn
+more about `rules_jvm_external`.
 
-## Objectives
+## Objectives of `rules_jvm_external`
 
-We wanted to fulfill two primary objectives with `rules_jvm_external`.
+We wanted to fulfill two primary objectives:
 
 First, users should be able to run `bazel build //...`. This means that the
 calculation of the transitive dependencies and their fetching need to happen
