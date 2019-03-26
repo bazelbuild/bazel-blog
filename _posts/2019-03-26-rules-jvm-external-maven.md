@@ -139,8 +139,7 @@ BUILD targets.
 ## Known limitations
 
 There are some known limitations for this initial release, like artifact
-checksumming and support for Scala and Kotlin-built JARs. We will be addressing
-these in the coming releases.
+checksumming. We will be addressing these in the coming releases.
 
 If you have an issue or want to request for a feature, please [file an
 issue](https://github.com/bazelbuild/rules_jvm_external/) on the repository.
