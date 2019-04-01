@@ -71,9 +71,9 @@ projects. The following features are supported:
 * Source JAR support
 * Dependency exclusion
 
-As part of this, we will no longer be maintaining generate_workspace.
-gmaven_rules, which was designed to be an interim solution, will also be
-replaced by rules_jvm_external. We will be updating existing documentation to
+As part of this, we will no longer be maintaining `generate_workspace`.
+`gmaven_rules`, which was designed to be an interim solution, will also be
+replaced by `rules_jvm_external`. We will be updating existing documentation to
 reflect this over the coming weeks.
 
 ## How to use `rules_jvm_external` in your project
