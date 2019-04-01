@@ -27,9 +27,9 @@ from community members:
 * [https://github.com/menny/mabel](https://github.com/menny/mabel)
   * Tool to generate a Maven dependency graph as a lock file, with support for
 Kotlin and Android dependencies
-* [java_import_external](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/java.bzl#L15)
+* [`java_import_external`](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/java.bzl#L15)
   and
-  [aar_import_external](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/android.bzl#L14)
+  [`aar_import_external`](https://github.com/bazelbuild/bazel/blob/15b70bb63e5495290900de9303cbebb0ff12210b/tools/build_defs/repo/android.bzl#L14)
   * Part of a set of rules that allow you to wire up your dependencies manually 
 
 Each project, including `rules_jvm_external`, approaches the problem slightly
