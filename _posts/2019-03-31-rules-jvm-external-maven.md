@@ -136,10 +136,10 @@ into a Coursier compatible command line. The CLI returns the calculated
 transitive closure of artifacts which the rule parses and uses it to generate
 BUILD targets.
 
-## Known limitations
+## Next steps
 
-There are some known limitations for this initial release, like artifact
-checksumming. We will be addressing these in the coming releases.
+We are continuing to iterate on this project. Some upcoming features include
+artifact checksumming and additional authentication mechanisms.
 
 If you have an issue or want to request for a feature, please [file an
 issue](https://github.com/bazelbuild/rules_jvm_external/) on the repository.
