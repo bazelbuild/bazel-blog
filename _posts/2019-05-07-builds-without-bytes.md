@@ -14,6 +14,8 @@ We have thus been working on virtualizing action outputs in Bazel so to only tra
 For the initial availability of this performance optimization we have focused on a continuous integration (CI) use case. That is, Bazel will not download any build and test output files and thus Bazel's output base (bazel-out/, bazel-bin/, ...) will be empty after a build. The one exception being that outputs of failed build and test actions (i.e. test.log) will be downloaded in order to make it easier to debug problems.
  
 ## How to Use It
+*This feature is experimental and we do not recommended to enable it on production systems without extensive prior testing.*
+
 You can enable this feature by adding the following three flags to your existing set of remote caching/execution flags:
  
 ```
@@ -58,7 +60,7 @@ $ bazel build :foo --experimental_remote_download_outputs=minimal
 Incremental builds that don't involve a shutdown will work fine. Please follow [#8248](https://github.com/bazelbuild/bazel/issues/8248) for the current state, progress updates and to express interest.
  
 ### Local file uploads and URI rewriting in the Build Event Service is disabled
-When using the build event service (BES) together with remote caching / execution URIs to files are automatically translated to remote URIs pointing to the remote cache. This rewriting is disabled when the `--experimental_remote_download_outputs` flag is set. Please follow [#8249](https://github.com/bazelbuild/bazel/issues/8249) for the current state, progress updates and to express interest.
+When using the build event service (BES) together with remote caching / execution URIs to files are automatically translated to remote URIs pointing to the remote cache. This rewriting is disabled when the `--experimental_remote_download_outputs` flag is set. Users of BEP / BES will see URIs referencing local paths instead of remote paths. Please follow [#8249](https://github.com/bazelbuild/bazel/issues/8249) for the current state, progress updates and to express interest.
  
 ### Remote build outputs must not be evicted
 A remote caching or execution system must not evict outputs during a build. That is an output of the 1st action must still be available to the 1000th action. Before this feature Bazel would simply reupload an output that's been evicted from the remote system but this is no longer possible.
