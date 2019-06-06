@@ -26,7 +26,7 @@ _will have a stability window of 3 months:_ we will not make any breaking change
 in releases [0.28](https://github.com/bazelbuild/bazel/issues/8571) (July 2019)
 and [0.29](https://github.com/bazelbuild/bazel/issues/8572) (August 2019).
 
-The September 2019 release will be the[Bazel 1.0](https://github.com/bazelbuild/bazel/issues/8573) release.
+The September 2019 release will be the [Bazel 1.0](https://github.com/bazelbuild/bazel/issues/8573) release.
 After that release, we'll continue following [semantic versioning](https://semver.org/)
 in naming Bazel releases: 1.x releases will be backwards-compatible with Bazel 1.0.
 We'll continue to publish minor releases of Bazel every month, cutting from GitHub HEAD.
