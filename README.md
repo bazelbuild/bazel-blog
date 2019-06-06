@@ -43,4 +43,5 @@ See [the Jekyll site](http://jekyllrb.com/docs) if you need more info.
 
 ## Deploying the website
 
-To deploy a build of the website, run `bazel run //:site -- --push`.
+The website is deployed automatically after new commits are merged into the `master` branch. 
+The update time is around 30 mins - ping (bazel-engprod@googlegroups.com) in case of problems
