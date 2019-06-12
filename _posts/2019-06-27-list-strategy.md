@@ -102,7 +102,8 @@ For example, something like `--spawn_strategy=linux-sandbox` will never fallback
 - Do you execute your build or part of it remotely using `--strategy=remote` and/or `--spawn_strategy=remote`?  
 Now you do not need to specify those strategies anymore - consider removing those `strategy` flags completely! In this case bazel will pickup the first available strategy from the default list, which is `remote`, unless you want to specifically forbid any non-remote executions or to configure custom fallback plan (see next advice).
 
-- If you were using `--remote_local_fallback_strategy=local` or need a custom fallback strategy, just add a fallback strategy to the list, for example: `--spawn_strategy=remote,local`.
+- If you were using custom fallback strategy for the remote execution, e.g. `--remote_local_fallback_strategy=worker`, just add a fallback strategy to the list, for example: `--spawn_strategy=remote,worker`. 
+Note, `--remote_local_fallback_strategy` flag defaults to `local`, so even if you have never used the flag it was implicitly there for every execution with a `--strategy=remote` flag. If you want to keep the same behavior, now you'd either need to use a default strategy or add a `local` to your custom strategy list: `--spawn_strategy=remote,local`.
 
 - If you are using `--config=remote` in your build you might need to change your .bazelrc file, where all the `remote` configs are located, including `strategy` flags. The above pieces of advice apply to the .bazelrc configurations as well.
 In a simple case, you might completely remove the following lines from .bazelrc (.bazelrc version of [the first example](#example-1):
