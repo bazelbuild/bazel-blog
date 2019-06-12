@@ -81,7 +81,7 @@ Isn't it much shorter and simpler?
 - Don't set any flags and Bazel will try to do the best automatically: Use remote execution if it's available, otherwise persistent workers, otherwise sandboxed execution, otherwise non-sandboxed execution.
 - I want the best sandboxed build on my Linux machine and no automatic fallback to symlink-only sandboxing, non-sandboxed execution and no persistent workers: `--spawn_strategy=linux-sandbox`.
 - I want persistent workers for actions that support it, but otherwise only sandboxed execution: `--spawn_strategy=worker,sandboxed`.
-- I want to ensure everything runs remotely: `--spawn_strategy=remote`. Be careful, this configuration will cause a build failure in case bazel finds any action, that cannot be executed remotely.
+- I want to ensure everything runs remotely: `--spawn_strategy=remote`. Be careful, this configuration will cause a build failure in case bazel finds any action that cannot be executed remotely.
 
 ### How to migrate
 You would know that you need to migrate if you see the following error:
