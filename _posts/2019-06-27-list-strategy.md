@@ -4,9 +4,9 @@ title: "Automatic execution strategy selection in Bazel 0.27"
 authors:
   - ishikhman
 ---
-**tl;dr**: Exciting news! After 0.27 release Bazel will *auto select* a suitable execution strategy if none provided. Customization and strategy enforcement would still be possible and will be much easier to configure.
+**tl;dr**: Exciting news! After 0.27 release Bazel will *auto select* a suitable execution strategy if none is provided. Customization and strategy enforcement will still be possible and will be much easier to configure.
 
-## How it was before bazel 0.27 release
+## Before Bazel 0.27
 
 It was possible to configure Bazel's execution strategy for a build via flags `--spawn_strategy=`, `--strategy=Mnemonic=` and `--strategy_regexp=Regex=`. This mechanism was quite powerful and widely used, but had some drawbacks:
 
@@ -34,18 +34,18 @@ $ bazel build
 ```
 
 
-## How it is after bazel 0.27
-- Bazel now *auto-detects* the execution strategy, if no strategy flag provided.  
+## After Bazel 0.27
+- Bazel now *auto-detects* the execution strategy, if no strategy flag is provided.  
 If none of the strategy flags was used, bazel will generate a default list of strategies `remote,worker,sandboxed,local` and, for every action it wants to execute, will pick up the first strategy that can execute it.
 
-- The user can pass comma-separated lists of strategies to the above mentioned flags: `--spawn_strategy=remote,worker,linux-sandbox`.  
+- The user can pass a comma-separated list of strategies to the above mentioned flags: `--spawn_strategy=remote,worker,linux-sandbox`.  
 Each strategy now knows whether it can execute a given action.
-For any action that it wants to execute, Bazel just picks the first strategy from the given list that claims to be able to execute the action. 
+For any action that it wants to execute, Bazel just picks the first strategy from the given list that can execute the action. 
 
-- If action cannot be executed with any of the given strategies, build will fail.  
-If any of the strategy flags is provided, then bazel will use ONLY those strategies that are listed there. 
-Which means that `--spawn_strategy=remote` will NOT fallback to a `sandboxed` strategy or to any other strategy in case remote action failed or not possible at all.
-Moreover, `--remote_local_fallback_strategy=local` is now deprecated and even if it was provided, bazel will ignore it and build would still fail. 
+- If an action cannot be executed with any of the given strategies, the build will fail.  
+If any of the strategy flags is provided, then Bazel will use ONLY those strategies that are listed there. 
+Which means that `--spawn_strategy=remote` will NOT fallback to a `sandboxed` strategy or to any other strategy in case remote action failed or is not possible at all.
+Moreover, `--remote_local_fallback_strategy=local` is now deprecated and made no-op. 
 
 ### Why is it better?
 - Now you can control your execution strategy and have your build fail if any non-sandboxable or non-remotable action sneaks in! 
