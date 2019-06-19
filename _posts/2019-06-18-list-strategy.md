@@ -4,7 +4,14 @@ title: "Automatic execution strategy selection in Bazel 0.27"
 authors:
   - ishikhman
 ---
-**tl;dr**: Exciting news! After [0.27](https://blog.bazel.build/2019/06/17/bazel-0.27.0.html) release Bazel will *auto select* a suitable execution strategy if none is provided. Customization and strategy enforcement will still be possible and will be much easier to configure.
+**tl;dr**: Exciting news! After [0.27](https://blog.bazel.build/2019/06/17/bazel-0.27.0.html) release Bazel can *auto select* a suitable execution strategy, 
+eliminating the need for manual configuration via command line flags in most cases. Customization and strategy enforcement is still possible if needed and has become much easier to configure.
+
+When Bazel executes commands that are a part of the build, such as compiler and linker invocations, test runs and so on, 
+it has a choice on how to execute those commands (also called actions): locally, remotely, in a sandbox, and so on. 
+This is controlled by [execution strategies](https://docs.bazel.build/versions/master/user-manual.html#strategy-options). Starting with 0.27 release, we implemented a feature in Bazel that will 
+allow it to auto select a suitable execution strategy, eliminating the need for manual configuration via command line 
+flags in most cases; and even in cases when customization and strategy enforcement is needed, it is still fully possible and has become much simpler.
 
 ## Before Bazel 0.27
 
@@ -13,7 +20,7 @@ This mechanism was quite powerful and widely used, but had some drawbacks:
 
 - Bazel's defaults did not account for remote execution at all, therefore we had to make sure to set the execution strategy for every mnemonic manually.
 
-- Starlark rules providing a persistent worker had to ship a .bazelrc file that sets --strategy=Mnemonic=worker (e.g. look at [rules_scala](https://github.com/bazelbuild/rules_scala)). 
+- Starlark rules providing a persistent worker had to ship a .bazelrc file that sets `--strategy=Mnemonic=worker` (e.g. look at [rules_scala](https://github.com/bazelbuild/rules_scala#getting-started), where `--strategy=Scalac=worker` is required in order to run it with a persistent worker). 
 
 - Bazel has hardcoded defaults for native action mnemonics. For example, Bazel will use sandboxing (if it's available) for all actions by default but has a hardcoded default to use persistent workers for Java compilation actions.
 
