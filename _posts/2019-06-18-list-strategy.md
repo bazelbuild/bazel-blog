@@ -26,9 +26,9 @@ This mechanism was quite powerful and widely used, but had some drawbacks:
 
 - To configure fallback strategy one had to provide additional flag `--remote_local_fallback_strategy=`.
 
-### Example
-I want to configure a build to run remotely and fallback onto `local` strategy in case remote execution is not possible. The configuration would be something like:
-
+> ### Example
+> Let's configure a build to run remotely and fallback onto `local` strategy in case remote execution is not possible. The configuration would be something like:
+> 
 ``` 
 $ bazel build
  --spawn_strategy=remote
@@ -38,7 +38,6 @@ $ bazel build
  --remote_local_fallback_strategy=local
  ... 
 ```
-
 
 ## After Bazel 0.27
 - Bazel now *auto-detects* the execution strategy, if no strategy flag is provided.  
@@ -59,26 +58,27 @@ More reproducibility and safety for your builds!
 - The strategies no longer do their own custom fallback, simplifying the code and unifying the behavior.
 - You might even completely forget about strategies configurations if the default behavior satisfies your needs.
 
-### Example
-This is how my [first example](#example) will look like now:
-
+> ### Example
+> This is how the previous example will look like now:
+>
 ``` 
 $ bazel build
  --spawn_strategy=remote,local
  ... 
 ```
-
-And if I want a custom strategy for my Java rules I can still add `--strategy=Javac=`:
-
+>
+> And if a custom strategy for Java rules is required, we can still add `--strategy=Javac=`:
+>
 ```
 $ bazel build
  --spawn_strategy=remote,local
  --strategy=Javac=worker
  ...
 ```
+>
+> In this case, Java rules will be executed using a persistent *worker*, everything else will be executed *remotely* or *locally* (if remote is not possible).
+> Isn't it much shorter and simpler?
 
-In this case, Java rules will be executed using a persistent *worker*, everything else will be executed *remotely* or *locally* (if remote is not possible).
-Isn't it much shorter and simpler?
 
 ## How to use it
 
