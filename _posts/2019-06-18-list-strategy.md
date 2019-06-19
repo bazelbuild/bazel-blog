@@ -5,7 +5,7 @@ authors:
   - ishikhman
 ---
 **tl;dr**: Exciting news! After [0.27](https://blog.bazel.build/2019/06/17/bazel-0.27.0.html) release Bazel can *auto select* a suitable execution strategy, 
-eliminating the need for manual configuration via command line flags in most cases. Customization and strategy enforcement is still possible if needed and has become much easier to configure.
+eliminating the need for manual configuration via command line flags in most cases.
 
 When Bazel executes commands that are a part of the build, such as compiler and linker invocations, test runs etc., 
 it has a choice on how to execute those commands (also called actions): locally, remotely, in a sandbox, and so on. 
