@@ -13,7 +13,7 @@ on December 11 and 12! ([Link to Map](https://www.google.com/maps/place/Google+B
 This is THE event for everything related to Bazel, the Bazel Rules Ecosystem, and fast, correct, large scale builds.
 
 Google's Event Center at Moffett Place was designed with events like BazelCon in mind, and is by far
-the largest BazelCon venue yet.  We’re excited to be able to accommodate double_ _the number of attendees
+the largest BazelCon venue yet.  We’re excited to be able to accommodate _twice_ the number of attendees
 from previous years and offer more breakout sessions, extended office hours, and in general provide a more
 seamless attendee experience. This is an opportunity for Bazel contributors, maintainers, and all the members
 of the Bazel open source community to meet and learn from each other.
