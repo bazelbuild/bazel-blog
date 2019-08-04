@@ -5,8 +5,9 @@ authors:
   - cgrushko
 ---
 
-Bazel currently provides built-in rules for Java, JavaLite and C++.
+Bazel currently provides rules for Java, JavaLite and C++.
 
+<!-- TODO(yannic): Create documentation for rules_proto and link to that instead. -->
 [`proto_library`]({{ site.docs_site_url }}/be/protocol-buffer.html#proto_library)
 is a language-agnostic rule that describes relations between `.proto` files.
 
@@ -26,6 +27,9 @@ By making a `java_library` (resp. `cc_library`) depend on `java_proto_library`
 > [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library)
 > contains a buildable example.
 
+<!-- TODO(yannic): Remove this when cgrushko/proto_library is updated. -->
+> **Update (August 2019)**: The example above is outdated and will no longer work with Bazel 1.0 or later. [https://github.com/Yannic/proto_library](https://github.com/Yannic/proto_library) contains an updated example.
+
 ### WORKSPACE file
 
 Bazel's proto rules implicitly depend on the
@@ -37,19 +41,61 @@ The following satisfies these dependencies:
 
 > **Update (January 2019)**: If you're using Bazel 0.21.0 or later, the minimum Protocol Buffer version required is [**3.6.1.2**](https://github.com/protocolbuffers/protobuf/releases/tag/v3.6.1.2). See this [pull request](https://github.com/protocolbuffers/protobuf/pull/4650) for more information. 
 
+<!-- TODO(yannic): The necessary fixes are not in a release yet. -->
+> **Update (August 2019)**: If you're using Bazel 1.0 or later, the minimum Protocol Buffer version required is [**???**](https://github.com/protocolbuffers/protobuf/releases/tag/v???). **TODO(yannic): The fixes are not in a release yet**
+
 ```python
-# proto_library, cc_proto_library, and java_proto_library rules implicitly
-# depend on @com_google_protobuf for protoc and proto runtimes.
-# This statement defines the @com_google_protobuf repo.
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+# rules_cc defines rules for generating C++ code from Protocol Buffers.
 http_archive(
-    name = "com_google_protobuf",
-    sha256 = "cef7f1b5a7c5fba672bec2a319246e8feba471f04dcebfe362d55930ee7c1c30",
-    strip_prefix = "protobuf-3.5.0",
-    urls = ["https://github.com/google/protobuf/archive/v3.5.0.zip"],
+    name = "rules_cc",
+    sha256 = "???",
+    strip_prefix = "rules_cc-???",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_cc/archive/???.tar.gz",
+        "https://github.com/bazelbuild/rules_cc/archive/???.tar.gz",
+    ],
 )
+
+# rules_cc defines rules for generating Java code from Protocol Buffers.
+http_archive(
+    name = "rules_java",
+    sha256 = "???",
+    strip_prefix = "rules_java-???",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_java/archive/???.tar.gz",
+        "https://github.com/bazelbuild/rules_java/archive/???.tar.gz",
+    ],
+)
+
+# rules_proto defines abstract rules for building Protocol Buffers.
+http_archive(
+    name = "rules_proto",
+    sha256 = "???",
+    strip_prefix = "rules_proto-???",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/???.tar.gz",
+        "https://github.com/bazelbuild/rules_proto/archive/???.tar.gz",
+    ],
+)
+
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies", "rules_cc_toolchains")
+rules_cc_dependencies()
+rules_cc_toolchains()
+
+load("@rules_java//java:repositories.bzl", "rules_java_dependencies", "rules_java_toolchains")
+rules_java_dependencies()
+rules_java_toolchains()
+
+load("@rules_proto//proto:repositories.bzl", "rules_proto_dependencies", "rules_proto_toolchains")
+rules_proto_dependencies()
+rules_proto_toolchains()
 
 # java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite//:javalite_toolchain,
 # which is the JavaLite proto runtime (base classes and common utilities).
+#
+# TODO(yannic): Update this to a version that includes the load statements for rules_{cc,java,proto,python}.
 http_archive(
     name = "com_google_protobuf_javalite",
     sha256 = "d8a2fed3708781196f92e1e7e7e713cf66804bd2944894401057214aff4f468e",
@@ -63,6 +109,10 @@ http_archive(
 > TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
 ```python
+load("@rules_cc//cc:defs.bzl", "cc_proto_library")
+load("@rules_java//java:defs.bzl", "java_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
 java_proto_library(
     name = "person_java_proto",
     deps = [":person_proto"],
@@ -118,17 +168,17 @@ files in a project.
 1.  One proto_library rule per `.proto` file.
 2.  A file named `foo.proto` will be in a rule named `foo_proto`, which is
     located in the same package.
-3.  A `X_proto_library` that wraps a `proto_library` named `foo_proto` should be
-    called `foo_X_proto`, and be located in the same package.
+3.  A `<lang>_proto_library` that wraps a `proto_library` named `foo_proto` should be
+    called `foo_<lang>_proto`, and be located in the same package.
 
 ## FAQ
 
-**Q:** I already have rules named `java_proto_library` and `cc_proto_library`.
-Will there be a problem?<br />
-**A:** No. Since Skylark extensions imported through `load` statements take
-precedence over native rules with the same name, the new rule should not affect
-existing usage of the `java_proto_library` macro.
+**Q:** I already have rules or macros named `proto_library`, `java_proto_library`,
+and `cc_proto_library`. Will there be a problem?<br />
+**A:** No. Since these rules are explicitely loaded through `load` statements,
+the new rule should not affect existing usage of the rules or macros.
 
+<!-- TODO(yannic): This is outdated. -->
 **Q:** How do I use gRPC with these rules?<br />
 **A:** The Bazel rules do not generate RPC code since `protobuf` is independent
 of any RPC system. We will work with the gRPC team to create Skylark extensions
@@ -136,14 +186,17 @@ to do so. ([C++ Issue](https://github.com/grpc/grpc/issues/9873), [Java
 Issue](https://github.com/grpc/grpc-java/issues/2756))
 
 **Q:** Do you plan to release additional languages?<br />
-**A:** We can relatively easily create `py_proto_library`. Our end goal is to
-improve Skylark to the point where these rules can be written in Skylark, making
-them independent of Bazel.
+**A:** We're currently [rewriting the existing](https://docs.google.com/document/d/1u95vlQ1lWeQNR4bUw5T4cMeHTGJla2_e1dHHx7v4Dvg/edit)
+rules for C++ and Java in Starlark, making them independent of Bazel.
+We may add rules for other languages after this work is finished.
 
 **Q:** How does one use well-known types? (e.g., `any.proto`,
 `descriptor.proto`)<br />
 **A:** See [the example repo](https://github.com/cgrushko/proto_library), particularly https://github.com/cgrushko/proto_library/blob/beae7b78b85b3af51d3ea54663c421ebde97dc10/src/BUILD#L42.
 
+<!-- TODO(yannic): This is outdated. -->
+<!-- TODO(yannic): rules_proto will contain a framework for writing rules and a guide
+                   how to do so. Link to that instead. -->
 **Q:** Any tips for writing my own such rules?<br />
 **A:** First, make sure you're able to register actions that compile your target
 language. (as far as I know, Bazel Python actions are not exposed to Skylark,
@@ -162,14 +215,15 @@ good example.
 
 ### Implicit Dependencies and Proto Toolchains
 
+<!-- TODO(yannic): This will need to be updated when the flags are removed. -->
 The `proto_library` rule implicitly depends on `@com_google_protobuf//:protoc`,
 which is the protocol buffer compiler. It must be a binary rule (in protobuf,
 it's a `cc_binary`). The rule can be overridden using the `--proto_compiler`
 command-line flag.
 
-Most `X_proto_library` rules implicitly depend on
-`@com_google_protobuf//:X_toolchain`, which is a `proto_lang_toolchain` rule.
-These rules can be overridden using the `--proto_toolchain_for_X` command-line
+Most `<lang>_proto_library` rules implicitly depend on
+`@com_google_protobuf//:<lang>_toolchain`, which is a `proto_lang_toolchain` rule.
+These rules can be overridden using the `--proto_toolchain_for_<lang>` command-line
 flags.
 
 A `proto_lang_toolchain` rule describes how to call the protocol compiler, and
@@ -179,18 +233,18 @@ repository](https://github.com/google/protobuf/blob/b4b0e304be5a68de3d0ee1af9b28
 
 ### Bazel Aspects
 
-The `X_proto_library` rules are implemented using [Bazel
+The `<lang>_proto_library` rules are implemented using [Bazel
 Aspects]({{ site.docs_site_url }}/skylark/aspects.html) to have
 the best of two worlds -
 
-1.  Only need a single `X_proto_library` rule for an arbitrarily-large proto
+1.  Only need a single `<lang>_proto_library` rule for an arbitrarily-large proto
     graph.
 2.  Incrementality, caching and no linking errors.
 
-Conceptually, an `X_proto_library` rule creates a shadow graph of the
+Conceptually, an `<lang>_proto_library` rule creates a shadow graph of the
 `proto_library` it depends on, and each shadow node calls protocol-compiler and
 then compiles the generated code. This way, if there are multiple paths from a
-rule to a `proto_library` through `X_proto_library`, they all share the same
+rule to a `proto_library` through `<lang>_proto_library`, they all share the same
 node.
 
 ### Descriptor Sets
