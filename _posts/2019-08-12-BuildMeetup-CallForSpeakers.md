@@ -21,7 +21,7 @@ our all day hackathon.
 We are looking for insightful and engaging talks and presentations on topics focused around build systems. Have you worked
 tirelessly for the past 6 months on a new feature for project foo you would like to showcase? Have you and your team spent
 the last year integrating the tool bar at your workplace? Do you have some comparisons to make between qux and quux that the
-community could benefit from? If so, we and the community would like to hear from you! Proposals welcome from 10 minute
+community could benefit from? If so, we and the community would like to hear from you! We are welcoming proposals for 10 minute
 lightning talks all the way to 45 minute deep dives.
 
 If you'd like to attend make sure to watch this space for the opening of the meetup registration soon!
