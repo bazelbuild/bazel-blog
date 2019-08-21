@@ -77,7 +77,7 @@ http_archive(
 )
 
 # java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite//:javalite_toolchain,
-# which is the JavaLite proto runtime (base classes and common utilities).    # which is the JavaLite proto runtime (base classes and common utilities).
+# which is the JavaLite proto runtime (base classes and common utilities).
 http_archive(
     name = "com_google_protobuf_javalite",
     sha256 = "a8cb9b8db16aff743a4bc8193abec96cf6ac0b0bc027121366b43ae8870f6fd3",
