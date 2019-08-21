@@ -27,10 +27,6 @@ By making a `java_library` (resp. `cc_library`) depend on `java_proto_library`
 > [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library)
 > contains a buildable example.
 
-<!-- TODO(yannic): Remove this when cgrushko/proto_library is updated.
-     https://github.com/cgrushko/proto_library/pull/15 -->
-> **Update (August 2019)**: The example above is outdated and does no longer work. [https://github.com/Yannic/proto_library](https://github.com/Yannic/proto_library) contains an updated example.
-
 ### WORKSPACE file
 
 Bazel's proto rules implicitly depend on the
