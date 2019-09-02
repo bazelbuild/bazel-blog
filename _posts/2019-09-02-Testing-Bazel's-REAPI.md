@@ -1,0 +1,35 @@
+---
+layout: posts
+title: Introducing the Remote Execution API Testing Project
+authors:
+  - username1  # See _config.yml for the list of authors.
+---
+
+When building software, we know that we need to be fast and we know we need to minimise any wasted time in the process. We need to get critical updates and features out to users as quickly as possible and we need to increase the productivity of teams who rely on an efficient edit and compile cycle. Introducing Remote Execution to builds will help achieve this, and for this, there is Bazel's [Remote Execution API](https://github.com/bazelbuild/remote-apis), which gives us the ability to parallelise the construction and validation phases of the software development cycle, and thus massively reduce elapsed time.
+
+The API specifies protocols for both client and server. Assuming your client is [Bazel](https://bazel.build/), there are several options to choose from for the server implementation: [Buildfarm](https://github.com/bazelbuild/bazel-buildfarm), [Buildbarn](https://github.com/buildbarn), [BuildGrid](https://gitlab.com/BuildGrid/buildgrid) or Google's [Remote Build Execution](https://blog.bazel.build/2018/10/05/remote-build-execution.html) (RBE). The first three are open source projects, and need to be set up on-prem and backed by the appropriate computing resource, whereas RBE is a service and comes with [Google Cloud Platform](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-gb-all-en-dr-bkws-all-all-trial-e-gcp-1007176&utm_content=text-ad-none-any-DEV_c-CRE_377886454212-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_M:1_GB_EN_General_Cloud_gcp-KWID_43700016286040951-kwd-87853815-userloc_1006912&utm_term=KW_gcpg&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIm_-k2MqO5AIVSYjVCh31PwUnEAAYASAAEgKJ0vD_BwE) included. But how do the different solutions compare? That's where the [Remote Execution API Testing](https://gitlab.com/remote-apis-testing/remote-apis-testing) Project comes in. This blog post will introduce the project and it's goals, progress so far, what's up next, and how you can get involved.
+
+## Testing the Remote Execution API
+
+The project is a community-driven initiative born out of discussions between folks working on Buildfarm, Buildbarn and BuildGrid, who thought it'd be a good idea to collaborate on creating an independent 'acid test' for all of the implementations. We are really interested in knowing which implementations make the best use of resources and improve execution times. To do this we aim to construct reproducible metrics of the behaviors of each of the systems we are comparing and see what their trend is as they are executed, allowing us to make judgements based on the data.
+
+## Progress so far
+
+The initial goal to get the project off the ground was to put some basic Remote Execution testing in place. For this, we used [Gitlab's CI pipelines](https://docs.gitlab.com/ee/ci/pipelines.html) - with [Terraform](https://www.terraform.io/), [Kubernetes](https://kubernetes.io/), and [AWS](https://aws.amazon.com/) - to spin up a Bazel build of [Abseil](https://abseil.io/) that executes against each of the server implementations once a week. Upon completion, a PASS/FAIL badge is displayed. The pipeline works by building the latest release of Bazel (with Bazel), then building the latest Docker images for each server implementation and using Terraform to deploy a small Kubernetes cluster with [EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html). After that, we use kubectl to deploy the individual services required for each of the server implementations and then set off the Abseil build job using Bazel  and post the results to the [README](https://gitlab.com/remote-apis-testing/remote-apis-testing/blob/master/README.md). This verifies that Remote Execution works with Bazel across all server implementations and we can see if anything falls over after one of the components has been updated. This has so far allowed us to catch a few bugs and raise these with the appropriate projects upstream.
+
+Once these pipelines were up and running we focused on adding tests to record performance, capturing end to end build times. For this, we needed a bigger project than Abseil, so we chose to build Bazel itself. Whilst this was a good first step and highlighted some basic speed comparisons between each project, we wanted to dig deeper and be able to see more finer grained metrics such as CPU cost and memory usage. To do this we added a monitoring stack to the Kubernetes cluster, comprised of [Prometheus](https://prometheus.io/), metrics servers ([cAdvisor](https://github.com/google/cadvisor) and [node-exporter](https://github.com/prometheus/node_exporter)) and [Grafana](https://grafana.com/). The metrics servers collect data from the cluster at the pod and node level and provide an endpoint for Prometheus to retrieve. The data is presented using Grafana, which connects to Prometheus to query the metrics using Prometheus PromQL, and for each test run a dashboard is created which shows CPU and memory usage for each of the pods. The results are then stored as Gitlab artifacts in pdf format and also pushed to the Grafana dashboard hosting site, allowing for interaction with the data.  See [here](https://gitlab.com/remote-apis-testing/remote-apis-testing/wikis/Metrics) for examples.
+
+## Up next
+
+So far the project has created an overview of the compatibility status between different Remote Execution build clients and server implementations. We’d like to continue to enhance this and include the status for all projects in this space. For example, Bazel is not the only build client to work with the Remote Execution API; there are others which we've added tests for, such as [BuildStream](https://buildstream.build/) and [RECC](https://gitlab.com/bloomberg/recc). These tests don't yet work with all of the server implementations, but we're working on adding these as well.
+
+We'd also like to enhance performance analysis further by enabling gRPC tracing in the server implementations using open-tracing. This should produce huge amounts of data which can be analysed to identify where inefficiencies lie, which should prove invaluable in steering each server implementation towards performance improvements.
+
+## How can you get involved? 
+
+We would very much welcome any contributions that help us move closer to our goals. If you’re interested in the issues Remote Execution is trying to solve, reducing elapsed time and wasted developer time via parallelisation of builds, then we’d like to hear from you. 
+
+Are you working with another build client or server implementation that conforms to the Remote Execution API that you would like to see tested as part of this framework? Have you chosen Bazel as your build tool and now need to consider which Remote Execution solution to choose? Do you have any test projects that could be contributed? 
+
+If so, come and chat to us on [Slack](http://tiny.cc/tihy5y), tweet me @LaurenceUrhegyi or email me directly at laurence.urhegyi@codethink.com.
+
