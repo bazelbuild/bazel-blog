@@ -7,5 +7,3 @@ steps:
   args: ['-m', 'rsync', '-r', '-c', '-d', '/workspace/bazel-bin/site-build', 'gs://blog.bazel.build']
 - name: gcr.io/cloud-builders/gsutil
   args: ['web', 'set', '-m', 'index.html', '-e', '404.html', 'gs://blog.bazel.build']
-- name: gcr.io/cloud-builders/gsutil
-  args: ['-m', 'acl', 'ch', '-R', '-u', 'AllUsers:R', 'gs://blog.bazel.build']
