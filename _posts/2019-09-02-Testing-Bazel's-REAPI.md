@@ -2,7 +2,7 @@
 layout: posts
 title: Introducing the Remote Execution API Testing Project
 authors:
-  - username1  # See _config.yml for the list of authors.
+  - LaurenceUrhegyi
 ---
 
 When building software, we know that we need to be fast and we know we need to minimise any wasted time in the process. We need to get critical updates and features out to users as quickly as possible and we need to increase the productivity of teams who rely on an efficient edit and compile cycle. Introducing Remote Execution to builds will help achieve this, and for this, there is Bazel's [Remote Execution API](https://github.com/bazelbuild/remote-apis), which gives us the ability to parallelise the construction and validation phases of the software development cycle, and thus massively reduce elapsed time.
