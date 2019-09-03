@@ -27,4 +27,4 @@ On day two there will be plenty of time for collaboration, discussion and hackin
 
 The event will be attended by many Bazel developers. This is a great opportunity
 to chat and mingle with the people behind Bazel. If you'd like to attend the event
-please **[register here](https://www.eventbrite.com/preview?eid=70824519043)**!
+please **[register here](https://www.eventbrite.com/e/london-build-meetup-tickets-70824519043)**!
