@@ -8,13 +8,18 @@ authors:
 In this blogpost, we'd like to explore IntelliJ with Bazel plugin's sync process
 by reverse engineering the plugin's generated files.
 
-Importing a Bazel project with the [Bazel IntelliJ, CLion or Android Studio
-plugin](https://ij.bazel.build/) results in a generated `.ijwb`, `.aswb` or
-`.clwb` directory in the project root. While users don’t typically need to know
-about the contents of this directory, exploring these files will help us
-understand how the plugin works.
+The sync process is central to the user experience of working with Bazel using
+the [IntelliJ plugin](https://ij.bazel.build). The purpose of the sync process
+is to query Bazel for information and build up IntelliJ's project structure to
+fit Bazel's model. It runs automatically during a project import, and manually
+by either clicking on the sync icon in the menu bar or, partially syncing
+packages and individual files in contextual menus.
 
-We will be using the IntelliJ variant for this post. Let’s dive in!
+Running a sync generates a `.ijwb` directory in the project root. While users
+don’t typically need to know about the contents of this directory, exploring
+these files will help us understand how the plugin works.
+
+Let's dive in!
 
 ## Structure of `.ijwb`
 
@@ -460,14 +465,16 @@ transitive closure of the specified Bazel targets in the project view file.
 
 The [output
 groups](https://docs.bazel.build/versions/master/skylark/rules.html#requesting-output-files)
-determine the set of requested files. In this Java project, the
-`intellij-info-java` and `intellij-resolve-java` output groups are requested by
-default, which instructs Bazel to run the actions that will produce the
-respective `intellij-info.txt` and JAR files for each target specified by the
-project view.
+determine the set of requested files. In this Java project, the the plugin
+requests for the `intellij-info-java` and `intellij-resolve-java` output groups
+by default, which instructs Bazel to run the actions that produces the
+respective `intellij-info.txt` and JAR files for the project view's targets.
+This builds up the `TargetData` and `BlazeProjectData` structures, which the
+plugin serializes onto the disk for persistence.
 
-After the build completes, the plugin processes the outputs to generate the internal 
-project model, writes the necessary IDE metadata files, and commits the project structure:
+After the build completes, the plugin processes the earlier outputs to generate
+the internal project model, writes the necessary IDE metadata files, and commits
+the project structure:
 
 ```
 Loading: 0 packages loaded
