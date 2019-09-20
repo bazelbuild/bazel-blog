@@ -28,6 +28,7 @@ $ tree -a .ijwb/
 .ijwb/
 ├── .bazelproject
 ├── .blaze
+│   ├── libraries
 │   ├── modules
 │   │   ├── .project-data-dir.iml
 │   │   └── .workspace.iml
@@ -106,6 +107,14 @@ to find the OS-specific directory.
 
 ```
 ├── .blaze 
+│   ├── libraries
+```
+
+This is the location of the plugin's JAR cache, if enabled in settings. This
+helps provide a more robust code navigation experience, but with the possibility
+of missing changes made by Bazel outside of the IDE view.
+
+```
 │   ├── modules 
 ```
 
