@@ -465,12 +465,12 @@ transitive closure of the specified Bazel targets in the project view file.
 
 The [output
 groups](https://docs.bazel.build/versions/master/skylark/rules.html#requesting-output-files)
-determine the set of requested files. In this Java project, the the plugin
-requests for the `intellij-info-java` and `intellij-resolve-java` output groups
-by default, which instructs Bazel to run the actions that produces the
-respective `intellij-info.txt` and JAR files for the project view's targets.
-This builds up the `TargetData` and `BlazeProjectData` structures, which the
-plugin serializes onto the disk for persistence.
+determine the set of requested files. In this Java project, the plugin requests
+for the `intellij-info-java` and `intellij-resolve-java` output groups by
+default, which instructs Bazel to run the actions that produces the respective
+`intellij-info.txt` and JAR files for the project view's targets. This builds up
+the `TargetData` and `BlazeProjectData` structures, which the plugin serializes
+onto the disk for persistence.
 
 After the build completes, the plugin processes the earlier outputs to generate
 the internal project model, writes the necessary IDE metadata files, and commits
