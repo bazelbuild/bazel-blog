@@ -202,8 +202,10 @@ Settings for external libraries. Note that this is not the same as Bazel's conce
 ```
 
 In this example, each XML file maps to a single JAR file. Most of them are
-downloaded through `rules_jvm_external` into an external repository named
-`@maven`. For example, `.ijwb/.idea/libraries/hamcrest_library_1_3_922bb0fc.xml` contains:
+downloaded through
+[`rules_jvm_external`](https://github.com/bazelbuild/rules_jvm_external/tree/master/examples/spring_boot)
+into an external repository named `@maven`. For example,
+`.ijwb/.idea/libraries/hamcrest_library_1_3_922bb0fc.xml` contains:
 
 ```xml
 <component name="libraryTable">
