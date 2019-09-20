@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Reverse Engineering IntelliJ with Bazel's Sync Process"
+title: "Reverse Engineering the IntelliJ Bazel Plugin's Sync Process"
 authors:
   - jin
 ---
