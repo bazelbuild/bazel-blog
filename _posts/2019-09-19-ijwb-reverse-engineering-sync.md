@@ -353,7 +353,7 @@ Bazel target is associated with an `intellij-info.txt` file that contains
 a text representation of the `TargetIdeInfo` proto. Here's an example for the
 main Spring Boot `java_binary` target:
 
-```protobuf
+```prototxt
 build_file_artifact_location {
   is_external: false
   is_new_external_version: true
