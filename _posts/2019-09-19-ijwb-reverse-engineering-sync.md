@@ -299,7 +299,7 @@ UUID is used to uniquely identify the project location.
         ├── cache.dat.gz
 ```
 
-This is the serialized `gzip` of the
+This is the `gzip` of the serialized
 [`BlazeProjectData`](https://github.com/bazelbuild/intellij/blob/master/proto/project_data.proto)
 protocol buffer. This is written to disk on sync, and read when reopening
 projects.
