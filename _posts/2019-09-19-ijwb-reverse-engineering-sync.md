@@ -359,10 +359,10 @@ message TargetIdeInfo {
 }
 ```
 
-This is the heart of the plugin's multi-language support. During a sync, each
-Bazel target is associated with an `intellij-info.txt` file that contains 
-a text representation of the `TargetIdeInfo` proto. Here's an example for the
-main Spring Boot `java_binary` target:
+`TargetIdeInfo` is heart of the plugin's multi-language support. During a sync,
+each Bazel target is associated with an `intellij-info.txt` file that contains a
+text representation of the `TargetIdeInfo` proto. Here's an example for the main
+Spring Boot `java_binary` target:
 
 ```prototxt
 build_file_artifact_location {
