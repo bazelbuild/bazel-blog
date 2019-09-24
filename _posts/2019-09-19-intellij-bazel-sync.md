@@ -10,22 +10,20 @@ by exploring the plugin's generated files and logs.
 
 ## Introduction
 
-The sync process is central to the user experience of working with Bazel using
-the [IntelliJ plugin](https://ij.bazel.build). The purpose of the sync process
-is to query Bazel for information and build up IntelliJ's project structure to
-fit Bazel's model. It runs automatically during a project import, and manually
-by either clicking on the sync icon in the menu bar or, partially syncing
-packages and individual files in contextual menus.
+The sync process is central to the user experience of the Bazel [IntelliJ
+plugin](https://ij.bazel.build). Its purpose is to query Bazel for information
+and build up IntelliJ's project structure to fit Bazel's model.
+
+It runs automatically during a project import, and manually by either clicking
+on the sync icon in the menu bar or, partially syncing packages and individual
+files in contextual menus.
 
 Running a sync generates a `.ijwb` directory in the project root. While users
-don’t typically need to know about the contents of this directory, exploring
-these files help us understand how the plugin works.
+don’t typically need to know about the contents of this directory, we will
+explore these files to learn how the plugin works.
 
-Next, we explore the sync process' logs and understand what is happening
-behind the scenes.
-
-Finally, we connect the dots between the logs and the generated files to
-crystallize our understanding.
+We will also explore the process logs, and connect the dots between them and the
+generated files to crystallize our understanding.
 
 Let's dive in!
 
