@@ -1,12 +1,14 @@
 ---
 layout: posts
-title: "Reverse Engineering the IntelliJ Bazel Plugin's Sync Process"
+title: "Exploring the IntelliJ Bazel Plugin's Sync Process"
 authors:
   - jin
 ---
 
-In this blogpost, we'd like to explore IntelliJ with Bazel plugin's sync process
-by reverse engineering the plugin's generated files.
+In this blogpost, we aim to understand IntelliJ with Bazel plugin's sync process
+through exploring the plugin's generated files.
+
+## Introduction
 
 The sync process is central to the user experience of working with Bazel using
 the [IntelliJ plugin](https://ij.bazel.build). The purpose of the sync process
@@ -17,7 +19,13 @@ packages and individual files in contextual menus.
 
 Running a sync generates a `.ijwb` directory in the project root. While users
 don’t typically need to know about the contents of this directory, exploring
-these files will help us understand how the plugin works.
+these files help us understand how the plugin works.
+
+Next, we explore the sync process' logs and understand what is happening
+behind the scenes.
+
+Finally, we connect the dots between the logs and the generated files to
+crystalize our understanding.
 
 Let's dive in!
 
@@ -65,7 +73,7 @@ $ tree -a .ijwb/
 
 Let's investigate the components of this directory individually.
 
-### Project view file
+## Project view file
 
 ```
 $ tree -a
@@ -100,13 +108,13 @@ additional_languages:
   # scala
 ```
 
-### Bazel data subdirectory
+## Bazel data subdirectory
 
 `.ijwb/.blaze` is the Bazel data subdirectory, containing mostly IntelliJ module
 definitions.
 
-Note that the actual persistent serialized data is not stored in this directory.
-To locate the serialized data, read the [IntelliJ
+Note that the actual persistent serialized data is not in this directory. To
+locate the serialized data, read the [IntelliJ
 documentation](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
 to find the OS-specific directory.
 
@@ -115,15 +123,16 @@ to find the OS-specific directory.
 │   ├── libraries
 ```
 
-This is the location of the plugin's JAR cache, if enabled in settings. This
-helps provide a more robust code navigation experience, but with the possibility
-of missing changes made by Bazel outside of the IDE view.
+This is the location of the plugin's JAR cache. This helps provide a more robust
+code navigation experience, but with the possibility of missing changes made by
+Bazel outside of the IDE view.
 
 ```
 │   ├── modules 
 ```
 
-This directory contains [IntelliJ module](https://www.jetbrains.org/intellij/sdk/docs/basics/project_structure.html#module)
+This directory contains [IntelliJ
+module](https://www.jetbrains.org/intellij/sdk/docs/basics/project_structure.html#module)
 definition files.
 
 ```
@@ -147,7 +156,7 @@ A general-purpose local cache for output artifacts generated remotely. During pr
 
 Cache files here have a hash appended to their name to allow matching to the original artifact.
 
-### IntelliJ configuration subdirectory
+## IntelliJ configuration subdirectory
 
 `.ijwb/.idea` contains project-specific settings files managed by IntelliJ.
 IntelliJ reads XML files in this directory to set up the [Project
@@ -224,7 +233,6 @@ into an external repository named `@maven`. For example,
 </component>
 ```
 
-
 ```
     ├── misc.xml
 ```
@@ -271,19 +279,20 @@ This file contains the last known persistent state of the user's workflow in the
 Using these settings, IntelliJ can recreate the active tabs, settings, recently
 used run configurations, and VCS tab states after restarting the IDE.
 
-### Is the .ijwb directory portable?
+## Portability of the `.ijwb` directory
 
-Not entirely. Files like `.bazelproject` and `codeStyleConfig.xml` can be shared
-project-wide, but `workspace.xml` and `.workspace.iml` should be user specific.
+The `.ijwb` directory is not completely portable. Files like `.bazelproject` and
+`codeStyleConfig.xml` can be shared project-wide, but `workspace.xml` and
+`.workspace.iml` should be user specific.
 
 In general, extract `.bazelproject` file out of `.ijwb/` to version control it,
 and follow [JetBrains' recommendations
 ](https://intellij-support.jetbrains.com/hc/en-us/articles/206544839) on
 checking in specific files in the `.idea` directory.
 
-### Does the .ijwb directory contain all persistent state?
+## Plugin cache
 
-No. There are more plugin-specific state in the [IDE installation
+There are more plugin-specific cached state in the [IDE installation
 directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
 On macOS, this is the `~/Library/Caches/IdeaIC2019.2/blaze/projects` directory.
 
@@ -369,7 +378,7 @@ each Bazel target is associated with an `intellij-info.txt` file that contains a
 text representation of the `TargetIdeInfo` proto. Here's an example for the main
 Spring Boot `java_binary` target:
 
-```prototxt
+```json
 build_file_artifact_location {
   is_external: false
   is_new_external_version: true
@@ -440,7 +449,7 @@ Finally, this is the serialized form of the Bazel project view. This prevents
 the need for parsing the `.bazelproject` project view file every time we open
 the project.
 
-### Connecting the dots
+## Connecting the dots
 
 Now that we understand what the generated files are and what they're for, we can
 explore the sync process' timeline through logs. Here's a simplified form of
