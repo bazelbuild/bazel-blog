@@ -6,7 +6,7 @@ authors:
 ---
 
 In this blogpost, we aim to understand IntelliJ with Bazel plugin's sync process
-through exploring the plugin's generated files.
+by exploring the plugin's generated files and logs.
 
 ## Introduction
 
@@ -25,7 +25,7 @@ Next, we explore the sync process' logs and understand what is happening
 behind the scenes.
 
 Finally, we connect the dots between the logs and the generated files to
-crystalize our understanding.
+crystallize our understanding.
 
 Let's dive in!
 
@@ -519,4 +519,16 @@ Updating in-memory state...
 Sync finished
 ```
 
-With this, the sync process completes and the project is ready for development in IntelliJ.
+After the plugin processes `TargetData` into a `TargetMap` of configured targets
+and aspects, it notifies language sync plugins to do further language-specific
+processing. See a list of `BlazeSyncPlugins`
+[here](https://github.com/bazelbuild/intellij/search?q=filename%3ASyncPlugin&unscoped_q=filename%3ASyncPlugin)
+
+For example, the [Java sync
+plugin](https://github.com/bazelbuild/intellij/blob/e40b6ce4e7552fbbbc63debe5bee769100744fe1/java/src/com/google/idea/blaze/java/sync/BlazeJavaSyncPlugin.java)
+further processes `jdeps` files generated in the `intellij-resolve-java` output
+group for dependency analysis, and also setting up the right JDK and source
+roots for the IntelliJ project structure.
+
+When all sync plugins complete, the main sync process finishes and the project
+is ready for development in IntelliJ.
