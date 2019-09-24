@@ -449,7 +449,7 @@ Finally, this is the serialized form of the Bazel project view. This prevents
 the need for parsing the `.bazelproject` project view file every time we open
 the project.
 
-## Connecting the dots
+## Connecting the dots with the logs
 
 Now that we understand what the generated files are and what they're for, we can
 explore the sync process' timeline through logs. Here's a simplified form of
@@ -519,6 +519,8 @@ Updating in-memory state...
 Sync finished
 ```
 
+## Language-specific sync processes
+
 After the plugin processes `TargetData` into a `TargetMap` of configured targets
 and aspects, it notifies language sync plugins to do further language-specific
 processing. See a list of `BlazeSyncPlugins`
@@ -526,8 +528,8 @@ processing. See a list of `BlazeSyncPlugins`
 
 For example, the [Java sync
 plugin](https://github.com/bazelbuild/intellij/blob/e40b6ce4e7552fbbbc63debe5bee769100744fe1/java/src/com/google/idea/blaze/java/sync/BlazeJavaSyncPlugin.java)
-further processes `jdeps` files generated in the `intellij-resolve-java` output
-group for dependency analysis, and also setting up the right JDK and source
+further processes generated `jdeps` files from the `intellij-resolve-java`
+output group for dependency analysis, and also sets up the right JDK and source
 roots for the IntelliJ project structure.
 
 When all sync plugins complete, the main sync process finishes and the project
