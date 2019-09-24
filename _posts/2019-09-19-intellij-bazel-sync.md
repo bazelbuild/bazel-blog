@@ -71,6 +71,10 @@ $ tree -a .ijwb/
     └── workspace.xml
 ```
 
+`.ijwb` ,or `.aswb`/`.clwb` for Android Studio and CLion respectively, is known
+as the **project directory**. It contains metadata about the project that
+bridges Bazel and IntelliJ project models.
+
 Let's investigate the components of this directory individually.
 
 ## Project view file
@@ -524,7 +528,7 @@ Sync finished
 After the plugin processes `TargetData` into a `TargetMap` of configured targets
 and aspects, it notifies language sync plugins to do further language-specific
 processing. See a list of `BlazeSyncPlugins`
-[here](https://github.com/bazelbuild/intellij/search?q=filename%3ASyncPlugin&unscoped_q=filename%3ASyncPlugin)
+[here](https://github.com/bazelbuild/intellij/search?q=filename%3ASyncPlugin&unscoped_q=filename%3ASyncPlugin).
 
 For example, the [Java sync
 plugin](https://github.com/bazelbuild/intellij/blob/e40b6ce4e7552fbbbc63debe5bee769100744fe1/java/src/com/google/idea/blaze/java/sync/BlazeJavaSyncPlugin.java)
