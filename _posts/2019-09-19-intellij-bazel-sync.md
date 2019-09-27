@@ -115,10 +115,10 @@ additional_languages:
 `.ijwb/.blaze` is the Bazel data subdirectory, containing mostly IntelliJ module
 definitions.
 
-Note that the actual persistent serialized data is not in this directory. To
-locate the serialized data, read the [IntelliJ
-documentation](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
-to find the OS-specific directory.
+Most of the persisted serialized data is in this directory. For the rest of the
+persisted data, find their OS-specific cache locations in the [IntelliJ
+documentation](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs).
+
 
 ```
 ├── .blaze 
