@@ -69,9 +69,9 @@ $ tree -a .ijwb/
     └── workspace.xml
 ```
 
-`.ijwb` ,or `.aswb`/`.clwb` for Android Studio and CLion respectively, is known
-as the **project directory**. It contains metadata about the project that
-bridges Bazel and IntelliJ project models.
+`.ijwb` is known as the **project directory**. It contains metadata about the
+project that bridges Bazel and IntelliJ project models. For Android Studio and
+CLion, this directory is `.aswb` and `.clwb` respectively.
 
 Let's investigate the components of this directory individually.
 
@@ -84,10 +84,11 @@ $ tree -a
 ```
 
 This is the IJwB [project view file
-](https://ij.bazel.build/docs/project-views.html) containing project-wide
+](https://ij.bazel.build/docs/project-views.html). It contains project-wide
 settings, like targets to sync, Bazel flags, and enabled languages. Check this
-file into your project's version control to share Bazel project settings. For
-example, the basic project view file looks like this:
+file into your project's version control to share Bazel project settings. 
+
+The default project view file looks like this:
 
 ```
 directories:
@@ -109,6 +110,10 @@ additional_languages:
   # python
   # scala
 ```
+
+`derive_targets_from_directories` collects all build targets recursively from
+the `directories` list. You can also specify targets manually in the `targets`
+list.
 
 ## Bazel data subdirectory
 
@@ -154,9 +159,11 @@ Monolithic module for the Bazel workspace.
 │   └── remoteOutputCache
 ```
 
-A general-purpose local cache for output artifacts generated remotely. During project sync, updated outputs of interest will be copied locally.
+A general-purpose local cache for output artifacts generated remotely. During a
+project sync, updated outputs of interest will be copied locally.
 
-Cache files here have a hash appended to their name to allow matching to the original artifact.
+The filenames in this directory contain a checksum suffix to ensure a deterministic map from the 
+cache entries sharing the same filename to the original artifact.
 
 ## IntelliJ configuration subdirectory
 
@@ -184,8 +191,8 @@ Settings for [code styles](https://www.jetbrains.com/help/idea/configuring-code-
     ├── externalDependencies.xml
 ```
 
-Settings for external dependencies of this project. In particular, every Bazel
-IntelliJ project depends on the Bazel plugin:
+Settings for IntelliJ's external dependencies, which are typically plugins.
+Every Bazel IntelliJ project depends on the Bazel plugin:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -200,7 +207,8 @@ IntelliJ project depends on the Bazel plugin:
     ├── libraries
 ```
 
-Settings for external libraries. Note that this is not the same as Bazel's concept of external repositories.
+Settings for external libraries. Note that this does not map directly to Bazel's
+concept of external repositories.
 
 ```
     │   ├── Runner_deploy_ijar_d8363141.xml
@@ -246,8 +254,8 @@ Miscelleanous configuration.
 ```
 
 Configuration for project modules. In the previous section, we saw that the
-plugin generated two modules for project data and the workspace itself. We can
-see their `.iml` files referenced in this file:
+plugin generated two modules for project data and the workspace itself. We see
+their `.iml` files referenced here:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -265,7 +273,8 @@ see their `.iml` files referenced in this file:
     ├── runConfigurations.xml
 ```
 
-Settings for [run configurations](https://www.jetbrains.com/help/rider/Run_Debug_Configurations_dialog.html).
+Settings for [run
+configurations](https://www.jetbrains.com/help/rider/Run_Debug_Configurations_dialog.html).
 
 ```
     ├── vcs.xml
@@ -277,15 +286,16 @@ Settings for version control.
     └── workspace.xml
 ```
 
-This file contains the last known persistent state of the user's workflow in the IntelliJ application.
-Using these settings, IntelliJ can recreate the active tabs, settings, recently
-used run configurations, and VCS tab states after restarting the IDE.
+This file contains the last known state of the user's workflow in the IntelliJ
+application. Using these settings, IntelliJ can recreate the active tabs,
+settings, recently used run configurations, and VCS tab states after restarting
+the IDE.
 
 ## Portability of the `.ijwb` directory
 
 The `.ijwb` directory is not completely portable. Files like `.bazelproject` and
 `codeStyleConfig.xml` can be shared project-wide, but `workspace.xml` and
-`.workspace.iml` should be user specific.
+`.workspace.iml` should be user-specific.
 
 In general, extract `.bazelproject` file out of `.ijwb/` to version control it,
 and follow [JetBrains' recommendations
@@ -306,9 +316,9 @@ $ tree
 
 This is the global project persistent data and configuration cache directory.
 
-For every project opened with the plugin using this installation, there is an
-entry named after the project and the first 8 characters of a random UUID. The
-UUID is used to uniquely identify the project location.
+For every project opened using this IDE installation, there is an entry named
+after the project and the first 8 characters of a random UUID. The UUID is used
+to uniquely identify the project location.
 
 ```
     └── springboot-94bce85a
