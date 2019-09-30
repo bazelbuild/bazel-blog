@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "BazelCon 2019"
+title: "BazelCon 2019: Registration Open"
 authors:
   - aiuto
 ---
