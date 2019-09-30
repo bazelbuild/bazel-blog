@@ -162,8 +162,8 @@ Monolithic module for the Bazel workspace.
 A general-purpose local cache for output artifacts generated remotely. During a
 project sync, updated outputs of interest will be copied locally.
 
-The cached files' names in this directory contains a checksum suffix to ensure a
-deterministic map to the original artifact.
+The filenames in this directory contain a checksum suffix to ensure a deterministic map from the 
+cache entries sharing the same filename to the original artifact.
 
 ## IntelliJ configuration subdirectory
 
