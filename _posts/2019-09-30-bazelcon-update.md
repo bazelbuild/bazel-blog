@@ -1,8 +1,8 @@
 ---
 layout: posts
-title: "BazelCon 2019: Save the Date!"
+title: "BazelCon 2019"
 authors:
-  - dslomov
+  - aiuto
 ---
 
 **TL;DR: BazelCon 2019 will be in Sunnyvale, CA on December 11-12.
@@ -30,4 +30,4 @@ The conference agenda is still being shaped, but you can expect:
 *   Conference social and networking opportunities
 *   ...And more!
 
-Mark your calendars and be on the lookout for the opening of conference registration in August!
+[Register here](https://events.withgoogle.com/bazelcon-2019/)
