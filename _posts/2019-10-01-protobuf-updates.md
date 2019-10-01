@@ -6,5 +6,5 @@ authors:
 ---
 
 We’re pleased to announce that we updated the instructions for using 
-[Protocol Buffers in Bazel](https://events.withgoogle.com/bazelcon-2019/)
+[Protocol Buffers in Bazel](/2017/02/27/protocol-buffers.html)
 to reflect recent and upcoming changes to Bazel.
