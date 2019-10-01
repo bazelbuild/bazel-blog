@@ -7,7 +7,8 @@ authors:
 
 Bazel currently provides rules for Java, JavaLite and C++.
 
-<!-- TODO(yannic): Create documentation for rules_proto and link to that instead. -->
+<!-- TODO(yannic): Create documentation for rules_proto and link to that instead. 
+     https://github.com/bazelbuild/bazel/issues/9203 -->
 [`proto_library`]({{ site.docs_site_url }}/be/protocol-buffer.html#proto_library)
 is a language-agnostic rule that describes relations between `.proto` files.
 
@@ -54,7 +55,7 @@ http_archive(
     ],
 )
 
-# rules_cc defines rules for generating Java code from Protocol Buffers.
+# rules_java defines rules for generating Java code from Protocol Buffers.
 http_archive(
     name = "rules_java",
     sha256 = "ccf00372878d141f7d5568cedc4c42ad4811ba367ea3e26bc7c43445bbc52895",
