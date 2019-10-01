@@ -36,10 +36,10 @@ The following satisfies these dependencies:
 
 > TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
-<!-- TODO(yannic): The necessary fixes are not in a release yet, update when 3.10 drops. -->
-> **Update (August 2019)**: If you're using Bazel 1.0 or later, the minimum Protocol Buffer version required is [ee4f2492ea4e7ff120f68a792af870ee30435aa5](https://github.com/protocolbuffers/protobuf/commit/ee4f2492ea4e7ff120f68a792af870ee30435aa5).
+> **Update (August 2019)**: We strongly recommend to use
+[Protocol Buffer version 3.10](https://github.com/protocolbuffers/protobuf/releases/tag/v3.10.0-rc1)
+ar later to maximize compatibility with future Bazel releases.
 
-<!-- TODO(yannic): Update protobuf-javalite to include load statements for @rules_{cc,java,proto,python}. -->
 ```python
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -80,10 +80,10 @@ http_archive(
 # which is the JavaLite proto runtime (base classes and common utilities).
 http_archive(
     name = "com_google_protobuf_javalite",
-    sha256 = "a8cb9b8db16aff743a4bc8193abec96cf6ac0b0bc027121366b43ae8870f6fd3",
-    strip_prefix = "protobuf-fa08222434bc58d743e8c2cc716bc219c3d0f44e",
+    sha256 = "311b29b8d0803ab4f89be22ff365266abb6c48fd3483d59b04772a144d7a24a1",
+    strip_prefix = "protobuf-7b64714af67aa967dcf941df61fe5207975966be",
     urls = [
-        "https://github.com/google/protobuf/archive/fa08222434bc58d743e8c2cc716bc219c3d0f44e.zip",
+        "https://github.com/google/protobuf/archive/7b64714af67aa967dcf941df61fe5207975966be.zip",
     ],
 )
 
