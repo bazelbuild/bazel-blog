@@ -1,12 +1,12 @@
 ---
 layout: posts
-title: "BazelCon 2019 Video and Birds of a Feather notes are up!"
+title: "BazelCon 2019 Videos and Birds of a Feather notes"
 authors:
   - mnarinsky
 ---
 
 
-We are truly thankful to everyone in our community for attending our annual [Bazel Conference](https://sites.google.com/corp/bazel.build/conference2017/2019) and making it a success! Check out the videos and Birds of a Feather session notes below:
+We are truly thankful to everyone in our community for attending our annual [Bazel Conference](https://sites.google.com/corp/bazel.build/conference2017/2019) and making it a success! Check out the videos and Birds of a Feather session notes from the conference below:
 
 
 ## Session Videos ([full playlist](https://www.youtube.com/playlist?list=PLxNYxgaZ8Rsf-7g43Z8LyXct9ax6egdSj))
@@ -48,10 +48,10 @@ We are truly thankful to everyone in our community for attending our annual [Baz
 *   **[Lightning Talk - Package manager integration with Bazel](https://www.youtube.com/watch?v=_7IIc3ZTwKk&list=PLxNYxgaZ8Rsf-7g43Z8LyXct9ax6egdSj&index=23)** _– Andreas Herrmann (Tweag)_
 
 
-## Birds of the Feather Session Summaries
+## Birds of a Feather Summaries
 
 *   **[Java Session Summary](/assets/BoF_2019_Java.pdf)**
-*   **[iOS Session Summary](/assets/BoF_2019_iOS.pdf")**
+*   **[iOS Session Summary](/assets/BoF_2019_iOS.pdf)**
 *   **[Python Session Summary](/assets/BoF_2019_Python.pdf)**
 *   **Front End Session Summary** (will be posted shortly)
 *   **C++ Session Summary** (will be posted shortly)
