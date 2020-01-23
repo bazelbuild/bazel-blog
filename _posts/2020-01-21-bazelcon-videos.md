@@ -54,4 +54,4 @@ We are truly thankful to everyone in our community for attending our annual [Baz
 *   **[iOS Session Summary](/assets/BoF_2019_iOS.pdf)**
 *   **[Python Session Summary](/assets/BoF_2019_Python.pdf)**
 *   **[Front End Session Summary](/assets/BoF_2019_FrontEnd.pdf)**
-*   **C++ Session Summary** (will be posted shortly)
+*   **[C++ Session Summary](/assets/BoF_2019_C++.pdf)**
