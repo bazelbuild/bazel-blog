@@ -37,6 +37,7 @@ This shape works well for purely local or purely remote builds---that is, any ca
 However, having a single pool of Xcode versions doesn’t really express the reality for dynamic execution, where the remote and local platforms have separate, and potentially disjoint, sets of Xcode versions available. 
 
 To make this rule shape work with dynamic execution, we used an `--xcode_config` that just contained the remotely available Xcode versions, then required our users to have the selected Xcode version (either `--xcode_version` or the remote default) installed on their machines.
+
 ## What’s wrong with that?
 There are two problems here. 
 
@@ -47,6 +48,7 @@ More importantly, requiring that the selected Xcode version be available both lo
 The solution we chose took two parts:
 *  Adapting the Xcode config rule to better express the Xcode versions available for dynamic scheduling.
 *  Configuring dynamic execution to tolerate local- or remote-only Xcode versions, by setting action execution requirements based on the availability of the selected Xcode.
+
 ## The new xcode_config rule
 We first introduced a new rule, `available_xcodes`, which takes the same fields as the original `xcode_config` rule shape, but exposes them all instead of performing Xcode selection. 
  
@@ -86,6 +88,7 @@ xcode_config(
     remote_versions = ‘remote_xcodes’
 )
 ```
+
 ## Xcode version selection
 Both `xcode_config` shapes select the value of `--xcode_version` if it’s present, or else the default. They differ, however, in what constitutes the default, and in the behavior if the selected Xcode is only present on a single platform.
 
@@ -94,12 +97,14 @@ You might remember that we were using the remote `xcode_config` with dynamic exe
 A mutually available Xcode should result in the best performance, since it enables both local and remote execution, and since some actions (e.g. Swift compiles) must be executed locally, the local default is the next best thing. Xcode version selection occurs in this order, mutual first, then local default, but you can skip straight to the local default by passing `--experimental_prefer_mutual_xcode=false`.
 
 Since the new `xcode_config` requires both dependencies to be set, we will never default to a remote-only Xcode version. We considered allowing a remote-only Xcode version in the absence of a locally available Xcode, but decided that preventing builds from failing cryptically if there was no Xcode to execute local actions was more important than providing the flexibility for dynamic execution to behave like a purely remote strategy.
+
 ## Configuring dynamic execution
-The last piece is having Bazel execute actions on the right platform based on the availability of the selected Xcode. If we’ve selected a local- or remote-only Xcode, either via `--xcode_version` or by accepting the default, we want to keep the dynamic scheduler from trying to execute Xcode-related actions on the other platform. 
+The last piece is having Bazel execute actions in the right location based on the availability of the selected Xcode. If we’ve selected a local- or remote-only Xcode, either via `--xcode_version` or by accepting the default, we want to keep the dynamic scheduler from trying to execute Xcode-related actions on the other system. 
 
 We considered bypassing the dynamic scheduler by setting an overall execution strategy based on the Xcode availability. However, we *do* want to be able to use either platform for actions that don’t care about Xcodes (plus, this proposal was pretty complicated to implement). 
 
 Instead, we had the dynamic scheduler set the execution strategy on a per-action basis. We did this by having the `XcodeConfig` provide a list of execution requirements, including location-based restrictions like `no-remote`. Implementations of rules that depend on `XcodeConfig` were modified to propagate these execution requirements to the actions they produce. The dynamic scheduler then checks each action for its location-based requirements, and disables the incompatible execution location, if there is one. 
+
 ## Takeaways
 If you use dynamic execution, you should use the new `xcode_config` rule shape to get more flexibility, better defaults, and more reasonable error messages!
 
