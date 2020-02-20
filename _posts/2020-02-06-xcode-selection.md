@@ -108,6 +108,6 @@ Instead, we had the dynamic scheduler set the execution strategy on a per-action
 ## Takeaways
 If you use dynamic execution, you should use the new `xcode_config` rule shape to get more flexibility, better defaults, and more reasonable error messages!
 
-You should still use the old `xcode_config` shape for local- or remote-only builds.
+You should still use the old `xcode_config` shape for local-only or remote-only builds.
 
 We’re excited to roll this out internally, so more developers can reap the benefits of dynamic scheduling.
