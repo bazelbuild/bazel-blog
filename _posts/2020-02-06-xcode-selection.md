@@ -99,7 +99,7 @@ A mutually available Xcode should result in the best performance, since it enabl
 Since the new `xcode_config` requires both dependencies to be set, we will never default to a remote-only Xcode version. We considered allowing a remote-only Xcode version in the absence of a locally available Xcode, but decided that preventing builds from failing cryptically if there was no Xcode to execute local actions was more important than providing the flexibility for dynamic execution to behave like a purely remote strategy.
 
 ## Configuring dynamic execution
-The last piece is having Bazel execute actions in the right location based on the availability of the selected Xcode. If we’ve selected a local- or remote-only Xcode, either via `--xcode_version` or by accepting the default, we want to keep the dynamic scheduler from trying to execute Xcode-related actions on the other system. 
+The last piece is having Bazel execute actions in the right location based on the availability of the selected Xcode. If we’ve selected a local-only or remote-only Xcode, either via `--xcode_version` or by accepting the default, we want to keep the dynamic scheduler from trying to execute Xcode-related actions on the other system. 
 
 We considered bypassing the dynamic scheduler by setting an overall execution strategy based on the Xcode availability. However, we *do* want to be able to use either platform for actions that don’t care about Xcodes (plus, this proposal was pretty complicated to implement). 
 
