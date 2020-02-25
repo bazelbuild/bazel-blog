@@ -5,7 +5,11 @@ authors:
   - susinmotion
 ---
 
-One of our major projects in the last year has been improving build times for interactive iOS builds by adding support for the Google-internal remote execution service from Mac. Combined with [dynamic execution]({% post_url 2019-02-01-dynamic-spawn-scheduler %}), which helps mitigate deficiencies in our remote Mac executors by running some actions locally, we are now able to deliver the best possible clean and incremental build times.
+As of Bazel 2.1, you can now use any locally-available Xcode version with [dynamic execution]({% post_url 2019-02-01-dynamic-spawn-scheduler %})! Read on to learn more about why we created this new functionality, how it works, why you would (or wouldn’t) want to use it, and how to opt into it if you do.
+
+## Setting the scene
+
+One of our major projects in the last year has been improving build times for interactive iOS builds by adding support for the Google-internal remote execution service from Mac. Combined with dynamic execution, which helps mitigate deficiencies in our remote Mac executors by running some actions locally, we are now able to deliver the best possible clean and incremental build times.
 
 This was a hands down performance improvement, but users kept opting out. Why? Were they nostalgic for slower builds?
 
