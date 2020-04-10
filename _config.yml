@@ -2,7 +2,7 @@ destination: production
 
 markdown: redcarpet
 redcarpet:
-  extensions: ["tables"]
+  extensions: ["tables", "with_toc_data"]
 
 paginate: 10
 
