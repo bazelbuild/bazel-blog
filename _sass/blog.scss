@@ -1,3 +1,5 @@
+// Styles specific to blog.bazel.build
+
 .blog-post {
   margin-bottom: 60px;
 
@@ -13,5 +15,11 @@
     max-width: 70%;
     display: block;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 1170px;
   }
 }
