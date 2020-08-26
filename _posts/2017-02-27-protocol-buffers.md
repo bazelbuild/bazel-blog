@@ -37,9 +37,9 @@ The following satisfies these dependencies:
 
 > TIP: Clone [https://github.com/cgrushko/proto_library](https://github.com/cgrushko/proto_library) to try protobufs in Bazel now.
 
-> **Update (August 2019)**: We strongly recommend to use
-[Protocol Buffer version 3.10](https://github.com/protocolbuffers/protobuf/releases/tag/v3.10.0-rc1)
-ar later to maximize compatibility with future Bazel releases.
+> **Update (February 2020)**: Starting with Bazel 3.0, the minimum Protocol Buffer
+version required is [**3.11.3**] (https://github.com/protocolbuffers/protobuf/releases/tag/v3.11.3).
+See this [issue](https://github.com/bazelbuild/bazel/issues/10335) for more information.
 
 ```python
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
@@ -69,22 +69,11 @@ http_archive(
 # rules_proto defines abstract rules for building Protocol Buffers.
 http_archive(
     name = "rules_proto",
-    sha256 = "57001a3b33ec690a175cdf0698243431ef27233017b9bed23f96d44b9c98242f",
-    strip_prefix = "rules_proto-9cd4f8f1ede19d81c6d48910429fe96776e567b1",
+    sha256 = "2490dca4f249b8a9a3ab07bd1ba6eca085aaf8e45a734af92aad0c42d9dc7aaf",
+    strip_prefix = "rules_proto-218ffa7dfa5408492dc86c01ee637614f8695c45",
     urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/9cd4f8f1ede19d81c6d48910429fe96776e567b1.tar.gz",
-        "https://github.com/bazelbuild/rules_proto/archive/9cd4f8f1ede19d81c6d48910429fe96776e567b1.tar.gz",
-    ],
-)
-
-# java_lite_proto_library rules implicitly depend on @com_google_protobuf_javalite//:javalite_toolchain,
-# which is the JavaLite proto runtime (base classes and common utilities).
-http_archive(
-    name = "com_google_protobuf_javalite",
-    sha256 = "311b29b8d0803ab4f89be22ff365266abb6c48fd3483d59b04772a144d7a24a1",
-    strip_prefix = "protobuf-7b64714af67aa967dcf941df61fe5207975966be",
-    urls = [
-        "https://github.com/google/protobuf/archive/7b64714af67aa967dcf941df61fe5207975966be.zip",
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_proto/archive/218ffa7dfa5408492dc86c01ee637614f8695c45.tar.gz",
+        "https://github.com/bazelbuild/rules_proto/archive/218ffa7dfa5408492dc86c01ee637614f8695c45.tar.gz",
     ],
 )
 

@@ -25,13 +25,12 @@ the past you will have to uninstall it first by running `brew uninstall bazel`.
 
 ```bash
 $ brew tap bazelbuild/tap
-$ brew tap-pin bazelbuild/tap
 ```
 
 Having added our tap you can install Bazel via the install command
 
 ```bash
-$ brew install bazel
+$ brew install bazelbuild/tap/bazel
 ```
 
 and upgrade to a newer version via the upgrade command
