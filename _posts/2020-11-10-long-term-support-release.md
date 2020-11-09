@@ -11,7 +11,7 @@ authors:
 
 tl;dr Bazel will now provide Long Term Support (LTS) Releases as well as regular rolling releases.
 
-Similar to other Open Source products, many current and future Bazel users require a stable, supported release of Bazel where the behavior doesn’t regularly change, but which receives critical bug fixes and security patches. At the same time, other Bazel users prefer frequent, high quality updates with small, incremental features delivered regularly.
+Similar to other Open Source products, many current and future Bazel users require a stable, supported release of Bazel where the behavior doesn't regularly change, but which receives critical bug fixes and security patches. At the same time, other Bazel users prefer frequent, high quality updates with small, incremental features delivered regularly.
 
 We are pleased to announce that, starting with the next major release (4.0), Bazel will provide Long Term Support (LTS) releases as well as regular Rolling releases.
 
@@ -29,19 +29,20 @@ Long Term Support (LTS) releases:
 - Each LTS release will include all new features, bug fixes and (breaking) changes since the last major version.
 - Bazel will actively support each LTS branch for 9 months with critical bug fixes, but no new features.
 - Thereafter, Bazel will provide maintenance for two additional years with only security and OS compatibility fixes.
-- Bazel Federation reboot: Bazel will provide strong guidance about the ruleset versions that should be used with each Bazel release so that each user will not have to manage interoperability themselves.
+- Bazel Federation reboot: Bazel will provide guidance about the ruleset versions that should be used with each Bazel release so that each user will not have to manage interoperability themselves.
 
 Rolling releases:
 - Live-at-head approach, which reduces upgrade distance and cost.
-- Continuous delivery of Bazel versions, in sync with Google’s internal Blaze releases.
-- Must pass Google’s internal test suite and be green on Bazel CI (external).
+- Continuous delivery of Bazel versions, in sync with Google's internal Blaze releases.
+- Must pass Google's internal test suite and be green on Bazel CI (external).
 - Bazel's main branch will form the basis for rolling releases.
-- Incompatible flags will still be used to ease the burden of migrating to new functionality, but default behaviors may change with any rolling release.
+- [Incompatible flags](https://docs.bazel.build/versions/master/backward-compatibility.html) will still be used to ease the burden of migrating to new functionality, but default behaviors may change with any rolling release.
 
 If you have questions or concerns, feel free to reach out to us:
 
-- Informational Q&A at BazelCon 2020
-- Discussion: bazel-discuss@google.com.
+- [Informational Q&A at BazelCon
+  2020](https://opensourcelive.withgoogle.com/events/bazelcon2020?talk=day2-boaf-4)
+- [Discussion: bazel-discuss@google.com](mailto:bazel-discuss@google.com).
 
 Thanks,
 
