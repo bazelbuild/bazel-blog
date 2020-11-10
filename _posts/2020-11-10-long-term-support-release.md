@@ -6,9 +6,6 @@ authors:
   - hicksjoseph
   - philwo
 ---
-
-# Announcing Bazel Long Term Support (LTS) releases
-
 **tl;dr Bazel will now provide Long Term Support (LTS) Releases as well as regular rolling releases.**
 
 Similar to other Open Source products, many current and future Bazel users require a stable, supported release of Bazel where the behavior doesn’t regularly change, but which receives critical bug fixes and security patches. At the same time, other Bazel users prefer frequent, high quality updates with small, incremental features delivered regularly.
@@ -40,8 +37,6 @@ Rolling releases:
 
 If you have questions or concerns, feel free to reach out to us:
 
-- [Informational Q&A at BazelCon
-  2020](https://opensourcelive.withgoogle.com/events/bazelcon2020?talk=day2-boaf-4)
 - [Discussion: bazel-discuss@google.com](mailto:bazel-discuss@google.com).
 
 Thanks,
