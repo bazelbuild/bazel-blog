@@ -39,7 +39,7 @@ Rolling releases:
 * Bazel's main branch forms the basis for rolling releases.
 * [Incompatible flags](https://docs.bazel.build/versions/master/backward-compatibility.html) will still be used to ease the burden of migrating to new functionality, but default behaviors may change with any rolling release.
 
-If you have questions or concerns, feel free to reach out to us: bazel-discuss@google.com.
+If you have questions or concerns, feel free to reach out to us: [bazel-discuss@googlegroups.com](mailto:bazel-discuss@googlegroups.com).
 
 Thanks,
 
