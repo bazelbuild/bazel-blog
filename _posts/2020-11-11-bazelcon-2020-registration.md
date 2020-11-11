@@ -17,14 +17,6 @@ Some benefits of this new release cadence are:
 * Bazel contributors / rules owners can prepare to support future LTS releases via rolling releases.
 * Bazel users can choose the release cadence that works best for them, since we will offer both LTS releases and rolling releases.
 
-Long Term Support (LTS) releases:
-
-* We will create an LTS release every ~9 months => new LTS release branch, increment major version number.
-* Each LTS release will include all new features, bug fixes and (breaking) changes since the last major version.
-* Bazel will actively support each LTS branch for 9 months with critical bug fixes, but no new features.
-* Thereafter, Bazel will provide maintenance for two additional years with only security and OS compatibility fixes.
-* Bazel Federation reboot: Bazel will provide guidance about the ruleset versions that should be used with each Bazel release so that each user will not have to manage interoperability themselves.
-
 Make sure that you register at http://goo.gle/bazelcon to be a part of the excitement of the premier build conference!
 
 See you all at BazelCon 2020!
