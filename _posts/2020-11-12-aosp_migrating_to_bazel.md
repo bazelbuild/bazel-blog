@@ -8,15 +8,17 @@ authors:
 After significant investment in understanding how best to build the
 Android Platform correctly and quickly, we are pleased to announce that
 the Android Platform is migrating from its current build systems (Soong
-and Make) to Bazel. While components of Bazel have been already checked
-into the Android Open Source Project (AOSP) source tree, this will be
-a phased migration over the next few Android releases which includes
-many concrete and digestible milestones to make the transformation as
-seamless and easy as possible. There will be no immediate impact to
-the Android Platform build workflow or the existing supported Android
-Platform Build tools in 2020 or 2021.  Some of the changes to support
-Android Platform builds are already in Bazel, such as Bazel’s ability
-to parse and execute Ninja files to support a gradual migration.
+and Make) to Bazel. While components of Bazel have been [already checked
+into the Android Open Source Project (AOSP) source
+tree](https://cs.android.com/android/platform/superproject/+/master:build/bazel/),
+this will be a phased migration over the next few Android releases
+which includes many concrete and digestible milestones to make the
+transformation as seamless and easy as possible. There will be no
+immediate impact to the Android Platform build workflow or the existing
+supported Android Platform Build tools in 2020 or 2021.  Some of the
+changes to support Android Platform builds are already in Bazel, such
+as Bazel’s ability to parse and execute Ninja files to support a
+gradual migration.
 
 Migrating to Bazel will enable AOSP to:
 
