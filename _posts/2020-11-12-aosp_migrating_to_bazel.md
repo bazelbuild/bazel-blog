@@ -52,3 +52,5 @@ greater developer velocity, productivity, and happiness across the entire
 Android Platform ecosystem.
 
 Joe (on behalf of the Bazel and AOSP infrastructure teams)
+
+![Bazel for AOSP](/assets/bazel_aosp.jpg)
