@@ -29,6 +29,10 @@ defaults:
       layout: posts
 
 authors:
+  abhishekarya:
+    - Abhishek Arya
+    - https://github.com/inferno-chromium
+
   aehlig:
     - Klaus Aehlig
     - https://github.com/aehlig
@@ -36,6 +40,10 @@ authors:
   aiuto:
     - Tony Aiuto
     - https://github.com/aiuto
+
+  asraa:
+    - Asra Ali
+    - https://github.com/asraa
 
   asteinb:
     - Alex Steinberg
@@ -157,10 +165,14 @@ authors:
     - Russell Wolf
     - https://github.com/russwolf
 
+  stefanbucur:
+    - Stefan Bucur
+    - https://github.com/stefanbucur
+
   steren:
     - Steren Giannini
     - https://github.com/steren
-    
+
   susinmotion:
     - Susan Steinman
     - https://github.com/susinmotion
