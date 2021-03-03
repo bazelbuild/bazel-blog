@@ -17,3 +17,6 @@ Olek Wojnar, Debian Developer, reached out to the Bazel team about packaging and
 The Bazel team jumped in to help Olek and the COVID-19 research community. Yun Peng, Software Engineer at Google with Olek Wojnar led the team of Bazel and Debian volunteers to move the project forward. The joint effort between Debian and Google has produced some great results, including packaging the Bazel bootstrap variant in 6 months time (Debian 11 -- released in Late 2021; Ubuntu 21.04 -- 22 April 2021). Bazel is now available as an easy to install package distributed on Debian and Ubuntu. The extended Google team continues to work with Debian towards the next step of packaging and distributing Tensorflow on Debian and other Linux distributions.
 
 In addition to Yun and Olek, other contributors to this project include Michael R. Crusoe of Debian, Joe Hicks, John Field, Philipp Wollermann, and Tobias Werth of Google.
+
+![Bazel](/assets/bazel-icon.png)
+![Debian](/assets/debian-logo.png)
