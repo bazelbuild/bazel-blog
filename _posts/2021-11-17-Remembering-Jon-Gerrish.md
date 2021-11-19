@@ -1,3 +1,9 @@
+---
+layout: posts
+title: "Remembering Jon Gerrish"
+authors:
+  - joehicks
+---
 
 ## Remembering Jon Gerrish
 
