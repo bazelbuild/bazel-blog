@@ -12,6 +12,7 @@ The Bazel team is excited to announce migration to a new [docs experience](https
 Renewing the Bazel documentation infrastructure was a team priority in 2021. Along with improving findability, the new site also makes it easier to scale and contribute so we can continue to grow our knowledge base together.
 
 The new documentation has several new features:
+
 *   Better user experience. With automated localization / translation, filterable sitemaps, and a consistent navigation structure, more users can find what they are looking for, faster.
 *   Standardized contributor experience. We’re making regular improvements to our documentation, and encourage the community to [contribute](https://bazel.build/contribute/docs).
 *   Improved information architecture. The refactored sitemap and landing pages give a professional feel to the site, and improve consistency with other Google OSS project sites like [Tensorflow](https://www.tensorflow.org/), [Android](https://source.android.com/), and [Firebase OSS](https://firebaseopensource.com/).
