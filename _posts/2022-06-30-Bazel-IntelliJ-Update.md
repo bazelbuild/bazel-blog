@@ -1,9 +1,8 @@
-
 ---
 layout: posts
 title: "Bazel IntelliJ Plugin Community Update"
 authors:
-- radvani13
+  - radvani13
 ---
 
 # **Bazel IntelliJ Plugin Community Update**
