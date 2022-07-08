@@ -5,7 +5,7 @@ authors:
   - radvani13
 ---
 
-### Bazel plugin for IntelliJ IDEA update
+### **Bazel & JetBrains collaborate to co-maintain open source IntelliJ IDEA Bazel Plugin**
 
 We are excited to announce that JetBrains* has joined as a co-maintainer of the open source [Bazel plugin for IntelliJ IDEA](https://github.com/bazelbuild/intellij). Using this plugin, developers can import Bazel project files and run Bazel tests and binaries within IntelliJ IDEA. JetBrains has been a contributor to the plugin, contributing to 2022.1 and 2022.2 compatibility releases made available in 2022 to the community.
 
