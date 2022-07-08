@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Bazel IntelliJ Plugin Community Update"
+title: "Bazel & JetBrains collaborate to co-maintain open source IntelliJ IDEA Bazel Plugin"
 authors:
   - radvani13
 ---
