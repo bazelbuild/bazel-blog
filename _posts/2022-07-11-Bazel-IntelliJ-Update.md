@@ -1,11 +1,11 @@
 ---
 layout: posts
-title: "Bazel & JetBrains collaborate to co-maintain open source IntelliJ IDEA Bazel Plugin"
+title: "Announcing Bazel & JetBrains co-maintenance of IntelliJ IDEA Bazel Plugin"
 authors:
   - radvani13
 ---
 
-### **Bazel & JetBrains collaborate to co-maintain open source IntelliJ IDEA Bazel Plugin.**
+### **Announcing Bazel & JetBrains co-maintenance of IntelliJ IDEA Bazel Plugin**
 
 Bazel plugin for IntelliJ IDEA announcement
 
