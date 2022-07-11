@@ -14,7 +14,8 @@ We are excited to announce that JetBrains* has joined as co-maintainer of the op
   
 As co-maintainer, the JetBrains team reviews and merges contributions, collaborates on the roadmap, and monitors the CI pipeline, including the overall health of the [plugin’s Github repo](https://github.com/bazelbuild/intellij). This new maintenance structure enables faster review and merger of developer requests — such as support for Scala — and support for more contributions to and iteration of the plugin.
 
- We welcome you to join the discussion! Discuss your feature request ideas and contributions by joining the [Bazel-Intellij plugin Google Group](https://groups.google.com/g/intellij-bazel-plugin) or contacting the [Bazel Product team](mailto:[bazel-discuss@googlegroups.com]).
+  We welcome you to join the discussion! Discuss your feature request ideas and contributions by joining the [Bazel-Intellij plugin Slack channel](https://bazelbuild.slack.com/archives/C025SBYFC4E) or contacting the [Bazel Product team](mailto:bazel-discuss@googlegroups.com).
+
 
   
 *Copyright © 2022 JetBrains s.r.o. JetBrains and IntelliJ are registered trademarks of JetBrains s.r.o.
