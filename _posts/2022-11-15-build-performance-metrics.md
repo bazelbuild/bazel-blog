@@ -14,7 +14,9 @@ Probably every Bazel user has experienced builds that were slow or slower than a
 Often we are concerned with how to improve the performance of individual builds. Some relevant cases of significance:
 
 1. Core developer targets that are frequently iterated on and (re)built.
+
 2. Common libraries widely depended upon by other targets.
+
 3. A representative target from a class of targets (e.g. custom rules), diagnosing and fixing issues in one build might help to resolve issues at the larger scale.
 
 ## Extracting metrics
