@@ -110,14 +110,14 @@ investigating build performance regressions.
 A clean build is one that builds everything from scratch, while an incremental build reuses some already completed work.
 
 We suggest looking at clean and incremental builds separately, especially when you are collecting / aggregating metrics that are dependent on the state of Blaze’s caches
-(for example [build request size metrics](#using-deterministic-build-metrics-as-a-proxy-for-build-performance)). They also represent two different user experiences. As compared to starting a clean build from scratch (which
+(for example [build request size metrics](#deterministic-build-metrics-as-a-proxy-for-build-performance)). They also represent two different user experiences. As compared to starting a clean build from scratch (which
 takes longer due to a cold cache), incremental builds happen far more frequently as developers iterate on code (typically faster since the cache is usually already warm).
 
 You can use the `CumulativeMetrics.num_analyses` field in the BEP to classify builds. If `num_analyses <= 1`, it is a clean build; otherwise, we can broadly categorize it to likely be an incremental build - the user could
 have switched to different flags or different targets causing an effectively clean build. Any more rigorous definition of incrementality will likely have to come in the form of a heuristic, for example looking at the number
 of packages loaded (`PackageMetrics.packages_loaded`).
 
-### Using deterministic build metrics as a proxy for build performance
+### Deterministic build metrics as a proxy for build performance
 
 Measuring build performance can be difficult due to the non-deterministic nature of certain metrics (for example Bazel’s CPU time or queue times on a remote cluster). As such, it can be useful to use deterministic metrics as
 a proxy for the amount of work done by Bazel, which in turn affects its performance.
@@ -191,7 +191,7 @@ There are two main sources to get Bazel’s memory usage, Bazel `info` and the [
 
 - [BEP](https://bazel.build/remote/bep)'s `MemoryMetrics.peak_post_gc_heap_size`: Size of the peak JVM heap size in bytes post GC (requires setting `--memory_profile` that attempts to force a full GC).
 
-A regression in memory usage is usually a result of a regression in [build request size metrics](#using-deterministic-build-metrics-as-a-proxy-for-build-performance), which are often due to addition of dependencies or a change in the rule implementation.
+A regression in memory usage is usually a result of a regression in [build request size metrics](#deterministic-build-metrics-as-a-proxy-for-build-performance), which are often due to addition of dependencies or a change in the rule implementation.
 
 To analyze Bazel’s memory footprint on a more granular level, we recommend using the [built-in memory profiler](https://bazel.build/rules/performance#memory-profiling) for rules.
 
