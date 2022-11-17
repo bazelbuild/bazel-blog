@@ -43,7 +43,7 @@ but here we will go over some concepts and proto fields that would be useful in 
 
 ### Bazel's query / cquery / aquery commands
 
-Blaze provides 3 different query modes ([query](https://bazel.build/query/quickstart), [cquery](https://bazel.build/query/cquery) and [aquery](https://bazel.build/query/aquery)) that allow users to query the target graph,
+Bazel provides 3 different query modes ([query](https://bazel.build/query/quickstart), [cquery](https://bazel.build/query/cquery) and [aquery](https://bazel.build/query/aquery)) that allow users to query the target graph,
 configured target graph and action graph respectively. The query language provides a [suite of functions](https://bazel.build/query/language#functions) usable across the different query modes, that allows you to customize
 your queries according to your needs.
 
@@ -109,7 +109,7 @@ investigating build performance regressions.
 
 A clean build is one that builds everything from scratch, while an incremental build reuses some already completed work.
 
-We suggest looking at clean and incremental builds separately, especially when you are collecting / aggregating metrics that are dependent on the state of Blaze’s caches
+We suggest looking at clean and incremental builds separately, especially when you are collecting / aggregating metrics that are dependent on the state of Bazel’s caches
 (for example [build request size metrics](#deterministic-build-metrics-as-a-proxy-for-build-performance)). They also represent two different user experiences. As compared to starting a clean build from scratch (which
 takes longer due to a cold cache), incremental builds happen far more frequently as developers iterate on code (typically faster since the cache is usually already warm).
 
@@ -185,7 +185,7 @@ container environments (at least until [#16512](https://github.com/bazelbuild/ba
 
 There are two main sources to get Bazel’s memory usage, Bazel `info` and the [BEP](https://bazel.build/remote/bep).
 
-- `blaze info used-heap-size-after-gc`: The amount of used memory in bytes after a call to `System.gc()`.
+- `bazel info used-heap-size-after-gc`: The amount of used memory in bytes after a call to `System.gc()`.
    - [Bazel bench](https://github.com/bazelbuild/bazel-bench) provides benchmarks for this metric as well.
    - Additionally, there are `peak-heap-size`, `max-heap-size`, `used-heap-size` and `committed-heap-size` (see [documentation](https://bazel.build/docs/user-manual#configuration-independent-data)), but are less relevant.
 
