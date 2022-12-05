@@ -7,7 +7,7 @@ authors:
 
 # Bazel 6.0 is now available!
 Bazel 6.0 is now available for use in your build pipeline. Bazel 6.0 is the Long Term Support release available in 2022. With Bazel 6.0, we have delivered highly requested customer updates that will simplify Bazel usage and eliminate some Android app development roadblocks users have run into in 2022.
-![Image]{./bazel_blog/images/Bazel6.0ReleaseBlogPost.png}
+![Image](../images/Bazel6.0ReleaseBlogPost.png)
 
 ## Android app builds with Bazel
 This release improves building Android apps with Bazel. It now uses [D8](https://developer.android.com/studio/command-line/d8) for dexing and desugaring by default, which was a high priority customer request. With D8, our customers can leverage the latest Android tooling for building mobile apps. 
