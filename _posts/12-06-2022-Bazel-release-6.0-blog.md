@@ -21,7 +21,7 @@ Through [community contributions,](https://github.com/bazelbuild/bazel/pulls?q=i
 -   Bzlmod includes support for rules_jvm_external, allowing users to download Maven dependencies for Java projects.
 
 ## Optional toolchains
-Our Developer Satisfaction survey indicated that rule authors want support for improved [toolchain development](https://bazel.build/versions/6.0.0/extending/toolchains#optional-toolchains). Bazel 6.0 allows authors to write rules using an [optional, high performance toolchain](https://bazel.build/docs/toolchains#optional-toolchains)s when available, with a fallback implementation for other platforms.
+Our Developer Satisfaction survey indicated that rule authors want support for improved [toolchain development](https://bazel.build/versions/6.0.0/extending/toolchains#optional-toolchains). Bazel 6.0 allows authors to write rules using an [optional, high performance toolchains](https://bazel.build/docs/toolchains#optional-toolchains) when available, with a fallback implementation for other platforms.
 
 ## Improve Build Productivity with these additions to build performance profiles
 With Bazel 6.0, builds provide more system and CPU related metrics data so that you can [optimize for build productivity.](https://blog.bazel.build/2022/11/15/build-performance-metrics.html)
