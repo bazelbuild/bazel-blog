@@ -13,7 +13,8 @@ Bazel 6.0 is now available for use in your build pipeline. Bazel 6.0 is the Long
 This release improves building Android apps with Bazel. It now uses [D8](https://developer.android.com/studio/command-line/d8) for dexing and desugaring by default, which was a high priority customer request. With D8, our customers can leverage the latest Android tooling for building mobile apps. 
 Through [community contributions,](https://github.com/bazelbuild/bazel/pulls?q=is%3Apr+is%3Aclosed+label%3Ateam-android+closed%3A2021-11-01..2022-12-02+) Bazel Android builds now also support a variety of quality-of-life and efficiency improvements, such as persistent workers for resource processing and (optional) manifest permission merging.
 
-- Bzlmod is now Generally Available.During BazelCon 2021, we announced the development of Bzlmod which will allow Bazel users to manage dependencies easily with automatic version resolution.
+## Bzlmod is now Generally Available
+- During BazelCon 2021, we announced the development of Bzlmod which will allow Bazel users to manage dependencies easily with automatic version resolution.
 - [Bzlmod](https://bazel.build/docs/bzlmod) automatically resolves transitive dependencies, allowing projects to scale while staying fast and resource-efficient. Bzlmod is generally available with Bazel 6.0.
 -   Common dependencies and rulesets are checked into Bazel Central Registry.
 -   [Bzlmod Migration Guide](https://docs.google.com/document/d/1JtXIVnXyFZ4bmbiBCr5gsTH4-opZAFf5DMMb-54kES0/edit?usp=gmail) has been refreshed and provides scripts and documentation for migration. 
@@ -30,6 +31,6 @@ With Bazel 6.0, builds provide more system and CPU related metrics data so that 
 -   system network usage (`--experimental_collect_system_network_usage`)
 
 ## Control .bzl dependencies with load visibility
-Starting in Bazel 6.0, rule and macro authors can declare a [load visibility](https://bazel.build/versions/6.0.0/concepts/visibility#load-visibility) for their .bzl files by calling the new `[visibility()](https://bazel.build/versions/6.0.0/rules/lib/globals#visibility)` built-in. This restricts what parts of the workspace may `load()` the .bzl file, so that macros and rules do not automatically become de facto public APIs.
+Starting in Bazel 6.0, rule and macro authors can declare a [load visibility](https://bazel.build/versions/6.0.0/concepts/visibility#load-visibility) for their .bzl files by calling the new [visibility()](https://bazel.build/versions/6.0.0/rules/lib/globals#visibility) built-in. This restricts what parts of the workspace may `load()` the .bzl file, so that macros and rules do not automatically become de facto public APIs.
 
 [Release notes for Bazel 6.0](https://docs.google.com/document/d/1pu2ARPweOCTxPsRR8snoDtkC9R51XWRyBXeiC6Ql5so/edit#heading=h.kh1neevharzp)
