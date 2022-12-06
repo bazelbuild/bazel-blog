@@ -16,7 +16,7 @@ Today, we launch Bazel 6.0 LTS!. Bazel 6.0 delivers many requested customer upda
 
 -   Pipelines to automatically check common dependencies and rulesets into the Bazel Central Registry.
 -   Updated [Bzlmod Migration Guide](https://docs.google.com/document/d/1JtXIVnXyFZ4bmbiBCr5gsTH4-opZAFf5DMMb-54kES0/edit?usp=gmail) includes scripts and documentation for migration.
--   Support for `rules_jvm_external`, allowing users to download Maven dependencies for Java projects.
+-   Added Bzlmod support for `rules_jvm_external`, allowing users to download Maven dependencies for Java projects.
   
 ## Build Android apps with Bazel
 By popular customer request, Bazel 6.0 uses [D8](https://developer.android.com/studio/command-line/d8) for dexing and desugaring by default. With D8, you leverage the latest Android tooling when building mobile apps. Through [community contributions,](https://github.com/bazelbuild/bazel/pulls?q=is%3Apr+is%3Aclosed+label%3Ateam-android+closed%3A2021-11-01..2022-12-02+) Bazel Android builds now also support a variety of quality-of-life and efficiency improvements, such as persistent workers for resource processing and (optional) manifest permission merging.
