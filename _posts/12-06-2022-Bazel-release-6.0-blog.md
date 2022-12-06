@@ -22,7 +22,7 @@ Today, we launch Bazel 6.0 LTS!. Bazel 6.0 delivers many requested customer upda
 By popular customer request, Bazel 6.0 uses [D8](https://developer.android.com/studio/command-line/d8) for dexing and desugaring by default. With D8, you leverage the latest Android tooling when building mobile apps. Through [community contributions,](https://github.com/bazelbuild/bazel/pulls?q=is%3Apr+is%3Aclosed+label%3Ateam-android+closed%3A2021-11-01..2022-12-02+) Bazel Android builds now also support a variety of quality-of-life and efficiency improvements, such as persistent workers for resource processing and (optional) manifest permission merging.
 
 ## Optional toolchains
-Our Developer Satisfaction survey indicated that rule authors want support for improved [toolchain development](https://bazel.build/versions/6.0.0/extending/toolchains#optional-toolchains). Bazel 6.0 allows authors to write rules using an [optional, high performance toolchains](https://bazel.build/docs/toolchains#optional-toolchains)s when available, with a fallback implementation for other platforms.
+Our Developer Satisfaction survey indicated that rule authors want support for improved [toolchain development](https://bazel.build/versions/6.0.0/extending/toolchains#optional-toolchains). Bazel 6.0 allows authors to write rules using an [optional, high performance toolchains](https://bazel.build/docs/toolchains#optional-toolchains) when available, with a fallback implementation for other platforms.
 
 ## New build performance profiles
 [Optimize for build productivity](https://blog.bazel.build/2022/11/15/build-performance-metrics.html) with new system and CPU related metrics data.
