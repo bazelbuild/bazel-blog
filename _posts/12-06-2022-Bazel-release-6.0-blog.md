@@ -33,6 +33,6 @@ Our Developer Satisfaction survey indicated that rule authors want support for i
     
 
 ## Control `.bzl` dependencies with load visibility
-Now, rule and macro authors can declare a [load visibility](https://bazel.build/versions/6.0.0/concepts/visibility#load-visibility) for their `.bzl` files by calling the new `[visibility()](https://bazel.build/versions/6.0.0/rules/lib/globals#visibility)` built-in function. This restricts what parts of the workspace may `load()` the `.bzl` file, so that macros and rules do not automatically become public APIs.
+Now, rule and macro authors can declare a [load visibility](https://bazel.build/versions/6.0.0/concepts/visibility#load-visibility) for their `.bzl` files by calling the new [visibility()](https://bazel.build/versions/6.0.0/rules/lib/globals#visibility) built-in function. This restricts what parts of the workspace may `load()` the `.bzl` file, so that macros and rules do not automatically become public APIs.
 
 [Release notes for Bazel 6.0](https://docs.google.com/document/d/1pu2ARPweOCTxPsRR8snoDtkC9R51XWRyBXeiC6Ql5so/edit#heading=h.kh1neevharzp)
