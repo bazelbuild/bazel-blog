@@ -9,7 +9,7 @@ authors:
 
 Today, we launch Bazel 6.0 LTS! Bazel 6.0 delivers many requested customer updates to simplify Bazel usage and eliminate common Android app development roadblocks.
 
-![Image](../images/Bazel6.0ReleaseBlogPost.png)
+![Image](/images/Bazel6.0ReleaseBlogPost.png)
 
 ### Bzlmod becomes Generally available
 [Bzlmod](https://bazel.build/docs/bzlmod) automatically resolves transitive dependencies, allowing projects to scale while staying fast and resource-efficient. In development since 2021, Bzlmod enters general availability with Bazel 6.0.
