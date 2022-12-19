@@ -1,13 +1,13 @@
 ---
 layout: posts
-title: Bazel 6.0 LT Release blog post
+title: Bazel 6.0 LTS
 authors:
   - radvani
 ---
 
 # Bazel 6.0 launched!
 
-Today, we launch Bazel 6.0 LTS!. Bazel 6.0 delivers many requested customer updates to simplify Bazel usage and eliminate common Android app development roadblocks.
+Today, we launch Bazel 6.0 LTS! Bazel 6.0 delivers many requested customer updates to simplify Bazel usage and eliminate common Android app development roadblocks.
 
 ![Image](../images/Bazel6.0ReleaseBlogPost.png)
 
