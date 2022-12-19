@@ -1,4 +1,4 @@
-load("@bazel_tools//tools/build_defs/pkg:pkg.bzl", "pkg_tar")
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("//scripts:jekyll.bzl", "jekyll_build")
 
 # Required to move the file from the external repo's execroot location
