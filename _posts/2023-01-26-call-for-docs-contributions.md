@@ -14,7 +14,7 @@ Here’s where we’d like your support:
 2. Look through the [pre-filtered link](https://github.com/bazelbuild/bazel/issues?q=is%3Aissue+is%3Aopen+label%3Ateam-Documentation+label%3A%22help+wanted%22+) of open issues in the bazelbuild/bazel repository. (Optionally, you can filter by issues labeled “team-Documentation” and “help wanted” yourself.)
 3. Identify issues that you can assist with. Add a comment to the issues to let other community members know that you are working on them.
 4. If you’re new to this community, look out for issues labeled “good first issue” - these are handpicked by the Bazel team as good introductory problems to work on.
-5. Go to the page you would like to update and click on the “View Source” button found on top. This will direct you to the correct file in the docs section of the repository.
+5. Go to the page you would like to update and click on the “View Source” button found on top. This will direct you to the correct file in the docs section of the repository. For example:
 
 ![Image](/assets/blog-docs-view-source.png)
 
