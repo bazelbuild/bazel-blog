@@ -15,7 +15,10 @@ Here’s where we’d like your support:
 3. Identify issues that you can assist with and assign them to yourself. This lets other community members know that you are working on them. 
 4. If you’re new to this community, look out for issues labeled “good first issue” - these are handpicked by the Bazel team as good introductory problems to work on.
 5. Go to the page you would like to update and click on the “View Source” button found on top. This will direct you to the correct file in the docs section of the repository.
-6. Make the required updates and submit a PR.
+
+![Image](/assets/blog-docs-view-source.png)
+
+7. Make the required updates and submit a PR.
 
 
 And that’s it! Our new internal processes will take care of the rest.
