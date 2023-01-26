@@ -10,6 +10,7 @@ Last year, we made significant changes to Bazel’s documentation website ([baze
 In 2023, we aim to improve Bazel’s documentation and eliminate common issues. We can achieve this goal by reducing the number of open GitHub documentation issues in a sustainable way. 
 
 Here’s where we’d like your support:
+
 1. Join our [Slack channel](https://app.slack.com/client/TA4K1KQ87/C04JVKPP4EB)! This is where we will collaborate and engage with you on documentation contributions.
 2. Look through the [pre-filtered link](https://github.com/bazelbuild/bazel/issues?q=is%3Aissue+is%3Aopen+label%3Ateam-Documentation+label%3A%22help+wanted%22+) of open issues in the bazelbuild/bazel repository. (Optionally, you can filter by issues labeled “team-Documentation” and “help wanted” yourself.)
 3. Identify issues that you can assist with. Add a comment to the issues to let other community members know that you are working on them.
@@ -18,7 +19,7 @@ Here’s where we’d like your support:
 
 ![Image](/assets/blog-docs-view-source.png)
 
-7. Make the required updates and submit a PR.
+6. Make the required updates and submit a PR.
 
 
 And that’s it! Our new internal processes will take care of the rest.
