@@ -5,9 +5,9 @@ authors:
   - keertk
 ---
 
-Last year, we made significant changes to Bazel’s documentation website ([bazel.build](https://bazel.build/)) to elevate overall developer experience. By redesigning the site’s architecture, we’ve made it easier for the community to contribute new documentation and add more content. 
+Last year, we made significant changes to Bazel’s documentation website ([bazel.build](https://bazel.build/)) to elevate overall developer experience. By redesigning the site’s architecture, we’ve made it easier for the community to contribute new documentation and add more content.
 
-In 2023, we aim to improve Bazel’s documentation and eliminate common issues. We can achieve this goal by reducing the number of open GitHub documentation issues in a sustainable way. 
+In 2023, we aim to improve Bazel’s documentation and eliminate common issues. We can achieve this goal by reducing the number of open GitHub documentation issues in a sustainable way.
 
 Here’s where we’d like your support:
 
@@ -23,4 +23,4 @@ And that’s it! Our new internal processes will take care of the rest.
 
 We encourage you all to contribute to Bazel’s documentation! By sharing what you know and learn, you’re helping us grow, strengthen, and foster our amazing community of developers. Let us know if we can help in any way during the process - reach out to Radhika Advani on Slack, or post on our dedicated [channel](https://app.slack.com/client/TA4K1KQ87/C04JVKPP4EB).
 
-_Make sure to check out Lyra Levin’s [lightning talk](https://opensourcelive.withgoogle.com/events/bazelcon2022/watch?talk=day1-talk20) from BazelCon 2022 on documentation barriers and benefits!_
+_Make sure to check out Lyra Levin’s [lightning talk](https://www.youtube.com/watch?v=LBPNqyC6v_A&list=PLxNYxgaZ8RsdH4GCIZ69dzxQCOPyuNlpF&index=24) from BazelCon 2022 on documentation barriers and benefits!_
