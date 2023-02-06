@@ -66,7 +66,7 @@ New versions of the plugin are being released every 2 weeks for [IntelliJ](https
 
 [Recent releases](https://github.com/bazelbuild/intellij/releases) have focused more on fixing issues reported by external users.
  
-We will continue to release plugin versions compatible with the new IDE releases (including EAPs) as early as possible. This  prevents blocking the users who want to upgrade their IDEs but cannot find Bazel support for the new versions. **You can now use the plugin with [IntelliJ 2022.3](https://plugins.jetbrains.com/plugin/8609-bazel/versions/stable/248253) and [CLion 2022.3](https://plugins.jetbrains.com/plugin/9554-bazel/versions/stable/248255).**
+We will continue to release plugin versions compatible with the new IDE releases (including EAPs) as early as possible. This  prevents blocking the users who want to upgrade their IDEs but cannot find Bazel support for the new versions.
 
 ## Developer support
 Over 2022, we heard your feedback and made significant process improvements to drive developer support excellence and elevate the overall contributor experience. A few notable areas we worked on in the support sphere in H2 2022 include:
@@ -85,9 +85,9 @@ Over 2022, we heard your feedback and made significant process improvements to d
 
 **Manual plugin testing:** Manual testing of the plugin after a release to the beta channel is being done every other week, for Java, Kotlin, and GoLang.
 
-**Releases and announcements:** Biweekly beta and stable releases for IntelliJ/CLion and Android Studio are part of our release cadence. We will send out emails to the [community Google group](intellij-bazel-plugin@googlegroups.com) after every beta/stable release.
+**Releases and announcements:** Biweekly beta and stable releases for IntelliJ/CLion and Android Studio are part of our release cadence. We will send out emails to the community Google group(intellij-bazel-plugin@googlegroups.com) after every beta/stable release.
 
-**Backlog:** Burning down open backlog issues in a timely manner is a top priority for us next year. Our prioritization process will involve reviewing and identifying issues that can be closed - if no longer relevant or beneficial to the community - so please look out for our comments on GitHub.
+**Backlog:** Burning down open backlog issues in a timely manner is a top priority for us in 2023. Our prioritization process will involve reviewing and identifying issues that can be closed - if no longer relevant or beneficial to the community - so please look out for our comments on GitHub.
 
 ## Community corner
 This is a space for the Bazel IntelliJ plugin community voice. If there is anything interesting you’re building or any updates you would like to include in future community updates, please reach out to raoarun@google.com.
@@ -119,4 +119,5 @@ Fixed CLion debugging on MacOS with [pr/4003](https://github.com/bazelbuild/inte
 Thank you for reading this edition! Let us know if you’d like to see any new information or changes in future community updates, or if you’d like to showcase your work in future “community corner” sections by [submitting this form](https://forms.gle/HiXcoixbr7TqySHs9). We look forward to hearing from you!
 
 Thanks,
-[Intellij Bazel Plugin Maintainers](intellij-bazel-plugin-maintainers@googlegroups.com)
+
+Intellij Bazel Plugin Maintainers (intellij-bazel-plugin-maintainers@googlegroups.com)
