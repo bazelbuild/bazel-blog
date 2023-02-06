@@ -20,7 +20,7 @@ In November 2022, several members of the Bazel community gathered together in Ne
 
 One of the key topics discussed was the Bazel plugin for IntelliJ and efforts made in this area in 2022, as shown below.
 
-[add image]
+![Image](/assets/blog-intellij-h2-2022-maintenance-model.png)
 
 This year, JetBrains and others [joined as co-maintainers](https://blog.bazel.build/2022/07/11/Bazel-IntelliJ-Update.html) of the [Bazel IntelliJ plugin repository](https://github.com/bazelbuild/intellij) and are actively reviewing contributions, tracking overall repository health, and adding new capabilities to the Bazel IntelliJ Plugin. This new co-maintenance model  has ensured a seamless intake process and reduced the turnaround time for pull requests raised in this repository.
 
@@ -32,7 +32,7 @@ We encourage you all to contribute to the IntelliJ plugin. This truly is a joint
 
 Let us know if we can help in any way during the process - we’re just a [Slack](https://slack.bazel.build) message away. 
 
-[add image]
+![Image](/assets/blog-intellij-h2-2022-partner.png)
 
 ## Issues
 More focus has been directed to the issues reported by external Bazel plugin users. The issue fixes improved the plugin main functionalities, e.g. debugging and testing for more languages like Kotlin, Go, C++ and Scala on different IDEs. The following is a list of significant issues fixed in H2 2022. You can find the complete list of closed issues [here](https://github.com/bazelbuild/intellij/issues?q=is%3Aissue+is%3Aclosed+closed%3A2022-07-01..2022-12-31).
