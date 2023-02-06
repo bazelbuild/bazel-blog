@@ -22,7 +22,7 @@ One of the key topics discussed was the Bazel plugin for IntelliJ and efforts ma
 
 ![Image](/assets/blog-intellij-h2-2022-maintenance-model.png)
 
-This year, JetBrains and others [joined as co-maintainers](https://blog.bazel.build/2022/07/11/Bazel-IntelliJ-Update.html) of the [Bazel IntelliJ plugin repository](https://github.com/bazelbuild/intellij) and are actively reviewing contributions, tracking overall repository health, and adding new capabilities to the Bazel IntelliJ Plugin. This new co-maintenance model  has ensured a seamless intake process and reduced the turnaround time for pull requests raised in this repository.
+In 2022, JetBrains and others [joined as co-maintainers](https://blog.bazel.build/2022/07/11/Bazel-IntelliJ-Update.html) of the [Bazel IntelliJ plugin repository](https://github.com/bazelbuild/intellij) and are actively reviewing contributions, tracking overall repository health, and adding new capabilities to the Bazel IntelliJ Plugin. This new co-maintenance model  has ensured a seamless intake process and reduced the turnaround time for pull requests raised in this repository.
 
 At BazelCon, we also organized a Birds of a Feather session for the Bazel IntelliJ plugin where a few of our co-maintainers ([Mai Hussien](https://github.com/mai93), [Justin Kaeser](https://github.com/jastice), and [Marcin Abramowicz](https://github.com/abrams27)) presented key updates and had fruitful discussions with the audience on existing features, challenges and pain points, as well as on the future of the Bazel IntelliJ plugin integration. 
 
@@ -92,7 +92,7 @@ Over 2022, we heard your feedback and made significant process improvements to d
 ## Community corner
 This is a space for the Bazel IntelliJ plugin community voice. If there is anything interesting you’re building or any updates you would like to include in future community updates, please reach out to raoarun@google.com.
 
-Here’s what some of our co-maintainers have worked on in H2 this year:
+Here’s what some of our co-maintainers have worked on in H2 2022:
 
 **Borja Lorente Escobar ([@blorente](https://github.com/blorente)):**
 
