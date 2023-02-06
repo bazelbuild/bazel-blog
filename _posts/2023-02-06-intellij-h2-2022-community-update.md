@@ -9,8 +9,6 @@ _A modified version of this blog was originally sent out to the IntelliJ Plugin 
 
 ## Welcome!
 Welcome to the inaugural edition of the Bazel Plugin for IntelliJ community update! We hope to build a stronger and more inclusive community, and encourage more participation by keeping you informed on what’s happening in this space.
- 
-We welcome feedback! Please provide your thoughts on this edition by filling out [this feedback form](https://forms.gle/HiXcoixbr7TqySHs9).
 
 ## Product highlights
 In November 2022, several members of the Bazel community gathered together in New York for [BazelCon](https://opensourcelive.withgoogle.com/events/bazelcon2022), an annual event hosted by the Google Bazel Team. The following videos are available on-demand and provide a lot of valuable insights:
@@ -22,7 +20,7 @@ One of the key topics discussed was the Bazel plugin for IntelliJ and efforts ma
 
 ![Image](/assets/blog-intellij-h2-2022-maintenance-model.png)
 
-In 2022, JetBrains and others [joined as co-maintainers](https://blog.bazel.build/2022/07/11/Bazel-IntelliJ-Update.html) of the [Bazel IntelliJ plugin repository](https://github.com/bazelbuild/intellij) and are actively reviewing contributions, tracking overall repository health, and adding new capabilities to the Bazel IntelliJ Plugin. This new co-maintenance model  has ensured a seamless intake process and reduced the turnaround time for pull requests raised in this repository.
+In 2022, JetBrains* and others [joined as co-maintainers](https://blog.bazel.build/2022/07/11/Bazel-IntelliJ-Update.html) of the [Bazel IntelliJ plugin repository](https://github.com/bazelbuild/intellij) and are actively reviewing contributions, tracking overall repository health, and adding new capabilities to the Bazel IntelliJ Plugin. This new co-maintenance model  has ensured a seamless intake process and reduced the turnaround time for pull requests raised in this repository.
 
 At BazelCon, we also organized a Birds of a Feather session for the Bazel IntelliJ plugin where a few of our co-maintainers ([Mai Hussien](https://github.com/mai93), [Justin Kaeser](https://github.com/jastice), and [Marcin Abramowicz](https://github.com/abrams27)) presented key updates and had fruitful discussions with the audience on existing features, challenges and pain points, as well as on the future of the Bazel IntelliJ plugin integration. 
 
@@ -116,8 +114,10 @@ Fixed CLion debugging on MacOS with [pr/4003](https://github.com/bazelbuild/inte
 - **SIG Meeting:** Held on the 3rd Thursday of every month. Reach out to raoarun@google.com to be added to the invite.
 
 ## Ideas, feedback, and submissions are welcome!
-Thank you for reading this edition! Let us know if you’d like to see any new information or changes in future community updates, or if you’d like to showcase your work in future “community corner” sections by [submitting this form](https://forms.gle/HiXcoixbr7TqySHs9). We look forward to hearing from you!
+Thank you for reading this edition! Let us know if you’d like to see any new information or changes in future community updates, or if you’d like to showcase your work in future “community corner” sections by reaching out to raoarun@google.com. We look forward to hearing from you!
 
 Thanks,
 
 Intellij Bazel Plugin Maintainers (intellij-bazel-plugin-maintainers@googlegroups.com)
+
+*Copyright © 2022 JetBrains s.r.o. JetBrains and IntelliJ are registered trademarks of JetBrains s.r.o.
