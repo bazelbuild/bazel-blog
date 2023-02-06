@@ -87,21 +87,6 @@ Over 2022, we heard your feedback and made significant process improvements to d
 
 **Backlog:** Burning down open backlog issues in a timely manner is a top priority for us in 2023. Our prioritization process will involve reviewing and identifying issues that can be closed - if no longer relevant or beneficial to the community - so please look out for our comments on GitHub.
 
-## Community corner
-This is a space for the Bazel IntelliJ plugin community voice. If there is anything interesting you’re building or any updates you would like to include in future community updates, please reach out to raoarun@google.com.
-
-Here’s what some of our co-maintainers have worked on in H2 2022:
-
-**Borja Lorente Escobar ([@blorente](https://github.com/blorente)):**
-
-The initial implementation of the Gazelle integration with the plugin has landed on the main branch ([PR](https://github.com/bazelbuild/intellij/pull/3910))! With this, users will be able to configure a Gazelle target to run before every sync, automatically keeping their files up to date.
-
-The integration reads the **directories**: field of your Project View, and passes it to Gazelle, so it will only run on the sources you have imported into the editor. To enable it, specify a target in the **gazelle_target**: field of your Project View.
-
-**Tomasz Pasternak ([@tpasternak](https://github.com/tpasternak)):**
-
-Fixed CLion debugging on MacOS with [pr/4003](https://github.com/bazelbuild/intellij/pull/4003). Also worked on IntelliJ 2022.3 support ([pr/4019](https://github.com/bazelbuild/intellij/pull/4019)) and fixed the regressions reported by users with PRs: [#4126](https://github.com/bazelbuild/intellij/pull/4126), [#4074](https://github.com/bazelbuild/intellij/pull/4074), [#4070](https://github.com/bazelbuild/intellij/pull/4070).
-
 ## Resources
 
 - **GitHub Repository:** https://github.com/bazelbuild/intellij 
@@ -114,7 +99,7 @@ Fixed CLion debugging on MacOS with [pr/4003](https://github.com/bazelbuild/inte
 - **SIG Meeting:** Held on the 3rd Thursday of every month. Reach out to raoarun@google.com to be added to the invite.
 
 ## Ideas, feedback, and submissions are welcome!
-Thank you for reading this edition! Let us know if you’d like to see any new information or changes in future community updates, or if you’d like to showcase your work in future “community corner” sections by reaching out to raoarun@google.com. We look forward to hearing from you!
+Thank you for reading this edition! Let us know if you’d like to see any new information or changes, or if you’d like to showcase your work in future community updates by reaching out to raoarun@google.com. We look forward to hearing from you!
 
 Thanks,
 
