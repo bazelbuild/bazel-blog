@@ -89,12 +89,12 @@ Over 2022, we heard your feedback and made significant process improvements to d
 
 ## Resources
 
-- **GitHub Repository:** https://github.com/bazelbuild/intellij 
-- **IntelliJ Plugin:** https://plugins.jetbrains.com/plugin/8609-bazel
-- **CLion Plugin:** https://plugins.jetbrains.com/plugin/9554-bazel
-- **Android Studio Plugin:** https://plugins.jetbrains.com/plugin/9185-bazel  
-- **Release Notes:** https://github.com/bazelbuild/intellij/releases 
-- **Slack Channel:** https://slack.bazel.build 
+- **GitHub Repository:** [https://github.com/bazelbuild/intellij](https://github.com/bazelbuild/intellij) 
+- **IntelliJ Plugin:** [https://plugins.jetbrains.com/plugin/8609-bazel](https://plugins.jetbrains.com/plugin/8609-bazel)
+- **CLion Plugin:** [https://plugins.jetbrains.com/plugin/9554-bazel](https://plugins.jetbrains.com/plugin/9554-bazel)
+- **Android Studio Plugin:** [https://plugins.jetbrains.com/plugin/9185-bazel](https://plugins.jetbrains.com/plugin/9185-bazel)  
+- **Release Notes:** [https://github.com/bazelbuild/intellij/releases](https://github.com/bazelbuild/intellij/releases)
+- **Slack Channel:** [https://slack.bazel.build](https://slack.bazel.build)
 - **Google Group:** intellij-bazel-plugin@googlegroups.com
 - **SIG Meeting:** Held on the 3rd Thursday of every month. Reach out to raoarun@google.com to be added to the invite.
 
