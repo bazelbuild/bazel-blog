@@ -4,7 +4,7 @@ title: "Improving the health of Bazel’s orphaned issues and PRs"
 authors:
  - radvani
  - meteorcloudy
- - keerthanakumar
+ - keertk
 ---
 
 Over the past few years, we have noticed several languishing issues and pull requests on repositories across the [Bazel GitHub organization](https://github.com/bazelbuild). While some have stalled without updates from authors, others have languished due to limited bandwidth and resources on the Bazel team’s end. In late 2022, we prioritized an effort to periodically review old issues/PRs and close them out as needed. Our apologies for the late communication on this process.
