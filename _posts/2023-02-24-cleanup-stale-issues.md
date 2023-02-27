@@ -21,7 +21,7 @@ _(Note: we implemented a slightly similar process for [bazelbuild/intellij](http
 - The bot will review all issues/PRs that are older than 3 years and close them out 14 days after a notification. After the first pass is complete, we’ll move on to more recent issues (2 years, 1 year, etc.) before eventually settling at 6 months. This phased process minimizes notifications and avoids loss of important comments.
 - Please note that all issues with priority P0 and P1 will be excluded from the stale workflow. Additionally, issues/PRs that are tagged as “untriaged”, ”awaiting-bazeler”, “awaiting-review”, “awaiting-PR-merge”, or “not stale” will be excluded from the stale workflow.
 
-**Our ask:** If you think any issue/PR that we flag as “**stale**” is relevant and will be worked on, please let our triage team know by tagging @bazelbuild/triage in a comment. The triage team will review the issue with the appropriate team at Google and reopen or suggest next steps.
+**Our ask:** If you think any issue/PR that we flag as “**stale**” is still something relevant or you are interested in getting the issue resolved, please let our triage team know by tagging @bazelbuild/triage in a comment. The triage team will review the issue with the appropriate team at Google and reopen or suggest next steps.
 
 Over the past few weeks, we might have closed some issues and PRs that are still relevant, and our only intent was to truly understand those that need our attention so we can refocus our resources where we can be most impactful. Our apologies for the inconvenience caused. As we continue with this process, we might close out issues simply based on issue age and inaction. We would like to hear from you - please reach out to product@bazel.build.
 
