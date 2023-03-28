@@ -137,6 +137,7 @@ Reach out the email(s) listed below if you’d like to be added to the SIG calen
 | Bazel plugin for IntelliJ | Monthly      |    raoarun@google.com |
 
 Interested in learning about SIGs or starting a new one? Find more information on our [website](https://bazel.build/community/sig).
+
 Want to get your SIG listed? Please add it to the [Community repository](https://github.com/bazelbuild/community/tree/main/sigs).
 
 ## Ideas, feedback, and submissions are welcome!
