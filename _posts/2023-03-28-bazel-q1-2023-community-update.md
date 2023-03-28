@@ -134,7 +134,8 @@ Reach out the email(s) listed below if you’d like to be added to the SIG calen
 | ------------- |-------------| -----|
 | [Rules authors](https://github.com/bazelbuild/community/tree/main/sigs/rules-authors)     | Every two weeks | bazel-contrib@googlegroups.com |
 | Android app development (charter coming soon)      | Monthly      |   radvani@google.com |
-| Bazel plugin for IntelliJ | Monthly      |    raoarun@google.com |
+| [Bazel plugin for IntelliJ](https://github.com/bazelbuild/community/tree/main/sigs/bazel-intellij) | Monthly      |    raoarun@google.com |
+
 
 Interested in learning about SIGs or starting a new one? Find more information on our [website](https://bazel.build/community/sig).
 
