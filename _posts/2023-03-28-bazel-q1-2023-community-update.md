@@ -112,7 +112,7 @@ This is a space for the Bazel community voice. If there is anything interesting 
 ### Videos
 
 - [How to make your builds and test extremely fast with Bazel](https://www.youtube.com/watch?v=6MXjAZWmn4Y) 
-- [Open source as a driver of innovation | Pioneers in Open Source (interview with Andreas Hermann, rules haskell and rules nixpkgs, Tweag)](https://www.youtube.com/watch?v=lF62EOw8REk) 
+- [Open source as a driver of innovation | Pioneers in Open Source (interview with Andreas Hermann, `rules_haskell` and `rules_nixpkgs`, Tweag)](https://www.youtube.com/watch?v=lF62EOw8REk) 
 - [Bazel tutorial for C++ in 30 minutes](https://www.youtube.com/watch?v=kLLDzLWzuag) 
 
 ### Tweets
