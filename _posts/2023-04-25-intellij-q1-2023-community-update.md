@@ -22,9 +22,6 @@ Details on the [Google branch](https://github.com/bazelbuild/intellij/tree/googl
 - The Android Studio plugin is built from the Google branch. Changes that are intended for Android Studio must therefore be made in this branch.
 - Internal Google teams review pull requests on a case-by-case basis.
 
-## Community survey
-We’d like to hear from you! Please fill out [this short survey](https://forms.gle/2gLmNF3uCnDBX6Ci7) to help us improve our product and community engagement. The survey is specific to the Bazel plugin for IntelliJ and shouldn’t take more than a few minutes to complete.
-
 ## Project board
 We have created a [GitHub Project](https://github.com/orgs/bazelbuild/projects/5/views/1?layout=board) to enable the community to better track the status of recently opened issues and PRs in the IntelliJ repository. Please use this board to check where in the pipeline an issue/PR currently is:
 
