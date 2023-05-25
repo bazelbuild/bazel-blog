@@ -20,7 +20,7 @@ expect
 
 * Tech talks, lightning talks and demos presented by members of the Bazel
   community
-* Birds of a Feature sessions on various topics
+* Birds of a Feather sessions on various topics
 * Office hours with Bazel experts
 * Community organized events
 * ... and more!
