@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Save the Date: BazelCon 2023
+title: "Save the Date: BazelCon 2023"
 authors:
   - meteorcloudy
 ---
