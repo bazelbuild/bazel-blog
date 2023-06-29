@@ -29,4 +29,6 @@ Registration and Call for Proposals details will be available on
 [bazel.build](https://bazel.build) in the next few weeks, we look forward to
 seeing you there!
 
+**Update [2023-06-29]**: [Call for Proposals](https://github.com/bazelbuild/bazel/discussions/18811) is now open!
+
 The Bazel team
