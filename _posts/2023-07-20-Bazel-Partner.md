@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "Bazel Product Partner Progra"
+title: "Bazel Product Partner Program"
 authors:
   - radvani
 ---
