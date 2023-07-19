@@ -5,7 +5,7 @@ authors:
   - radvani
 ---
 
-# Bazel New Product Partner Program is now live!
+## New Bazel Product Partner Program is now live!
 
 Dear community members,
 
@@ -22,4 +22,4 @@ Thank you for your continued support of Bazel.
 
 The Bazel Team
 
-*Copyright © 2023 JetBrains s.r.o. JetBrains and IntelliJ are registered trademarks of JetBrains s.r.o
+_*Copyright © 2023 JetBrains s.r.o. JetBrains and IntelliJ are registered trademarks of JetBrains s.r.o._
