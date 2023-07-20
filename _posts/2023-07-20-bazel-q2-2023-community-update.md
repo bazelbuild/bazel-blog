@@ -33,7 +33,7 @@ Possible actions for users:
 
 This change is part of releasing Starlark Android build rules to open source, and deprecating their Bazel-native equivalents. 
 
-We switched  our internal export pipeline from “pre-alpha” to “main” branch on 2023-05-30, after which the pre-alpha branch will no longer be updated. All future development will occur on the "main" branch, which we anticipate to be the last branch change for this codebase.
+We switched  our internal export pipeline from “pre-alpha” to “main” branch on May 30, 2023, after which the pre-alpha branch will no longer be updated. All future development will occur on the "main" branch, which we anticipate to be the last branch change for this codebase.
 
 ## Announcements
 
@@ -41,7 +41,7 @@ We switched  our internal export pipeline from “pre-alpha” to “main” bra
 
 We’re excited to announce that [BazelCon 2023](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html) will be held October 24-25 in Google Munich! We look forward to further strengthening and connecting the Bazel community.
 
-Call for Proposals is now open! We are looking for proposals for tech talks, lighting talks and birds of a feather sessions. We encourage proposals from a wide range of speakers, including Bazel users, contributors, and rule authors. Proposals should be submitted through Google Forms:
+Call for Proposals is now open! We are looking for proposals for tech talks, lighting talks, and birds of a feather sessions. We encourage proposals from a wide range of speakers, including Bazel users, contributors, and rule authors. Proposals should be submitted through Google Forms:
 
 [https://forms.gle/y3w1nfZdzDB2Rm498](https://forms.gle/y3w1nfZdzDB2Rm498)
 
@@ -57,7 +57,8 @@ We are very happy to announce that the [Bazel Product Partner program](https://b
 
 ### Explainer video
 
-To continue to grow and educate new users, we launched a new Bazel explainer video: [What is Bazel?](https://www.youtube.com/watch?v=fSxOZSFph4g) Please share this with your engineering community to drive adoption of Bazel.
+To continue to grow and educate new users, we launched a new Bazel explainer video: [What is Bazel?](https://www.youtube.com/watch?v=fSxOZSFph4g) 
+Please share this with your engineering community to drive adoption of Bazel.
 
 ## Highlights
 
