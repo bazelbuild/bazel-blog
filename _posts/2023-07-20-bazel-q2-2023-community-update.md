@@ -12,7 +12,7 @@ authors:
 
 **Bisect feature in Bazelisk:** The `--bisect` flag was introduced in [Bazelisk v1.17.0](https://github.com/bazelbuild/bazelisk/releases/tag/v1.17.0). It allows you to bisect Bazel versions to find out the specific commit that caused a build failure. You can find more information and examples [here](https://github.com/bazelbuild/bazelisk#--bisect).
 
-**Lock file for Bzlmod:** Preliminary support for a lockfile for Bzlmod was introduced in [Bazel 6.2.0](https://github.com/bazelbuild/bazel/releases/tag/6.2.0). It's disabled by default; use [--lockfile_mode](https://bazel.build/reference/command-line-reference#flag--lockfile_mode)=update to enable it. The lockfile contains only Bazel module information; it does not involve module extensions yet.
+**Lockfile for Bzlmod:** Preliminary support for a lockfile for Bzlmod was introduced in [Bazel 6.2.0](https://github.com/bazelbuild/bazel/releases/tag/6.2.0). It's disabled by default; use [--lockfile_mode](https://bazel.build/reference/command-line-reference#flag--lockfile_mode)=update to enable it. The lockfile contains only Bazel module information; it does not involve module extensions yet.
 
 **Build without the Bytes:** BwoB is now enabled by default at HEAD. Many improvements landed that make BwoB just work e.g. Symlinks and remote cache eviction are supported. Use [--experimental_remote_cache_eviction_retries](https://bazel.build/reference/command-line-reference#flag--experimental_remote_cache_eviction_retries) to let Bazel automatically retry the build when cache eviction happens during the build.
 
