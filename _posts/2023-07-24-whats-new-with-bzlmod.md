@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "What's New with Bzlmod?"
+title: "What's new with Bzlmod?"
 authors:
  - wyv
 ---
