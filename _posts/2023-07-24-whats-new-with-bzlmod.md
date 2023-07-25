@@ -10,9 +10,9 @@ Since the official launch of Bzlmod in Bazel 6.0 in December 2022, the team has 
 
 ## Changes since 6.0
 
-* **[Lockfile support](https://bazel.build/external/lockfile)** (partially available in 6.2.0, fully available in 6.3.0): Bazel now outputs a lockfile, `MODULE.bazel.lock`, next to the `MODULE.bazel` file, which contains information about the resolved module dependency graph and extension evaluation results.
-* **[`mod` command](https://bazel.build/external/mod-command)** (available in 6.3.0): Bazel now supports a new command that allows the user to inspect the external dependency graph, and look at modules, repos, and extensions in detail.
-* **[New docs](https://bazel.build/external/overview)**: The documentation for Bzlmod on bazel.build has been reorganized. Old content has been rewritten to be up to date and clearer, and new content such as the Bzlmod [migration guide](https://bazel.build/external/migration) has been added.
+* [**Lockfile support**](https://bazel.build/external/lockfile) (partially available in 6.2.0, fully available in 6.3.0): Bazel now outputs a lockfile, `MODULE.bazel.lock`, next to the `MODULE.bazel` file, which contains information about the resolved module dependency graph and extension evaluation results.
+* [**`mod` command**](https://bazel.build/external/mod-command) (available in 6.3.0): Bazel now supports a new command that allows the user to inspect the external dependency graph, and look at modules, repos, and extensions in detail.
+* [**New docs**](https://bazel.build/external/overview): The documentation for Bzlmod on bazel.build has been reorganized. Old content has been rewritten to be up to date and clearer, and new content such as the Bzlmod [migration guide](https://bazel.build/external/migration) has been added.
 * Other new minor functionality and fixes. The most user-visible changes include:
     * Module extensions can now return a [metadata object](https://bazel.build/rules/lib/builtins/module_ctx#extension_metadata) specifying the list of repos to be specified in the `use_repo` clause of your MODULE.bazel file. This helps Bazel output a Buildozer command that automatically updates `use_repo` clauses. (Thanks to [Fabian Meumertzheim](https://github.com/fmeum) for this contribution!)
     * Module dependencies can now specify a [`max_compatibility_level`](https://bazel.build/rules/lib/globals/module#bazel_dep.max_compatibility_level), reducing the pain introduced by a compatibility level increase. (Thanks to [Brentley Jones](https://github.com/brentleyjones) for this contribution!)
@@ -25,9 +25,9 @@ Since the official launch of Bzlmod in Bazel 6.0 in December 2022, the team has 
 
 Besides the changes above, we have several Bzlmod features planned for Bazel 7.0, including:
 
-* **[A true repository cache](https://github.com/bazelbuild/bazel/issues/12227)**: Bazel's `--repository_cache` flag is actually an HTTP download cache, and does not include the extracted contents of fetched repos. We plan to introduce an actual cache for the extracted contents, which might also allow different workspaces on the same machine to share extracted repos.
-* **[Offline and vendor mode](https://github.com/bazelbuild/bazel/issues/18934)**: Bazel will offer a way to prefetch all necessary external repos to set up offline work. These repos can optionally be fetched into the source tree, effectively _vendoring_ them.
-* **[REPO.bazel](https://github.com/bazelbuild/bazel/issues/18077)**: This new file will replace WORKSPACE as the repo boundary marker (in addition to MODULE.bazel), and allows you to specify repo-wide common attributes.
+* [**A true repository cache**](https://github.com/bazelbuild/bazel/issues/12227): Bazel's `--repository_cache` flag is actually an HTTP download cache, and does not include the extracted contents of fetched repos. We plan to introduce an actual cache for the extracted contents, which might also allow different workspaces on the same machine to share extracted repos.
+* [**Offline and vendor mode**](https://github.com/bazelbuild/bazel/issues/18934): Bazel will offer a way to prefetch all necessary external repos to set up offline work. These repos can optionally be fetched into the source tree, effectively _vendoring_ them.
+* [**REPO.bazel**](https://github.com/bazelbuild/bazel/issues/18077): This new file will replace WORKSPACE as the repo boundary marker (in addition to MODULE.bazel), and allows you to specify repo-wide common attributes.
 
 We now have a [timeline view](https://github.com/orgs/bazelbuild/projects/16/views/1) of upcoming Bzlmod work as a GitHub project, where you can keep track of the team's progress and efforts.
 
