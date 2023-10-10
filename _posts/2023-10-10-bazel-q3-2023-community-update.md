@@ -32,7 +32,7 @@ We’re continuing to work towards Bazel 7.0 with the first release candidate te
 
 ### Bzlmod: a call for migration
 
-Since the official launch of Bzlmod in Bazel 6.0 in Dec ‘22, the team has been hard at work improving Bzlmod in time for enabling it by default in Bazel 7.0. Read this blog post for details on what's changed since 6.0, what's coming up in 7.0, and a roadmap for the next few years.
+Since the official launch of Bzlmod in Bazel 6.0 in Dec ‘22, the team has been hard at work improving Bzlmod in time for enabling it by default in Bazel 7.0. Read [this blog post](https://blog.bazel.build/2023/07/24/whats-new-with-bzlmod.html) for details on what's changed since 6.0, what's coming up in 7.0, and a roadmap for the next few years.
 
 We'd like to encourage you to use Bzlmod by default in new projects, and start migration for existing projects. Please respond to [this poll](https://github.com/bazelbuild/bazel/discussions/18329) to help us understand which rule sets and libraries are most important to unblock your migration.
 
