@@ -63,6 +63,12 @@ Deprecated flags (and their new equivalents):
 
 ### Can I test this out?
 
+Yes, download the latest [Bazel 7.0 release
+candidate](https://releases.bazel.build/7.0.0/rc3/index.html) and update your
+build flags. Please [file an
+issue](https://github.com/bazelbuild/bazel/issues/new/choose) if you encounter
+any problems.
+
 ### Do I have to migrate?
 
 The legacy functionality is still present in the Bazel 7.0 LTS branch. You can
