@@ -35,6 +35,14 @@ Ubuntu (tested on 16.10).
 To deploy the site, you will need [gsutil](https://cloud.google.com/storage/docs/gsutil)
 and to authenticate with `gcloud auth login`.
 
+### Using Docker container
+
+Or you can run a Docker container to avoid setting up Jekyll locally:
+
+```
+docker run --rm -it --entrypoint bash -v <path-to-bazel-blog>:/opt -w /opt -p 4000:4000 gcr.io/bazel-public/docgen
+```
+
 ## Running the website locally
 
 To stage the site, run `bazel run //:site`.
