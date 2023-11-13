@@ -104,8 +104,9 @@ mixed-language builds work properly.
 
 The biggest change coming to the Android rules is to move them out of the Bazel
 binary, and into [the independent `rules_android`
-repository](https://github.com/bazelbuild/rules_android). The team is working
-away at this, with **statement from ahumesky here**.
+repository](https://github.com/bazelbuild/rules_android). Starlarkification of
+the Android Rules is expected to be complete in Q2 2024, and users will be
+encouraged to migrate to the Starlark Android Rules between then and Bazel 8.0
 
 The current version of the Starlark Android rules also supports the same
 `--android_platforms` flag, although since these rules aren't currently fully
