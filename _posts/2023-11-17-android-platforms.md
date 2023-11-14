@@ -93,9 +93,9 @@ things like "Linux on 64-bit intel" (`--cpu=k8`), "macOS on 64-bit-intel"
 (`--cpu=darwin_x86_64`), "Windows on ARM" (`--cpu=arm64_windows`): and that's
 just a few common OSes.
 
-Once we also want to describe Android and iOS devices, or custom development
-boards and their firmware, the single dimension of `--cpu` is insufficient,
-which is where the platforms concepts shine.
+When describing Android and iOS devices, or custom development boards and their
+firmware, the single dimension of `--cpu` is insufficient, which is where the
+platforms concepts shine.
 
 At a more basic level, because other rules (like C++, Java, Go, and Rust) are
 moving to support platforms, Android needs to support it to, so that
@@ -112,4 +112,4 @@ Starlark Android Rules between then and Bazel 8.0
 
 The current version of the Starlark Android rules also supports the same
 `--android_platforms` flag, although since these rules aren't currently fully
-ready for release, there will be breaking issues.
+ready for release, they are not recommended for use without thorough testing.
