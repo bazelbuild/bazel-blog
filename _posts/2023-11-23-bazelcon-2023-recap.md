@@ -5,7 +5,7 @@ authors:
   - meteorcloudy
 ---
 
-Last month, we hosted [BazelCon 2023](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html) in Munich, Germany, marking the first-ever [BazelCon](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html) in Europe.
+Last month, we hosted [BazelCon 2023](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html) in Munich, Germany, marking the first-ever BazelCon in Europe.
 
 We received a record number of 120 proposals submitted by the community this year. A heartfelt thank you to the community members who generously devoted their time in the selection process and all speakers who put their dedication and effort into preparing great talks!
 
