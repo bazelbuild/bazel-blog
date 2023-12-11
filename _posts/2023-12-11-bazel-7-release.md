@@ -2,7 +2,7 @@
 layout: posts
 title: "Bazel 7.0 LTS"
 authors:
- - wyverald
+ - wyv
  - keertk
 ---
 
