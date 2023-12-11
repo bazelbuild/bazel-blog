@@ -20,7 +20,7 @@ As we announced in a [previous blog post](https://blog.bazel.build/2023/07/24/wh
 
 Note that even if you have an empty `MODULE.bazel` file, Bazel 7 might behave differently from older versions because Bzlmod is enabled, particularly surrounding label stringification and runfiles handling. See the [Bzlmod migration guide](https://bazel.build/external/migration) for more information.
 
-You may wish to plan a migration to remove content from the `WORKSPACE` file. At this time, such a migration is possible, but may run into challenges. For example, we are aware that some rulesets do not work with bzlmod yet. If you encounter a missing one, we ask you to file a “Module Wanted” issue on the [Central Registry](https://github.com/bazelbuild/bazel-central-registry/issues/new).
+You may wish to plan a migration to remove content from the `WORKSPACE` file. At this time, such a migration is possible, but may run into challenges. For example, we are aware that some rulesets do not work with bzlmod yet. If you encounter a missing one, we ask you to file a “Module Wanted” issue on the [Central Registry](https://github.com/bazelbuild/bazel-central-registry/issues/new/choose).
 
 ### Build without the Bytes (BwoB)
 
