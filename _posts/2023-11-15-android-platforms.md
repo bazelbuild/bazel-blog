@@ -35,7 +35,7 @@ Every Android `platform` should use the [`@platforms//os:android`](https://githu
 
 CPU Value     | Platform
 ------------- | ------------------------------------------
-`armeabi-v7a` | `@platforms//cpu:arm`
+`armeabi-v7a` | `@platforms//cpu:armv7`*
 `arm64-v8a`   | `@platforms//cpu:arm64`
 `x86`         | `@platforms//cpu:x86_32`
 `x86_64`      | `@platforms//cpu:x86_64`
@@ -43,6 +43,10 @@ CPU Value     | Platform
 And, of course, for a multi-architecture APK, you pass multiple labels, for
 example: `--android_platforms=//:arm64,//:x86_64` (assuming you defined those in
 your top-level `BUILD.bazel` file).
+
+\* Update: Originally `@platforms//cpu:armv7` was listed as `@platforms//cpu:arm`.
+  Prefer `@platforms//cpu:armv7` because it more accurately represents the target
+  architecture.
 
 ### Are any other flags changing?
 
