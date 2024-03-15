@@ -200,7 +200,7 @@ To analyze Bazel’s memory footprint on a more granular level, we recommend usi
 While [persistent workers](https://bazel.build/remote/persistent) can help to speed up builds significantly (especially for interpreted languages) their memory footprint can be problematic. Bazel collects metrics on its workers, in particular,
 the `WorkerMetrics.WorkerStats.worker_memory_in_kb` field tells how much memory workers use (by mnemonic).
 
-The JSON trace profiler also collects persistent worker memory usage during the invocation by passing in the `--experimental_collect_system_network_usage` flag (new in Bazel 6.0).
+The JSON trace profiler also collects persistent worker memory usage during the invocation by passing in the `--experimental_collect_worker_data_in_profiler` flag (new in Bazel 6.0).
 
 ![Memory profiling for persistant workers with Json trace profiles](/assets/workers-memory-usage.png)
 
