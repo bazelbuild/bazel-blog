@@ -14,7 +14,8 @@ The Bazel plugins for IntelliJ and CLion are built and released from the [master
 These two branches are now diverging from each other.
 
 - Changes for IntelliJ and CLion plugins are **_only_** merged into the master branch. Few fixes that are also needed for the Android Studio plugin can be merged into the google branch after the internal teams’ approval.
-- Changes made by the internal Google teams are automatically exported to the google branch. **Only relevant commits are cherry-picked from the google branch to the master branch.**
+- Changes made by the internal Google teams are automatically exported to the google branch. **Only relevant commits (security and selected bug fixes, and feature requests) are cherry-picked from the _google_ branch to the _master_ branch.**
+- **The master branch is not intended to be used to build the Android Studio with Bazel plugin; failures of the Android Studio plugin built from the master branch will not be addressed.**
 
 ## Significant changes
 The following is a list of significant changes made to the plugin from Q2 2023 to Q1 2024. Take a look at the complete list of [closed issues](https://github.com/bazelbuild/intellij/issues?q=is%3Aissue+is%3Aclosed+closed%3A2023-03-31..2024-03-31+) and [merged PRs](https://github.com/bazelbuild/intellij/pulls?q=is%3Apr+closed%3A2023-03-31..2024-03-31+-author%3Aapp%2Fcopybara-service+is%3Aclosed+). A big thank you to all PR authors and issue reporters!
@@ -31,6 +32,7 @@ The following is a list of significant changes made to the plugin from Q2 2023 t
 
 **Go development**
 
+- Enable debugging the gazelle binary ([#5816](https://github.com/bazelbuild/intellij/pull/5816))
 - Support embedded `go_source` rule type in `go_test` and `go_library` rules ([#5205](https://github.com/bazelbuild/intellij/pull/5205))
 
 **CLion**
@@ -50,9 +52,10 @@ The following is a list of significant changes made to the plugin from Q2 2023 t
 
 - Buildifier calls now use the configuration from the default config file at the root of the workspace ([#6158](https://github.com/bazelbuild/intellij/pull/6158))
 - Allow environment variables in run configurations ([#5885](https://github.com/bazelbuild/intellij/pull/5885))
+- Introduce `try_import` section to allow importing optional .projectview files ([#5689](https://github.com/bazelbuild/intellij/pull/5689))
 - Fix references for repo-relative labels in external workspaces ([#5164](https://github.com/bazelbuild/intellij/pull/5164))
-- Allow setting custom Bazel run script file location ([#4690](https://github.com/bazelbuild/intellij/pull/4690))
 - Allow targets with `manual` tag to be synced to the project ([#5085](https://github.com/bazelbuild/intellij/pull/5085))
+- Allow setting custom Bazel run script file location ([#4690](https://github.com/bazelbuild/intellij/pull/4690))
 
 ## Releases
 New versions of the plugin are continuing to be released every 2 weeks for [IntelliJ](https://plugins.jetbrains.com/plugin/8609-bazel), [CLion](https://plugins.jetbrains.com/plugin/9554-bazel), and [Android Studio](https://plugins.jetbrains.com/plugin/9185-bazel). The new versions are first released to the [Beta channel](https://github.com/bazelbuild/intellij#beta-versions) for users to experiment and report regressions that will be fixed before releasing to the Stable channel after 2 weeks.
