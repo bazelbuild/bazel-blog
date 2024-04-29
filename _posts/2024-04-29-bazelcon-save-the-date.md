@@ -6,7 +6,7 @@ authors:
 ---
 
 During last year’s BazelCon keynote, we issued a challenge: *“Let us organize
-BazelCon together!”* We were thrilled when community members from Aspect.dev,
+BazelCon together!”* We were thrilled when community members from Aspect.build,
 BuildBuddy, EngFlow, Gradle, Salesforce, and Tweag took us up on this offer.
 Over the past few months, we've been working together to make this vision a
 reality.
