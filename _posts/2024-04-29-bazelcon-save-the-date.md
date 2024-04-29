@@ -2,7 +2,7 @@
 layout: posts
 title: BazelCon 2024, Oct 14-15 at the Computer History Museum, Mountain View
 authors:
-  - twerth
+  - meisterT
 ---
 
 During last year’s BazelCon keynote, we issued a challenge: *“Let us organize
