@@ -10,7 +10,7 @@ authors:
 
 ### BazelCon 2024
 
-The Bazel Community, in partnership with The Linux Foundation, is excited to announce [BazelCon 2024](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html), taking place on October 14-15 at the Computer History Museum in Mountain View, CA.
+The Bazel community, in partnership with The Linux Foundation, is excited to announce [BazelCon 2024](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html), taking place on October 14-15 at the Computer History Museum in Mountain View, CA.
 
 Thanks to our sponsors, Google, BuildBuddy, EngFlow, AspectBuild, and Tweag, we invite you to join us for two days of insightful presentations, networking opportunities, and engaging discussions on all things Bazel. [Registration](https://events.linuxfoundation.org/bazelcon/) is now open.
 
@@ -41,7 +41,7 @@ Bazel 7.3.0 is in progress and scheduled to be released in August. Follow the [r
 
 ### Improvement of versioned docs
 
-Thanks to Fabian Meumertzheim’s contribution (#22725), you can now easily switch between different versions of the same page in the versioned docs. Take a look at the example below.
+Thanks to Fabian Meumertzheim’s contribution ([#22725](https://github.com/bazelbuild/bazel/pull/22725)), you can now easily switch between different versions of the same page in the versioned docs. Take a look at the example below.
 
 <img src="/assets/bazel-q2-2024-versioneddocs.png"/>
 
@@ -52,7 +52,7 @@ To help keep Bazel stable, minimize regressions, and reduce the need for frequen
 - Only high-priority / critical fixes will be accepted
 - New features will be postponed to the next release
 
-Take a look at the release page for more details.
+Take a look at the [release page](https://bazel.build/release) for more details.
 
 ## Community corner
 
