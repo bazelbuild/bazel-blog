@@ -12,7 +12,7 @@ authors:
 
 The Bazel community, in partnership with The Linux Foundation, is excited to announce [BazelCon 2024](https://blog.bazel.build/2023/05/25/save-the-date-bazelcon2023.html), taking place on October 14-15 at the Computer History Museum in Mountain View, CA.
 
-Thanks to our sponsors, Google, BuildBuddy, EngFlow, AspectBuild, and Tweag, we invite you to join us for two days of insightful presentations, networking opportunities, and engaging discussions on all things Bazel. [Registration](https://events.linuxfoundation.org/bazelcon/) is now open.
+Thanks to our sponsors, Google, BuildBuddy, EngFlow, AspectBuild, Gradle, and VirtusLab, we invite you to join us for two days of insightful presentations, networking opportunities, and engaging discussions on all things Bazel. [Registration](https://events.linuxfoundation.org/bazelcon/) is now open.
 
 We can’t wait to see you there!
 
