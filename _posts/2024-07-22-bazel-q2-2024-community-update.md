@@ -56,7 +56,7 @@ Take a look at the [release page](https://bazel.build/release) for more details.
 
 ## Community corner
 
-The community went on a creative spree this quarter! A huge thank you to all the authors that contribute their time and knowledge to create amazing educational content for all Bazel users. 🔥
+The community went on a creative spree this quarter! A huge thank you to all the authors that contributed their time and knowledge to create amazing educational content for all Bazel users. 🔥
 
 - [Why is my Bazel build so slow?](https://www.buildbuddy.io/blog/debugging-slow-bazel-builds/) _by Maggie Lou (BuildBuddy)_
 - [Running local tools installed by Bazel](https://blog.aspect.build/run-tools-installed-by-bazel) _by Alex Eagle (AspectBuild)_
