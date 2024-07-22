@@ -78,7 +78,7 @@ You can listen to other episodes in the YouTube [playlist](https://www.youtube.c
 
 **Amsterdam Bazel Community Day**
 
-On March 25th, EngFlow (recap) and Booking.com (recap) held the 7th Bazel Community in the Booking.com headquarters. Check out the recordings of the sessions:
+On March 25th, EngFlow ([recap](https://blog.engflow.com/2024/04/30/amsterdam-bazel-community-day---engflow--bookingcom/)) and Booking.com ([recap](https://medium.com/booking-com-development/bazelday-amsterdam-2024-at-booking-com-a9d49b88c301)) held the 7th Bazel Community in the Booking.com headquarters. Check out the recordings of the sessions:
 
 - [Opening remarks](https://www.youtube.com/watch?v=KJMdI9IaZ3E&list=PLxx_fSA_YtcUJ2_CyNFbKwUEAyvA1CLVC&index=1&t=5s&pp=iAQB) _by Helen Altshuler_
 - [Adopting Bazel At Booking: A Bumpy Road](https://www.youtube.com/watch?v=a6ySQK1OBUo&list=PLxx_fSA_YtcUJ2_CyNFbKwUEAyvA1CLVC&index=2&pp=iAQB) _by Manuel Naranjo (Booking.com)_
