@@ -42,15 +42,15 @@ The Bazel Output Service was first implemented back in 2021 as part of [the Buil
 
 <img src="/assets/remote-output-service-image2.png"/>
 
-When using bb_clientd as a Bazel Output Service, the overall setup looks like shown in the diagram above. As you can see, bb_clientd makes use of a couple of auxiliary data stores:
+When using bb_clientd as a Bazel Output Service, the overall setup looks like shown in the diagram above. As you can see, `bb_clientd` makes use of a couple of auxiliary data stores:
 
 * __Local CAS cache__: At the REv2 protocol level, it is preferable to read files sequentially and entirely, as this makes it possible to validate their contents. However, when accessing output files through the FUSE file system, it is possible to access files partially and at random. In addition to preventing redundant downloads, the local CAS cache provides efficient random access to CAS objects. 
-* __File pool__: As mentioned earlier, Bazel is still permitted to write output files of local actions into `bazel-out/`. Storing these files in the local CAS cache isn’t feasible, as they are mutable and cannot easily be evicted. bb_clientd therefore stores these files in a separate data store named the file pool.
-* __Snapshots__: When a build completes, bb_clientd can write a snapshot of the contents of `bazel-out/` to disk. This allows bb_clientd to reload them after restarting. These snapshots are very compact, as they don’t store any file contents; only their digests.
+* __File pool__: As mentioned earlier, Bazel is still permitted to write output files of local actions into `bazel-out/`. Storing these files in the local CAS cache isn’t feasible, as they are mutable and cannot easily be evicted. `bb_clientd` therefore stores these files in a separate data store named the file pool.
+* __Snapshots__: When a build completes, `bb_clientd` can write a snapshot of the contents of `bazel-out/` to disk. This allows `bb_clientd` to reload them after restarting. These snapshots are very compact, as they don’t store any file contents; only their digests.
 
-In addition to implementing the Bazel Output Service protocol, bb_clientd also acts as a proxy for REv2 traffic. This allows bb_clientd to automatically extract credentials from “Authorization” headers, and reuse those to read objects from the CAS when files in the FUSE file system are accessed.
+In addition to implementing the Bazel Output Service protocol, `bb_clientd` also acts as a proxy for REv2 traffic. This allows `bb_clientd` to automatically extract credentials from “Authorization” headers, and reuse those to read objects from the CAS when files in the FUSE file system are accessed.
 
-On [the GitHub Actions page](https://github.com/buildbarn/bb-clientd/actions) you may find pre-built binaries of bb_clientd. There are also [container images](https://github.com/buildbarn/bb-clientd/pkgs/container/bb-clientd) that are of use when running bb_clientd as a sidecar of build environments running on Kubernetes. In addition, the repository also provides targets for building Debian packages.
+On [the GitHub Actions page](https://github.com/buildbarn/bb-clientd/actions) you may find pre-built binaries of `bb_clientd`. There are also [container images](https://github.com/buildbarn/bb-clientd/pkgs/container/bb-clientd) that are of use when running `bb_clientd` as a sidecar of build environments running on Kubernetes. In addition, the repository also provides targets for building Debian packages.
 
 ## Getting started with Bazel and bb_clientd
 
@@ -61,12 +61,12 @@ On [the GitHub Actions page](https://github.com/buildbarn/bb-clientd/actions) yo
 
 ### Steps
 
-1. Setup and run bb_clientd as described in the [repo](https://github.com/buildbarn/bb-clientd).
+1. Setup and run `bb_clientd` as described in the [repo](https://github.com/buildbarn/bb-clientd).
 1. Note down the value of `mount.mountPath` and `grpcServers.listenPaths`.
-    * mountPath defaults to ~/bb_clientd
-    * listenPaths defaults to ~/.cache/bb_clientd/grpc
+    * mountPath defaults to `~/bb_clientd`
+    * listenPaths defaults to `~/.cache/bb_clientd/grpc`
 1. Add flag `--experimental_remote_output_service=${listenPaths}` and `--experimental_remote_output_service_prefix=${mountPath}/outputs` to your [`.bazelrc`](https://bazel.build/run/bazelrc)
-1. Start the invocation as usual and you should notice `bazel-out/` is managed by bb_clientd.
+1. Start the invocation as usual and you should notice `bazel-out/` is managed by `bb_clientd`.
 
 ## Future work
 
