@@ -37,7 +37,7 @@ authors:
   aehlig:
     - Klaus Aehlig
     - https://github.com/aehlig
-  
+
   aiuto:
     - Tony Aiuto
     - https://github.com/aiuto
@@ -53,7 +53,7 @@ authors:
   brendandouglas:
     - Brendan Douglas
     - https://github.com/brendandouglas
-    
+
   buchgr:
     - Jakob Buchgraber
     - https://github.com/buchgr
@@ -113,11 +113,11 @@ authors:
   hermione521:
     - Yue Gan
     - https://github.com/hermione521
-  
+
   hicksjoseph:
     - Joe Hicks
     - https://github.com/hicksjoseph
-    
+
   iirina:
     - Irina Iancu
     - https://github.com/iirina
@@ -149,7 +149,7 @@ authors:
   karolinakalin:
     - Karolina Kalin
     - https://github.com/karolinakalin
-    
+
   katre:
     - John Cater
     - https://github.com/katre
@@ -237,11 +237,14 @@ authors:
   wyv:
     - Xudong Yang
     - https://github.com/Wyverald
-    
+
   radvani13:
     - Radhika Advani
     - https://github.com/radvani13
-  
+
   zhengwei143:
     - Zheng Wei Tan
     - https://github.com/zhengwei143
+
+  bazel-for-embedded-authors:
+    - Ted Pudlik, Armando Montanez, Keir Mierle (Pigweed team), John Cater, Greg Estren, Yun Peng (Bazel team)
