@@ -35,7 +35,7 @@ The Google Bazel team is migrating community-maintained repositories from the _b
 
 Bazel [7.3.0](https://github.com/bazelbuild/bazel/releases/tag/7.3.0) was released in Q3 ‘24, along with patch releases [7.3.1](https://github.com/bazelbuild/bazel/releases/tag/7.3.1) and [7.3.2](https://github.com/bazelbuild/bazel/releases/tag/7.3.2).
 
-Bazel [7.4.0](https://github.com/bazelbuild/bazel/issues/23271) is in progress and scheduled to be released in October. The first release candidate is scheduled for October 9th. 
+Bazel [7.4.0](https://github.com/bazelbuild/bazel/issues/23271) is in progress and scheduled to be released in October. The first release candidate is being prepared. 
 
 Bazel 8.0 is coming soon! The [first release candidate](https://github.com/bazelbuild/bazel/releases/tag/8.0.0rc1) is already out, so please take a moment to test and report any issues you find in the [Bazel repository](https://github.com/bazelbuild/bazel/issues/new?assignees=sgowroji%2Ciancha1992%2Csatyanandak&labels=type%3A+bug%2Cuntriaged&projects=&template=bug_report.yml). The final release is tentatively expected around October 28th. Keep this date in mind as you plan and prioritize contributions. Stay updated on any changes by following the [release tracker issue](https://github.com/bazelbuild/bazel/issues/23315).
 
