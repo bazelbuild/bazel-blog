@@ -44,13 +44,13 @@ Bazel 8.0 is coming soon! The [first release candidate](https://github.com/bazel
 We're thrilled to announce a major milestone for the IntelliJ Bazel plugin: **1 million downloads**! 🎉
 This achievement is a testament to the hard work, dedication, and incredible support from our community. Thank you to all of our users for your continued trust and support. Your feedback and contributions have been invaluable in shaping the plugin into what it is today.
 
-### Introducing Bazel 7.2’s Output Service protocol
+### Introducing Bazel 7.2’s output service protocol
 
 One of the exciting new features in Bazel 7.2 is support for the Bazel Output Service which allows Bazel to lazily materialize outputs when you access them with normal filesystem operations. This allows you to maintain visibility to the entire output tree while still saving network bandwidth. 
 
 It can be enabled by providing command line flags `--experimental_remote_output_service` and `--experimental_remote_output_service_output_path_prefix`. In [this blog post](https://blog.bazel.build/2024/07/23/remote-output-service.html), we describe what the Bazel Output Service is, and why you’d want to use it.
 
-### Bazel for Embedded: Pigweed SDK Launches with Native Bazel Support
+### Bazel for embedded: Pigweed SDK launches with native Bazel support
 
 The Pigweed team is excited to announce the launch of the Pigweed SDK (preview) with native Bazel support. Take a look at [this blog post](https://blog.bazel.build/2024/08/08/bazel-for-embedded.html) for all the details!
 
