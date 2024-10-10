@@ -25,9 +25,9 @@ You can also register to join the additional events that are organized along Baz
 
 We hope you enjoy and have fun at BazelCon!
 
-### Transfer of community maintained repositories to _bazel-contrib_
+### Transfer of community maintained repositories to The Linux Foundation (_github.com/bazel-contrib_)
 
-The Google Bazel team is migrating community-maintained repositories from the _bazelbuild_ GitHub organization to the _bazel-contrib_ organization. This move aims to provide better maintenance and support for these projects. The _bazel-contrib_ organization is governed by the Bazel Rules Author SIG and supported by the community, ensuring the continued development and health of these valuable resources. Take a look at this [GitHub discussion](https://github.com/orgs/bazelbuild/discussions/2) for more details.
+The Google Bazel team is migrating community-maintained repositories from the _bazelbuild_ GitHub organization to the _bazel-contrib_ organization. This move aims to provide better maintenance and support for these projects. The _bazel-contrib_ organization is governed by The Linux Foundation via the [Community for Bazel TSC](https://github.com/bazel-contrib/.github/blob/master/Community%20for%20Bazel%20Technical%20Charter.pdf) (Technical Steering Committee) and supported by the [Bazel Rules Authors SIG](https://bazel-contrib.github.io/SIG-rules-authors/), ensuring the continued development and health of these valuable resources. Take a look at this [GitHub discussion](https://github.com/orgs/bazelbuild/discussions/2) for more details.
 
 ## Product updates
 
