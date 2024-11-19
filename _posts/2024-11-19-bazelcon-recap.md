@@ -19,7 +19,7 @@ You can catch up on all the action by watching the main stage talks and Birds of
 
 ### Monday, October 14, 2024
 
-- [BazelCon Keynote - Mícheál Ó Foghlú & Tobias Werth, Alex Eagle, Helen Altshuler, Chuck Grindel](https://www.youtube.com/watch?v=-0DRS99dSU4&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw)
+- [BazelCon Keynote - Mícheál Ó Foghlú & Tobias Werth, Alex Eagle, Helen Altshuler, Chuck Grindel](https://www.youtube.com/watch?v=-0DRS99dSU4&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=1)
 - [State of the Union](https://www.youtube.com/watch?v=-rjIX5AVF5A&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=2)
 - [The Classics Never Go Out of Style: An Empirical Study of Downgrades from Bazel](https://www.youtube.com/watch?v=Yu281P45NsA&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=3)
 - [Post Mortems for 4 Years of Remote Execution](https://www.youtube.com/watch?v=2c_SaHI3KLs&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=4)
