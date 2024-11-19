@@ -59,7 +59,7 @@ You can catch up on all the action by watching the main stage talks and Birds of
 - [Hermetic Toolchain Creation with Local Remote Execution (LRE) & Nix](https://www.youtube.com/watch?v=uokjTev8myk&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=35)
 - [Scala, Bazel and VirtusLab](https://www.youtube.com/watch?v=lTeTiDsyATU&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=36)
 - [Swiping Left on Monolithic Targets](https://www.youtube.com/watch?v=v4wkzp-2K9w&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=37)
-- [Improved --Toolchain_resolution_debug’ing](https://www.youtube.com/watch?v=z4-3To3oLGo&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=38)
+- [Improved --Toolchain\_resolution\_debug’ing](https://www.youtube.com/watch?v=z4-3To3oLGo&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=38)
 - [Why We Should Care About Test Execution Output in Safety-Critical Industries](https://www.youtube.com/watch?v=e3zwztC7t1Q&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=39)
 - [The State of Compilation Database in Bazel](https://www.youtube.com/watch?v=HJGD0-mX6G8&list=PLbzoR-pLrL6ptKfAQNZ5RS4HMdmeilBcw&index=40)
 
