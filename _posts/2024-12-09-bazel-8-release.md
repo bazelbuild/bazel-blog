@@ -35,7 +35,7 @@ Bzlmod was introduced in Bazel 5 in 2021 as an experimental feature, it became G
 
 Since Bzlmod was launched, the [Bazel Central Registry](https://registry.bazel.build/) growth has accelerated from Bazel release to Bazel release:
 
-<img src="/assets/bazel8.png"/>
+<img src="/assets/bazel8.png" style="width:50%; height:50%;"/>
 
 The BCR now hosts more than 500 Bazel modules with 2500+ different versions.
 
