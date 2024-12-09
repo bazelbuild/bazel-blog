@@ -48,7 +48,7 @@ We are aiming to remove all WORKSPACE functionalities in Bazel 9.
 Symbolic macros offer a new way to write macros that are safer to use and that catch bugs sooner. For example, their arguments are typed like rule attributes, and the author decides which attributes permit select()s based on whether the macro needs to examine that value or pass it through. With Symbolic macros come several related features:
 
 - A new macro-aware visibility model, which protects a macro's internal targets from being depended on by its caller
-- Rule Finalizers, which are macros that can call native.existing_rules() with less surprising behavior
+- Rule Finalizers, which are macros that can call `native.existing_rules()` with less surprising behavior
 - A way for a macro to inherit the attribute schema of another rule or macro that it wraps.
 
 Check out the [documentation on macros](https://bazel.build/extending/macros) for more details.
