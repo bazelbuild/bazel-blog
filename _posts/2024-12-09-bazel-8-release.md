@@ -20,12 +20,12 @@ Read on to explore the key highlights of Bazel 8.0, and be sure to check out the
 
 A significant change in Bazel 8.0 is the ongoing effort to modularize rules using Starlark. Many rules previously bundled with Bazel are now split into their own modules. This includes rules for Android, C++, Java, Protobuf, and Shell.
 
-- **Android:** All android_* build and repo rules have migrated to [rules_android](https://github.com/bazelbuild/rules_android). Android tools are no longer bundled within Bazel.
+- **Android:** All `android_*` build and repo rules have migrated to [rules_android](https://github.com/bazelbuild/rules_android). Android tools are no longer bundled within Bazel.
 - **C++:** All C++ toolchain-related symbols have been moved to [rules_cc](http://github.com/bazelbuild/rules_cc). Other symbols, including the rules themselves, will be moved in a future release.
-- **Java:** All java_* rules now reside in [rules_java](https://github.com/bazelbuild/rules_java).
-- **Protobuf:** *_proto_library rules have been moved to [protobuf](https://github.com/protocolbuffers/protobuf).
-- **Python:** All py_* rules and providers (like PyInfo) have been moved to [rules_python](http://github.com/bazelbuild/rules_python).
-- **Shell:** All sh_* rules are now part of [rules_shell](https://github.com/bazelbuild/rules_shell).
+- **Java:** All `java_*` rules now reside in [rules_java](https://github.com/bazelbuild/rules_java).
+- **Protobuf:** `*_proto_library` rules have been moved to [protobuf](https://github.com/protocolbuffers/protobuf).
+- **Python:** All `py_*` rules and providers (like PyInfo) have been moved to [rules_python](http://github.com/bazelbuild/rules_python).
+- **Shell:** All `sh_*` rules are now part of [rules_shell](https://github.com/bazelbuild/rules_shell).
 
 To ease this transition, Bazel 8.0 introduces the `--incompatible_autoload_externally` flag which automatically loads rules from their respective repositories, thus removing the need for an imminent migration. The migration to use load statements needs to happen in 2025 before Bazel 9 is released. Load statements are supported on Bazel versions 6, 7 and 8, so the migration is largely independent of the Bazel version.
 
