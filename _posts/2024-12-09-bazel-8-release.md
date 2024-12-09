@@ -3,7 +3,7 @@ layout: posts
 title: "Bazel 8.0 LTS"
 authors:
  - wyv
- - fweikert
+ - fwe
  - keertk
 ---
 
