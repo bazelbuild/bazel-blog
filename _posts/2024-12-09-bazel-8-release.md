@@ -31,7 +31,7 @@ To ease this transition, Bazel 8.0 introduces the `--incompatible_autoload_exter
 
 ### Bzlmod: the new default for dependency management
 
-Bzlmod was introduced in Bazel 5 in 2021 as an experimental feature, it became GA in Bazel 6 and turned on in Bazel 7. In Bazel 8, the new powerful external dependencies system works with the old WORKSPACE mechanism turned off by default. This shift means that Bazel no longer automatically reads the WORKSPACE and WORKSPACE.bzlmod files when building your project. These files were previously required for defining external repositories and dependencies, but Bzlmod offers a more modern and efficient approach.
+Bzlmod was introduced in Bazel 5 in 2021 as an experimental feature, it became GA in Bazel 6 and turned on in Bazel 7. In Bazel 8, the new powerful external dependencies system works with the old WORKSPACE mechanism turned off by default. This shift means that Bazel no longer automatically reads the `WORKSPACE` and `WORKSPACE.bzlmod` files when building your project. These files were previously required for defining external repositories and dependencies, but Bzlmod offers a more modern and efficient approach.
 
 Since Bzlmod was launched, the [Bazel Central Registry](https://registry.bazel.build/) growth has accelerated from Bazel release to Bazel release:
 
