@@ -3,3 +3,4 @@
 /production
 *.swp
 .DS_Store
+MODULE.bazel.lock
