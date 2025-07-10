@@ -5,6 +5,8 @@ authors:
   - EricBurnett
 ---
 
+**Update: Google Cloud RBE is no longer available to external customers**
+
 Remote Build Execution can accelerate your software builds and tests and
 help you cut infrastructure costs. This Bazel-compatible service is now
 available on Google Cloud Platform (GCP) in alpha.
