@@ -39,12 +39,12 @@ Let's try to validate `MODULE.bazel`. To illustrate this, we'll do it by hand, t
 
 The GitHub CLI uses attestations that were uploaded to the attestations store during publication. The [attestation](https://github.com/aspect-build/rules_lint/attestations/6280303) can be seen in the attestations tab for a project.
 
-1. Download the file from BCR
+###### Download the file from BCR
 ```
 $ curl -sSO https://bcr.bazel.build/modules/aspect_rules_lint/1.3.4/MODULE.bazel
 ```
 
-2. Run the GitHub CLI attestation verification workflow
+###### Run the GitHub CLI attestation verification workflow
 ```
 $ gh attestation verify MODULE.bazel \
     --repo aspect-build/rules_lint \
@@ -73,9 +73,9 @@ The following 1 attestation matched the policy criteria
   - Signer workflow: .github/workflows/publish.yaml@refs/tags/v0.0.1
 ```
 
-   The `--source-ref refs/tags/v1.3.4` flag ensures the build came from an officially tagged commit.
+The `--source-ref refs/tags/v1.3.4` flag ensures the build came from an officially tagged commit.
 
-   The `--signer-workflow github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v0.0.1` flag corresponds to the approved builder workflow and version. While it is optional for verification, it's recommended to ensure the official publishing workflow was used. For a builder with many versions this can be a regex like `...@refs/tags/v\\d+\\.\\d+\\.\\d+$`, but your build's policy file can map the correct version to the artifact in question.
+The `--signer-workflow github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v0.0.1` flag corresponds to the approved builder workflow and version. While it is optional for verification, it's recommended to ensure the official publishing workflow was used. For a builder with many versions this can be a regex like `...@refs/tags/v\\d+\\.\\d+\\.\\d+$`, but your build's policy file can map the correct version to the artifact in question.
 
 #### Verifying source.json
 
@@ -140,6 +140,6 @@ We encourage module maintainers to explore integrating attestation generation in
 
 The Aspect Build team ([@kormide](https://github.com/kormide), [@alexeagle](https://github.com/alexeagle)) for their work on improving release processes for Bazel developers and specifically on the reusable actions for producing the secure SLSA attestations with these reusable workflows.
 
-The extended BCR team ([@meteorcloudy](https://github.com/meteorcloudy)) for their work validating and mirroring attestations on BCR making them easily available for consumption.
+The extended BCR team ([@meteorcloudy](https://github.com/meteorcloudy), [@adincebic](https://github.com/adincebic)) for their work validating and mirroring attestations on BCR making them easily available for consumption.
 
 The SLSA team ([@ramonpetgrave64](https://github.com/ramonpetgrave64)) for their work ensuring we were producing our SLSA attestations that allowed higher level audits on build processes.
