@@ -40,39 +40,39 @@ Let's try to validate `MODULE.bazel`. To illustrate this, we'll do it by hand, t
 The GitHub CLI uses attestations that were uploaded to the attestations store during publication. The [attestation](https://github.com/aspect-build/rules_lint/attestations/6280303) can be seen in the attestations tab for a project.
 
 1. Download the file from BCR
-   ```
-   $ curl -sSO https://bcr.bazel.build/modules/aspect_rules_lint/1.3.4/MODULE.bazel
-   ```
+```
+$ curl -sSO https://bcr.bazel.build/modules/aspect_rules_lint/1.3.4/MODULE.bazel
+```
 
 2. Run the GitHub CLI attestation verification workflow
-   ```
-   $ gh attestation verify MODULE.bazel \
-       --repo aspect-build/rules_lint \
-       --source-ref refs/tags/v1.3.4 \
-       --signer-workflow github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v0.0.1
+```
+$ gh attestation verify MODULE.bazel \
+    --repo aspect-build/rules_lint \
+    --source-ref refs/tags/v1.3.4 \
+    --signer-workflow github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v0.0.1
 
-   Loaded digest sha256:e0758f32323887cfe0b9d6e9f01f803f50a3f5efb6a229fc6791e99bd91ea038 for file://MODULE.bazel
-   Loaded 1 attestation from GitHub API
+Loaded digest sha256:e0758f32323887cfe0b9d6e9f01f803f50a3f5efb6a229fc6791e99bd91ea038 for file://MODULE.bazel
+Loaded 1 attestation from GitHub API
 
-   The following policy criteria will be enforced:
-   - Predicate type must match:................ https://slsa.dev/provenance/v1
-   - Source Repository Owner URI must match:... https://github.com/aspect-build
-   - Source Repository URI must match:......... https://github.com/aspect-build/rules_lint
-   - Source repo ref must match:............... refs/tags/v1.3.4
-   - Subject Alternative Name must match regex: ^https://github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v\*
-   - OIDC Issuer must match:................... https://token.actions.githubusercontent.com
+The following policy criteria will be enforced:
+- Predicate type must match:................ https://slsa.dev/provenance/v1
+- Source Repository Owner URI must match:... https://github.com/aspect-build
+- Source Repository URI must match:......... https://github.com/aspect-build/rules_lint
+- Source repo ref must match:............... refs/tags/v1.3.4
+- Subject Alternative Name must match regex: ^https://github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v\*
+- OIDC Issuer must match:................... https://token.actions.githubusercontent.com
 
-   ✓ Verification succeeded\!
+✓ Verification succeeded\!
 
-   The following 1 attestation matched the policy criteria
+The following 1 attestation matched the policy criteria
 
-   - Attestation \#1
-     - Build repo:..... aspect-build/rules_lint
-     - Build workflow:. .github/workflows/release.yml@refs/tags/v1.3.4
-     - Signer repo:.... bazel-contrib/publish-to-bcr
-     - Signer workflow: .github/workflows/publish.yaml@refs/tags/v0.0.1
+- Attestation \#1
+  - Build repo:..... aspect-build/rules_lint
+  - Build workflow:. .github/workflows/release.yml@refs/tags/v1.3.4
+  - Signer repo:.... bazel-contrib/publish-to-bcr
+  - Signer workflow: .github/workflows/publish.yaml@refs/tags/v0.0.1
+```
 
-   ```
    The `--source-ref refs/tags/v1.3.4` flag ensures the build came from an officially tagged commit.
 
    The `--signer-workflow github.com/bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@refs/tags/v0.0.1` flag corresponds to the approved builder workflow and version. While it is optional for verification, it's recommended to ensure the official publishing workflow was used. For a builder with many versions this can be a regex like `...@refs/tags/v\\d+\\.\\d+\\.\\d+$`, but your build's policy file can map the correct version to the artifact in question.
