@@ -3,7 +3,7 @@ layout: posts
 title: Enhancing Security Metadata in BCR with Attestation Support
 authors:
   - loosebazooka
-  - fweikert
+  - fwe
 ---
 
 
