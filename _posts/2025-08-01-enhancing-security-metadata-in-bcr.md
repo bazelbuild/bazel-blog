@@ -140,6 +140,6 @@ We encourage module maintainers to explore integrating attestation generation in
 
 The Aspect Build team ([@kormide](https://github.com/kormide), [@alexeagle](https://github.com/alexeagle)) for their work on improving release processes for Bazel developers and specifically on the reusable actions for producing the secure SLSA attestations with these reusable workflows.
 
-The extended BCR team ([@meteorcloudy](https://github.com/meteorcloudy)) for their work validating and mirroring attestations on BCR making them easily available for consumption.
+The extended BCR team ([@meteorcloudy](https://github.com/meteorcloudy), [@adincebic](https://github.com/adincebic)) for their work validating and mirroring attestations on BCR making them easily available for consumption.
 
 The SLSA team ([@ramonpetgrave64](https://github.com/ramonpetgrave64)) for their work ensuring we were producing our SLSA attestations that allowed higher level audits on build processes.
