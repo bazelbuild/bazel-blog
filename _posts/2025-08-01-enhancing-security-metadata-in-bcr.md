@@ -20,12 +20,12 @@ If you are using [release_ruleset](https://github.com/bazel-contrib/.github/blob
 1. upgrade your release_ruleset to use the new attestation generating workflow
 2. follow the instructions to [setup the new publish-to-bcr workflow](https://github.com/bazel-contrib/publish-to-bcr?tab=readme-ov-file#setup)
 
-To see how this affects a release, let's use the example of [aspect_rules_lint](https://registry.bazel.build/modules/aspect_rules_lint) which has been publishing modules with attestations since v1.3.4. You will see a new publishing artifact `[attestations.json](https://github.com/bazelbuild/bazel-central-registry/blob/main/modules/aspect_rules_lint/1.3.4/attestations.json)' that contains information about your attestations. On successful publication, BCR will preserve and mirror attestations for publishing artifacts. Please note that since BCR does not mirror the source archive, it also does not mirror the source archive's attestation. The BCR UI will attach a blue indicator to a release version informing users that attestations are available for consumption.
+To see how this affects a release, let's use the example of [aspect\_rules\_lint](https://registry.bazel.build/modules/aspect_rules_lint) which has been publishing modules with attestations since v1.3.4. You will see a new publishing artifact `[attestations.json](https://github.com/bazelbuild/bazel-central-registry/blob/main/modules/aspect_rules_lint/1.3.4/attestations.json)' that contains information about your attestations. On successful publication, BCR will preserve and mirror attestations for publishing artifacts. Please note that since BCR does not mirror the source archive, it also does not mirror the source archive's attestation. The BCR UI will attach a blue indicator to a release version informing users that attestations are available for consumption.
 <img width="572" height="166" alt="image" src="https://github.com/user-attachments/assets/c1d961f1-904a-4769-a9f1-b8aeeb3d3582" />
 
 ### Verifying Attestations
 
-Once you've generated and published your attestations, you can validate them. For the purposes of this example, we will once again use [aspect_rules_lint](https://registry.bazel.build/modules/aspect_rules_lint). There are three critical files to attest to cover a module version:
+Once you've generated and published your attestations, you can validate them. For the purposes of this example, we will once again use [aspect\_rules\_lint](https://registry.bazel.build/modules/aspect_rules_lint). There are three critical files to attest to cover a module version:
 
 1. `MODULE.bazel` (published to BCR)
 2. `source.json` (published to BCR)
@@ -106,12 +106,14 @@ $ gh attestation verify rules_lint-v1.3.4.tar.gz \
 You can skip the github attestation store lookup and use a downloaded attestation instead. For example, with MODULE.bazel:
 
 Download the file from BCR and its attestation
+
 ```
 $ curl -sSO https://bcr.bazel.build/modules/aspect_rules_lint/1.3.4/MODULE.bazel
 $ curl -sSO https://bcr.bazel.build/modules/aspect_rules_lint/1.3.4/MODULE.bazel.intoto.jsonl
 ```
 
 Use the `--bundle` flag to run the verification workflow with the downloaded attestation
+
 ```
 $ gh attestation verify MODULE.bazel \
     --repo aspect-build/rules_lint \
