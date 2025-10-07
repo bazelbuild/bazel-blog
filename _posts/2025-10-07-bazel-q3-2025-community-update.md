@@ -94,10 +94,11 @@ JetBrains is continuously updating the Bazel plugin [documentation pages](https:
 
 If you enjoy meeting fellow build enthusiasts in person, we encourage you to keep an eye on [meetup.build](http://meetup.build) - the right place to find build community meetups and opportunities to learn and share knowledge. 
 
-Upcoming meetups -
-- [Munich Build Meetup](https://4mksw.share.hsforms.com/21ZG5vZFgQRSvnAzXRe_olQ) - October 13th
-- London Build Meetup - February 2026
-- New York Build Meetup - March 2026
+Upcoming meetups:
+
+- [Munich Build Meetup](https://4mksw.share.hsforms.com/21ZG5vZFgQRSvnAzXRe_olQ): October 13th
+- London Build Meetup: February 2026
+- New York Build Meetup: March 2026
 
 ### Articles
 - [Understanding Bazel remote caching](https://blogsystem5.substack.com/p/bazel-remote-caching) - by Julio Merino
@@ -123,8 +124,8 @@ Upcoming meetups -
 - [Bazel Training 101](https://www.youtube.com/playlist?list=PLLU28e_DRwdswrrZaNqnFFm9OawpxN4CB) - playlist by Alex Eagle @Aspect Build
 - [IDE Support for Bazel: JetBrains’ New Plugin with Justin Kaeser](https://www.youtube.com/watch?v=PzPH3MgoBMw) - by Alex Eagle @Aspect Build
 - [How Tinder built and open-sourced Bazel-diff to transform their CI/CD at scale](https://www.youtube.com/watch?v=WlQahiQ8kLM) - by BuildKite
-- [State of Swift and iOS in Bazel with Luis Padron and Brentley Jones](https://www.youtube.com/watch?v=WlQahiQ8kLM) - by Alex Eagle @Aspect Build
-- [How Snowflake Transformed its C++ and Java Build Systems with Julio Merino](https://www.youtube.com/watch?v=gn3Of-0JNIA) - by Alex Eagle @Aspect Build
+- [State of Swift and iOS in Bazel with Luis Padron and Brentley Jones](https://www.youtube.com/watch?v=gn3Of-0JNIA) - by Alex Eagle @Aspect Build
+- [How Snowflake Transformed its C++ and Java Build Systems with Julio Merino](https://www.youtube.com/watch?v=3gIqshGJJtE) - by Alex Eagle @Aspect Build
 
 ## Resources
 
