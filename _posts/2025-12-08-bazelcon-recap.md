@@ -84,5 +84,5 @@ If you are interested in presentation slides, you can find them attached to the 
 - [AI Breaks Everything: Is Your Build Infrastructure Ready?](https://docs.google.com/document/d/1GcN0Bi-qrokHT_kE4dt6vFPMvAaIeEVtj3jsSSROB6w/edit?usp=sharing)
 - [Let's Build the Future of Bazel Documentation](https://docs.google.com/document/d/1R-02--2NQuu2TR7covDTqNMExMhjHfPS-YHoqOweaqk/edit?usp=sharing)
 - [Bzlmod](https://docs.google.com/document/d/1aqn9aZl3JA4AbTkkNj7UmGEGAegrhn5VHy5m50joUGY/edit?usp=sharing)
-- [Android](https://docs.google.com/document/d/1ipj62MoDCc2Cq9kGWh5ieMizPPlIw3S1EePWAkPZ2LY/edit?usp=sharing)
+- [Android](https://docs.google.com/document/d/1T7VxMDdjVD5pWghylOBGQf0KfVMX0dbwYQDJv_oky1U/edit?usp=sharing)
 - [Supply Chain Security](https://docs.google.com/document/d/10AgoOcCbt3q4SzoVsHiKkQzVLxUNug2BOsmZ9RThAtE/edit?usp=sharing)
