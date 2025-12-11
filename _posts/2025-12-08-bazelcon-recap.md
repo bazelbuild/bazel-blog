@@ -11,7 +11,7 @@ Autumn is BazelCon season, and this year was no different: Last month we hosted 
 We were able to welcome **331 attendees** from 214 organizations to Atlanta, Georgia.
 The conference kicked off with a day of sponsored sessions on Sunday, followed by two days filled with conference talks, birds-of-a-feather sessions and multiple unconferences.
 
-If you want to learn more, you can take a look at the [post-event report](https://events.linuxfoundation.org/wp-content/uploads/2025/12/BazelCon25_PostEventReport.pdf), watch the recordings of the main stage talks or read through the birds-of-a-feather notes linked below.
+If you want to learn more, you can take a look at the [post-event report](https://events.linuxfoundation.org/wp-content/uploads/2025/12/BazelCon25_PostEventReport.pdf), browse through some [photos](https://flic.kr/s/aHBqjCAQoA), watch the recordings of the main stage talks or read through the birds-of-a-feather notes linked below.
 
 A heartfelt "thank you" goes out to everyone who made this BazelCon another great success: the Linux Foundation, our sponsors, our amazing presenters and all the attendees.
 We're looking forward to seeing all of you again in 2026!
@@ -62,7 +62,7 @@ You can find the recordings on our new [@BazelCon](https://www.youtube.com/@Baze
 - [Nix and Bazel: A New Hope](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=32)
 - [How We Automated 3rd-Party Dependency Management in a Bazel Monorepo](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=33)
 - [A Bazel Story: Cargo Splicing and the Three Lockfiles](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=34)
-- [Gradle-Backed Dependency Resolution in Rules_jvm_external](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=35)
+- [Gradle-Backed Dependency Resolution in Rules\_jvm\_external](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=35)
 - [Immutable Infrastructure for Clinical AI: Bazel for Dependency Governance in Healthcare ML](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=36)
 - [Managing Flaky Tests With Bazel and rules_go](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=37)
 - [rules_img: A Ground-Up Redesign of Container Image Building for Bazel](https://www.youtube.com/watch?v=Otjbpn2rB3w&list=PLak8-7eFSpowmNiR2lhvJEomLA140yban&index=38)
