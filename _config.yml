@@ -254,5 +254,17 @@ authors:
     - Zheng Wei Tan
     - https://github.com/zhengwei143
 
+  robaiken:
+    - Rob Aiken
+    - https://github.com/robaiken
+
+  markhallen:
+    - Mark Allen
+    - https://github.com/robaiken
+
+  honeyankit:
+    - Ankit Kumar Honey
+    - https://github.com/honeyankit
+
   bazel-for-embedded-authors:
     - Ted Pudlik, Armando Montanez, Keir Mierle (Pigweed team), John Cater, Greg Estren, Yun Peng (Bazel team)
