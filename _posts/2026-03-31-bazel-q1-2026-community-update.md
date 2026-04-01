@@ -103,7 +103,7 @@ Read the [Prospectus and Membership Entitlements](https://docs.google.com/presen
 
 **Articles**
 
-[Goodbye Dockerfile, Hello Bazel: Doubling Our CI Speed ](https://plaid.com/blog/hello-bazel/) - y Nikita Chepanov and Oleg Dashevskii at Plaid
+[Goodbye Dockerfile, Hello Bazel: Doubling Our CI Speed ](https://plaid.com/blog/hello-bazel/) - by Nikita Chepanov and Oleg Dashevskii at Plaid
 
 [Build less, merge faster: avoiding diamond merges with a merge queue ](https://plaid.com/blog/merge-queue/) - by Nikita Chepanov and Oleg Dashevskii at Plaid
 
