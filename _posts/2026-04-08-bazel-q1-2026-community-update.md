@@ -62,7 +62,7 @@ Email us at bazelcon-planning@bazel.build to reserve your sponsorship, ask quest
 
 ### Upcoming Bazel releases
 
-[Bazel 9.1.0](https://github.com/bazelbuild/bazel/issues/28365) is expected to release on on 2026-04-14. Please send cherry-pick PRs against the [release-9.1.0](https://github.com/bazelbuild/bazel/tree/release-9.1.0) branch before the RC1 cutoff on 2026-04-07.
+[Bazel 9.1.0](https://github.com/bazelbuild/bazel/issues/28365) is expected to release on on 2026-04-16. Please send cherry-pick PRs against the [release-9.1.0](https://github.com/bazelbuild/bazel/tree/release-9.1.0) branch before the RC1 cutoff on 2026-04-09.
 
 [Bazel 8.7.0](https://github.com/bazelbuild/bazel/issues/28821) is expected to release on 2026-05-04. Please send cherry-pick PRs against the [release-8.7.0](https://github.com/bazelbuild/bazel/tree/release-8.7.0) branch before the RC1 cutoff on 2026-04-27.
 
@@ -80,6 +80,20 @@ Email us at bazelcon-planning@bazel.build to reserve your sponsorship, ask quest
 
 
 ## Community Corner
+
+### Bazel for CLion plugin updates
+
+A few updates from the JetBrains* team:
+
+- Plugin supports Bazel 9 and comes now with Starlark REPL.
+
+- C++ code insight under transitions is being rolled out. CLion Classic lets the user select resolve configuration for such files if more than one configuration is available, CLion Nova support for configuration switching is on the way.
+
+- GoogleTest TEST_P macro is supported for individual test runs.
+
+- Code insight takes into account conlyopts and cxxopts attributes.
+
+- New PTY capable view is enabled by default for all outputs.
 
 ### BUILD Foundation
 
@@ -167,3 +181,5 @@ Thank you for reading this edition! Let us know if you’d like to see any new i
 Thanks,
 
 Google Bazel team
+
+**Copyright © 2026 JetBrains s.r.o. JetBrains and IntelliJ are registered trademarks of JetBrains s.r.o.*
