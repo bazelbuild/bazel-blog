@@ -20,9 +20,9 @@ Alan and a group of volunteers from the community and Google have now completed 
 
 Documentation content continues to live in the [bazelbuild/bazel](https://github.com/bazelbuild/bazel) GitHub repository next to the Bazel source code. The new [bazel-contrib/bazel-docs](https://github.com/bazel-contrib/bazel-docs) repository contains the documentation pipeline and the navigation.
 
-There are still some rough edges that we plan to address in the near future. We hope that the new website makes it easier for external developers to contribute to the documentation, especially when it comes to significant changes like revamping the structure or adding new pages such as codelabs and tutorials.
+There are still some rough edges that we plan to address in the near future. Known issues are being tracked [here](https://github.com/bazelbuild/bazel/issues/30598) - please post a comment when you encounter a bug.
 
-We welcome anyone to contribute to these efforts - please check [https://bazel.build/contribute/docs](https://bazel.build/contribute/docs) for instructions, or visit us in the [#documentation Slack channel](https://bazelbuild.slack.com/archives/CRH3QF91B).
+We hope that the new website makes it easier for external developers to contribute to the documentation, especially when it comes to significant changes like revamping the structure or adding new pages such as codelabs and tutorials. Consequently, we welcome anyone to contribute to these efforts - please check [https://bazel.build/contribute/docs](https://bazel.build/contribute/docs) for instructions, or visit us in the [#documentation Slack channel](https://bazelbuild.slack.com/archives/CRH3QF91B).
 
 ## New BCR UI
 
