@@ -35,7 +35,7 @@ _Wednesday, October 14th:_
 
 - (6 PM – 11 PM) [Extreme Scale Party](https://meetup.build/bazelcon-2026) at Social Impact Factory
 
-- (After Reception) BuildBuddy Afterparty at Ventuno Skylounge
+- (6:30 PM) [BuildBuddy & Google Cloud Happy Hour](https://docs.google.com/forms/d/e/1FAIpQLScf1zZSPL3SEnhLFgRMMh7ocLMCRrhCSBNIcsWPCe4FvjFyTg/viewform) at Ventuno Skylounge
 
 _Friday, October 16th:_
 
