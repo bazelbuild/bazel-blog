@@ -8,18 +8,13 @@ nav: blog
   <body>
     {% include header.html %}
 
-    <div class="page-title-bar">
-      <div class="container">
-        <h1>Bazel Blog</h1>
-      </div>
-    </div>
-
     <div class="container vpad">
       <div class="row">
-        <div class="col-lg-9">
+        <div class="col-lg-12">
           {{ content }}
 
-          <nav aria-label="...">
+          {% if paginator %}
+          <nav aria-label="Blog pagination">
             <ul class="pager">
               {% if paginator.previous_page %}
               <li class="previous">
@@ -29,7 +24,7 @@ nav: blog
               </li>
               {% else %}
               <li class="previous disabled">
-                <a href="#"><span aria-hidden="true">&larr;</span> Newer</a>
+                <span><span aria-hidden="true">&larr;</span> Newer</span>
               </li>
               {% endif %}
 
@@ -41,17 +36,16 @@ nav: blog
               </li>
               {% else %}
               <li class="next disabled">
-                <a href="#">Older <span aria-hidden="true">&rarr;</span></a>
+                <span>Older <span aria-hidden="true">&rarr;</span></span>
               </li>
               {% endif %}
             </ul>
           </nav>
+          {% endif %}
         </div>
-        {% include blog-sidebar.html %}
       </div>
     </div>
 
     {% include footer.html %}
-    {% include blog-twitter-js.html %}
   </body>
 </html>

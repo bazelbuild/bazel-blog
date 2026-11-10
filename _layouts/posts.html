@@ -2,23 +2,17 @@
 nav: blog
 ---
 
-
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="https://schema.org/WebPage">
   {% include head.html %}
   <body>
     {% include header.html %}
 
-    <div class="page-title-bar">
-      <div class="container">
-        <h1>Bazel Blog</h1>
-      </div>
-    </div>
-
     <div class="container vpad">
       <div class="row">
-        <div class="col-lg-9">
-          <div class="blog-post">
+        <div class="col-lg-12">
+          <article class="blog-post blog-post-single">
+            <a href="/" class="blog-eyebrow">&larr; Bazel Blog</a>
             <h1 class="blog-post-title">{{ page.title }}</h1>
             <div class="blog-post-meta">
               {% include byline.html authors=page.authors date=page.date %}
@@ -41,20 +35,18 @@ nav: blog
               <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
             </div>
             {% endif %}
-          </div>
+          </article>
         </div>
-        {% include blog-sidebar.html %}
       </div>
     </div>
 
     {% include footer.html %}
-    {% include blog-twitter-js.html %}
 
     <!-- Anchor JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.0/anchor.min.js"></script>
     <script>
       // Automatically add anchors and links to all header elements that don't already have them.
-      anchors.add();
+      anchors.add('.blog-post-content h2, .blog-post-content h3, .blog-post-content h4');
     </script>
   </body>
 </html>

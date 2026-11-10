@@ -1,5 +1,6 @@
 ---
 layout: blog
+title: Post Archive
 enable_comments: false
 ---
 
@@ -18,8 +19,8 @@ enable_comments: false
       {% unless forloop.first %}</ul>{% endunless %}
 
       <!-- Create the year header -->
-      <h1>{{ yearOfPost }}</h1>
-      <ul>
+      <h2 class="archive-year">{{ yearOfPost }}</h2>
+      <ul class="archive-list">
 
       <!-- Assign the current year section -->
       {% assign currentYear = yearOfPost %}
@@ -27,9 +28,8 @@ enable_comments: false
 
     <!-- Create the list entry for the post -->
     <li>
-      <a href="{{ post.url }}">
-        <span>{{ post.date | date: "%b %-d" }}</span> - {{ post.title }}
-      </a>
+      <span class="archive-date">{{ post.date | date: "%b %-d" }}</span>
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
 
     <!-- Close the list if it's the last post -->

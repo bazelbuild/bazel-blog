@@ -1,20 +1,73 @@
-// Footer styles
+// Footer styles aligned with https://bazel.build
+
 .footer {
-  margin-top: 40px;
-  background-color: #424242;
-  color: #fff;
-  padding: 20px;
+  margin-top: 80px;
+  background-color: #ffffff;
+  border-top: 1px solid $gray-100;
+  color: $gray-600;
+  padding: 64px 0 48px;
+
+  .footer-brand {
+    margin-bottom: 24px;
+
+    .footer-logo {
+      height: 26px;
+      width: auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+
+      a {
+        color: $gray-400;
+        font-size: 18px;
+        line-height: 1;
+
+        &:hover,
+        &:focus {
+          color: $gray-700;
+        }
+      }
+    }
+  }
+
+  .footer-heading {
+    font-size: 14px;
+    font-weight: $font-weight-semibold;
+    color: $gray-900;
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+
+  ul.list-unstyled {
+    margin-bottom: 24px;
+
+    li {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
 
   .text-muted {
-    color: #e0e0e0;
+    color: $gray-400;
+    font-size: 13px;
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 
   a {
-    color: #e0e0e0;
+    color: $gray-500;
+    font-weight: $font-weight-normal;
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: $gray-900;
       text-decoration: none;
     }
   }
