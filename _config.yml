@@ -1,17 +1,14 @@
 destination: production
 
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables"]
+markdown: kramdown
 
 paginate: 10
 
-highlighter: pygments
+highlighter: rouge
 
 sass:
   sass_dir: _sass
 
-gems: [jekyll-paginate]
 plugins: [jekyll-paginate]
 
 main_site_url: https://bazel.build
