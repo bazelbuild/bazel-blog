@@ -1,29 +1,25 @@
-//
-// Copyright 2015 Google
-//
-// Generated using Base16 Builder
-// (https://github.com/chriskempson/base16-builder)
+// Syntax highlighting colors harmonized with bazel.build code blocks
 
-$base00: #212121;  //  ----
-$base01: #424242;  //  ---
-$base02: #616161;  //  --
-$base03: #757575;  //  -
-$base04: #9e9e9e;  //  +
-$base05: #bdbdbd;  //  ++
-$base06: #e0e0e0;  //  +++
-$base07: #eee;     //  ++++
+$base00: #181b18;
+$base01: #272a27;
+$base02: #525452;
+$base03: #727472;
+$base04: #727472;
+$base05: #a0a3a0;
+$base06: #e0e3e0;
+$base07: #f4f7f5;
 
-$base08: #f44336;  //  red
-$base09: #ff9800;  //  orange
-$base0A: #ffc107;  //  yellow
-$base0B: #4caf50;  //  green
-$base0C: #009688;  //  aqua
-$base0D: #2196f3;  //  blue
-$base0E: #9c27b0;  //  purple
-$base0F: #795548;  //  brown
+$base08: #c62828;  // red
+$base09: #d95f02;  // orange
+$base0A: #9a6700;  // amber/type
+$base0B: #1b7f2a;  // green
+$base0C: #00796b;  // teal
+$base0D: #0550ae;  // blue
+$base0E: #7c3aed;  // purple
+$base0F: #6d4c41;  // brown
 
 .highlight .hll { background-color: $base06 }
-.highlight { background: $base07; color: $base00 }
+.highlight { background: $base07; color: $base00; border-radius: 12px; }
 .highlight .c { color: $base04 }  // Comment
 .highlight .err { color: $base08 }  // Error
 .highlight .k { color: $base0E }  // Keyword

@@ -8,8 +8,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ site.main_site_url }}/">
-            <img class="navbar-logo" src="/images/bazel-navbar.svg">
+          <a class="navbar-brand" href="/">
+            <img class="navbar-logo" src="/images/bazel-logo.svg" alt="Bazel">
+            <span class="navbar-brand-title">Blog</span>
           </a>
         </div>
 
@@ -17,7 +18,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="https://github.com/bazelbuild/bazel">
+              <a href="https://github.com/bazelbuild/bazel-blog" target="_blank" rel="noopener noreferrer">
                 <span class="hidden-sm">GitHub</span>
                 <span class="nav-icon visible-sm"><i class="fa fa-github"></i></span>
               </a>
@@ -28,35 +29,20 @@
               <input type="hidden" name="cx" value="012346921571893344015:xv_nfgpzbu4">
               <input type="hidden" name="cof" value="FORID:10">
               <input type="hidden" name="ie" value="UTF-8">
-              <input type="search" name="q" class="form-control input-sm" placeholder="Search">
+              <input type="search" name="q" class="form-control input-sm" placeholder="Search blog...">
             </div>
           </form>
           <ul class="nav navbar-nav navbar-right">
             <li{% if page.nav == "docs" %} class="active"{% endif %}>
-              <a href="{{ site.new_docs_site_url }}">Documentation</a>
-            </li>
-            <li{% if page.nav == "contribute" %} class="active"{% endif %}>
-              <a href="{{ site.main_site_url }}/contributing.html">Contribute</a>
-            </li>
-            <li{% if page.nav == "blog" %} class="active"{% endif %}>
-              <a href="{{ site.blog_site_url }}">
-                <span class="hidden-sm">Blog</span>
-                <span class="nav-icon visible-sm"><i class="fa fa-rss"></i></span>
-              </a>
+              <a href="{{ site.main_site_url }}">Documentation</a>
             </li>
             <li>
-              <a href="https://twitter.com/bazelbuild">
-                <span class="visible-xs">Twitter</span>
-                <span><i class="nav-icon fa fa-twitter hidden-xs"></i></span>
-              </a>
+              <a href="https://registry.bazel.build" target="_blank" rel="noopener noreferrer">Module Registry</a>
             </li>
-            <li>
-              <a href="http://stackoverflow.com/questions/tagged/bazel">
-                <span class="visible-xs">StackOverflow</span>
-                <span><i class="nav-icon fa fa-stack-overflow hidden-xs"></i></span>
-              </a>
+            <li{% if page.url == "/archive.html" or page.nav == "archive" %} class="active"{% endif %}>
+              <a href="/archive.html">Post Archive</a>
             </li>
           </ul>
         </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+      </div><!-- /.container -->
     </nav>

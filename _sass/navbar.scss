@@ -1,98 +1,151 @@
-// Navbar styles
-$navbar-bg-color: $bazel-green;
-$navbar-hover-bg-color: $bazel-green-light;
-$navbar-color: $color-on-bazel-green;
-$navbar-hover-color: #444;
-$navbar-input-bg-color: $bazel-green-light;
-$navbar-input-focus-bg-color: $color-on-bazel-green;
-$navbar-input-border-color: $bazel-green;
+// Navbar styles aligned with https://bazel.build topbar
 
 .navbar-inverse {
+  min-height: 64px;
   margin-bottom: 0;
-  background-color: $navbar-bg-color;
-  border-bottom: 1px solid $navbar-bg-color;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0;
+  border-bottom: 1px solid $gray-100;
 
-  .navbar-brand {
-    padding-top: 12px;
-
-    .navbar-logo {
-      height: 28px;
-    }
+  .navbar-header {
+    min-height: 64px;
   }
 
-  a.navbar-brand {
-    color: $navbar-color;
+  .navbar-brand {
+    height: 64px;
+    padding: 14px 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: $gray-900;
+
+    .navbar-logo {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .navbar-brand-title {
+      font-size: 23px;
+      font-weight: $font-weight-semibold;
+      color: $gray-900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
 
     &:focus,
     &:hover {
-      color: $navbar-hover-color;
-      background-color: $navbar-bg-color;
+      color: $gray-900;
+      background-color: transparent;
     }
   }
 
   .navbar-nav > li > a {
-    color: $navbar-color;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: $font-weight-medium;
+    color: $gray-600;
 
     &:focus,
     &:hover {
-      color: $navbar-hover-color;
-      background-color: $navbar-hover-bg-color;
+      color: $gray-900;
+      background-color: transparent;
     }
   }
 
-   .navbar-nav .nav-icon {
-    font-size: 18px;
+  .navbar-nav .nav-icon {
+    font-size: 16px;
   }
 
   .navbar-nav > li.active > a {
-    background-color: $navbar-hover-bg-color;
+    color: $bazel-green-dark-left;
+    font-weight: $font-weight-semibold;
+    background-color: transparent;
 
     &:focus,
     &:hover {
-      background-color: $navbar-hover-bg-color;
+      color: $bazel-green-dark-left;
+      background-color: transparent;
     }
   }
 
   .navbar-form {
-    border-color: $navbar-bg-color;
+    border-color: $gray-100;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-right: 0;
 
     .input-sm {
-      margin-top: 2px;
+      margin-top: 0;
     }
 
     input[type="search"] {
-      background-color: $navbar-input-bg-color;
-      border-color: $navbar-input-border-color;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 13px;
+      color: $gray-900;
+      background-color: $gray-50;
+      border: 1px solid $gray-200;
+      border-radius: 10px;
+      box-shadow: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
 
       &::placeholder {
-        color: $navbar-color;
+        color: $gray-400;
       }
 
       &:focus,
       &:active {
-        background-color: $navbar-input-focus-bg-color;
+        background-color: #ffffff;
+        border-color: $bazel-green;
+        box-shadow: 0 0 0 3px rgba(68, 160, 71, 0.15);
+        outline: none;
       }
     }
   }
 
   .navbar-toggle {
-    border: 1px solid $navbar-bg-color;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid $gray-200;
+    border-radius: 8px;
+    background-color: transparent;
+
+    .icon-bar {
+      background-color: $gray-700;
+    }
 
     &.active,
     &:focus,
     &:hover {
-      background-color: $navbar-hover-bg-color;
+      background-color: $gray-50;
     }
   }
 
   .navbar-collapse {
-    border-color: $navbar-bg-color;
+    border-color: $gray-100;
   }
 }
 
 @media (max-width: 767px) {
+  .navbar-inverse {
+    background-color: #ffffff;
+
+    .navbar-nav > li > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
   #cse-search-box {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 0 15px;
   }
 }

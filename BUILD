@@ -1,15 +1,6 @@
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
 load("//scripts:jekyll.bzl", "jekyll_build")
 
-# Required to move the file from the external repo's execroot location
-# to the _sass location expected by the local css/main.scss imports.
-genrule(
-    name = "style-common",
-    srcs = ["@bazel_website//:_sass/style.scss"],
-    outs = ["_sass/style.scss"],
-    cmd = "cp $< $@",
-)
-
 filegroup(
     name = "jekyll-srcs",
     srcs = glob(
@@ -27,7 +18,7 @@ filegroup(
             "production/**",
             "README.md",
         ],
-    ) + [":style-common"],
+    ),
 )
 
 pkg_tar(

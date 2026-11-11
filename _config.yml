@@ -12,11 +12,12 @@ sass:
   sass_dir: _sass
 
 gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 main_site_url: https://bazel.build
 blog_site_url: https://blog.bazel.build
-docs_site_url: https://docs.bazel.build
-new_docs_site_url: https://bazel.build/docs
+docs_site_url: https://bazel.build
+new_docs_site_url: https://bazel.build
 
 assets_url: https://bazel.build
 
