@@ -1,10 +1,10 @@
 ---
 ---
 
-@import "style.scss";
-@import "footer.scss";
-@import "navbar.scss";
-@import "blog.scss";
-@import "tables.scss";
+@use "style";
+@use "footer";
+@use "navbar";
+@use "blog";
+@use "tables";
 
-@import "syntax.scss";
+@use "syntax";
